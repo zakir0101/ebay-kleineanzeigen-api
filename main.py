@@ -1,4 +1,4 @@
-
+import time
 from time import sleep
 from bs4 import BeautifulSoup
 import requests
@@ -13,50 +13,119 @@ Cookies in congif files must be with ';' separator, juste copy paste google chro
 
 
 class EbayKleineanzeigenApi:
-    def __init__(self, filename):
+    def __init__(self, filename: str = "default.json",
+                 url_prefix: str = "", type: str = "html", log=True):
         # Test for custom configs
-
-        with open('default.json', 'r') as f:
-            self.config = json.load(f)
-            print("Loading default config")
-
-        self.googleChromeCookie = self.config['googleChromeCookie']
-        self.cookies = {}
-        for cook in self.googleChromeCookie:
-            self.cookies[cook['name']] = cook['value']
-        self.cookies = {}
-
+        self.login = True
+        self.filename = filename
         self.ebay_url = "https://www.ebay-kleinanzeigen.de/"
-        user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+        # user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+        user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"
         self.headers = {'User-Agent': user_agent, 'Connection': 'keep-alive',
                         'Accept-Encoding': 'gzip, deflate',
                         'Accept': '*/*'}
+        self.cookie_domain = "http://localhost:4200/"
+        self.cookie_domain = "ebay-kleinanzeigen-zakir"
+        self.googleChromeCookie: list[dict] = []
+        self.load_cookies(log=log)
+        self.refresh_cookies(log=log)
+        self.cookies = {}
+        for cook in self.googleChromeCookie:
+            self.cookies[cook['name']] = cook['value']
+        if not self.check_cookies():
+            self.cookies = {}
+            self.googleChromeCookie = {}
+            self.save_cookies()
+            self.login = False
 
-    def search_for(self, search, token):
+        if type == "html":
+            url = self.ebay_url + url_prefix
+            result = self.request_url(url, log=log)
+            self.html_text = result.text
+            self.soup = BeautifulSoup(self.html_text, 'lxml')
+        elif type == "json":
+            url = "https://www.ebay-kleinanzeigen.de/s-ort-empfehlungen.json?query=" + url_prefix
+            result = self.request_url(url, log=log)
+            self.json_obj = result.json()
+
+    def request_url(self, url, log=True):
+        session = requests.Session()
+        result = session.get(url, headers=self.headers, cookies=self.cookies)
+        self.set_cookies(session)
+        if log:
+            print("URL = " + url)
+            print("StatusCode = " + str(result.status_code))
+        return result
+
+    def check_cookies(self):
         url = self.ebay_url
-        if search == "None" and token == "None":
-            url += "s-suchen.html"
-        elif search == "None" and token != "None":
-            url += token
-        else :
-            url += search+"/"+token
-
-        result = requests.Session().get(url, headers=self.headers, cookies=self.cookies)
-        print("URL = " + url+"\n\n")
-        print("StatusCode = " + str(result.status_code))
-        print("encoding  = "+result.encoding)
-
+        result = self.request_url(url, log=False)
         html_text = result.text
+        html_item = "itemtile-fullpic"
+        item_number = html_text.count(html_item)
+        if item_number < 400:
+            return False
+        else:
+            return True
+
+    def load_cookies(self, log=True):
+        with open(self.filename, 'r') as f:
+            self.googleChromeCookie = json.load(f)
+            if log:
+                print("Loading default config")
+
+    def save_cookies(self):
+        f = open(self.filename, "w")
+        f.write(json.dumps(self.googleChromeCookie))
+        f.close()
+
+    def refresh_cookies(self, log=True):
+        for cook in self.googleChromeCookie:
+            cook['domain'] = self.cookie_domain
+            index = 0
+            if cook.get('expirationDate'):
+                rem = int(cook.get('expirationDate')) - time.time()
+                if rem <= 0:
+                    self.googleChromeCookie.remove(cook)
+                    if log:
+                        print(cook['name'] + " was removed from cookies")
+            else:
+                self.googleChromeCookie.remove(cook)
+                if log:
+                    print(cook['name'] + " was removed from cookies")
+
+            pass
+        pass
+
+    def set_cookies(self, session):
+        self.cookies_temp = [
+            {'name': c.name, 'secure': c.secure, 'hostOnly': True,
+             'httpOnly': False, 'value': c.value, "sameSite": "unspecified",
+             'expirationDate': c.expires, "session": False, "storeId": 0,
+             'domain': self.cookie_domain, 'path': c.path}
+            for c in session.cookies]
+        for cook in self.cookies_temp:
+            self.cookies[cook['name']] = cook['value']
+        found = False
+        for cook in self.cookies_temp:
+            for cook2 in self.googleChromeCookie:
+                if cook['name'] == cook2['name']:
+                    found = True
+                    self.googleChromeCookie.remove(cook2)
+                    self.googleChromeCookie.append(cook)
+
+            if not found:
+                if cook['expirationDate']:
+                    self.googleChromeCookie.append(cook)
+            found = False
+
+        self.save_cookies()
+
+    def search_for(self):
 
         html_item = "ad-listitem lazyload-item"
-        item_number = html_text.count(html_item)
-        if item_number == 0:
-            sleep(60)
-        print("Item Number = " + str(item_number))
-
-        soup = BeautifulSoup(html_text, 'lxml')
-        jobs = soup.find_all('li', class_=html_item)
-        print("Real Item Number = " + str(len(jobs)))
+        self.print_item_number(html_item, "Search")
+        jobs = self.soup.find_all('li', class_=html_item)
         add_list = []
         for job in jobs:
             add = dict()
@@ -78,45 +147,22 @@ class EbayKleineanzeigenApi:
             except KeyError as k:
                 add['image_url'] = ""
 
-
-            print(add.get("url_link"))
             add_list.append(add)
         # sleep(60 * 5)
         return add_list
 
-
-
-    def get_cities(self, search):
-        url = "https://www.ebay-kleinanzeigen.de/s-ort-empfehlungen.json?query=" + search
-        result = requests.Session().get(url, headers=self.headers, cookies=self.cookies)
-        print("URL = " + url)
-        print("StatusCode = " + str(result.status_code))
-
-        json_obj = result.json()
+    def get_cities(self):
         list = []
-        for code, name in json_obj.items():
+        for code, name in self.json_obj.items():
             city = dict(code=code[1:], name=name)
             list.append(city)
 
         return list
 
     def get_main(self):
-        url = self.ebay_url
-        result = requests.Session().get(url, headers=self.headers, cookies=self.cookies)
-        print("URL = " + url)
-        print("StatusCode = " + str(result.status_code))
-
-        html_text = result.text
-
         html_item = "itemtile-fullpic"
-        item_number = html_text.count(html_item)
-        if item_number == 0:
-            sleep(60)
-        print("Item Number = " + str(item_number))
-
-        soup = BeautifulSoup(html_text, 'lxml')
-        items = soup.find_all('li', class_=html_item)
-
+        self.print_item_number(html_item, "main window")
+        items = self.soup.find_all('li', class_=html_item)
         add_list = []
         for item in items:
             add = dict()
@@ -126,7 +172,6 @@ class EbayKleineanzeigenApi:
                 html_image = "itemtile-header"
                 html_title = "itemtile-title"
                 html_location = "itemtile-location"
-
                 add['url_link'] = self.ebay_url + item.find("a")['href']
                 add['title'] = str(item.find("h3", class_=html_title).text).strip()
                 add['location'] = item.find("div", class_=html_location).text.strip()
@@ -145,21 +190,10 @@ class EbayKleineanzeigenApi:
         return add_list
 
     def get_categories(self):
-        url = self.ebay_url
-        result = requests.Session().get(url, headers=self.headers, cookies=self.cookies)
-        print("URL = " + url)
-        print("StatusCode = " + str(result.status_code))
-
-        html_text = result.text
 
         html_item = "text-link-secondary treelist-headline"
-        item_number = html_text.count(html_item)
-        if item_number == 0:
-            sleep(60)
-        print("Item Number = " + str(item_number))
-
-        soup = BeautifulSoup(html_text, 'lxml')
-        items = soup.find_all('a', class_=html_item)
+        self.print_item_number(html_item, "Categories")
+        items = self.soup.find_all('a', class_=html_item)
 
         add_list = []
         for item in items:
@@ -183,21 +217,9 @@ class EbayKleineanzeigenApi:
         return add_list
 
     def get_galerie(self):
-        url = self.ebay_url
-        result = requests.Session().get(url, headers=self.headers, cookies=self.cookies)
-        print("URL = " + url)
-        print("StatusCode = " + str(result.status_code))
-
-        html_text = result.text
-
         html_item = "itemtile-condensed"
-        item_number = html_text.count(html_item)
-        if item_number == 0:
-            sleep(60)
-        print("Item Number = " + str(item_number))
-
-        soup = BeautifulSoup(html_text, 'lxml')
-        items = soup.find_all('li', class_=html_item)
+        self.print_item_number(html_item, "Galerie")
+        items = self.soup.find_all('li', class_=html_item)
         add_list = []
         for item in items:
             add = dict()
@@ -225,47 +247,10 @@ class EbayKleineanzeigenApi:
         # sleep(60 * 5)
         return add_list
 
-    # def get_ads(self, city="", min_price="", max_price="", category=""):
-    #
-    #     page_number = 0
-    #
-    #     url = self.ebay_url + "s-preis:" + str(min_price) + ":/seite:" + str(
-    #         page_number) + "/marklin/k0"
-    #     result = requests.Session().get(url, headers=self.headers, cookies=self.cookies)
-    #     print("URL = " + url)
-    #     print("StatusCode = " + str(result.status_code))
-    #
-    #     html_text = result.text
-    #
-    #     html_item = "ad-listitem lazyload-item"
-    #     item_number = html_text.count(html_item)
-    #     if item_number == 0:
-    #         sleep(60)
-    #     print("Item Number = " + str(item_number))
-    #
-    #     soup = BeautifulSoup(html_text, 'lxml')
-    #     jobs = soup.find_all('li', class_=html_item)
-    #     anzeigen = []
-    #     for job in jobs:
-    #         anzeige = dict()
-    #         try:
-    #             html_price = "aditem-main--middle--price-shipping--price"  # "aditem-main--middle--price"
-    #             html_ellipsis = "ellipsis"
-    #             html_image = "imagebox"
-    #             html_description = "aditem-main--middle--description"
-    #
-    #             anzeige['price'] = job.find("p", html_price).text
-    #             anzeige['title'] = job.find("a", class_=html_ellipsis).text
-    #             anzeige['url_link'] = self.ebay_url + job.find("a", class_=html_ellipsis)['href']
-    #             anzeige['description'] = job.find("p", class_=html_description).text
-    #             anzeige['image_link'] = job.find("div", class_=html_image)['data-imgsrc']
-    #
-    #         except KeyError as k:
-    #             anzeige['image_link'] = ""
-    #
-    #         anzeigen.append(anzeige)
-    #     # sleep(60 * 5)
-    #     return anzeigen
+    def print_item_number(self, html_item, for_object):
+        item_number = self.html_text.count(html_item)
+        print(f"Item Number for {for_object} = " + str(item_number))
+        print("\n")
 
     def print_anzeigen(self, anzeigen):
         for anz in anzeigen:
@@ -286,5 +271,4 @@ if __name__ == "__main__":
 
         # ads = api.get_ads(min_price="100")
     except Exception as e:
-        print("Error exception caught!")
-        print(e)
+        print("Error exception caut")
