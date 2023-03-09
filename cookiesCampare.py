@@ -38,12 +38,13 @@ def expirationDate():
         if cook2.get('expirationDate'):
             rem = int(cook2.get('expirationDate')) - time.time()
 
-            if rem < 24*60*60:
+            if rem < 2*60*60:
                 index += 1
                 print("name " + str(index) + " : " + cook2['name'])
                 hour = timedelta(seconds=rem)
                 print ("remaining time : " +str( hour ))
                 print("expirationDate : ", datetime.fromtimestamp(cook2['expirationDate']).strftime('%d-%m-%y-%H:%M'))
+                print("now  = " + datetime.now().strftime('%d-%m-%y-%H:%M'))
                 print("\n\n\n")
 
         else:

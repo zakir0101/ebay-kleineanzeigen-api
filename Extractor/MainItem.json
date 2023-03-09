@@ -1,0 +1,35 @@
+{
+  "title" : {
+    "type": "text",
+    "class": "itemtile-title",
+    "element" : "h3",
+    "strip" : true,
+    "rm_space" : true
+  },
+  "location" : {
+    "type": "text",
+    "class": "itemtile-location",
+    "element" : "div",
+    "strip" : true,
+    "rm_space" : true
+  },
+  "url_link" : {
+    "type": "link",
+    "element" : "a"
+  },
+  "image_link": {
+    "type" : "parent",
+    "element": "div",
+    "class" : "itemtile-header",
+    "children": {
+      "type" : "image"
+    }
+  },
+  "price": {
+    "type" : "text",
+    "element": "span",
+    "class": "itemtile-price",
+    "strip": true,
+    "rm_space": false
+  }
+}

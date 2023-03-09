@@ -1,0 +1,67 @@
+{
+  "title": {
+    "type": "text",
+    "class": "ellipsis",
+    "element": "a",
+    "strip": true,
+    "rm_space": true
+  },
+  "location": {
+    "type": "text",
+    "class": "aditem-main--top--left",
+    "element": "div",
+    "strip": true,
+    "rm_space": true
+  },
+  "date": {
+    "type": "text",
+    "class": "aditem-main--top--right",
+    "element": "div",
+    "strip": true,
+    "rm_space": true
+  },
+  "description": {
+    "type": "text",
+    "class": "aditem-main--middle--description",
+    "element": "p",
+    "strip": true,
+    "rm_space": true
+  },
+  "url_link": {
+    "type": "link",
+    "element": "a",
+    "class": "ellipsis"
+  },
+  "image_link": {
+    "type": "attr",
+    "element": "div",
+    "class": "imagebox",
+    "attr": "data-imgsrc"
+  },
+  "price": {
+    "type": "text",
+    "element": "p",
+    "class": "aditem-main--middle--price-shipping--price",
+    "strip": true,
+    "rm_space": true
+  },
+  "shipping": {
+    "type": "text",
+    "element": "p",
+    "class": "aditem-main--middle--price-shipping--shipping",
+    "strip": true,
+    "rm_space": true
+  },
+  "direkt_kaufen": {
+    "type": "parent",
+    "element": "div",
+    "class": "aditem-main--bottom",
+    "children": {
+      "type": "text",
+      "element": "span",
+      "class": "simpletag tag-small",
+      "strip": true,
+      "rm_space": true
+    }
+  }
+}

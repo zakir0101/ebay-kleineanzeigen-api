@@ -1,0 +1,74 @@
+{
+  "user_name": {
+    "type": "parent",
+    "element": "span",
+    "class": "text-body-regular-strong text-force-linebreak",
+    "children": {
+      "type": "text",
+      "element": "a",
+      "strip": true
+    }
+  },
+  "user_link": {
+    "type": "parent",
+    "element": "span",
+    "class": "text-body-regular-strong text-force-linebreak",
+    "children": {
+      "type": "link"
+    }
+  },
+  "rating": {
+    "type": "parent",
+    "element": "span",
+    "class": "userbadges-vip userbadges-profile-rating",
+    "children": {
+      "type": "text",
+      "element": "span",
+      "strip": true
+    }
+  },
+  "friendliness": {
+    "type": "parent",
+    "element": "span",
+    "class": "userbadges-vip userbadges-profile-friendliness",
+    "children": {
+      "type": "text",
+      "element": "span",
+      "strip": true
+    }
+  },
+  "reliability": {
+    "type": "parent",
+    "element": "span",
+    "class": "userbadges-vip userbadges-profile-reliability",
+    "children": {
+      "type": "text",
+      "element": "span",
+      "strip": true
+    }
+  },
+  "user_type": {
+    "type": "text",
+    "element": "span",
+    "class": "text-body-regular text-light",
+    "split": true,
+    "splitter": "\n",
+    "index": 1 ,
+    "strip": true
+  },
+  "active_since": {
+    "type": "text",
+    "element": "span",
+    "class": "text-body-regular text-light",
+    "split": true,
+    "splitter": "\n",
+    "index": 2 ,
+    "strip": true
+  },
+  "user_ad_number": {
+    "type": "text",
+    "element": "a",
+    "id": "poster-other-ads-link",
+    "strip": true
+  }
+}

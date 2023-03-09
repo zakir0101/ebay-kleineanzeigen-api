@@ -1,3 +1,5 @@
+import sys
+
 import requests
 
 from main import EbayKleineanzeigenApi
@@ -7,28 +9,33 @@ class AnzeigeAbschicken:
     def __init__(self, cookies):
         self.cookies = cookies
         self.url = "https://www.ebay-kleinanzeig1en.de/p-anzeige-abschicken.html"
-        self.headers = self.get_headers()
         self.form_data = self.get_form_data()
+        self.headers = self.get_headers(self.form_data)
+
 
     def get_form_data(self):
         NachbarschaftHilfe = "401"
         zuVerschenken = "192"
-        csrf = "7a750f89-f122-4687-a0d2-09140bc86195"
+        location_id1="3343"
+        location_id2="1124"
+
+        csrf = "f670377f-1257-465a-92db-a9f600d22f5c"
+
         for cook in self.cookies.keys():
             if cook == "CSRF-TOKEN":
                 csrf = self.cookies[cook]
         form_data = dict(adType="OFFER",
-                         title="HeadSet blututh wifi",
+                         title="Nachhilfe java",
                          categoryId=zuVerschenken ,
                          previousCategoryId=zuVerschenken,
                          userSelectedAttributeMap="{}",
                          suggestedCategoryId=zuVerschenken,
                          trackingId="fa99601b-34dd-4432-b026-ad8082545711",
-                         priceAmount="30",
+                         priceAmount="",
                          description="sldfjlsfd ldsjflsj löj lsd jlösk jöflkj",
                          buyNow="false",
                          zipCode="10627",
-                         locationId="3343",
+                         locationId=location_id1,
                          latitude="52.520008",
                          longitude="13.404954",
                          _addressVisibility="on",
@@ -47,7 +54,7 @@ class AnzeigeAbschicken:
 
         pass
 
-    def get_headers(self):
+    def get_headers(self,form_data):
         authority = "www.ebay-kleinanzeigen.de"
         method = "POST"
         path = "/p-anzeige-abschicken.html"
@@ -56,7 +63,7 @@ class AnzeigeAbschicken:
         accept_encoding = "gzip, deflate, br"
         accept_language = "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7,ar;q=0.6"
         cache_control = "max-age=0"
-        content_length = "580"
+        content_length = sys.getsizeof(form_data).__str__()
         content_type = "application/x-www-form-urlencoded"
         dnt = "1"
         origin = "https://www.ebay-kleinanzeigen.de"
@@ -76,7 +83,7 @@ class AnzeigeAbschicken:
                    "accept": accept, "accept-encoding": accept_encoding, "accept-language": accept_language,
                    "cache-control": cache_control, "content-length": content_length, "content-type": content_type,
                    "dnt": dnt, "origin": origin, "referer": referer, "sec-ch-ua": sec_ch_ua,
-                   "sec-ch-ua-mobile": sec_ch_ua_mobile, "sec-ch-ua-platform": sec_ch_ua_platform,
+                   "sec-ch-ua-mo    bile": sec_ch_ua_mobile, "sec-ch-ua-platform": sec_ch_ua_platform,
                    "sec-fetch-dest": sec_fetch_dest, "sec-fetch-mode": sec_fetch_mode,
                    "sec-fetch-site": sec_fetch_site,
                    "sec-fetch-user": sec_fetch_user, "upgrade-insecure-requests": upgrade_insecure_requests,
@@ -107,10 +114,12 @@ if __name__ == "__main__":
     api = None
     schicken = None
     try:
-        api = EbayKleineanzeigenApi()
+        api = EbayKleineanzeigenApi(mode="server",log=False)
         schicken = AnzeigeAbschicken(api.cookies)
+        print("configeration done")
     except Exception as e:
         print("Exception :")
         print(e)
     else:
-        schicken.anzeige_abschicken()
+        if api.check_cookies():
+            schicken.anzeige_abschicken()

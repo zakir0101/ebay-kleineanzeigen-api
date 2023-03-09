@@ -1,0 +1,16 @@
+{
+  "galerie": {
+    "type": "parent_list_file",
+    "element" : "None",
+    "child_class": "itemtile-condensed",
+    "child_element": "li",
+    "filename": "MainItem.json"
+  },
+  "main": {
+    "type": "parent_list_file",
+    "element" : "None",
+    "child_class": "itemtile-fullpic",
+    "child_element": "li",
+    "filename": "MainItem.json"
+  }
+}

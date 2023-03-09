@@ -1,0 +1,120 @@
+{
+  "user_logo": {
+    "type": "text",
+    "element": "span",
+    "class": "user-profile-badge",
+    "strip": true
+  },
+  "user_name": {
+    "type": "text",
+    "element": "h2",
+    "class": "userprofile--name",
+    "strip": true
+  },
+  "user_link": {
+    "type": "unknown"
+  },
+  "rating": {
+    "type": "parent",
+    "element": "li",
+    "class": "userbadges-profile-rating",
+    "children": {
+      "type": "text",
+      "element": "div",
+      "class": "iconlist-text",
+      "strip": true,
+      "rm_space": true,
+      "split": true,
+      "splitter": "\n",
+      "index": 0 }
+  },
+  "friendliness": {
+    "type": "parent",
+    "element": "li",
+    "class": "userbadges-profile-friendliness",
+    "children": {
+      "type": "text",
+      "element": "div",
+      "class": "iconlist-text",
+      "strip": true
+    }
+  },
+  "reliability": {
+    "type": "parent",
+    "element": "li",
+    "class": "userbadges-profile-reliability",
+    "children": {
+      "type": "text",
+      "element": "div",
+      "class": "iconlist-text",
+      "strip": true
+    }
+  },
+  "reply_rate": {
+    "type": "parent",
+    "element": "li",
+    "class": "userbadges-profile-replyRate",
+    "children": {
+      "type": "text",
+      "element": "div",
+      "class": "iconlist-text",
+      "strip": true,
+      "rm_space": true,
+      "split": true,
+      "splitter": "\n",
+      "index": 0
+    }
+  },
+  "reply_speed": {
+    "type": "parent",
+    "element": "li",
+    "class": "userbadges-profile-replySpeed",
+    "children": {
+      "type": "text",
+      "element": "div",
+      "class": "iconlist-text",
+      "strip": true,
+      "rm_space": true,
+      "split": true,
+      "splitter": "\n",
+      "index": 0
+    }
+  },"followers": {
+    "type": "parent",
+    "element": "li",
+    "class": "userbadges-profile-followers",
+    "children": {
+      "type": "text",
+      "element": "div",
+      "class": "iconlist-text",
+      "strip": true,
+      "rm_space": true,
+      "split": true,
+      "splitter": "\n",
+      "index": 0
+    }
+  },
+  "user_type": {
+    "type": "text",
+    "element": "span",
+    "class": "userprofile-details",
+    "number": 1,
+    "strip": true
+  },
+  "active_since": {
+    "type": "text",
+    "element": "span",
+    "class": "userprofile-details",
+    "number": 2,
+    "strip": true
+  },
+  "user_ad_number": {
+    "type": "text",
+    "element": "span",
+    "class": "userprofile-details",
+    "number": 3,
+    "strip": true,
+    "rm_space": true,
+    "rm_newline": true
+  }
+}

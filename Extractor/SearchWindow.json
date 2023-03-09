@@ -1,0 +1,25 @@
+{
+  "result": {
+    "type": "parent_list_file",
+    "element" : "ul",
+    "id": "srchrslt-adtable",
+    "child_class": "ad-listitem lazyload-item",
+    "child_element": "li",
+    "filename": "SearchItem.json"
+  },
+  "alternative": {
+    "type": "parent_list_file",
+    "element" : "ul",
+    "id"  : "srchrslt-adtable-altads",
+    "child_class": "ad-listitem lazyload-item",
+    "child_element": "li",
+    "filename": "SearchItem.json"
+  },
+  "navigation": {
+    "type": "parent_list_count",
+    "class": "pagination-pages",
+    "element": "div",
+    "child_element": "a",
+    "child_class": "pagination-page"
+  }
+}

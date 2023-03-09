@@ -1,0 +1,24 @@
+{
+   "user_id": {
+    "type": "attr",
+    "element": "section",
+    "class": "l-container-row contentbox surface userprofile j-followeduser",
+    "attr": "data-followed-user",
+    "print": true
+  },
+  "user": {
+    "type": "parent_list_file_single",
+    "element": "None",
+    "child_class": "l-container-row contentbox surface userprofile j-followeduser",
+    "child_element": "section",
+    "filename": "User.json"
+  },
+  "user_adds": {
+    "type": "parent_list_file",
+    "id": "page-searchresults-adtable",
+    "element": "ul",
+    "child_class": "ad-listitem",
+    "child_element": "li",
+    "filename": "AddOthers.json"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "parent_list_file",
+  "filename": "CategoryItem.json",
+  "element": "ul",
+  "class": "itemlist-padded treelist",
+  "child_element": "li",
+  "recursive": false
+
+}

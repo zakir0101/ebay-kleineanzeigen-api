@@ -1,0 +1,24 @@
+{
+  "url_link": {
+    "type": "link",
+    "class": "text-link-secondary"
+  },
+  "code": {
+    "type": "link",
+    "class": "text-link-secondary",
+    "category_code": true
+  },
+  "name": {
+    "type": "text",
+    "class": "text-link-secondary",
+    "element": "a",
+    "strip": true
+  },
+  "children": {
+    "type": "parent_list_file",
+    "filename" : "CategoryItem.json",
+    "element": "ul",
+    "child_element": "li",
+    "recursive": false
+  }
+}

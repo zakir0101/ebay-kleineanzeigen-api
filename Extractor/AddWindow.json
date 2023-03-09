@@ -1,0 +1,105 @@
+{
+  "images_url": {
+    "type": "parent_list",
+    "class": "galleryimage-large",
+    "element": "div",
+    "child_class": "galleryimage-element",
+    "child_element": "div",
+    "children": {
+      "image_url": {
+        "type": "image"
+      }
+    }
+  },
+  "title": {
+    "type": "text",
+    "class": "boxedarticle--title",
+    "element": "h1",
+    "strip": true
+  },
+  "price": {
+    "type": "text",
+    "class": "boxedarticle--price",
+    "element": "h2",
+    "strip": true
+  },
+  "shipping": {
+    "type": "text",
+    "class": "boxedarticle--details--shipping",
+    "element": "span",
+    "strip": true
+  },
+  "location": {
+    "type": "text",
+    "id": "viewad-locality",
+    "element": "span",
+    "strip": true
+  },
+  "date": {
+    "type": "parent",
+    "id": "viewad-extra-info",
+    "element": "div",
+    "children": {
+      "type": "text",
+      "element": "span",
+      "strip": true
+    }
+  },
+  "views": {
+    "type": "parent",
+    "id": "viewad-cntr",
+    "element": "div",
+    "children": {
+      "type": "text",
+      "id": "viewad-cntr-num",
+      "element": "span",
+      "strip": true
+    }
+  },
+  "art": {
+    "type": "text",
+    "element": "span",
+    "class": "addetailslist--detail--value",
+    "strip": "true"
+  },
+  "description": {
+    "type": "text",
+    "id": "viewad-description-text",
+    "element": "p"
+  },
+  "other_add_by_user": {
+    "type": "parent_list_file",
+    "id": "vap-pstrads",
+    "element": "section",
+    "child_class": "ad-listitem",
+    "child_element": "li",
+    "filename": "AddOthers.json"
+  },
+  "other_add_similar": {
+    "type": "parent_list_file",
+    "id": "vap-smlrads",
+    "element": "section",
+    "child_class": "ad-listitem",
+    "child_element": "li",
+    "filename": "AddOthers.json"
+  },
+  "user": {
+    "type": "parent_list_file_single",
+    "element" : "None",
+    "child_id": "viewad-contact",
+    "child_element": "div",
+    "filename": "AddUser.json"
+
+  }
+  ,
+   "add_id": {
+    "type": "parent",
+    "element": "ul",
+    "class": "flexlist text-light-800",
+    "children":{
+      "type": "text",
+      "number": 2,
+      "element": "li"
+    }
+  }
+}
