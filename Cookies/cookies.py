@@ -10,7 +10,7 @@ from print_dict import pd
 
 class Cookies:
     def __init__(self, filename: str = "default.json", log: bool = True,
-                 cookies: dict = None, save=False, mode: str = "client"):
+                 cookies: dict = None, save=False, mode: str = "client",keep_old=False):
         # Test for custom configs
         self.log = log
         self.mode = mode
@@ -33,7 +33,8 @@ class Cookies:
                 self.load_google_chrome_cookies_from_request(log=log)
         elif mode == "server":
             self.load_google_chrome_cookies_from_file(log=log)
-            self.refresh_google_chrome_cookies()
+            if not keep_old:
+                self.refresh_google_chrome_cookies()
             for cook in self.googleChromeCookie:
                 self.request_cookies[cook['name']] = cook['value']
 
@@ -58,6 +59,7 @@ class Cookies:
                         expirationDate="")
             self.googleChromeCookie.append(cook)
 
+        self.save_cookies()
     ###############################################
     #   saving cookies to a file
     ###############################################

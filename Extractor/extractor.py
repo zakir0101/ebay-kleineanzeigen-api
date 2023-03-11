@@ -119,8 +119,7 @@ class EbayKleinanzeigenExtractor:
         if not parent:
             return res
 
-        children_elms = self.find_children(parent, desc=parent_desc, all=True,
-                                           recursive=parent_desc.get('recursive') or True)
+        children_elms = self.find_children(parent, desc=parent_desc, all=True)
         if parent_desc['type'] == "parent_list_count":
             return len(children_elms)
 
@@ -149,8 +148,11 @@ class EbayKleinanzeigenExtractor:
     #                 find children
     ####################################################
 
-    def find_children(self, elm: Tag, desc, all=False, recursive=True):
+    def find_children(self, elm: Tag, desc, all=False):
         child_desc = dict()
+        recursive = True
+        if desc.get('recursive') is not None:
+            recursive = desc['recursive']
         child_desc['type'] = "unknown"
         child_desc['element'] = desc['child_element']
         child_desc['class'] = desc.get('child_class')

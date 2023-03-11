@@ -2,11 +2,10 @@ import traceback
 
 from flask_cors import CORS
 from flask import Flask, request, jsonify
+
+import anzeige_abschicken
 from main import EbayKleinanzeigenApi
 import json
-
-
-
 
 app = Flask(__name__)
 CORS(app)
@@ -19,7 +18,8 @@ app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.de:5000'
 @app.route('/main')
 def get_main():  # put application's code here
     try:
-        api = EbayKleinanzeigenApi(log=True, cookies=request.cookies)
+        api = EbayKleinanzeigenApi(log=log, cookies=request.cookies)
+        api.run(log=log)
         ads = api.get_main()
 
         res = api.attach_cookies_to_response(ads)
@@ -32,7 +32,7 @@ def get_main():  # put application's code here
 def is_user_logged():  # put application's code here
     try:
         api = EbayKleinanzeigenApi(log=log, cookies=request.cookies)
-        is_logged = api.check_cookies()
+        is_logged = api.login
         res = dict(isLogged=is_logged)
         res = api.attach_cookies_to_response(res)
         return res
@@ -61,7 +61,8 @@ def search_for(search, token):  # put application's code here
     try:
         path = request.args.get("path")
         prefix = set_up_url_for_search(search, token, path)
-        api = EbayKleinanzeigenApi(url_prefix=prefix, log=True, cookies=request.cookies)
+        api = EbayKleinanzeigenApi(log=True, cookies=request.cookies)
+        api.run(url=(api.ebay_url + prefix), log=log)
         add_list = api.search_for()
         res = api.attach_cookies_to_response(add_list)
         return res
@@ -73,7 +74,9 @@ def search_for(search, token):  # put application's code here
 def get_add_page():  # put application's code here
     try:
         add_link = request.args.get("link")[1:]
-        api = EbayKleinanzeigenApi(url_prefix=add_link, log=True, cookies=request.cookies)
+        api = EbayKleinanzeigenApi(log=True, cookies=request.cookies)
+        url = api.ebay_url + add_link
+        api.run(url=url, log=log)
         add_detail = api.get_add_detail()
         res = api.attach_cookies_to_response(add_detail)
         return res
@@ -85,12 +88,14 @@ def get_add_page():  # put application's code here
 def get_user_page():  # put application's code here
     try:
         user_link = request.args.get("link")[1:]
-        api = EbayKleinanzeigenApi(url_prefix=user_link, log=True, cookies=request.cookies)
+        api = EbayKleinanzeigenApi(log=True, cookies=request.cookies)
+        url = api.ebay_url + user_link
+        api.run(url=url, log=log)
         user_detail = api.get_user_detail()
         res = api.attach_cookies_to_response(user_detail)
         return res
     except Exception as e:
-        return get_error_msg(e,log)
+        return get_error_msg(e, log)
 
 
 def set_up_url_for_search(search, token, path) -> str:
@@ -116,7 +121,9 @@ def set_up_url_for_search(search, token, path) -> str:
 @app.route('/cities/<search>')
 def get_cities(search):  # put application's code here
     try:
-        api = EbayKleinanzeigenApi(url_prefix=search, type="json", log=log, cookies=request.cookies)
+        url = "https://www.ebay-kleinanzeigen.de/s-ort-empfehlungen.json?query=" + search
+        api = EbayKleinanzeigenApi(log=log, cookies=request.cookies)
+        api.run(url=url, log=log, type="json")
         ads = api.get_cities()
         print("city number found = " + len(ads).__str__())
         return api.attach_cookies_to_response(ads)
@@ -129,8 +136,28 @@ def get_cities(search):  # put application's code here
 def get_categories():  # put application's code here
     try:
         api = EbayKleinanzeigenApi(log=log, cookies=request.cookies)
+        url = api.ebay_url
+        api.run(url=url, log=log)
         ads = api.get_categories()
         res = api.attach_cookies_to_response(ads)
+        return res
+    except Exception as e:
+        return get_error_msg(e, log)
+
+
+@app.route('/send')
+def send_message():  # put application's code here
+    try:
+        api = EbayKleinanzeigenApi(log=True, cookies=request.cookies)
+        args = request.args
+        api.send_message(args.get("message"), args.get("add_id"),
+                         args.get('add_type'), args.get("contact_name"))
+        res: dict | None
+        if api.json_obj:
+            res = json.loads(api.json_obj)
+        else:
+            res = dict(msg=api.html_text, type="Error")
+        res = api.attach_cookies_to_response(res)
         return res
     except Exception as e:
         return get_error_msg(e, log)
@@ -158,8 +185,6 @@ def clear_cookies(ads: dict, cookies: dict):
         print(name + " was expired")
     res.headers.add('Access-Control-Allow-Credentials', 'true')
     return res
-
-
 
 
 if __name__ == '__main__':

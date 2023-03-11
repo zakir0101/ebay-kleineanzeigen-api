@@ -31,7 +31,7 @@
     "type": "link",
     "class": "ellipsis"
   },
-  "image_link": {
+  "image_url": {
     "type" : "parent",
     "element": "div",
     "class" : "imagebox",

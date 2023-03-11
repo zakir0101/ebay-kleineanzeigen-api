@@ -32,7 +32,7 @@
     "element": "a",
     "class": "ellipsis"
   },
-  "image_link": {
+  "image_url": {
     "type": "attr",
     "element": "div",
     "class": "imagebox",

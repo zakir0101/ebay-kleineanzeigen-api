@@ -2,6 +2,8 @@ import time
 from bs4 import BeautifulSoup
 import requests
 from flask import jsonify
+from requests import Response
+
 from Cookies.cookies import Cookies
 from Extractor.extractor import EbayKleinanzeigenExtractor
 from print_dict import pd
@@ -13,11 +15,10 @@ Cookies in congif files must be with ';' separator, juste copy paste google chro
 
 
 class EbayKleinanzeigenApi:
-    def __init__(self, filename: str = "default.json",
-                 url_prefix: str = "", type: str = "html", log: bool = True,
+    def __init__(self, filename: str = "default.json", log: bool = True,
                  cookies: dict = None, save=False, mode: str = "client"):
         # Test for custom configs
-        self.cookies = Cookies(filename, log, cookies, save, mode)
+        self.cookies = Cookies(filename, log, cookies, save, mode, keep_old=True)
         self.log = log
         self.login = True
         self.ebay_url = "https://www.ebay-kleinanzeigen.de/"
@@ -25,26 +26,54 @@ class EbayKleinanzeigenApi:
         self.headers = {'User-Agent': user_agent, 'Connection': 'keep-alive',
                         'Accept-Encoding': 'gzip, deflate',
                         'Accept': '*/*'}
-
+        self.html_text = ""
+        self.json_obj = ""
+        self.extractor = None
+        self.response: Response | None = None
         if not self.check_cookies():
             self.cookies.reset_cookies()
             self.login = False
 
+    def run(self, type="html", method="get", url=None, log=True, body=None):
+        if url is None:
+            url = self.ebay_url
         if type == "html":
-            url = self.ebay_url + url_prefix
+            url = url
             result = self.request_url(url, log=log)
             self.html_text = result.text
-            self.soup = BeautifulSoup(self.html_text, "html.parser")
-            self.extractor = EbayKleinanzeigenExtractor(self.soup)
+            soup = BeautifulSoup(self.html_text, "html.parser")
+            self.extractor = EbayKleinanzeigenExtractor(soup)
         elif type == "json":
-            url = "https://www.ebay-kleinanzeigen.de/s-ort-empfehlungen.json?query=" + url_prefix
-            result = self.request_url(url, log=log)
-            self.json_obj = result.json()
+            if method == "post":
+                result = self.request_url_post(url, log=log, body=body)
+            else:
+                result = self.request_url(url, log=log)
+            self.html_text = result.text
+            try:
+                self.json_obj = result.json()
+            except Exception as e:
+                pass
 
     def request_url(self, url, log=True):
+
         session = requests.Session()
-        result = session.get(url, headers=self.headers, cookies=self.cookies.request_cookies)
-        self.cookies.set_cookies(session)
+        result = session.get(url, headers=self.headers,
+                             cookies=self.cookies.request_cookies)
+        self.response = result
+        if result.status_code > 301:
+            self.cookies.set_cookies(session)
+        if log:
+            print("URL = " + url)
+            print("StatusCode = " + str(result.status_code))
+        return result
+
+    def request_url_post(self, url, body, log=True):
+        session = requests.Session()
+        result = session.post(url, headers=self.headers,
+                              cookies=self.cookies.request_cookies, data=body)
+        self.response = result
+        if result.status_code > 301:
+            self.cookies.set_cookies(session)
         if log:
             print("URL = " + url)
             print("StatusCode = " + str(result.status_code))
@@ -67,9 +96,9 @@ class EbayKleinanzeigenApi:
             if cook.get('expirationDate'):
                 res.set_cookie(key=cook['name'], value=cook['value'],
                                expires=cook['expirationDate'], path=cook['path'],
-                               domain=api.cookies.cookie_domain)
+                               domain=self.cookies.cookie_domain)
             # print(cook['name']+"   "+cook['domain'])
-            res.headers.add('Access-Control-Allow-Credentials', 'true')
+        res.headers.add('Access-Control-Allow-Credentials', 'true')
         return res
 
     def search_for(self):
@@ -121,13 +150,51 @@ class EbayKleinanzeigenApi:
                     print(f'{key} = {value}'.encode('utf-8'))
             print("\n")
 
+    def send_message(self, message, add_id, add_type, contact_name):
+        body = dict(message=message,
+                    adId=add_id,
+                    adType=add_type,
+                    contactName=contact_name)
+
+        url1 = "https://www.ebay-kleinanzeigen.de/m-access-token.json"
+        url2 = "https://gateway.ebay-kleinanzeigen.de/user-trust/users/current/verifications/phone/required?action=POST_MESSAGE&source=DESKTOP"
+        url3 = "https://www.ebay-kleinanzeigen.de/s-anbieter-kontaktieren.json"
+
+        self.run(url=url1, log=self.log)
+        auth = api.response.headers.get("Authorization")
+        if self.log:
+            print("printing first")
+            print(api.html_text)
+            print(api.json_obj)
+            print(auth)
+            print("\n\n\n")
+
+        self.headers['Authorization'] = auth
+        api.run(url=url2, log=self.log)
+        if self.log:
+            print("printing second")
+            print(api.html_text)
+            print(api.json_obj)
+            print("\n\n\n")
+
+        api.headers['Authorization'] = auth
+        api.headers['x-csrf-token'] = api.cookies.request_cookies['CSRF-TOKEN']
+
+        api.run(type="json", method="post", url=url3, log=True, body=body)
+        if api.login:
+            print("x-csrf-token :", api.headers['x-csrf-token'])
+            print("printing third")
+            print(api.html_text)
+            print("\n\n\n")
+
+    pass
+
 
 if __name__ == "__main__":
-    test = 1
+    test = 4
     if test == 1:
         prefix = "s-direktkaufen:aktiv/book/k0"
         api = EbayKleinanzeigenApi(url_prefix=prefix, log=True, mode="server", filename="default.json")
-
         res = api.search_for()
         pd(res)
     if test == 2:
@@ -135,14 +202,13 @@ if __name__ == "__main__":
         add = api2.get_main()
         pd(add)
     if test == 3:
-        api3 = EbayKleinanzeigenApi(mode='server')
-        add = EbayKleinanzeigenExtractor(api3.soup).parse(path="Extractor/", filename="Categories.json")
+        api3 = EbayKleinanzeigenApi(mode='server', log=True)
+        add = api3.get_categories()
         pd(add)
     if test == 4:
         prefix = "s-anzeige/top-delonghi-primadonna-s-de-luxe-kaffeevollautomat/2378252152-176-6832"
         api = EbayKleinanzeigenApi(url_prefix=prefix, log=True, mode="server", filename="default.json")
-        ext = EbayKleinanzeigenExtractor(api.soup)
-        res = ext.parse(path="Extractor/", filename="AddWindow.json")
+        res = api.get_add_detail()
         res['views'] = api.get_add_views(res['add_id'], log=True)
         pd(res)
     if test == 5:
