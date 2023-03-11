@@ -2,7 +2,7 @@ import sys
 
 import requests
 
-from main import EbayKleineanzeigenApi
+from main import EbayKleinanzeigenApi
 
 
 class AnzeigeAbschicken:
@@ -114,7 +114,7 @@ if __name__ == "__main__":
     api = None
     schicken = None
     try:
-        api = EbayKleineanzeigenApi(mode="server",log=False)
+        api = EbayKleinanzeigenApi(mode="server", log=False)
         schicken = AnzeigeAbschicken(api.cookies)
         print("configeration done")
     except Exception as e:

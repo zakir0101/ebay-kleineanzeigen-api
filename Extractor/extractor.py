@@ -1,7 +1,6 @@
 import json
 from bs4 import BeautifulSoup, Tag
 
-from print_dict import pd
 
 
 class EbayKleinanzeigenExtractor:

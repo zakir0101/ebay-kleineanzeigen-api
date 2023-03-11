@@ -1,8 +1,9 @@
 import time
 from bs4 import BeautifulSoup
 import requests
+from flask import jsonify
+from Cookies.cookies import Cookies
 from Extractor.extractor import EbayKleinanzeigenExtractor
-import json
 from print_dict import pd
 
 """
@@ -11,46 +12,29 @@ Cookies in congif files must be with ';' separator, juste copy paste google chro
 """
 
 
-class EbayKleineanzeigenApi:
+class EbayKleinanzeigenApi:
     def __init__(self, filename: str = "default.json",
                  url_prefix: str = "", type: str = "html", log: bool = True,
                  cookies: dict = None, save=False, mode: str = "client"):
         # Test for custom configs
-        self.log=log
-        self.mode = mode
-        self.save = save
+        self.cookies = Cookies(filename, log, cookies, save, mode)
+        self.log = log
         self.login = True
-        self.filename = filename
         self.ebay_url = "https://www.ebay-kleinanzeigen.de/"
-        # user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
         user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"
         self.headers = {'User-Agent': user_agent, 'Connection': 'keep-alive',
                         'Accept-Encoding': 'gzip, deflate',
                         'Accept': '*/*'}
-        self.cookie_domain = "ebay-kleinanzeigen-zakir.de"
-        self.googleChromeCookie = []
-        self.cookies = dict()
 
-        # self.refresh_cookies(log=log)
-        if mode == "client":
-            if cookies:
-                self.cookies = cookies.copy()
-                self.load_cookies(log=log)
-        elif mode == "server":
-            self.load_cookies(log=log)
-            for cook in self.googleChromeCookie:
-                self.cookies[cook['name']] = cook['value']
         if not self.check_cookies():
-            self.cookies = {}
-            self.googleChromeCookie = []
-            self.save_cookies()
+            self.cookies.reset_cookies()
             self.login = False
 
         if type == "html":
             url = self.ebay_url + url_prefix
             result = self.request_url(url, log=log)
             self.html_text = result.text
-            self.soup = BeautifulSoup(self.html_text, 'lxml')
+            self.soup = BeautifulSoup(self.html_text, "html.parser")
             self.extractor = EbayKleinanzeigenExtractor(self.soup)
         elif type == "json":
             url = "https://www.ebay-kleinanzeigen.de/s-ort-empfehlungen.json?query=" + url_prefix
@@ -59,8 +43,8 @@ class EbayKleineanzeigenApi:
 
     def request_url(self, url, log=True):
         session = requests.Session()
-        result = session.get(url, headers=self.headers, cookies=self.cookies)
-        self.set_cookies(session)
+        result = session.get(url, headers=self.headers, cookies=self.cookies.request_cookies)
+        self.cookies.set_cookies(session)
         if log:
             print("URL = " + url)
             print("StatusCode = " + str(result.status_code))
@@ -77,69 +61,16 @@ class EbayKleineanzeigenApi:
         else:
             return True
 
-    def load_cookies(self, log=True):
-        if self.mode == "server":
-            with open(self.filename, 'r') as f:
-                self.googleChromeCookie = json.load(f)
-                if log:
-                    print("Loading default config")
-
-        elif self.mode == "client":
-            for name, value in self.cookies.items():
-                cook = dict(name=name, value=value, path="/",
-                            domain=self.cookie_domain,
-                            expirationDate="")
-                self.googleChromeCookie.append(cook)
-
-    def save_cookies(self):
-        f = open(self.filename, "w")
-        f.write(json.dumps(self.googleChromeCookie))
-        f.close()
-
-    ###############################################
-    #   removing expired cookies
-    ###############################################
-    def refresh_cookies(self, log=True):
-        for cook in self.googleChromeCookie:
-            cook['domain'] = self.cookie_domain
-            index = 0
+    def attach_cookies_to_response(self, ads: dict):
+        res = jsonify(ads)
+        for cook in self.cookies.googleChromeCookie:
             if cook.get('expirationDate'):
-                rem = int(cook.get('expirationDate')) - time.time()
-                if rem <= 0:
-                    self.googleChromeCookie.remove(cook)
-                    if log:
-                        print(cook['name'] + " was removed from cookies")
-            else:
-                self.googleChromeCookie.remove(cook)
-                if log:
-                    print(cook['name'] + " was removed from cookies")
-
-            pass
-        pass
-
-    def set_cookies(self, session):
-        self.cookies_temp = [
-            {'name': c.name, 'secure': c.secure, 'hostOnly': True,
-             'httpOnly': False, 'value': c.value, "sameSite": "unspecified",
-             'expirationDate': c.expires, "session": False, "storeId": 0,
-             'domain': self.cookie_domain, 'path': "/"}
-            for c in session.cookies]
-        for cook in self.cookies_temp:
-            self.cookies[cook['name']] = cook['value']
-        found = False
-        for cook in self.cookies_temp:
-            for cook2 in self.googleChromeCookie:
-                if cook['name'] == cook2['name']:
-                    found = True
-                    self.googleChromeCookie.remove(cook2)
-                    self.googleChromeCookie.append(cook)
-
-            if not found:
-                if cook['expirationDate']:
-                    self.googleChromeCookie.append(cook)
-            found = False
-
-        self.save_cookies()
+                res.set_cookie(key=cook['name'], value=cook['value'],
+                               expires=cook['expirationDate'], path=cook['path'],
+                               domain=api.cookies.cookie_domain)
+            # print(cook['name']+"   "+cook['domain'])
+            res.headers.add('Access-Control-Allow-Credentials', 'true')
+        return res
 
     def search_for(self):
         res = self.extractor.parse(path="Extractor/", filename="SearchWindow.json")
@@ -195,28 +126,28 @@ if __name__ == "__main__":
     test = 1
     if test == 1:
         prefix = "s-direktkaufen:aktiv/book/k0"
-        api = EbayKleineanzeigenApi(url_prefix=prefix, log=True, mode="server", filename="default.json")
-        ext = EbayKleinanzeigenExtractor(api.soup)
-        res = ext.parse(path="Extractor/", filename="SearchWindow.json")
+        api = EbayKleinanzeigenApi(url_prefix=prefix, log=True, mode="server", filename="default.json")
+
+        res = api.search_for()
         pd(res)
     if test == 2:
-        api2 = EbayKleineanzeigenApi(cookies=None, mode='server')
-        add = api2.get_galerie()
+        api2 = EbayKleinanzeigenApi(cookies=None, mode='server')
+        add = api2.get_main()
         pd(add)
     if test == 3:
-        api3 = EbayKleineanzeigenApi(mode='server')
+        api3 = EbayKleinanzeigenApi(mode='server')
         add = EbayKleinanzeigenExtractor(api3.soup).parse(path="Extractor/", filename="Categories.json")
         pd(add)
     if test == 4:
         prefix = "s-anzeige/top-delonghi-primadonna-s-de-luxe-kaffeevollautomat/2378252152-176-6832"
-        api = EbayKleineanzeigenApi(url_prefix=prefix, log=True, mode="server", filename="default.json")
+        api = EbayKleinanzeigenApi(url_prefix=prefix, log=True, mode="server", filename="default.json")
         ext = EbayKleinanzeigenExtractor(api.soup)
         res = ext.parse(path="Extractor/", filename="AddWindow.json")
         res['views'] = api.get_add_views(res['add_id'], log=True)
         pd(res)
     if test == 5:
         prefix = "s-bestandsliste.html?userId=85361371"
-        api = EbayKleineanzeigenApi(url_prefix=prefix, log=True, mode="server", filename="default.json")
+        api = EbayKleinanzeigenApi(url_prefix=prefix, log=True, mode="server", filename="default.json")
         ext = EbayKleinanzeigenExtractor(api.soup)
         res = ext.parse(path="Extractor/", filename="UserWindow.json")
 
