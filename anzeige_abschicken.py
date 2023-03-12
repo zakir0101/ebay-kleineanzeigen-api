@@ -3,7 +3,7 @@ import sys
 
 import requests
 
-from main import EbayKleinanzeigenApi
+from main import Main
 
 
 class AnzeigeAbschicken:
@@ -178,7 +178,7 @@ if __name__ == "__main__":
     url1 = "https://www.ebay-kleinanzeigen.de/m-access-token.json"
     url2 = "https://gateway.ebay-kleinanzeigen.de/user-trust/users/current/verifications/phone/required?action=POST_MESSAGE&source=DESKTOP"
     url3 = "https://www.ebay-kleinanzeigen.de/s-anbieter-kontaktieren.json"
-    api = EbayKleinanzeigenApi( mode="server", log=True,)
+    api = Main(mode="server", log=True, )
 
     api.make_request(url=url1, log=True)
     if api.login:

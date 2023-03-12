@@ -1,109 +1,12 @@
-
-import traceback
-
-from bs4 import BeautifulSoup, Tag
-import requests
-from flask import jsonify
-from requests import Response
-
-from Cookies.cookies import Cookies
-from Extractor.extractor import EbayKleinanzeigenExtractor
 from print_dict import pd
+from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
 
 
-class EbayKleinanzeigenApi:
-    def __init__(self, filename: str = "default.json", log: bool = True,
-                 cookies: dict = None, save=False, mode: str = "client"):
+class Main(EbayKleinanzeigenApi):
+    def __init__(self, filename: str = "default.json", log: bool = True, cookies: dict = None, save=False,
+                 mode: str = "client"):
         # Test for custom configs
-
-        self.cookies = Cookies(filename, log, cookies, save, mode, keep_old=True)
-        self.login = self.is_user_logged_in()
-        self.log = log
-        self.login = True
-        self.ebay_url = "https://www.ebay-kleinanzeigen.de/"
-        user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"
-        self.headers = {'User-Agent': user_agent, 'Connection': 'keep-alive',
-                        'Accept-Encoding': 'gzip, deflate',
-                        'Accept': '*/*'}
-        self.html_text = ""
-        self.json_obj: dict | None = None
-        self.soup: Tag | None = None
-        self.extractor: EbayKleinanzeigenExtractor | None = None
-        self.response: Response | None = None
-
-    def make_request(self, type, method, url, body=None):
-
-        if method == "post":
-            self.request_url_post(url,  body=body)
-        elif method == "get":
-            self.request_url(url)
-        else:
-            print("method should be either post or get")
-
-        if "html" in type:
-            self.html_text = self.response.text
-        if "soup" in type:
-            html_text = self.response.text
-            self.soup = BeautifulSoup(html_text, "html.parser")
-        if "ext" in type:
-            html_text = self.response.text
-            soup = BeautifulSoup(html_text, "html.parser")
-            self.extractor = EbayKleinanzeigenExtractor(soup)
-        if "json" in type:
-            try:
-                self.json_obj = self.response.json()
-            except Exception as e:
-                traceback.print_exc()
-                print(e)
-                pass
-
-    def request_url(self, url):
-
-        session = requests.Session()
-        result = session.get(url, headers=self.headers,
-                             cookies=self.cookies.request_cookies)
-        self.response = result
-        if result.status_code < 301:
-            self.cookies.set_cookies(session)
-        if self.log:
-            print("URL = " + url)
-            print("StatusCode = " + str(result.status_code))
-        return result
-
-    def request_url_post(self, url, body):
-        session = requests.Session()
-        result = session.post(url, headers=self.headers,
-                              cookies=self.cookies.request_cookies, data=body)
-        self.response = result
-        if result.status_code > 301:
-            self.cookies.set_cookies(session)
-        if self.log:
-            print("URL = " + url)
-            print("StatusCode = " + str(result.status_code))
-        return result
-
-    def is_user_logged_in(self):
-        url = self.ebay_url
-        self.make_request(url=url, method="get", type="html")
-
-        html_item = "itemtile-fullpic"
-        item_number = self.html_text.count(html_item)
-        if item_number < 400:
-            self.cookies.reset_cookies()
-            return False
-        else:
-            return True
-
-    def attach_cookies_to_response(self, ads: dict):
-        res = jsonify(ads)
-        for cook in self.cookies.googleChromeCookie:
-            if cook.get('expirationDate'):
-                res.set_cookie(key=cook['name'], value=cook['value'],
-                               expires=cook['expirationDate'], path=cook['path'],
-                               domain=self.cookies.cookie_domain)
-            # print(cook['name']+"   "+cook['domain'])
-        res.headers.add('Access-Control-Allow-Credentials', 'true')
-        return res
+        super().__init__(filename, log, cookies, save, mode)
 
     def search_for(self, url):
         self.make_request(type="extractor", method="get", url=url)
@@ -163,28 +66,14 @@ class EbayKleinanzeigenApi:
         self.make_request(url=url, method="get", type="json")
         return self.json_obj.get('numVisits')
 
-    def set_bearer_token(self):
-        url1 = "https://www.ebay-kleinanzeigen.de/m-access-token.json"
-        self.make_request(url=url1, type="html", method="get")
-        auth = self.response.headers.get("Authorization")
-        self.headers['Authorization'] = auth
-        if self.log:
-            print("printin bearer Token")
-            print("Expiration ", self.html_text)
-            print(auth)
-            print("\n\n\n")
-
-    def set_xsrf_token(self):
+    def get_conversations(self,user_id,  page , size = 10):
+        if not user_id:
+            user_id = self.get_user_id()
+        url = "https://gateway.ebay-kleinanzeigen.de/messagebox/api/users/" + \
+              user_id + "/conversations?page=" + page + "&size=" + size
         self.set_bearer_token()
-        url2 = "https://gateway.ebay-kleinanzeigen.de/user-trust/users/current/verifications/phone/required?action" \
-               "=POST_MESSAGE&source=DESKTOP "
-        self.make_request(url=url2, type="html", method="get")
-        self.headers['x-csrf-token'] = self.cookies.request_cookies['CSRF-TOKEN']
-        if self.log:
-            print("printing csrf token")
-            print("x-csrf-token :", self.headers['x-csrf-token'])
-            print(self.html_text)
-            print("\n\n\n")
+        self.make_request(type="json", method="get", url=url)
+        return self.json_obj
 
     def send_message(self, message, add_id, add_type, contact_name):
         self.set_xsrf_token()
@@ -203,4 +92,7 @@ class EbayKleinanzeigenApi:
 
 
 if __name__ == "__main__":
+    api = Main(log=True , mode="server")
+    conversation = api.get_conversations("","0","100")
+    pd(len(conversation.get('conversations')))
     pass
