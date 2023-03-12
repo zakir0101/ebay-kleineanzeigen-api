@@ -180,7 +180,7 @@ if __name__ == "__main__":
     url3 = "https://www.ebay-kleinanzeigen.de/s-anbieter-kontaktieren.json"
     api = EbayKleinanzeigenApi( mode="server", log=True,)
 
-    api.run( url=url1, log=True )
+    api.make_request(url=url1, log=True)
     if api.login:
         print("printing ")
         print(api.html_text)
@@ -191,7 +191,7 @@ if __name__ == "__main__":
 
 
     api.headers['Authorization'] = auth
-    api.run( url=url2, log=True)
+    api.make_request(url=url2, log=True)
     if api.login:
         print("printing ")
         print(api.html_text)
@@ -201,7 +201,7 @@ if __name__ == "__main__":
     api.headers['Authorization'] = auth
     api.headers['x-csrf-token'] = api.cookies.request_cookies['CSRF-TOKEN']
     print("x-csrf-token :",api.headers['x-csrf-token'])
-    api.run(type="json", method="post", url=url3, log=True, body=body)
+    api.make_request(type="json", method="post", url=url3, log=True, body=body)
     if api.login:
         print("printing ")
         print(api.html_text)
