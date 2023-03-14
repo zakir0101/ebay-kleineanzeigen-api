@@ -14,6 +14,7 @@ class EbayKleinanzeigenApi:
     def __init__(self, filename: str = "default.json", log: bool = True,
                  cookies: dict = None, save=False, mode: str = "client", keep_old_cookies=True):
         # Test for custom configs
+        self._csrf = None
         self.ebay_url = "https://www.ebay-kleinanzeigen.de/"
         self.cookies = Cookies(filename, log, cookies, save, mode, keep_old=keep_old_cookies)
         self.log = log
@@ -32,7 +33,7 @@ class EbayKleinanzeigenApi:
     def make_request(self, type, method, url, body=None):
 
         if method == "post":
-            self.request_url_post(url, body=body)
+            self.request_url_post(url, body=body, type=type)
         elif method == "get":
             self.request_url(url)
         else:
@@ -47,7 +48,7 @@ class EbayKleinanzeigenApi:
             html_text = self.response.text
             soup = BeautifulSoup(html_text, "html.parser")
             self.extractor = EbayKleinanzeigenExtractor(soup)
-        if "json" in type:
+        if "json" in type :
             try:
                 self.json_obj = self.response.json()
             except Exception as e:
@@ -68,10 +69,14 @@ class EbayKleinanzeigenApi:
             print("StatusCode = " + str(result.status_code))
         return result
 
-    def request_url_post(self, url, body):
+    def request_url_post(self, url, body, type):
         session = requests.Session()
-        result = session.post(url, headers=self.headers,
-                              cookies=self.cookies.request_cookies, data=body)
+        if "jsondata" in type:
+            result = session.post(url, headers=self.headers,
+                                  cookies=self.cookies.request_cookies, json=body)
+        else:
+            result = session.post(url, headers=self.headers,
+                                  cookies=self.cookies.request_cookies, data=body)
         self.response = result
         if result.status_code > 301:
             self.cookies.set_cookies(session)
@@ -105,6 +110,7 @@ class EbayKleinanzeigenApi:
 
     def set_bearer_token(self):
         url1 = "https://www.ebay-kleinanzeigen.de/m-access-token.json"
+        self.headers['x-csrf-token'] = self.cookies.request_cookies['CSRF-TOKEN']
         self.make_request(url=url1, type="html", method="get")
         auth = self.response.headers.get("Authorization")
         self.headers['Authorization'] = auth
@@ -120,6 +126,7 @@ class EbayKleinanzeigenApi:
                "=POST_MESSAGE&source=DESKTOP "
         self.make_request(url=url2, type="html", method="get")
         self.headers['x-csrf-token'] = self.cookies.request_cookies['CSRF-TOKEN']
+        self._csrf = self.cookies.request_cookies['CSRF-TOKEN']
         if self.log:
             print("printing csrf token")
             print("x-csrf-token :", self.headers['x-csrf-token'])
@@ -138,7 +145,7 @@ class EbayKleinanzeigenApi:
         user_id_regex = re.compile(r'userId: (\d+)')
         match = user_id_regex.search(text)
         if self.log:
-            print("user id =  ",match.groups()[0])
+            print("user id =  ", match.groups()[0])
         return match.groups()[0]
         pass
 

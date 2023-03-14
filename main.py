@@ -66,33 +66,62 @@ class Main(EbayKleinanzeigenApi):
         self.make_request(url=url, method="get", type="json")
         return self.json_obj.get('numVisits')
 
-    def get_conversations(self,user_id,  page , size = 10):
+    def get_conversations(self, user_id, page:str, size:str="10"):
         if not user_id:
             user_id = self.get_user_id()
         url = "https://gateway.ebay-kleinanzeigen.de/messagebox/api/users/" + \
-              user_id + "/conversations?page=" + page + "&size=" + size
+              user_id.__str__() + "/conversations?page=" + page.__str__() + "&size=" + size
         self.set_bearer_token()
         self.make_request(type="json", method="get", url=url)
         return self.json_obj
 
-    def send_message(self, message, add_id, add_type, contact_name):
+    def send_message_from_add_page(self, message, add_id, add_type, contact_name):
         self.set_xsrf_token()
         body = dict(message=message,
                     adId=add_id,
                     adType=add_type,
                     contactName=contact_name)
+        # self.headers["content-type"] = "application/json"
         url = "https://www.ebay-kleinanzeigen.de/s-anbieter-kontaktieren.json"
-        self.make_request(type="json_html", method="post", url=url, body=body)
+        self.make_request(type="html_json", method="post", url=url, body=body)
         if self.log:
             print("printing send message result")
+            print(self.html_text.encode("utf-8"))
+            print("\n\n\n")
+
+    def send_message_from_message_box(self, message, user_id, conversation_id):
+        if not user_id:
+            user_id = self.get_user_id()
+        self.set_bearer_token()
+        self.set_xsrf_token()
+        self.headers["x-ecg-user-agent"] = "messagebox-1"
+        self.headers["content-type"] = "application/json"
+        self.headers["accept-language"] = "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7,ar;q=0.6"
+
+        body = dict(message=message)
+        print( " message is = ",message )
+        print("pody is")
+        pd( body )
+        url = "https://gateway.ebay-kleinanzeigen.de/messagebox/api/users/"+user_id\
+              +"/conversations/"+conversation_id+"?warnPhoneNumber=false&warnEmail=false&warnBankDetails=false"
+        self.make_request(type="jsondata_json_html", method="post", url=url, body=body)
+        if self.log:
+            print("printing send message from message Box")
             print(self.html_text)
             print("\n\n\n")
 
-    pass
+    def get_messages(self, user_id, conversation_id):
+        if not user_id:
+            user_id = self.get_user_id()
+        url = "https://gateway.ebay-kleinanzeigen.de/messagebox/api/users/" + \
+              user_id + "/conversations/" + conversation_id + "?contentWarnings=true"
+        self.set_bearer_token()
+        self.make_request(type="json", method="get", url=url)
+        return self.json_obj
 
 
 if __name__ == "__main__":
-    api = Main(log=True , mode="server")
-    conversation = api.get_conversations("","0","100")
-    pd(len(conversation.get('conversations')))
+    api = Main(log=True, mode="server")
+    messages = api.get_categories(api.ebay_url)
+    pd(messages)
     pass

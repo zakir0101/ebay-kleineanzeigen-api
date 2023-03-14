@@ -13,15 +13,14 @@ cookie_domain = 'ebay-kleinanzeigen-zakir.de'
 app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.de:5000'
 
 
-
 @app.route('/islogged')
 def is_user_logged():  # put application's code here
     try:
         api = Main(log=log, cookies=request.cookies)
         is_logged = api.login
-        user_id= ""
+        user_id = ""
         if is_logged:
-            user_id= api.get_user_id()
+            user_id = api.get_user_id()
 
         res = dict(isLogged=is_logged, user_id=user_id)
         res = api.attach_cookies_to_response(res)
@@ -38,8 +37,6 @@ def logout():  # put application's code here
         return res
     except Exception as e:
         return get_error_msg(e, log)
-
-
 
 
 @app.route('/main')
@@ -67,7 +64,6 @@ def search_for(search, token):  # put application's code here
         return get_error_msg(e, True)
 
 
-
 @app.route('/cities/<search>')
 def get_cities(search):  # put application's code here
     try:
@@ -91,6 +87,7 @@ def get_categories():  # put application's code here
         return api.attach_cookies_to_response(ads)
     except Exception as e:
         return get_error_msg(e, log)
+
 
 @app.route('/add')
 def get_add_page():  # put application's code here
@@ -118,17 +115,15 @@ def get_user_page():  # put application's code here
         return get_error_msg(e, log)
 
 
-
-
-@app.route('/send')
+@app.route('/send/addpage')
 def send_message():  # put application's code here
     try:
-        api = Main(log=log, cookies=request.cookies)
+        api = Main(log=True, cookies=request.cookies)
         args = request.args
-        api.send_message(args.get("message"), args.get("add_id"),
-                         args.get('add_type'), args.get("contact_name"))
+        api.send_message_from_add_page(args.get("message"), args.get("add_id"),
+                                       args.get('add_type'), args.get("contact_name"))
         res: dict | None
-        if api.json_obj:
+        if json.loads(api.html_text):
             res = api.json_obj
         else:
             res = dict(msg=api.html_text, type="Error")
@@ -137,18 +132,44 @@ def send_message():  # put application's code here
     except Exception as e:
         return get_error_msg(e, log)
 
-@app.route('/conversation')
+
+@app.route('/send/messagebox')
+def send_message2():  # put application's code here
+    try:
+        api = Main(log=True, cookies=request.cookies)
+        args = request.args
+        api.send_message_from_message_box(args.get("message"), args.get("user_id"),
+                                          args.get('conversation_id'))
+
+        res = dict(msg=api.html_text, status="OK")
+        res = api.attach_cookies_to_response(res)
+        return res
+    except Exception as e:
+        return get_error_msg(e, log)
+
+
+@app.route('/conversations')
 def get_conversation():  # put application's code here
     try:
         args = request.args
-        api = Main(log=True, cookies=request.cookies)
-        conversation_page = api.get_conversations(args.get("user_id"),args.get("page"),args.get("size"),)
+        api = Main(log=log, cookies=request.cookies)
+        conversation_page = api.get_conversations(args.get("user_id"), args.get("page"), args.get("size"), )
         res = api.attach_cookies_to_response(conversation_page)
         return res
     except Exception as e:
         return get_error_msg(e, log)
 
 
+@app.route('/messages')
+def get_messages():  # put application's code here
+    try:
+        args = request.args
+        api = Main(log=log, cookies=request.cookies)
+        messages_list = api.get_messages(args.get("user_id"), args.get("conversation_id"))
+        res = api.attach_cookies_to_response(messages_list)
+        return res
+    except Exception as e:
+        return get_error_msg(e, log)
 
 
 def get_error_msg(e, log=False):
