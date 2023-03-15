@@ -1,4 +1,4 @@
-pip==23.0.1
+-ip==21.3.1
 argparse==1.4.0
 asgiref==3.6.0
 beautifulsoup4==4.11.2
@@ -20,6 +20,7 @@ idna==3.4
 intervaltree==3.1.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
+json5==0.9.11
 jsonify==0.5
 MarkupSafe==2.1.2
 networkx==3.0

@@ -1,4 +1,5 @@
 # importing datetime from datetime module
+import uuid
 import sys
 from datetime import datetime
 import time
@@ -19,5 +20,4 @@ msg_body = dict(message="hallo",
                 adType="private",
                 contactName="Zakir")
 
-string1 = "message=hallo&adId=2382158583&adType=private&contactName=Zakir"
-print("content lenght ",sys.getsizeof(string1).__str__() )
+print(str(uuid.uuid4()))

@@ -48,7 +48,7 @@ class EbayKleinanzeigenApi:
             html_text = self.response.text
             soup = BeautifulSoup(html_text, "html.parser")
             self.extractor = EbayKleinanzeigenExtractor(soup)
-        if "json" in type :
+        if "json" in type:
             try:
                 self.json_obj = self.response.json()
             except Exception as e:
@@ -120,7 +120,12 @@ class EbayKleinanzeigenApi:
             print(auth)
             print("\n\n\n")
 
-    def set_xsrf_token(self):
+    def set_xsrf_token(self,mode = 1):
+        action = ""
+        if mode == 1:
+            action = "POST_MESSAGE"
+        elif mode == 2:
+            action = "POST_AD"
         self.set_bearer_token()
         url2 = "https://gateway.ebay-kleinanzeigen.de/user-trust/users/current/verifications/phone/required?action" \
                "=POST_MESSAGE&source=DESKTOP "
@@ -148,6 +153,15 @@ class EbayKleinanzeigenApi:
             print("user id =  ", match.groups()[0])
         return match.groups()[0]
         pass
+
+    def get_cities(self, url):
+        self.make_request(url=url, type="json", method="get")
+        cities_list = []
+        for code, name in self.json_obj.items():
+            city = dict(code=code[1:], name=name)
+            cities_list.append(city)
+
+        return cities_list
 
 
 if __name__ == "__main__":

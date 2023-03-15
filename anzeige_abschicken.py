@@ -1,29 +1,34 @@
-import random
-import sys
+import traceback
+from time import sleep
+import uuid
+from print_dict import pd
+from urllib import parse
+from uuid import uuid4
 from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
-import requests
-
-from main import Main
 
 
-class AnzeigeAbschicken(EbayKleinanzeigenApi):
+class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
     def __init__(self, filename: str = "default.json", log: bool = True, cookies: dict = None, save=False,
                  mode: str = "client"):
         super().__init__(filename, log, cookies, save, mode)
         self.form_data = None
         self.NachbarschaftHilfe = "401"
         self.zuVerschenken = "192"
-        self.NACHHILFE = ""
-        self.tracking_id = "fa99601b-34dd-4432-b026-ad8082545711"
+        self.NACHHILFE = "268"
+        self.WEITERE_DIENSTLEISTUN = "298"
+        self.tracking_id = "ma99601b-34dd-4432-b026-ad8082545711"
 
-    def set_headers(self, form_data):
+    def set_headers(self):
         self.set_bearer_token()
+        sleep(1)
         self.set_xsrf_token()
+        sleep(1)
         # authority = "www.ebay-kleinanzeigen.de"
         # method = "POST"
         # path = "/p-anzeige-abschicken.html"
         # shema = "https"
-        accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8," \
+                 "application/signed-exchange;v=b3;q=0.7 "
         self.headers['accept'] = accept
         accept_encoding = "gzip, deflate, br"
         self.headers['accept-encoding'] = accept
@@ -51,49 +56,208 @@ class AnzeigeAbschicken(EbayKleinanzeigenApi):
 
         return
 
-    def set_form_data(self, title, category, price, location_id):
-        location = get_location(location_id)
+    def get_category_id(self, title):
+        if "nachhilfe" in title.lower():
+            return self.NACHHILFE
+        elif "webseite" in title.lower():
+            return self.WEITERE_DIENSTLEISTUN
+        else:
+            return self.zuVerschenken
+
+    def set_form_data(self, title, price, zip_code, description, contact_name, adwen_id):
+        category_id = self.get_category_id(title)
+        sug_category_id = self.get_suggested_category(title)
+        location = self.get_location_by_zip(zip_code)
 
         form_data = dict(adType="OFFER",
                          title=title,
-                         categoryId=category,
-                         previousCategoryId=category,
+                         categoryId=category_id,
+                         previousCategoryId="",
                          userSelectedAttributeMap="{}",
-                         suggestedCategoryId=self.get_suggested_category(title),
+                         suggestedCategoryId=sug_category_id,
                          trackingId=self.tracking_id,
                          priceAmount=price,
-                         description="sldfjlsfd ldsjflsj löj lsd jlösk jöflkj",
+                         description=description,
                          buyNow="false",
-                         zipCode=str(location['name']).split("-")[0].strip(),
+                         zipCode=location['zip'],
                          locationId=location['id'],
                          latitude=location['lat'],
                          longitude=location['lng'],
-                         _addressVisibility="on",
                          posterType="PRIVATE",
-                         contactName="Abood",
+                         contactName=contact_name,
+                         _addressVisibility="on",
                          _phoneNumberVisibility="on",
                          imprint="",
                          adid="",
                          flow="true",
-                         postAdWenkseSessionId="d1393bef-90be-47fc-86ff-4d7a8077a636",
+                         postAdWenkseSessionId=adwen_id,
                          _csrf=self._csrf)
 
-        form_data['attributeMap[notebooks.versand_s]'] = "nein"
+        # form_data['attributeMap[notebooks.versand_s]'] = "nein"
+        if category_id == self.zuVerschenken:
+            form_data['attributeMap[zu_verschenken.versand_s]'] = "nein"
         self.form_data = form_data
         return form_data
 
         pass
 
-    def get_location_by_id(self,location_id):
-        pass
-    def get_suggested_category(title):
+    def get_location_by_id(self, location_id):
+        url = self.ebay_url + "p-orte-der-plz.jason?locationId=" + location_id
+        self.make_request("json", "get", url)
+        res = self.json_obj[0]
+        return res
         pass
 
-    def anzeige_abschicken(self):
-        self.set_headers()
-        self.set_form_data()
+    def get_location_by_zip(self, zip):
+        url = self.ebay_url + "p-orte-der-plz.json?zipCode=" + zip
+        self.make_request("json", "get", url)
+        if self.json_obj.__len__() == 0:
+            return None
+        self.json_obj = self.json_obj[0]
+        self.json_obj['zip'] = zip
+        if self.log:
+            pd(self.json_obj)
+        return self.json_obj
         pass
+
+    def get_suggested_category(self, title):
+        url = self.ebay_url + "p-category-suggestion.json?title=" + title
+        self.make_request("json", "get", url)
+        if self.log:
+            print("suggested category is")
+            pd(self.json_obj)
+        return self.json_obj.get("category_id")
+        pass
+
+    def get_price_suggestion(self, title, category_id):
+        url = self.ebay_url + "p-price-suggestion.json?title=" + title + "&categoryId=" + str(category_id)
+        self.make_request("html", "get", url)
+        if self.log:
+            print("suggested price is :")
+            print(self.html_text)
+        return self.json_obj
+
+    def get_attributes_suggestion(self, title, category_id):
+        url = self.ebay_url + "p-attribute-suggestion.json"
+        self.set_xsrf_token(mode=2)
+        data = dict(title=title, categoryId=category_id,
+                    previousCategoryId=category_id, attributes="{}")
+        self.headers['content-type'] = "application/json"
+        self.headers['x-requested-with'] = "XMLHttpRequest"
+        self.make_request("jsondata_json", "post", url, data)
+        if self.log:
+            print("suggested attributes are")
+            pd(self.json_obj)
+        return self.json_obj
+
+    def check_add_state(self, adid):
+        url = self.ebay_url + "p-mein-anzeige-status.json?id=" + adid
+        self.make_request("json", "get", url)
+        # if self.log:
+        #     pd(self.json_obj)
+        return self.json_obj
+
+    def anzeige_abschicken(self, title, price, zip_code, description, contact_name):
+        published = False
+        url = self.ebay_url + "p-anzeige-abschicken.html"
+
+        adwenk_session_id = str(uuid4())
+        self.tracking_id = str(uuid4())
+        self.set_headers()
+        self.set_form_data(title, price, zip_code, description, contact_name, adwenk_session_id)
+        self.make_request(type="html", method="post", url=url, body=self.form_data)
+        sleep(1)
+        f = open("result.html", "w", encoding="utf-8")
+        f.write(self.html_text)
+        if self.log:
+            print(self.response.url)
+        adId = parse.parse_qs(parse.urlparse(self.response.url).query)['adId'][0]
+        # trackingId = parse.parse_qs(parse.urlparse(self.response.url).query)['trackingId'][0]
+        # uuid = parse.parse_qs(parse.urlparse(self.response.url).query)['uuid'][0]
+        if self.log:
+            print("add id is ", adId)
+        for i in range(15):
+            check = self.check_add_state(adId)
+            check['title'] = title
+            check["zip"] = zip_code
+            pd(check)
+            print()
+            if check.get("state") != "PROCESSING":
+                published = True
+                break
+            sleep(1)
+
+        return published
 
 
 if __name__ == "__main__":
+    id = 5
+    api = AnzeigeAbschickenApi(log=True, mode="server")
+    title = "Audi 10"
+    zip_array = ["01616", "02627",
+                 "04617", "06420", "06667", "08209",
+                 "09623", "01945", "01990", "18211",
+                 "20253", "21107", "10117", "10779", "21244", ]
+    title_array = ["html css javascript react Angular Vue",
+                   "Nachhilfe Java", "Webseite erstellen", "Nachhilfe Python",
+                   "Nachhilfe Javascript", "Nachhilfe Informatik" "Logo erstellen",
+                   "Responsive Webseite Erstellen", "Webdesign Webseite Homepage, web scraping",
+                   ]
+
+    if id == 1:
+        api.get_location_by_id("3343")
+        pd(api.json_obj)
+    if id == 2:
+        res = api.get_location_by_zip("09126")
+        pd(res)
+    if id == 3:
+        res = api.get_suggested_category(title)
+        print("suggested category id = ", res)
+        pd(res)
+    if id == 4:
+        cat = api.get_suggested_category(title_array[0])
+        price = api.get_price_suggestion(title_array[0], cat)
+        attr = api.get_attributes_suggestion(title_array[0], cat)
+    if id == 5:
+        published = False
+        for zip in zip_array:
+            for title in title_array:
+                published = api.anzeige_abschicken(title, "15", zip,
+                                                   "ich bin informatiker, und ich freu mich auf deine Nachricht",
+                                                   "Zakir")
+                if published:
+                    print("Titel = ", title)
+                    print("zip code = ", zip)
+                    city = api.get_location_by_zip(zip)['name']
+                    print("city name = ", city)
+                    break
+            if published:
+                break
+        if published:
+            print(" your add was published successfully")
+        else:
+            print("uninformatively we couldn`t publish your add :( ")
+
+    if id == 6:
+        index = 0
+        for title in title_array:
+            index += 1
+            try:
+                cat = api.get_suggested_category(title)
+                print(index, title, "has the categroy code :", cat)
+            except Exception as e:
+                print(index, title, "has no categoryis code")
+
+    if id == 7:
+        index = 0
+        api = AnzeigeAbschickenApi(log=False, mode="server")
+        for zip in zip_array:
+            index += 1
+            try:
+                city = api.get_location_by_zip(zip)
+                print(index, "  ", zip, "exist :", city['name'])
+            except Exception as e:
+                traceback.print_exc()
+                print(index, "  ", zip, "exist nicht :( ")
+
     pass

@@ -31,15 +31,6 @@ class Main(EbayKleinanzeigenApi):
 
         return prefix
 
-    def get_cities(self, url):
-        self.make_request(url=url, type="json", method="get")
-        cities_list = []
-        for code, name in self.json_obj.items():
-            city = dict(code=code[1:], name=name)
-            cities_list.append(city)
-
-        return cities_list
-
     def get_main(self, url):
         self.make_request(url=url, method="get", type="extractor")
         main_page = self.extractor.parse("Extractor/", "MainWindow.json")
