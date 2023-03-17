@@ -18,7 +18,7 @@ class Cookies:
         self.filename = filename
         self.googleChromeCookie = []
         self.request_cookies = dict()
-        self.cookie_domain = "ebay-kleinanzeigen-zakir.de"
+        self.cookie_domain = "ebay-kleinanzeigen-zakir.onrender.com"
 
         # self.ebay_url = "https://www.ebay-kleinanzeigen.de/"
         # user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"

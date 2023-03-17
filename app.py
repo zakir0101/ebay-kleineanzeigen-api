@@ -1,6 +1,6 @@
 import traceback
 from flask_cors import CORS
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from print_dict import pd
 
 from anzeige_abschicken import AnzeigeAbschickenApi
@@ -11,8 +11,26 @@ app = Flask(__name__)
 CORS(app)
 
 log = False
-cookie_domain = 'ebay-kleinanzeigen-zakir.de'
+cookie_domain = 'ebay-kleinanzeigen-zakir.onrender.com'
 app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.de:5000'
+
+
+@app.route('/')
+@app.route('/search')
+@app.route('/add')
+@app.route('/user')
+@app.route('/messages')
+@app.route('/myadd')
+@app.route('/publish')
+@app.route('/static/')
+@app.route('/static/search')
+@app.route('/static/add')
+@app.route('/static/user')
+@app.route('/static/messages')
+@app.route('/static/myadd')
+@app.route('/static/publish')
+def get_index():
+    return render_template("index.html")
 
 
 @app.route('/islogged')
@@ -49,10 +67,10 @@ def get_main():  # put application's code here
         res = api.attach_cookies_to_response(ads)
         return res
     except Exception as e:
-        get_error_msg(e, log)
+        return get_error_msg(e, log)
 
 
-@app.route('/search/<search>/<token>')
+@app.route('/search/<search>/<token>/api')
 def search_for(search, token):  # put application's code here
     try:
         path = request.args.get("path")
@@ -91,7 +109,7 @@ def get_categories():  # put application's code here
         return get_error_msg(e, log)
 
 
-@app.route('/add')
+@app.route('/add/api')
 def get_add_page():  # put application's code here
     try:
         add_link = request.args.get("link")[1:]
@@ -104,7 +122,7 @@ def get_add_page():  # put application's code here
         return get_error_msg(e, log)
 
 
-@app.route('/user')
+@app.route('/user/api')
 def get_user_page():  # put application's code here
     try:
         user_link = request.args.get("link")[1:]
@@ -162,7 +180,7 @@ def get_conversation():  # put application's code here
         return get_error_msg(e, log)
 
 
-@app.route('/messages')
+@app.route('/messages/api')
 def get_messages():  # put application's code here
     try:
         args = request.args
@@ -174,7 +192,7 @@ def get_messages():  # put application's code here
         return get_error_msg(e, log)
 
 
-@app.route('/publish')
+@app.route('/publish/api')
 def publish_add():  # put application's code here
     try:
         args = request.args
@@ -224,6 +242,9 @@ def get_cities_by_zip():  # put application's code here
     except Exception as e:
         return get_error_msg(e, log)
 
+
+# @app.route('/<path:any_path1>')
+# @app.route('/static/<path:any_path2>')
 
 def get_error_msg(e, log=False):
     traceback.print_exc()

@@ -185,7 +185,7 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
 
 
 if __name__ == "__main__":
-    id = 2
+    id = 10
     api = AnzeigeAbschickenApi(log=True, mode="server")
     title = "Audi 10"
     zip_array = ["01616", "02627",
@@ -233,25 +233,17 @@ if __name__ == "__main__":
             print("uninformatively we couldn`t publish your add :( ")
 
     if id == 10:
-        published = False
-        for zip_index in range(3):
-            for title_index in range(3):
-                published = api.anzeige_abschicken(title_array[title_index], "15", zip_array[zip_index],
-                                                   "ich bin informatiker, und ich freu mich auf deine Nachricht",
-                                                   "Zakir")
-                if published:
-                    print("Titel = ", title)
-                    print("zip code = ", zip)
-                    city = api.get_location_by_zip(zip)['name']
-                    print("city name = ", city)
-                    break
-            if published:
-                break
-        if published:
-            print(" your add was published successfully")
-        else:
-            print("uninformatively we couldn`t publish your add :( ")
+        adid = api.anzeige_abschicken(title_array[0], "15","09126" ,"3880",
+                                      "ich bin informatiker, und ich freu mich auf deine Nachricht",
+                                      "Zakir")
 
+        if adid:
+            res = dict(state="OK", add_id=adid)
+            print("Add-id is :", adid)
+        else:
+            res = dict(state="ERROR", html=api.html_text)
+            f = open("result.html", "w", encoding="utf-8")
+            f.write(api.html_text)
     if id == 6:
         index = 0
         for title in title_array:
