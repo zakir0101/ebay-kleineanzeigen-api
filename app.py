@@ -36,9 +36,13 @@ def get_index():
 @app.route('/islogged')
 def is_user_logged():  # put application's code here
     try:
+
         api = Main(log=log, cookies=request.cookies)
         is_logged = api.login
         user_id = ""
+        api.set_xsrf_token()
+        api.set_xsrf_token()
+        is_logged  = api.is_user_logged_in()
         if is_logged:
             user_id = api.get_user_id()
 
@@ -62,6 +66,7 @@ def logout():  # put application's code here
 @app.route('/main')
 def get_main():  # put application's code here
     try:
+        print_cookies(request.cookies)
         api = Main(log=log, cookies=request.cookies)
         ads = api.get_main(api.ebay_url)
         res = api.attach_cookies_to_response(ads)
@@ -138,7 +143,7 @@ def get_user_page():  # put application's code here
 @app.route('/send/addpage')
 def send_message():  # put application's code here
     try:
-        api = Main(log=True, cookies=request.cookies)
+        api = Main(log=False, cookies=request.cookies)
         args = request.args
         api.send_message_from_add_page(args.get("message"), args.get("add_id"),
                                        args.get('add_type'), args.get("contact_name"))
@@ -156,7 +161,7 @@ def send_message():  # put application's code here
 @app.route('/send/messagebox')
 def send_message2():  # put application's code here
     try:
-        api = Main(log=True, cookies=request.cookies)
+        api = Main(log=False, cookies=request.cookies)
         args = request.args
         api.send_message_from_message_box(args.get("message"), args.get("user_id"),
                                           args.get('conversation_id'))
@@ -198,7 +203,7 @@ def publish_add():  # put application's code here
         args = request.args
         print("argument :")
         pd(args.to_dict())
-        api = AnzeigeAbschickenApi(log=True, cookies=request.cookies)
+        api = AnzeigeAbschickenApi(log=log, cookies=request.cookies)
 
         adid = api.anzeige_abschicken(args.get('title'), args.get('price'),
                                       args.get('zip'), args.get('city_code'),
@@ -222,7 +227,7 @@ def publish_add():  # put application's code here
 def check_add():  # put application's code here
     try:
         args = request.args
-        api = AnzeigeAbschickenApi(log=True, cookies=request.cookies)
+        api = AnzeigeAbschickenApi(log=log, cookies=request.cookies)
         check = api.check_add_state(args.get("add_id"))
         res = api.attach_cookies_to_response(check)
 
@@ -235,7 +240,7 @@ def check_add():  # put application's code here
 def get_cities_by_zip():  # put application's code here
     try:
         args = request.args
-        api = AnzeigeAbschickenApi(log=True, cookies=request.cookies)
+        api = AnzeigeAbschickenApi(log=log, cookies=request.cookies)
         cities = api.get_location_by_zip(args.get("zip"))
         res = api.attach_cookies_to_response(cities)
         return res
