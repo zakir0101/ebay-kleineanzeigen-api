@@ -11,6 +11,7 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
     def __init__(self, filename: str = "default.json", log: bool = True, cookies: dict = None, save=False,
                  mode: str = "client"):
         super().__init__(filename, log, cookies, save, mode)
+        self.adwen_id = None
         self.form_data = None
         self.NachbarschaftHilfe = "401"
         self.zuVerschenken = "192"
@@ -19,10 +20,6 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
         self.tracking_id = "ma99601b-34dd-4432-b026-ad8082545711"
 
     def set_headers(self):
-        self.set_bearer_token()
-        sleep(1)
-        self.set_xsrf_token()
-        sleep(1)
         # authority = "www.ebay-kleinanzeigen.de"
         # method = "POST"
         # path = "/p-anzeige-abschicken.html"
@@ -64,11 +61,12 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
         else:
             return self.zuVerschenken
 
-    def set_form_data(self, title, price, zip_code, description, contact_name, adwen_id):
+    def set_form_data(self, title, price, zip_code, city_code, description, contact_name):
         category_id = self.get_category_id(title)
         sug_category_id = self.get_suggested_category(title)
-        location = self.get_location_by_zip(zip_code)
-
+        # location = self.get_location_by_zip(zip_code)
+        if category_id == self.zuVerschenken:
+            price = ""
         form_data = dict(adType="OFFER",
                          title=title,
                          categoryId=category_id,
@@ -79,10 +77,10 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
                          priceAmount=price,
                          description=description,
                          buyNow="false",
-                         zipCode=location['zip'],
-                         locationId=location['id'],
-                         latitude=location['lat'],
-                         longitude=location['lng'],
+                         zipCode=zip_code,
+                         locationId=city_code,
+                         latitude="",
+                         longitude="",
                          posterType="PRIVATE",
                          contactName=contact_name,
                          _addressVisibility="on",
@@ -90,7 +88,7 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
                          imprint="",
                          adid="",
                          flow="true",
-                         postAdWenkseSessionId=adwen_id,
+                         postAdWenkseSessionId=self.adwen_id,
                          _csrf=self._csrf)
 
         # form_data['attributeMap[notebooks.versand_s]'] = "nein"
@@ -111,10 +109,10 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
     def get_location_by_zip(self, zip):
         url = self.ebay_url + "p-orte-der-plz.json?zipCode=" + zip
         self.make_request("json", "get", url)
-        if self.json_obj.__len__() == 0:
-            return None
-        self.json_obj = self.json_obj[0]
-        self.json_obj['zip'] = zip
+        # if self.json_obj.__len__() == 0:
+        #     return None
+        # self.json_obj = self.json_obj[0]
+        # self.json_obj['zip'] = zip
         if self.log:
             pd(self.json_obj)
         return self.json_obj
@@ -127,7 +125,6 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
             print("suggested category is")
             pd(self.json_obj)
         return self.json_obj.get("category_id")
-        pass
 
     def get_price_suggestion(self, title, category_id):
         url = self.ebay_url + "p-price-suggestion.json?title=" + title + "&categoryId=" + str(category_id)
@@ -153,56 +150,53 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
     def check_add_state(self, adid):
         url = self.ebay_url + "p-mein-anzeige-status.json?id=" + adid
         self.make_request("json", "get", url)
-        # if self.log:
-        #     pd(self.json_obj)
+        if self.log:
+            pd(self.json_obj)
         return self.json_obj
 
-    def anzeige_abschicken(self, title, price, zip_code, description, contact_name):
-        published = False
+    def anzeige_abschicken(self, title, price, zip_code, city_code, description, contact_name):
         url = self.ebay_url + "p-anzeige-abschicken.html"
 
-        adwenk_session_id = str(uuid4())
+        self.adwen_id = str(uuid4())
         self.tracking_id = str(uuid4())
+
+        # setting header
         self.set_headers()
-        self.set_form_data(title, price, zip_code, description, contact_name, adwenk_session_id)
+        self.set_bearer_token()
+        sleep(1)
+        self.set_xsrf_token()
+        sleep(1)
+
+        # setting form data
+        self.set_form_data(title, price, zip_code, city_code, description, contact_name)
+
+        # making request
         self.make_request(type="html", method="post", url=url, body=self.form_data)
         sleep(1)
         f = open("result.html", "w", encoding="utf-8")
         f.write(self.html_text)
         if self.log:
             print(self.response.url)
-        adId = parse.parse_qs(parse.urlparse(self.response.url).query)['adId'][0]
+        adId = parse.parse_qs(parse.urlparse(self.response.url).query).get('adId')
+
         # trackingId = parse.parse_qs(parse.urlparse(self.response.url).query)['trackingId'][0]
         # uuid = parse.parse_qs(parse.urlparse(self.response.url).query)['uuid'][0]
-        if self.log:
-            print("add id is ", adId)
-        for i in range(15):
-            check = self.check_add_state(adId)
-            check['title'] = title
-            check["zip"] = zip_code
-            pd(check)
-            print()
-            if check.get("state") != "PROCESSING":
-                published = True
-                break
-            sleep(1)
-
-        return published
+        return adId
 
 
 if __name__ == "__main__":
-    id = 5
+    id = 2
     api = AnzeigeAbschickenApi(log=True, mode="server")
     title = "Audi 10"
     zip_array = ["01616", "02627",
                  "04617", "06420", "06667", "08209",
                  "09623", "01945", "01990", "18211",
                  "20253", "21107", "10117", "10779", "21244", ]
-    title_array = ["html css javascript react Angular Vue",
-                   "Nachhilfe Java", "Webseite erstellen", "Nachhilfe Python",
-                   "Nachhilfe Javascript", "Nachhilfe Informatik" "Logo erstellen",
-                   "Responsive Webseite Erstellen", "Webdesign Webseite Homepage, web scraping",
-                   ]
+    title_array = [
+        "Nachhilfe Java", "Webseite erstellen", "Nachhilfe Python",
+        "Nachhilfe Javascript", "Nachhilfe Informatik" "Logo erstellen",
+        "Responsive Webseite Erstellen", "Webdesign Webseite Homepage, web scraping",
+        "html css javascript react Angular Vue"]
 
     if id == 1:
         api.get_location_by_id("3343")
@@ -223,6 +217,26 @@ if __name__ == "__main__":
         for zip in zip_array:
             for title in title_array:
                 published = api.anzeige_abschicken(title, "15", zip,
+                                                   "ich bin informatiker, und ich freu mich auf deine Nachricht",
+                                                   "Zakir")
+                if published:
+                    print("Titel = ", title)
+                    print("zip code = ", zip)
+                    city = api.get_location_by_zip(zip)['name']
+                    print("city name = ", city)
+                    break
+            if published:
+                break
+        if published:
+            print(" your add was published successfully")
+        else:
+            print("uninformatively we couldn`t publish your add :( ")
+
+    if id == 10:
+        published = False
+        for zip_index in range(3):
+            for title_index in range(3):
+                published = api.anzeige_abschicken(title_array[title_index], "15", zip_array[zip_index],
                                                    "ich bin informatiker, und ich freu mich auf deine Nachricht",
                                                    "Zakir")
                 if published:

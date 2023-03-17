@@ -1,7 +1,9 @@
 import traceback
 from flask_cors import CORS
 from flask import Flask, request, jsonify
+from print_dict import pd
 
+from anzeige_abschicken import AnzeigeAbschickenApi
 from main import Main
 import json
 
@@ -172,6 +174,57 @@ def get_messages():  # put application's code here
         return get_error_msg(e, log)
 
 
+@app.route('/publish')
+def publish_add():  # put application's code here
+    try:
+        args = request.args
+        print("argument :")
+        pd(args.to_dict())
+        api = AnzeigeAbschickenApi(log=True, cookies=request.cookies)
+
+        adid = api.anzeige_abschicken(args.get('title'), args.get('price'),
+                                      args.get('zip'), args.get('city_code'),
+                                      args.get('description'), args.get('contact_name'))
+
+        res = dict()
+        if adid:
+            res = dict(state="OK", add_id=adid)
+            print("Add-id is :", adid)
+        else:
+            res = dict(state="ERROR", html=api.html_text)
+            f = open("result.html", "w", encoding="utf-8")
+            f.write(api.html_text)
+        res = api.attach_cookies_to_response(res)
+        return res
+    except Exception as e:
+        return get_error_msg(e, log)
+
+
+@app.route('/check/add')
+def check_add():  # put application's code here
+    try:
+        args = request.args
+        api = AnzeigeAbschickenApi(log=True, cookies=request.cookies)
+        check = api.check_add_state(args.get("add_id"))
+        res = api.attach_cookies_to_response(check)
+
+        return res
+    except Exception as e:
+        return get_error_msg(e, log)
+
+
+@app.route('/cities/zip')
+def get_cities_by_zip():  # put application's code here
+    try:
+        args = request.args
+        api = AnzeigeAbschickenApi(log=True, cookies=request.cookies)
+        cities = api.get_location_by_zip(args.get("zip"))
+        res = api.attach_cookies_to_response(cities)
+        return res
+    except Exception as e:
+        return get_error_msg(e, log)
+
+
 def get_error_msg(e, log=False):
     traceback.print_exc()
     res = dict()
@@ -179,7 +232,9 @@ def get_error_msg(e, log=False):
     res['msg'] = e.__str__()
     if log:
         print("error" + e.__str__())
-    return json.dumps(res)
+    res = jsonify(res)
+    res.headers.add('Access-Control-Allow-Credentials', 'true')
+    return res
     pass
 
 
