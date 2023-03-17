@@ -12,7 +12,7 @@ CORS(app)
 
 log = False
 cookie_domain = 'ebay-kleinanzeigen-zakir.onrender.com'
-app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.de:5000'
+app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.onrender.com'
 
 
 @app.route('/')
