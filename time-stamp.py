@@ -21,3 +21,8 @@ msg_body = dict(message="hallo",
                 contactName="Zakir")
 
 print(str(uuid.uuid4()))
+
+
+string = "iam zakir"
+string = string.replace("who","")
+print("string" , "")
