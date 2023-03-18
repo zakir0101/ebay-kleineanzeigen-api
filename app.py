@@ -11,8 +11,13 @@ app = Flask(__name__)
 CORS(app)
 
 log = False
-cookie_domain = 'ebay-kleinanzeigen-zakir.onrender.com'
-app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.onrender.com'
+deploy_mode = "offline"
+if deploy_mode == "online":
+    cookie_domain = '.ebay-kleinanzeigen-zakir.onrender.com'
+    app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.onrender.com'
+else:
+    cookie_domain = '.ebay-kleinanzeigen-zakir.de:5000'
+    app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.de:5000'
 
 
 @app.route('/')
@@ -36,17 +41,18 @@ def get_index():
 @app.route('/islogged')
 def is_user_logged():  # put application's code here
     try:
-
+        print_cookies(request.cookies)
         api = Main(log=log, cookies=request.cookies)
         is_logged = api.login
         user_id = ""
-        api.set_xsrf_token()
-        api.set_xsrf_token()
-        is_logged  = api.is_user_logged_in()
+        # api.set_bearer_token()
+        # api.set_xsrf_token()
+        is_logged = api.is_user_logged_in()
+        user_email , user_name = ("None" , "None")
         if is_logged:
             user_id = api.get_user_id()
-
-        res = dict(isLogged=is_logged, user_id=user_id)
+            user_email, user_name = api.get_user_name()
+        res = dict(is_logged=is_logged, user_id=user_id,user_name=user_name,user_email=user_email)
         res = api.attach_cookies_to_response(res)
         return res
     except Exception as e:

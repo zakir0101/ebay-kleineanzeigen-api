@@ -10,7 +10,7 @@ from print_dict import pd
 
 class Cookies:
     def __init__(self, filename: str = "default.json", log: bool = True,
-                 cookies: dict = None, save=False, mode: str = "client",keep_old=False):
+                 cookies: dict = None, save=False, mode: str = "client", keep_old=False):
         # Test for custom configs
         self.log = log
         self.mode = mode
@@ -18,14 +18,17 @@ class Cookies:
         self.filename = filename
         self.googleChromeCookie = []
         self.request_cookies = dict()
-        self.cookie_domain = "ebay-kleinanzeigen-zakir.onrender.com"
+        deploy_mode = "offline"
+        if deploy_mode == "online":
+            self.cookie_domain = ".ebay-kleinanzeigen-zakir.onrender.com"
+        else:
+            self.cookie_domain = ".ebay-kleinanzeigen-zakir.de"
 
         # self.ebay_url = "https://www.ebay-kleinanzeigen.de/"
         # user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"
         # self.headers = {'User-Agent': user_agent, 'Connection': 'keep-alive',
         #                 'Accept-Encoding': 'gzip, deflate',
         #                 'Accept': '*/*'}
-
 
         if mode == "client":
             if cookies:
@@ -37,7 +40,6 @@ class Cookies:
                 self.refresh_google_chrome_cookies()
             for cook in self.googleChromeCookie:
                 self.request_cookies[cook['name']] = cook['value']
-
 
     ###############################################
     #   load google chrome cookies
@@ -60,6 +62,7 @@ class Cookies:
             self.googleChromeCookie.append(cook)
 
         self.save_cookies()
+
     ###############################################
     #   saving cookies to a file
     ###############################################
@@ -93,7 +96,7 @@ class Cookies:
     ###############################################
     #   setting
     ###############################################
-    def set_cookies(self, session:Session):
+    def set_cookies(self, session: Session):
         self.cookies_temp = [
             {'name': c.name, 'secure': c.secure, 'hostOnly': True,
              'httpOnly': False, 'value': c.value, "sameSite": "unspecified",
@@ -124,4 +127,3 @@ class Cookies:
         self.request_cookies = {}
         self.googleChromeCookie = []
         self.save_cookies()
-

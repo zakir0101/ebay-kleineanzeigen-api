@@ -120,7 +120,7 @@ class EbayKleinanzeigenApi:
             print(auth)
             print("\n\n\n")
 
-    def set_xsrf_token(self,mode = 1):
+    def set_xsrf_token(self, mode=1):
         action = ""
         if mode == 1:
             action = "POST_MESSAGE"
@@ -138,6 +138,21 @@ class EbayKleinanzeigenApi:
             print(self.html_text)
             print("\n\n\n")
 
+    def get_user_name(self):
+        url = self.ebay_url
+        self.make_request("soup", "get", url)
+        soup = self.soup
+        user_elm = soup.find("span", id="user-email", class_='text-body-regular')
+        if user_elm:
+            user_text = user_elm.text.strip()
+            user_email = user_text.replace("angemeldet", "").replace("als","").replace(":","").strip()
+            user_name = user_email[:user_email.index("@")]
+            if self.log:
+                print("user_email :", user_email)
+                print("user_name :", user_name)
+            return user_email, user_name
+
+        return None,None
     def get_user_id(self):
         url = "https://www.ebay-kleinanzeigen.de/m-nachrichten.html"
         self.make_request(type="soup", method="get", url=url)
@@ -165,6 +180,6 @@ class EbayKleinanzeigenApi:
 
 
 if __name__ == "__main__":
-    api = EbayKleinanzeigenApi(mode="server", keep_old_cookies=False)
-    api.get_user_id()
+    api = EbayKleinanzeigenApi(mode="server", keep_old_cookies=True)
+    api.get_user_name()
     pass
