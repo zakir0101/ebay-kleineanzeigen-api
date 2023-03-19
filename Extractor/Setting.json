@@ -1,0 +1,34 @@
+{
+  "add_num_online": {
+    "type": "parent",
+    "id": "my-settings-posted-ads",
+    "element": "div",
+    "children": {
+      "type" : "text",
+      "element": "div",
+      "class": "sectionbox",
+      "strip": true,
+      "rm_newline": true,
+      "rm_space": true,
+      "split": true,
+      "splitter": ".",
+      "index": 0
+    }
+  },
+  "add_num_total": {
+    "type": "parent",
+    "id": "my-settings-posted-ads",
+    "element": "div",
+    "children": {
+      "type" : "text",
+      "element": "div",
+      "class": "sectionbox",
+      "strip": true,
+      "rm_newline": true,
+      "rm_space": true,
+      "split": true,
+      "splitter": ".",
+      "index": 1
+    }
+  }
+}

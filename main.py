@@ -1,3 +1,6 @@
+import time
+from datetime import datetime
+
 from print_dict import pd
 from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
 
@@ -7,7 +10,7 @@ class Main(EbayKleinanzeigenApi):
                  mode: str = "client"):
         # Test for custom configs
         super().__init__(filename, log, cookies, save, mode)
-
+        self.days_of_week = ['Mon', 'Die', 'Mit', 'Don', 'Fri', 'Sam', 'Son']
     def search_for(self, url):
         self.make_request(type="extractor", method="get", url=url)
         return self.extractor.parse(path="Extractor/", filename="SearchWindow.json")
@@ -50,6 +53,13 @@ class Main(EbayKleinanzeigenApi):
     def get_user_detail(self, url):
         self.make_request(url=url, type="extractor", method="get")
         user_page = self.extractor.parse(path="Extractor/", filename="UserWindow.json")
+        return user_page
+
+    def get_setting_page(self):
+        url = self.ebay_url + "m-einstellungen.html"
+        self.make_request(url=url, type="extractor", method="get")
+        user_page = self.extractor.parse(path="Extractor/", filename="Setting.json")
+        user_page['add_num_online'] = user_page['add_num_online'].replace('Mein',"").replace("Konto","")
         return user_page
 
     def get_add_views(self, add_id, log):
@@ -108,11 +118,39 @@ class Main(EbayKleinanzeigenApi):
               user_id + "/conversations/" + conversation_id + "?contentWarnings=true"
         self.set_bearer_token()
         self.make_request(type="json", method="get", url=url)
+        for msg in self.json_obj.get('messages'):
+            msg['readableDate'] = self.get_time_readable(msg.get('receivedDate'))
         return self.json_obj
+
+
+
+    def get_time_readable(self,time_str):
+        time_obj = time.strptime(time_str, "%Y-%m-%dT%H:%M:%S.%f+0100")
+        my_datetime = datetime(time_obj.tm_year, time_obj.tm_mon,
+                               time_obj.tm_mday, time_obj.tm_hour,
+                               time_obj.tm_min, time_obj.tm_sec)
+
+        epoch = my_datetime.timestamp()
+        now = time.time()
+        a_day = 24 * 60 * 60
+        day_morning = datetime(time_obj.tm_year, time_obj.tm_mon,
+                               time_obj.tm_mday, 0,
+                               0, 0).timestamp()
+
+        if (now - day_morning) < a_day:
+            return "Heute"+my_datetime.strftime(' %H:%M')
+        elif (now - day_morning) < 2 * a_day:
+            return "Gersten" + my_datetime.strftime(' %H:%M')
+        elif (now - day_morning) < a_day * 7:
+            return 'letzte ' + self.days_of_week[time_obj.tm_wday]+my_datetime.strftime(' %H:%M')
+        else:
+            return my_datetime.strftime('%d-%b-%y %H:%M')
+
+        pass
 
 
 if __name__ == "__main__":
     api = Main(log=True, mode="server")
-    messages = api.get_categories(api.ebay_url)
-    pd(messages)
+    setting = api.get_setting_page()
+    pd(setting)
     pass

@@ -110,7 +110,7 @@ class EbayKleinanzeigenApi:
 
     def set_bearer_token(self):
         url1 = "https://www.ebay-kleinanzeigen.de/m-access-token.json"
-        self.headers['x-csrf-token'] = self.cookies.request_cookies['CSRF-TOKEN']
+        self.headers['x-csrf-token'] = self.cookies.request_cookies.get('CSRF-TOKEN')
         self.make_request(url=url1, type="html", method="get")
         auth = self.response.headers.get("Authorization")
         self.headers['Authorization'] = auth
@@ -130,8 +130,8 @@ class EbayKleinanzeigenApi:
         url2 = "https://gateway.ebay-kleinanzeigen.de/user-trust/users/current/verifications/phone/required?action" \
                "=POST_MESSAGE&source=DESKTOP "
         self.make_request(url=url2, type="html", method="get")
-        self.headers['x-csrf-token'] = self.cookies.request_cookies['CSRF-TOKEN']
-        self._csrf = self.cookies.request_cookies['CSRF-TOKEN']
+        self.headers['x-csrf-token'] = self.cookies.request_cookies.get('CSRF-TOKEN')
+        self._csrf = self.cookies.request_cookies.get('CSRF-TOKEN')
         if self.log:
             print("printing csrf token")
             print("x-csrf-token :", self.headers['x-csrf-token'])

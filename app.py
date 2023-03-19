@@ -27,6 +27,7 @@ else:
 @app.route('/messages')
 @app.route('/myadd')
 @app.route('/publish')
+@app.route('/setting')
 @app.route('/static/')
 @app.route('/static/search')
 @app.route('/static/add')
@@ -34,6 +35,7 @@ else:
 @app.route('/static/messages')
 @app.route('/static/myadd')
 @app.route('/static/publish')
+@app.route('/static/setting')
 def get_index():
     return render_template("index.html")
 
@@ -237,6 +239,18 @@ def check_add():  # put application's code here
         check = api.check_add_state(args.get("add_id"))
         res = api.attach_cookies_to_response(check)
 
+        return res
+    except Exception as e:
+        return get_error_msg(e, log)
+
+
+
+@app.route('/setting/api')
+def get_setting():  # put application's code here
+    try:
+        api = Main(log=log, cookies=request.cookies)
+        check = api.get_setting_page()
+        res = api.attach_cookies_to_response(check)
         return res
     except Exception as e:
         return get_error_msg(e, log)
