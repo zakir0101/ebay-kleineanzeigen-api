@@ -13,8 +13,8 @@ CORS(app)
 log = False
 deploy_mode = "online"
 if deploy_mode == "online":
-    cookie_domain = '.ebay-kleinanzeigen-zakir.onrender.com'
-    app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.onrender.com'
+    cookie_domain = '.ebay-kleinanzeigen-zakir-new.onrender.com'
+    app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir-new.onrender.com'
 else:
     cookie_domain = '.ebay-kleinanzeigen-zakir.de:5000'
     app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.de:5000'

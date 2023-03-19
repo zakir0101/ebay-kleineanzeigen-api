@@ -20,7 +20,7 @@ class Cookies:
         self.request_cookies = dict()
         deploy_mode = "online"
         if deploy_mode == "online":
-            self.cookie_domain = ".ebay-kleinanzeigen-zakir.onrender.com"
+            self.cookie_domain = ".ebay-kleinanzeigen-zakir-new.onrender.com"
         else:
             self.cookie_domain = ".ebay-kleinanzeigen-zakir.de"
 
