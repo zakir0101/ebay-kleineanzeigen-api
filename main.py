@@ -44,6 +44,14 @@ class Main(EbayKleinanzeigenApi):
         cat_lst = self.extractor.parse("Extractor/", "Categories.json")
         return cat_lst
 
+    def get_categories2(self):
+        url = self.ebay_url+"api/categories/v1"
+        self.set_bearer_token()
+        self.set_xsrf_token()
+        self.make_request(url=url, method="get", type="html")
+        categories = self.html_text
+        return categories
+
     def get_add_detail(self, url):
         self.make_request(url=url, type="extractor", method="get")
         add_page = self.extractor.parse(path="Extractor/", filename="AddWindow.json")
@@ -151,6 +159,6 @@ class Main(EbayKleinanzeigenApi):
 
 if __name__ == "__main__":
     api = Main(log=True, mode="server")
-    setting = api.get_setting_page()
+    setting = api.get_categories2()
     pd(setting)
     pass

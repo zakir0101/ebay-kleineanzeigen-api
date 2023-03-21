@@ -13,8 +13,8 @@ CORS(app)
 log = False
 deploy_mode = "online"
 if deploy_mode == "online":
-    cookie_domain = '.ebay-kleinanzeigen-zakir-new.onrender.com'
-    app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir-new.onrender.com'
+    cookie_domain = '.ebay-kleinanzeigen-zakir.onrender.com'
+    app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.onrender.com'
 else:
     cookie_domain = '.ebay-kleinanzeigen-zakir.de:5000'
     app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.de:5000'
@@ -47,9 +47,7 @@ def is_user_logged():  # put application's code here
         api = Main(log=log, cookies=request.cookies)
         is_logged = api.login
         user_id = ""
-        # api.set_bearer_token()
-        # api.set_xsrf_token()
-        is_logged = api.is_user_logged_in()
+        # is_logged = api.is_user_logged_in()
         user_email , user_name = ("None" , "None")
         if is_logged:
             user_id = api.get_user_id()

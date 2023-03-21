@@ -181,5 +181,8 @@ class EbayKleinanzeigenApi:
 
 if __name__ == "__main__":
     api = EbayKleinanzeigenApi(mode="server", keep_old_cookies=True)
-    api.get_user_name()
+    print("login",api.login)
+
+    user_email,user_name= api.get_user_name()
+
     pass
