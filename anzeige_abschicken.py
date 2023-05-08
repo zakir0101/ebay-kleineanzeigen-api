@@ -9,8 +9,8 @@ from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
 
 class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
     def __init__(self, filename: str = "default.json", log: bool = True, cookies: dict = None, save=False,
-                 mode: str = "client"):
-        super().__init__(filename, log, cookies, save, mode)
+                 mode: str = "client",rotate_ip: bool = False):
+        super().__init__(filename, log, cookies, save, mode,rotate_ip)
         self.adwen_id = None
         self.form_data = None
         self.NachbarschaftHilfe = "401"

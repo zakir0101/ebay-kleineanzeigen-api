@@ -20,9 +20,11 @@ class Cookies:
         self.request_cookies = dict()
         deploy_mode = "online"
         if deploy_mode == "online":
-            self.cookie_domain = ".ebay-kleinanzeigen-zakir.onrender.com"
-        else:
+            self.cookie_domain = ".ebay-kleinanzeigen-zakir-new.onrender.com"
+        elif deploy_mode == "offline":
             self.cookie_domain = ".ebay-kleinanzeigen-zakir.de"
+        elif deploy_mode == "mobile":
+            self.cookie_domain = ".192.168.151.149"
 
         # self.ebay_url = "https://www.ebay-kleinanzeigen.de/"
         # user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"
@@ -86,9 +88,10 @@ class Cookies:
                     if log:
                         print(cook['name'] + " was removed from cookies")
             else:
-                self.googleChromeCookie.remove(cook)
-                if log:
-                    print(cook['name'] + " was removed from cookies")
+                 pass
+                # self.googleChromeCookie.remove(cook)
+                # if log:
+                #     print(cook['name'] + " was removed from cookies")
 
             pass
         pass
@@ -114,8 +117,8 @@ class Cookies:
                     self.googleChromeCookie.append(cook)
 
             if not found:
-                if cook['expirationDate']:
-                    self.googleChromeCookie.append(cook)
+                # if cook['expirationDate']:
+                self.googleChromeCookie.append(cook)
             found = False
 
         self.save_cookies()
@@ -124,6 +127,7 @@ class Cookies:
     #   resetting cookies
     ###############################################
     def reset_cookies(self):
+        return
         self.request_cookies = {}
         self.googleChromeCookie = []
         self.save_cookies()

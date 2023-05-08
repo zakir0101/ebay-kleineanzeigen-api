@@ -1,16 +1,17 @@
 {
+
   "url_link": {
     "type": "link",
-    "class": "text-link-secondary"
+    "class": "text-link-subdued"
   },
   "code": {
     "type": "link",
-    "class": "text-link-secondary",
+    "class": "text-link-subdued",
     "category_code": true
   },
   "name": {
     "type": "text",
-    "class": "text-link-secondary",
+    "class": "text-link-subdued",
     "element": "a",
     "strip": true
   },

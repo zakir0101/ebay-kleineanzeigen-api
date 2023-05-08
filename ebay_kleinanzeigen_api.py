@@ -1,24 +1,32 @@
+import json
 import re
 import traceback
+from ssl import SSLError
+from lxml.html import fromstring
 from bs4 import BeautifulSoup, Tag
 import requests
 from flask import jsonify
 from requests import Response
-import json5
+from requests.exceptions import ProxyError, ConnectTimeout
+
 from Cookies.cookies import Cookies
 from Extractor.extractor import EbayKleinanzeigenExtractor
 from print_dict import pd
 
 
 class EbayKleinanzeigenApi:
+
     def __init__(self, filename: str = "default.json", log: bool = True,
-                 cookies: dict = None, save=False, mode: str = "client", keep_old_cookies=True):
+                 cookies: dict = None, save=False, mode: str = "client",
+                 keep_old_cookies=True, rotate_ip: bool = False):
         # Test for custom configs
+        self.rotate_ip = rotate_ip
         self._csrf = None
         self.ebay_url = "https://www.ebay-kleinanzeigen.de/"
         self.cookies = Cookies(filename, log, cookies, save, mode, keep_old=keep_old_cookies)
         self.log = log
         self.login = True
+        self.request_error = False
         user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"
         self.headers = {'User-Agent': user_agent, 'Connection': 'keep-alive',
                         'Accept-Encoding': 'gzip, deflate',
@@ -28,55 +36,111 @@ class EbayKleinanzeigenApi:
         self.soup: Tag | None = None
         self.extractor: EbayKleinanzeigenExtractor | None = None
         self.response: Response | None = None
-        self.login = self.is_user_logged_in()
+        self.countries = json.loads(open('Countries.json', "r").read())[:8]
+        #self.countries = [''
+        self.proxies = self.fetch_proxies()
+        self.active_proxy = None
+        if rotate_ip:
+           self.try_hard(self.is_user_logged_in,lambda res: res)
+        else:
+           self.is_user_logged_in()
+
+        if not self.login and log:
+            print("leider koennte nciht einlogen",)
+
+        # self.login = self.is_user_logged_in()
+
+    def try_hard(self,func1,func2):
+        for x in range(len(self.proxies)):
+            self.active_proxy = self.proxies[x]
+            if self.log:
+                print("trying with :", self.active_proxy['country'], self.active_proxy['proxy'])
+            res = func1()
+            if func2(res):
+                if self.log:
+                    print("operation done successfully")
+                return res
+        return None
+    def fetch_proxies(self):
+        src = 'https://api64.ipify.org'
+        response = requests.get('https://free-proxy-list.net/')
+        parser = fromstring(response.text)
+        proxies = []
+        for i in parser.xpath('//tbody/tr'):
+            if i.xpath('.//td[7][contains(text(),"yes")]'):
+                if i.xpath('.//td[4]/text()')[0] in self.countries:
+                    proxy = ":".join([i.xpath('.//td[1]/text()')[0],
+                                      i.xpath('.//td[2]/text()')[0]])
+                    country = i.xpath('.//td[4]/text()')[0]
+                    proxy = dict(proxy=proxy, country=country)
+                    proxies.append(proxy)
+        return proxies
 
     def make_request(self, type, method, url, body=None):
 
-        if method == "post":
-            self.request_url_post(url, body=body, type=type)
-        elif method == "get":
-            self.request_url(url)
-        else:
-            print("method should be either post or get")
+        # if self.proxies:
+        #     self.active_proxy = random.choice(self.proxies)
+        #     if  self.log:
+        #         print("active proxy")
+        #         pd(self.active_proxy)
 
-        if "html" in type:
-            self.html_text = self.response.text
-        if "soup" in type:
-            html_text = self.response.text
-            self.soup = BeautifulSoup(html_text, "html.parser")
-        if "ext" in type:
-            html_text = self.response.text
-            soup = BeautifulSoup(html_text, "html.parser")
-            self.extractor = EbayKleinanzeigenExtractor(soup)
-        if "json" in type:
-            try:
-                self.json_obj = self.response.json()
-            except Exception as e:
-                traceback.print_exc()
-                print(e)
-                pass
+        try:
+            if method == "post":
+                self.request_url_post(url, body=body, type=type)
+            elif method == "get":
+                self.request_url(url)
+            else:
+                print("method should be either post or get")
+            self.request_error = False
+        except (SSLError, ProxyError, ConnectTimeout, Exception):
+            print("max retries exceed with url")
+            self.request_error = True
+        else:
+            if "html" in type:
+                self.html_text = self.response.text
+            if "soup" in type:
+                html_text = self.response.text
+                self.soup = BeautifulSoup(html_text, "html.parser")
+            if "ext" in type:
+                html_text = self.response.text
+                soup = BeautifulSoup(html_text, "html.parser")
+                self.extractor = EbayKleinanzeigenExtractor(soup)
+            if "json" in type:
+                try:
+                    self.json_obj = self.response.json()
+                except Exception as e:
+                    traceback.print_exc()
+                    print(e)
+                    pass
 
     def request_url(self, url):
 
         session = requests.Session()
-        result = session.get(url, headers=self.headers,
-                             cookies=self.cookies.request_cookies)
+        if self.active_proxy and self.rotate_ip:
+            result = session.get(url, proxies={"http": self.active_proxy['proxy'],
+                                               "https": self.active_proxy['proxy']},
+                                 headers=self.headers,
+                                 cookies=self.cookies.request_cookies)
+
+        else:
+            result = session.get(url,
+                                 headers=self.headers,
+                                 cookies=self.cookies.request_cookies)
         self.response = result
         if result.status_code < 301:
             self.cookies.set_cookies(session)
         if self.log:
             print("URL = " + url)
             print("StatusCode = " + str(result.status_code))
+
         return result
 
     def request_url_post(self, url, body, type):
         session = requests.Session()
-        if "jsondata" in type:
-            result = session.post(url, headers=self.headers,
-                                  cookies=self.cookies.request_cookies, json=body)
+        if self.rotate_ip and self.active_proxy:
+            result = self.request_url_post_with_proxy(url, body, type, session)
         else:
-            result = session.post(url, headers=self.headers,
-                                  cookies=self.cookies.request_cookies, data=body)
+            result = self.request_url_post_without_proxy(url, body, type, session)
         self.response = result
         if result.status_code > 301:
             self.cookies.set_cookies(session)
@@ -85,16 +149,43 @@ class EbayKleinanzeigenApi:
             print("StatusCode = " + str(result.status_code))
         return result
 
+    def request_url_post_with_proxy(self, url, body, type, session):
+        if "jsondata" in type:
+            result = session.post(url, proxies={"http": self.active_proxy['proxy'],
+                                                "https": self.active_proxy['proxy']},
+                                  headers=self.headers,
+                                  cookies=self.cookies.request_cookies, json=body)
+        else:
+            result = session.post(url, proxies={"http": self.active_proxy['proxy'],
+                                                "https": self.active_proxy['proxy']},
+                                  headers=self.headers,
+                                  cookies=self.cookies.request_cookies, data=body)
+        return result
+
+    def request_url_post_without_proxy(self, url, body, type, session):
+
+        if "jsondata" in type:
+            result = session.post(url, headers=self.headers,
+                                  cookies=self.cookies.request_cookies, json=body)
+        else:
+            result = session.post(url, headers=self.headers,
+                                  cookies=self.cookies.request_cookies, data=body)
+        return result
+
     def is_user_logged_in(self):
         url = self.ebay_url
         self.make_request(url=url, method="get", type="html")
 
+        if self.request_error:
+            return False
         html_item = "itemtile-fullpic"
         item_number = self.html_text.count(html_item)
         if item_number < 400:
+            self.login = False
             self.cookies.reset_cookies()
             return False
         else:
+            self.login = True
             return True
 
     def attach_cookies_to_response(self, ads: dict):
@@ -141,18 +232,21 @@ class EbayKleinanzeigenApi:
     def get_user_name(self):
         url = self.ebay_url
         self.make_request("soup", "get", url)
+        if self.request_error:
+            return None
         soup = self.soup
         user_elm = soup.find("span", id="user-email", class_='text-body-regular')
         if user_elm:
             user_text = user_elm.text.strip()
-            user_email = user_text.replace("angemeldet", "").replace("als","").replace(":","").strip()
+            user_email = user_text.replace("angemeldet", "").replace("als", "").replace(":", "").strip()
             user_name = user_email[:user_email.index("@")]
             if self.log:
                 print("user_email :", user_email)
                 print("user_name :", user_name)
             return user_email, user_name
 
-        return None,None
+        return None
+
     def get_user_id(self):
         url = "https://www.ebay-kleinanzeigen.de/m-nachrichten.html"
         self.make_request(type="soup", method="get", url=url)
@@ -180,9 +274,9 @@ class EbayKleinanzeigenApi:
 
 
 if __name__ == "__main__":
-    api = EbayKleinanzeigenApi(mode="server", keep_old_cookies=True)
-    print("login",api.login)
-
-    user_email,user_name= api.get_user_name()
-
+    api = EbayKleinanzeigenApi(mode="server", keep_old_cookies=False, rotate_ip=True)
+    # login = api.is_user_logged_in()
+    print("login ", api.login)
+    # user_email, user_name = api.get_user_name()
+    api.try_hard(api.get_user_name,lambda res : res)
     pass

@@ -7,9 +7,9 @@ from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
 
 class Main(EbayKleinanzeigenApi):
     def __init__(self, filename: str = "default.json", log: bool = True, cookies: dict = None, save=False,
-                 mode: str = "client"):
+                 mode: str = "client",rotate_ip : bool = False):
         # Test for custom configs
-        super().__init__(filename, log, cookies, save, mode)
+        super().__init__(filename, log, cookies, save, mode,rotate_ip)
         self.days_of_week = ['Mon', 'Die', 'Mit', 'Don', 'Fri', 'Sam', 'Son']
     def search_for(self, url):
         self.make_request(type="extractor", method="get", url=url)
@@ -133,7 +133,11 @@ class Main(EbayKleinanzeigenApi):
 
 
     def get_time_readable(self,time_str):
-        time_obj = time.strptime(time_str, "%Y-%m-%dT%H:%M:%S.%f+0100")
+        print(time_str)
+        try:	
+            time_obj = time.strptime(time_str, "%Y-%m-%dT%H:%M:%S.%f+0100")
+        except Exception as e:
+            time_obj = time.strptime(time_str, "%Y-%m-%dT%H:%M:%S.%f+0200")
         my_datetime = datetime(time_obj.tm_year, time_obj.tm_mon,
                                time_obj.tm_mday, time_obj.tm_hour,
                                time_obj.tm_min, time_obj.tm_sec)
