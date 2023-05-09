@@ -1,6 +1,5 @@
 import time
 from datetime import datetime
-
 from print_dict import pd
 from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
 
@@ -10,6 +9,7 @@ class Main(EbayKleinanzeigenApi):
                  mode: str = "client",rotate_ip : bool = False):
         # Test for custom configs
         super().__init__(filename, log, cookies, save, mode,rotate_ip)
+
         self.days_of_week = ['Mon', 'Die', 'Mit', 'Don', 'Fri', 'Sam', 'Son']
     def search_for(self, url):
         self.make_request(type="extractor", method="get", url=url)

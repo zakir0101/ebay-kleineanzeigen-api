@@ -36,14 +36,13 @@ class EbayKleinanzeigenApi:
         self.soup: Tag | None = None
         self.extractor: EbayKleinanzeigenExtractor | None = None
         self.response: Response | None = None
-        self.countries = json.loads(open('Countries.json', "r").read())[:8]
-        #self.countries = [''
-        self.proxies = self.fetch_proxies()
         self.active_proxy = None
         if rotate_ip:
-           self.try_hard(self.is_user_logged_in,lambda res: res)
+            self.countries = json.loads(open('Countries.json', "r").read())[:8]
+            self.proxies = self.fetch_proxies()
+            self.try_hard(self.is_user_logged_in,lambda res: res)
         else:
-           self.is_user_logged_in()
+            self.is_user_logged_in()
 
         if not self.login and log:
             print("leider koennte nciht einlogen",)
