@@ -18,9 +18,9 @@ class Cookies:
         self.filename = filename
         self.googleChromeCookie = []
         self.request_cookies = dict()
-        deploy_mode = "offline"
+        deploy_mode = "online"
         if deploy_mode == "online":
-            self.cookie_domain = ".ebay-kleinanzeigen-zakir-new.onrender.com"
+            self.cookie_domain = ".ebay-zakir-1996.onrender.com"
         elif deploy_mode == "offline":
             self.cookie_domain = ".ebay-kleinanzeigen-zakir.de"
         elif deploy_mode == "mobile":
