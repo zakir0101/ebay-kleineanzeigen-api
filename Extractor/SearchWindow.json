@@ -3,7 +3,7 @@
     "type": "parent_list_file",
     "element" : "ul",
     "id": "srchrslt-adtable",
-    "child_class": "ad-listitem lazyload-item",
+    "child_class": "ad-listitem",
     "child_element": "li",
     "filename": "SearchItem.json"
   },

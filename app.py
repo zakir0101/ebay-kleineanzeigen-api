@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 log = False
-deploy_mode = "online"
+deploy_mode = "offline"
 if deploy_mode == "online":
     cookie_domain = '.ebay-zakir-1996.onrender.com'
     app.config['SERVER_NAME'] = 'ebay-zakir-1996.onrender.com'

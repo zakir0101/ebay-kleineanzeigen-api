@@ -20,14 +20,14 @@ def compare():
                 if cook1['value'] != cook2['value']:
                     print(cook1['name'] + " is diffrent")
                     print("value 1 : " + cook1['value'])
-                    if cook1['expires']:
+                    if cook1.get('expirationDate'):
                         print("expirationDate : ",
-                              datetime.fromtimestamp(cook1['expires']).strftime('%d-%m-%y-%H:%M'))
+                              datetime.fromtimestamp(cook1['expirationDate']).strftime('%d-%m-%y-%H:%M'))
 
                     print("value 2 : " + cook2['value'])
-                    if cook2['expirationDate']:
+                    if cook2.get('expirationDate'):
                         print("expirationDate : ",
-                              datetime.fromtimestamp(cook2['expirationDate']).strftime('%d-%m-%y-%H:%M'))
+                              datetime.fromtimestamp(cook2.get('expirationDate')).strftime('%d-%m-%y-%H:%M'))
                     print("\n\n\n")
 
 
@@ -56,25 +56,12 @@ def expirationDate():
             print("\n\n\n")
 
 
-expirationDate()
+# expirationDate()
+def find_csrf_token():
+    for cook in cookies2:
+        if cook["session"]:
+            print(cook['name'])
+    pass
 
 
-
-
-
-
-
-
-
-
-'''
-
-set-cookie: bm_sv=8B5D1182E9AF1B6E637C16BB70C5420B~YAAQjSV+aOI5LYuGAQAAWqI7qBJng5louHZ2L96mEmtt0wy/YaTITkc1q
-aGgpHkaai0seQt4GMRjiC02f1o7RVD97bMqhxjTPhgxBw5JSxK+m3XOB60elWXFLeA7vpiaWKBmrOI+h6ni7KZAtMCd+z
-BbLKJM/3o1f1bVnYyPrWPoeWi/UAQpcEBCmalVdC6uBA7cIkaxYRw5l9Bro4woS0t71UXGJbsE1JtkARMqYe4UItp8Q4bdK/gHYQx
-KXwdLkFxFg0A3dv7Fzys=~1; Domain=.ebay-kleinanzeigen.de; Path=/; Expires=Fri, 03 Mar 2023 17:51:10 GMT;
- Max-Age=6145; Secure
-
-
-
-'''
+compare()

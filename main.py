@@ -6,9 +6,9 @@ from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
 
 class Main(EbayKleinanzeigenApi):
     def __init__(self, filename: str = "default.json", log: bool = True, cookies: dict = None, save=False,
-                 mode: str = "client",rotate_ip : bool = False):
+                 mode: str = "client",rotate_ip : bool = False,keep_old_cookies=True,webshare_rotate=False):
         # Test for custom configs
-        super().__init__(filename, log, cookies, save, mode,rotate_ip)
+        super().__init__(filename, log, cookies, save, mode,keep_old_cookies,rotate_ip,webshare_rotate)
 
         self.days_of_week = ['Mon', 'Die', 'Mit', 'Don', 'Fri', 'Sam', 'Son']
     def search_for(self, url):
@@ -55,7 +55,8 @@ class Main(EbayKleinanzeigenApi):
     def get_add_detail(self, url):
         self.make_request(url=url, type="extractor", method="get")
         add_page = self.extractor.parse(path="Extractor/", filename="AddWindow.json")
-        add_page['views'] = self.get_add_views(add_page['add_id'], log=self.log)
+        # add_page['views'] = self.get_add_views(add_page['add_id'], log=self.log)
+        add_page['views'] = None
         return add_page
 
     def get_user_detail(self, url):
@@ -72,8 +73,29 @@ class Main(EbayKleinanzeigenApi):
 
     def get_add_views(self, add_id, log):
         url = self.ebay_url + "s-vac-inc-get.json?adId=" + add_id
-        self.make_request(url=url, method="get", type="json")
-        return self.json_obj.get('numVisits')
+        self.make_request(url=url, method="get", type="html-json")
+        if self.json_obj:
+            return self.json_obj.get('numVisits')
+        else:
+            return None
+
+    def try_hard_get_add_views(self,add_id,log):
+        views = 0
+        if self.log:
+            print("trying to get views")
+        for x in range(len(self.proxies)):
+            error = False
+            self.active_proxy = self.proxies[x]
+            if self.log:
+                print("trying with :", self.active_proxy['country'], self.active_proxy['proxy'])
+
+            views = self.get_add_views(add_id,log)
+            if views is not None:
+                if self.log:
+                    print("operation done successfully")
+                return views
+        return None
+
 
     def get_conversations(self, user_id, page:str, size:str="10"):
         if not user_id:
@@ -97,6 +119,7 @@ class Main(EbayKleinanzeigenApi):
             print("printing send message result")
             print(self.html_text.encode("utf-8"))
             print("\n\n\n")
+
 
     def send_message_from_message_box(self, message, user_id, conversation_id):
         if not user_id:
@@ -161,8 +184,3 @@ class Main(EbayKleinanzeigenApi):
         pass
 
 
-if __name__ == "__main__":
-    api = Main(log=True, mode="server")
-    setting = api.get_categories2()
-    pd(setting)
-    pass

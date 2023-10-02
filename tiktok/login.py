@@ -1,0 +1,9 @@
+import requests
+
+url = """https://web-i18n.tiktok.com/passport/web/send_code/?multi_login=1&did=7283958054574507553&aid=1459&account_sdk_source=web&sdk_version=2.0.3-tiktok&language=de&verifyFp=verify_ln3k1xkh_BQypeL9T_6fyK_431m_BNNm_1DyQphFdxWea&shark_extra=%7B%22aid%22:1459,%22app_name%22:%22Tik_Tok_Login%22,%22channel%22:%22tiktok_web%22,%22device_platform%22:%22web_pc%22,%22device_id%22:%227283958054574507553%22,%22region%22:%22DE%22,%22priority_region%22:%22%22,%22os%22:%22windows%22,%22referer%22:%22https:%2F%2Fwww.google.com%2F%22,%22root_referer%22:%22https:%2F%2Fwww.google.com%2F%22,%22cookie_enabled%22:true,%22screen_width%22:1920,%22screen_height%22:1080,%22browser_language%22:%22de-DE%22,%22browser_platform%22:%22Win32%22,%22browser_name%22:%22Mozilla%22,%22browser_version%22:%225.0+(Windows+NT+10.0%3B+Win64%3B+x64)+AppleWebKit%2F537.36+(KHTML,+like+Gecko)+Chrome%2F116.0.0.0+Safari%2F537.36%22,%22browser_online%22:true,%22verifyFp%22:%22verify_ln3k1xkh_BQypeL9T_6fyK_431m_BNNm_1DyQphFdxWea%22,%22app_language%22:%22de-DE%22,%22webcast_language%22:%22de-DE%22,%22tz_name%22:%22Africa%2FKhartoum%22,%22is_page_visible%22:true,%22focus_state%22:true,%22is_fullscreen%22:false,%22history_len%22:1,%22battery_info%22:null%7D&fp=verify_ln3k1xkh_BQypeL9T_6fyK_431m_BNNm_1DyQphFdxWea&msToken=YuBBn8kMrVA0Lk4RzoHJSuoSt5AcvBvHFrCgAhJQC2XP_B54D51uVjXyG_X7XAwDTG6tYmiVBNvSJ7JiVK_T0tkmGGcaVEBjzdAavlH6i_P1zm-6BSkF&X-Bogus=DFSzswVLmcS5ZoDktOgfgt9WcBr7&_signature=_02B4Z6wo00001ITDV5QAAIDAhMNXlvjTEFiEw1MAAEQp14"""
+form = dict(mix_mode = "1" ,mobile = "2e37313c253c33343c333d353737" , type = "3731" ,aid =  "1459",
+            is_sso = "false" , acount_sdk_source = "web" ,region = "DE" ,
+            language = "de" , did = "7283958054574507553", is6digit = "1" , fixed_mix_mode = "1" )
+
+
+requests.post(url,data=form)
