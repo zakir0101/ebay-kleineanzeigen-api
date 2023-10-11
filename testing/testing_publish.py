@@ -1,3 +1,5 @@
 import requests
 
-res = requests.get("http://ebay-kleinanzeigen-zakir.de:5000/publish/saleem/nachhilfe")
+# res = requests.get("http://publish-zakir.onrender.com/publish/saleem/nachhilfe")
+res = requests.get("http://publish-zakir.onrender.com/main")
+print(res)
