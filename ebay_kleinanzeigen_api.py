@@ -18,7 +18,7 @@ class EbayKleinanzeigenApi:
 
     def __init__(self, filename: str = "default.json", log: bool = True,
                  cookies: dict = None, save=False, mode: str = "client",
-                 keep_old_cookies=True, rotate_ip: bool = False,webshare_rotate = False):
+                 keep_old_cookies=True, rotate_ip: bool = False, webshare_rotate=False):
         # Test for custom configs
         self.rotate_ip = rotate_ip
         self._csrf = None
@@ -41,9 +41,9 @@ class EbayKleinanzeigenApi:
         self.webshare_proxies = None
         if webshare_rotate:
             self.webshare_proxies = {
-                    "http": "http://oeaariao-rotate:yoeq67r30rhb@p.webshare.io:80/",
-                    "https": "http://oeaariao-rotate:yoeq67r30rhb@p.webshare.io:80/"
-                }
+                "http": "http://oeaariao-rotate:yoeq67r30rhb@p.webshare.io:80/",
+                "https": "http://oeaariao-rotate:yoeq67r30rhb@p.webshare.io:80/"
+            }
 
         if rotate_ip:
             self.countries = json.loads(open('Countries.json', "r").read())[:8]
@@ -102,7 +102,9 @@ class EbayKleinanzeigenApi:
                 print("method should be either post or get")
             self.request_error = False
         except (SSLError, ProxyError, ConnectTimeout, Exception):
+            traceback.print_exc()
             print("max retries exceed with url - printend from server")
+
             self.request_error = True
         else:
             if "html" in type:
@@ -126,26 +128,25 @@ class EbayKleinanzeigenApi:
                     pass
 
     def request_url(self, url):
-        print("x-csrf-token befor :", self.cookies.request_cookies.get('CSRF-TOKEN'))
+        # print("x-csrf-token befor :", self.cookies.request_cookies.get('CSRF-TOKEN'))
 
         session = requests.Session()
         if self.active_proxy and self.rotate_ip:
             result = session.get(url, proxies={"http": self.active_proxy['proxy'],
-                                               "https": self.active_proxy['proxy']} ,
+                                               "https": self.active_proxy['proxy']},
                                  headers=self.headers,
                                  cookies=self.cookies.request_cookies)
 
         else:
 
             print("get request using proxies webshare")
-            result = session.get(url,  proxies=self.webshare_proxies,
+            result = session.get(url, proxies=self.webshare_proxies,
                                  headers=self.headers,
                                  cookies=self.cookies.request_cookies)
         self.response = result
         if result.status_code < 400:
             self.cookies.set_cookies(session)
         if self.log:
-
             print("URL = " + url)
             print("StatusCode = " + str(result.status_code))
             print("x-csrf-token after:", self.cookies.request_cookies.get('CSRF-TOKEN'))
@@ -172,7 +173,7 @@ class EbayKleinanzeigenApi:
     def request_url_post_with_proxy(self, url, body, type, session):
         if "jsondata" in type:
             result = session.post(url, proxies={"http": self.active_proxy['proxy'],
-                                                 "https": self.active_proxy['proxy']},
+                                                "https": self.active_proxy['proxy']},
                                   headers=self.headers,
                                   cookies=self.cookies.request_cookies, json=body)
         else:
@@ -185,13 +186,13 @@ class EbayKleinanzeigenApi:
     def request_url_post_without_proxy(self, url, body, type, session, files):
 
         if "jsondata" in type:
-            result = session.post(url, headers=self.headers,proxies=self.webshare_proxies,
+            result = session.post(url, headers=self.headers, proxies=self.webshare_proxies,
                                   cookies=self.cookies.request_cookies, json=body)
         elif "image" in type:
-            result = session.post(url, headers=self.headers,proxies=self.webshare_proxies,
+            result = session.post(url, headers=self.headers, proxies=self.webshare_proxies,
                                   cookies=self.cookies.request_cookies, data=body, files=files)
         else:
-            result = session.post(url, headers=self.headers,allow_redirects=True, proxies=self.webshare_proxies,
+            result = session.post(url, headers=self.headers, allow_redirects=True, proxies=self.webshare_proxies,
                                   cookies=self.cookies.request_cookies, data=body, )
         return result
 
@@ -284,7 +285,7 @@ class EbayKleinanzeigenApi:
         # self.set_bearer_token()
         print("""*************************** settting xsrf token *********************************""")
         url2 = "https://gateway.ebay-kleinanzeigen.de/user-trust/users/current/verifications/phone/required?action" \
-               "="+action+"&source=DESKTOP "
+               "=" + action + "&source=DESKTOP "
         self.make_request(url=url2, type="html", method="get")
         # self.headers['x-csrf-token'] = self.cookies.request_cookies.get('CSRF-TOKEN')
         self._csrf = self.cookies.request_cookies.get('CSRF-TOKEN')

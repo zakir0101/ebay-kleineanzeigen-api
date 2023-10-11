@@ -7,6 +7,8 @@ import uuid
 from print_dict import pd
 from urllib import parse
 from uuid import uuid4
+
+# from app import publish_saleem_nachhilfe
 from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
 from pathlib import Path
 import time
@@ -101,7 +103,7 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
                          suggestedCategoryId=sug_category_id,
                          trackingId=self.tracking_id,
                          priceAmount=price,
-                         priceType="Fixed",
+                         priceType="FIXED",
                          description=description,
                          buyNowEligible='false',
                          buyNow="",
@@ -415,7 +417,7 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
             return
         print("""*************************** checking add state *********************************""")
         active = False
-        while not active:
+        for i in range(20):
             response = self.check_add_state(add_id)
             print(response)
             if response.get("state") == "ACTIVE":
@@ -424,11 +426,12 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
         myadds: list = json.loads(open("myAdd.json", "r").read())
         myadds.append(adid.__str__().strip())
         open("myAdd.json", "w").write(json.dumps(myadds))
+        return active
 
 
 if __name__ == "__main__":
     id = 16
-    api = AnzeigeAbschickenApi(log=True, mode="server",filename="Cookies/adnan.json", keep_old_cookies=False, save=True, webshare_rotate=True)
+    api = AnzeigeAbschickenApi(log=True, mode="server",filename="Cookies/saleem.json", keep_old_cookies=False, save=True, webshare_rotate=True)
     # api.is_user_logged_in()
     print("login", api.login)
     if not api.login:
@@ -444,6 +447,7 @@ if __name__ == "__main__":
         "Nachhilfe Javascript", "Nachhilfe Informatik" "Logo erstellen",
         "Responsive Webseite Erstellen", "Webdesign Webseite Homepage, web scraping",
         "html css javascript react Angular Vue"]
+
     if id == 15:
         adId = ['2559357833']
         print("adId", adId)

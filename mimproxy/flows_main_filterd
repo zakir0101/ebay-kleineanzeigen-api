@@ -1,0 +1,721 @@
+8027:9:websocket;0:~8:response;1724:6:reason;0:,11:status_code;3:500#13:timestamp_end;18:1696742814.1105337^15:timestamp_start;18:1696742814.1045332^8:trailers;0:~7:content;455:<!doctype html><html lang="en"><head><title>HTTP Status 500 â€“ Internal Server Error</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 500 â€“ Internal Server Error</h1></body></html>,7:headers;1084:43:12:content-type,23:text/html;charset=utf-8,]24:14:content-length,3:455,]67:13:cache-control,46:no-cache, no-store, max-age=0, must-revalidate,]20:6:pragma,8:no-cache,]14:7:expires,1:0,]69:25:strict-transport-security,36:max-age=31536000 ; includeSubDomains,]37:16:x-xss-protection,13:1; mode=block,]26:15:x-frame-options,4:DENY,]36:22:x-content-type-options,7:nosniff,]25:16:content-language,2:en,]22:10:cneonction,5:close,]40:4:date,29:Sun, 08 Oct 2023 09:24:03 GMT,]608:10:set-cookie,589:ak_bmsc=D8902799764318B7F531AB89C737F511~000000000000000000000000000000~YAAQkqAkF8wt/AKLAQAA4tKZDhUhppUupCd35x+qJ4vrMuYlIx3NaeBk0SWbi9PvmC1eEOVRazPo/RizShU1BKjjoHmQVizbubxT3CVYPj3XNcxrGSefZQKQZrIfyLLsNUI80j7UOgyOpktP1q7LKdHO4YDkmtH9jVyEHQR76RJIKghSAk1Zp9mv6GGxhWa3xP8Yha04tc2V3KJZEQIZkEZNOEllCeibvSNjTRQdv/F/HvhjNFgZrozOGVCzZdQMBPyz8X/OTZkmc9AMnrWlsta4uG+CJXfa9eLP0wcl4v2RhW2oWPamg8aL56Tr0XDlBW93Apdenlan8/KTpWQvXaIVvO5kd20TWkYV53FqVptKvxeQousDigEzi+7ADawbr+f1LkgEVfyxQmSvh2aorRIR11y/U9E7jA==; Domain=.kleinanzeigen.de; Path=/; Expires=Sun, 08 Oct 2023 11:24:03 GMT; Max-Age=7200; HttpOnly,]]12:http_version;8:HTTP/2.0,}7:request;972:4:path;67:/api/featureflags/c7b013c7-a4de-40c5-b5a0-a1aa526fd3f51696422065298,9:authority;20:api.kleinanzeigen.de,6:scheme;5:https,6:method;3:GET,4:port;3:443#4:host;13:23.36.162.196;13:timestamp_end;18:1696742813.6703022^15:timestamp_start;18:1696742813.6683059^8:trailers;0:~7:content;0:,7:headers;640:68:11:x-ebayk-app,49:c7b013c7-a4de-40c5-b5a0-a1aa526fd3f51696422065298,]27:20:x-ebayk-userid-token,0:,]279:14:x-ebayk-groups,256:BAND-7832-Category-Alerts_B|BAND-7912-Revise-Buy-Now_B|BLN-19260-cis-login_B|BLN-24066_letzte_preis_A|BLN-24652_category_alert_B|backend_ab_bln01021_B|backend_ab_bln01022_A|backend_ab_bln13364_B|backend_ab_bln404_A|backend_ab_bln418_A|backend_ab_bln_abc2_A,]77:10:user-agent,59:Kleinanzeigen/15.9.0 (Android 11; google sdk_gphone_x86_64),]48:16:x-ecg-user-agent,24:ebayk-android-app-15.9.0,]31:18:x-ecg-user-version,6:15.9.0,]51:13:authorization,30:Basic YW5kcm9pZDpUYVI2MHBFdHRZ,]26:15:accept-encoding,4:gzip,]]12:http_version;8:HTTP/2.0,}6:backup;0:~17:timestamp_created;18:1696742813.6683059^7:comment;0:;8:metadata;0:}6:marked;0:;9:is_replay;0:~11:intercepted;5:false!11:server_conn;4508:3:via;0:~19:timestamp_tcp_setup;18:1696742813.1906588^7:address;23:13:23.36.162.196;3:443#]19:timestamp_tls_setup;18:1696742813.6443014^13:timestamp_end;16:1696742902.52051^15:timestamp_start;18:1696742813.1886575^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;3936:2204:-----BEGIN CERTIFICATE-----
+MIIGLzCCBRegAwIBAgIQDSU/O9zDWqrObJPkT5w3BzANBgkqhkiG9w0BAQsFADBZ
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTMwMQYDVQQDEypE
+aWdpQ2VydCBHbG9iYWwgRzIgVExTIFJTQSBTSEEyNTYgMjAyMCBDQTEwHhcNMjMw
+OTE0MDAwMDAwWhcNMjQxMDE0MjM1OTU5WjBtMQswCQYDVQQGEwJFUzESMBAGA1UE
+BxMJQmFyY2Vsb25hMSswKQYDVQQKDCJBREVWSU5UQSBQUk9EVUNUUyAmIFRFQ0hO
+T0xPR1kgUy5MMR0wGwYDVQQDExRhcGkua2xlaW5hbnplaWdlbi5kZTBZMBMGByqG
+SM49AgEGCCqGSM49AwEHA0IABM/y5etKRC6w0ooMfRiCk1bzc2565VDI9lWuR6m6
+5S8GLE4zlVpLmhGVSHpdQ9PlBAD0GkwsPDa4DRA0AldTUjGjggOoMIIDpDAfBgNV
+HSMEGDAWgBR0hYDAZsffN97PvSk3qgMdvu3NFzAdBgNVHQ4EFgQULtM3KycsRwBu
+p0Hu0r7J42gmymgwOQYDVR0RBDIwMIIUYXBpLmtsZWluYW56ZWlnZW4uZGWCGGdh
+dGV3YXkua2xlaW5hbnplaWdlbi5kZTA+BgNVHSAENzA1MDMGBmeBDAECAjApMCcG
+CCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwDgYDVR0PAQH/
+BAQDAgOIMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATCBnwYDVR0fBIGX
+MIGUMEigRqBEhkJodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9i
+YWxHMlRMU1JTQVNIQTI1NjIwMjBDQTEtMS5jcmwwSKBGoESGQmh0dHA6Ly9jcmw0
+LmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENB
+MS0xLmNybDCBhwYIKwYBBQUHAQEEezB5MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5kaWdpY2VydC5jb20wUQYIKwYBBQUHMAKGRWh0dHA6Ly9jYWNlcnRzLmRpZ2lj
+ZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENBMS0xLmNy
+dDAMBgNVHRMBAf8EAjAAMIIBfAYKKwYBBAHWeQIEAgSCAWwEggFoAWYAdgDuzdBk
+1dsazsVct520zROiModGfLzs3sNRSFlGcR+1mwAAAYqUFM5rAAAEAwBHMEUCIHg8
+rrorqut3gRHraiXM10o1QOKm9FXcPxIjuCGjTFbYAiEA9HYYjGY/8YzcdgdGdpjR
+/CF+rCpE04lfisrxqRbCUuIAdQBIsONr2qZHNA/lagL6nTDrHFIBy1bdLIHZu7+r
+OdiEcwAAAYqUFM6GAAAEAwBGMEQCIHJ1AC6T/qsKXomd2mhZ2yt8h6ZY8PkEE6gu
+vHTAHRlBAiAk8hZ8B1pUTmYRgmPIF2XdoKpBtXsOJFPSrcIhGi+jTAB1ANq2v2s/
+tbYin5vCu1xr6HCRcWy7UYSFNL2kPTBI1/urAAABipQUzk4AAAQDAEYwRAIgWpnL
+XpUgLxtlgGuCwrbrRKgXSx3AtJnwudt7ZACyUoUCIBm7R77Vd/eIE94S6vl63oXf
+KgLkeZzAYi1PZ8sdZLqfMA0GCSqGSIb3DQEBCwUAA4IBAQCscRSaw6FOU5ih1kQz
+Y7wSbabaRn5zHemkyNimWqEXuMaUD2YBGt/j5G1TMJqlf7HJ2COEW8f9dYSAzRiY
+VUgViznc8C0a0DrunA3k6u8A86qwt+jGqy37XamDtcWVB3CrP3bwigrkQj6y6qfz
+2/xwVWzflBW2DiwdbXk+22E5m+yeFwKqROyp+A/+ydILntBDs2LmvOG7HkVvJtvM
+9iAHcArzkum5Ln80PBubD9+9KZTBvVFYQt0rHp9tZm6898+BRx22rf10NzaOB+qj
+t8az3dnl/9axoO/ZLlhuSbAjjV8GKtsYARVg0JBN196Ar8lUOiA2FcH8Pv6xRSss
++k5p
+-----END CERTIFICATE-----
+,1720:-----BEGIN CERTIFICATE-----
+MIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh
+bCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV
+cNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy
+FuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc
+3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8
+osicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT
+zGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud
+EwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G
+A1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd
+BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG
+NGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH
+Mi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29t
+L0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDA9BgNVHSAENjA0MAsGCWCGSAGG/WwC
+ATAHBgVngQwBATAIBgZngQwBAgEwCAYGZ4EMAQICMAgGBmeBDAECAzANBgkqhkiG
+9w0BAQsFAAOCAQEAkPFwyyiXaZd8dP3A+iZ7U6utzWX9upwGnIrXWkOH7U1MVl+t
+wcW1BSAuWdH/SvWgKtiwla3JLko716f2b4gp/DA/JIS7w7d7kwcsr4drdjPtAFVS
+slme5LnQ89/nD/7d+MS5EHKBCQRfz5eeLjJ1js+aWNJXMX43AYGyZm0pGrFmCW3R
+bpD0ufovARTFXFZkAdl9h6g4U5+LXUZtXMYnhIHUfoyMo5tS58aI7Dd8KvvwVVo4
+chDYABPPTHPbqjc1qCmBaZx2vN4Ye5DUys/vZwP9BFohFrH/6j/f3IL16/RZkiMN
+JCqVJUzKoZHm1Lesh3Sz8W2jmdv51b2EQJ8HmA==
+-----END CERTIFICATE-----
+,]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:8b039754-72fc-4c77-904e-53e94ad44ad4;8:sockname;27:15:100.127.255.249;5:59936#]8:peername;23:13:23.36.162.196;3:443#]}11:client_conn;518:10:proxy_mode;7:regular;8:mitmcert;0:~19:timestamp_tls_setup;18:1696742813.6533031^13:timestamp_end;18:1696742902.4234166^15:timestamp_start;17:1696742813.182677^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;0:]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:0a4814f5-02d8-4d54-9b5a-cd05476922c5;8:sockname;25:14:192.168.56.149;4:8080#]8:peername;26:14:192.168.56.149;5:59935#]}5:error;0:~2:id;36:8cd053e9-b625-42d7-8d41-721e4dd527d0;4:type;4:http;7:version;2:20#}10485:9:websocket;0:~8:response;4242:6:reason;0:,11:status_code;3:200#13:timestamp_end;18:1696742814.1075408^15:timestamp_start;18:1696742814.1035304^8:trailers;0:~7:content;2920:‹     ÍZínÇ}•)Qmªñ~ÌÌ~0
+JQ$YŸM³3wÈ­–»ÂîÒ²dèƒÈŸ<ƒùŸÞ¤OÒ3””P”0eqIîÇ™;çž{î}7°º×ƒõwƒšÞöûe}>XŒûþ¢[}Q>?¯¨¬u}Måˆêç–Ö¥þƒÀÙ¿_è½ˆžuå5½á³¾œP×ëÉÅ‹(É“T¥¡À_2XtT¹ÿíìág÷·±[[z;X×eO“î˜Úc¬‹û#ƒõïß´ÝµxÂX%‰Œ””î­/û
+_ûò\³ýÓ«0dûzZtz:¢6ðÿÕÍÏµø~9™ø˜ÊÉèL3ˆÞDÁEÛX®mÌ~Ô$ð—(«”à.6Äef2ž§6ã.'ar
+srâïí´¢þñÝìg»öýó—ÇÛ¸tÕÝ—M}¨'þŽOÆXœJ×–;]]3Î¾£q=ÖÓŽjVPÉN¨®	·€Ÿ^´¥¡á¤™Öý`=RwÎ®.ü‰N·6w¿ÙÝúúÇáÁÑ·‡gø~1½:l.·j]TÈpþŽ°ŽS¬/=ÖL[ƒ·ß†‡G‡ÿÀ	N?Ì–¼¢vhŒ¿äÝuŽOv_Ï¶ï×–BÆaŒ‹Þ/ÅÁÍÏÖŒñÇ4Ò¸&VSæô¸mµeqÂ®›ªÂ×WY‰Ô©…JåY¡#.EóÂ	Ë­Ir†’%Wâ°$Km§ÍØCÏÙÆômOã©¥GÈËè÷·†§[?nž7ÿxà•Tó{`»©,!dØö=žh¬Ïñ<Ûº@þaVÜfÍ\“È¸J€»49‚?”)OŠB“f…•ñ’Ü|¬g1Â±UËÉ"Ð0ÿv„÷íô38pNq‹÷¾Wß|ÀÍWOÇÄ¶Ûç"_ÝÈÀMò¨àÖ9€ÖÄóDÇ\& c'ãTÄÑ’èžÞ†2‚NªýµWT_ê¶«¨ zîì‰Š’©ôïW¯±%;v&×ør´ÆN{Ð&èózZV>A&”6ªÐ\¤”s™
+ §x…Æ:¡2ËrúäÜº˜¶#þªi/šÉ„ZO)Çº£K]/"/‘¬‚ÿ¥)Edjúêû«g› G
+:ÿ§6ç³€g"V„ZQ.²ÈnRP·ÔYÁstQ¥L¶dÌ?N§7Æß¨B¬<â˜(~üo“ÌgN£JŠpúƒ¦(+bÚ"r VD;7AŽ”©Hñ$s
+üm‰g"ÎxJçO	šoI´7ôÕ]`Wºï«r¶¨ùÄâZÊyp_7•KØ^se«u¶Qö=12¶Ñ–ýŸØ_Î4ØÝïd3þëŠÈË,YÇÚàM‰—ÏŒ‹y–ë(Q©#åÔ’È6­m½tä¯!×’3É²SúÔ}°Ñ“‹p9ŸG·[=%¶Ù c6){Ä+íÜ´>÷2yUÔM Ì²Ðsz˜xÑ9/Ò,âÆ9*”	C‘K¢¾A-‚D~HÓó›Uõë'Gä¹¯Ýîsèë²îQíP[tý„aÏ~Ñé0,ŠÂ Šö•ÌÙx¾bÑŠ+`L`ŒH£H®Š0äÒÊˆk%"žh(×,wi”-Ë8wšK°Ùt—¥Ïûb]-ðÍ—§s‘Ï3Îî9i¶C“š:vjÆ-•E_"âÙ%•7?±Ýuå›qƒBp4ÅJ±ï|±VûâoÕ®\ \F.Í2^D)X?‚çÂ:ž…‘ÔN$iX,›c?Í=gmSv¶iÝâ’Dñ‚ŽÿÒÚF
+{¼ßC[ZÝ¡>º¦
+‰v¯„	ÑbE éWDd@p§2Ò¥Èµ`üÜXðO‰r•D‰]VÍ{Ô][RçÍÄÿIÙM'†ŒE¸<–5Oodrõi5ÒxššíÓÇÙ¦Êud4/vêóºég™l•°÷d†°Ž#¡¹Êñ"ÃNA’8žRœi[ÒK«‹þ vñŠçq¾ò©%\ñ Ú™b›jvÖÂåk|>>|VZåðUÊZÁuœ:.U‘ò‚r íŒJ¤Š]ž/kÄx­]só±…›À¶!>6PsÀÄ|DøqþÍÉÖæu¾”Èæå6ÉÞI§ì¨*ß€È·[–{{l˜Iˆ1É•ø*Õzk2‹ÒDº"Ëš/K¥¯!æ˜¸ÍIõéÕH"Ÿ'“3Ý¢2ê¯Ù°è[Ø¥ð€wƒ|zÔ–#XœÐzwIãUÝ_ggrgœáùÆ¡îÀ)K’Åqd-%ÞIXRP~:•Uî¬²EŸ€²y`;žR‡Îlïæ£¯š@ç-˜|Õ ×i#¥N"[c3@BRM£>o"A=+¾ƒn€—òŸËWè¡àô÷’#ÿó¯³ôt½cœÞ¶å¤c”çU!D!jÎ-Zcqø6~.ÙÕV³¦é W„4Rb¡ÓPrr!è:Í×)y…žË<‹ðw˜ Xd¶w»ÀÓÃª÷¥ó´Û|È#O®8Jæ—å¶Ø÷õ',Òkf4ê¡”½e‘ÄKÂÌªY2’A$ü[á¸("8]°\ ÂÓ‚+$Í,·(¿hµH>nÚ^³;O 4zq	’''Mây&ß|6d/I×°ya©Ÿž—u}åu&WÍ©	R£2Ò™áÖ&°_r“ó,K*"—	cÝÆËæÎ_Œ¯ïÁR¯|‰ö ØÓ'‡t2oéÞ•=/›ähÜt„²´Eö\‘[R¤Né4×/b…ÆE„>FN6ÅKu]ù’tý¨…±£Q¤-B-ˆÀ§ç±ÞêºëÒ÷ ø)—7MÍv÷¶†ë,bhó^—4.t‰x63þª9ío>¢U³âRÌœ—œŒÍã¹¯ú#+y!_ŠT¦:MÛ%—b±üÙö¬ßžSGÖ#~r</½‹uŸ~wn~FÙVG¸½Þr$ÿßD£ë²/Ð¡_U´88ˆó”Ð¹Ë…À.ÈŒÏ°¹æ¹ŒŠ$
+-¶…YúOš½(œ¿ŸXÜÉÓÛÑ¼	‰sóuþËYi«/[ÇíöæÃÍOÄöWŒúÄ	f0RL#pR¡w]t84ªÒL‰„(†`Ì–u]>Y‹¾ÝmS?~÷/TŒÆóÜsfÆeÑ¬±9¢_c‘<šuBV)G³$È‘dÖF<té8,¸6‰äa®4M£Ø¸•ªþ#xô3e¹ââ÷f×Ï< ¢ysë œ7“‹
+Ó“0 ÷¯§uÕ\°ÛÏØé”S,ŽU Bvù–È*«Š D/Å  7qŸ=Q ›¼/L+ÙHY)–û³1j‘™»M[¶>72‹GŠòÉ‘}œÏ›1~t	ãNEyŽbê†ŽF˜Âzôk¨ÀÆ8§k¬ƒ1ÀðAE£~Åu&À˜‰‹Ôp›×M%¥EÌaÁ§Y.¢¼H—5Nµnïß}ú¤7“/Î—v×ã“ßN®§#†×›#bµÏ£iE˜s
+rœV„\…pÑVÊs	±)EÓ=—”-ÛÒxî[­›¶>èù….êóæÑÁÁÖÉæîpÿñ¼:hóDÿªÄl’*’ëÿÁuIÃ u¬cB›N€W¦	ÝfH]Qd(´Ë
+˜ïÍfê0û·‡Üÿ¸q‡yÍ‡”þ[ nBçgêÎ¦­·³ÐZ»-G½o°
+[§yæ©ÌsDn*-¬\‡©—"ËcJÄZE,Ý‘Öç¼õ_Ž[dœò‘2ùâÓ¢˜&­t×¿*é’ì®ïÅ´éï×º^î›‹MÝÓ¨i¯ü,su[Õôë± Ÿ=»læâ-ªû=ºº„RžøþØÝÑ6›]îýðK7Z--  ,7:headers;1136:50:12:content-type,30:application/json;charset=UTF-8,]36:22:x-content-type-options,7:nosniff,]37:16:x-xss-protection,13:1; mode=block,]49:23:content-security-policy,18:default-src='self',]51:25:x-content-security-policy,18:default-src='self',]39:13:cache-control,18:no-store, no-cache,]69:25:strict-transport-security,36:max-age=31536000 ; includeSubDomains,]26:15:x-frame-options,4:DENY,]27:16:content-encoding,4:gzip,]25:14:content-length,4:2920,]26:4:vary,15:Accept-Encoding,]40:4:date,29:Sun, 08 Oct 2023 09:24:03 GMT,]608:10:set-cookie,589:ak_bmsc=C68542243A0B74CDD5CE9ADC235BC5A3~000000000000000000000000000000~YAAQkqAkF8ot/AKLAQAA0dKZDhXECvvxkrylcHq/y8jneonidyauzXjQypSxzA7r3QTLrix3oZ8Y7JZqweRezQDxtbYTaUhyOP0QqALOutGTF9i1f3qHAM8DItr7Ot6WeRBUw65ajk3LNm7KfXT3qPfY5YfTsNyBCIMF7OsZC4h9v5G7o+oerq2JIloNzjRJyNPx6+VvX6LNU2TFLfbyrMgr527BNdo1j3JsrptnYotKrNS7/PwMsapKfbzhfpB/uUpoXZtBqRDCEg9mHVoHmPNBMb4u/bdPqAU2lNbCs3XM0VBIcb/960LY2s9LcOuiny+hQLuPwrWFBmYD6Vac2SZIiDG3VglOfKuZ3uSdq4qMSFm7aUfcqCRghmoWUfFVP/ONX4kDgdLnF1+GhfiNiaPB/kDmmgoijw==; Domain=.kleinanzeigen.de; Path=/; Expires=Sun, 08 Oct 2023 11:24:03 GMT; Max-Age=7200; HttpOnly,]]12:http_version;8:HTTP/2.0,}7:request;912:4:path;9:/api/feed,9:authority;20:api.kleinanzeigen.de,6:scheme;5:https,6:method;3:GET,4:port;3:443#4:host;13:23.36.162.196;13:timestamp_end;17:1696742813.812312^15:timestamp_start;18:1696742813.8093085^8:trailers;0:~7:content;0:,7:headers;640:68:11:x-ebayk-app,49:c7b013c7-a4de-40c5-b5a0-a1aa526fd3f51696422065298,]27:20:x-ebayk-userid-token,0:,]279:14:x-ebayk-groups,256:BAND-7832-Category-Alerts_B|BAND-7912-Revise-Buy-Now_B|BLN-19260-cis-login_B|BLN-24066_letzte_preis_A|BLN-24652_category_alert_B|backend_ab_bln01021_B|backend_ab_bln01022_A|backend_ab_bln13364_B|backend_ab_bln404_A|backend_ab_bln418_A|backend_ab_bln_abc2_A,]77:10:user-agent,59:Kleinanzeigen/15.9.0 (Android 11; google sdk_gphone_x86_64),]48:16:x-ecg-user-agent,24:ebayk-android-app-15.9.0,]31:18:x-ecg-user-version,6:15.9.0,]51:13:authorization,30:Basic YW5kcm9pZDpUYVI2MHBFdHRZ,]26:15:accept-encoding,4:gzip,]]12:http_version;8:HTTP/2.0,}6:backup;0:~17:timestamp_created;18:1696742813.8093085^7:comment;0:;8:metadata;0:}6:marked;0:;9:is_replay;0:~11:intercepted;5:false!11:server_conn;4508:3:via;0:~19:timestamp_tcp_setup;18:1696742813.1906588^7:address;23:13:23.36.162.196;3:443#]19:timestamp_tls_setup;18:1696742813.6443014^13:timestamp_end;16:1696742902.52051^15:timestamp_start;18:1696742813.1886575^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;3936:2204:-----BEGIN CERTIFICATE-----
+MIIGLzCCBRegAwIBAgIQDSU/O9zDWqrObJPkT5w3BzANBgkqhkiG9w0BAQsFADBZ
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTMwMQYDVQQDEypE
+aWdpQ2VydCBHbG9iYWwgRzIgVExTIFJTQSBTSEEyNTYgMjAyMCBDQTEwHhcNMjMw
+OTE0MDAwMDAwWhcNMjQxMDE0MjM1OTU5WjBtMQswCQYDVQQGEwJFUzESMBAGA1UE
+BxMJQmFyY2Vsb25hMSswKQYDVQQKDCJBREVWSU5UQSBQUk9EVUNUUyAmIFRFQ0hO
+T0xPR1kgUy5MMR0wGwYDVQQDExRhcGkua2xlaW5hbnplaWdlbi5kZTBZMBMGByqG
+SM49AgEGCCqGSM49AwEHA0IABM/y5etKRC6w0ooMfRiCk1bzc2565VDI9lWuR6m6
+5S8GLE4zlVpLmhGVSHpdQ9PlBAD0GkwsPDa4DRA0AldTUjGjggOoMIIDpDAfBgNV
+HSMEGDAWgBR0hYDAZsffN97PvSk3qgMdvu3NFzAdBgNVHQ4EFgQULtM3KycsRwBu
+p0Hu0r7J42gmymgwOQYDVR0RBDIwMIIUYXBpLmtsZWluYW56ZWlnZW4uZGWCGGdh
+dGV3YXkua2xlaW5hbnplaWdlbi5kZTA+BgNVHSAENzA1MDMGBmeBDAECAjApMCcG
+CCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwDgYDVR0PAQH/
+BAQDAgOIMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATCBnwYDVR0fBIGX
+MIGUMEigRqBEhkJodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9i
+YWxHMlRMU1JTQVNIQTI1NjIwMjBDQTEtMS5jcmwwSKBGoESGQmh0dHA6Ly9jcmw0
+LmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENB
+MS0xLmNybDCBhwYIKwYBBQUHAQEEezB5MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5kaWdpY2VydC5jb20wUQYIKwYBBQUHMAKGRWh0dHA6Ly9jYWNlcnRzLmRpZ2lj
+ZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENBMS0xLmNy
+dDAMBgNVHRMBAf8EAjAAMIIBfAYKKwYBBAHWeQIEAgSCAWwEggFoAWYAdgDuzdBk
+1dsazsVct520zROiModGfLzs3sNRSFlGcR+1mwAAAYqUFM5rAAAEAwBHMEUCIHg8
+rrorqut3gRHraiXM10o1QOKm9FXcPxIjuCGjTFbYAiEA9HYYjGY/8YzcdgdGdpjR
+/CF+rCpE04lfisrxqRbCUuIAdQBIsONr2qZHNA/lagL6nTDrHFIBy1bdLIHZu7+r
+OdiEcwAAAYqUFM6GAAAEAwBGMEQCIHJ1AC6T/qsKXomd2mhZ2yt8h6ZY8PkEE6gu
+vHTAHRlBAiAk8hZ8B1pUTmYRgmPIF2XdoKpBtXsOJFPSrcIhGi+jTAB1ANq2v2s/
+tbYin5vCu1xr6HCRcWy7UYSFNL2kPTBI1/urAAABipQUzk4AAAQDAEYwRAIgWpnL
+XpUgLxtlgGuCwrbrRKgXSx3AtJnwudt7ZACyUoUCIBm7R77Vd/eIE94S6vl63oXf
+KgLkeZzAYi1PZ8sdZLqfMA0GCSqGSIb3DQEBCwUAA4IBAQCscRSaw6FOU5ih1kQz
+Y7wSbabaRn5zHemkyNimWqEXuMaUD2YBGt/j5G1TMJqlf7HJ2COEW8f9dYSAzRiY
+VUgViznc8C0a0DrunA3k6u8A86qwt+jGqy37XamDtcWVB3CrP3bwigrkQj6y6qfz
+2/xwVWzflBW2DiwdbXk+22E5m+yeFwKqROyp+A/+ydILntBDs2LmvOG7HkVvJtvM
+9iAHcArzkum5Ln80PBubD9+9KZTBvVFYQt0rHp9tZm6898+BRx22rf10NzaOB+qj
+t8az3dnl/9axoO/ZLlhuSbAjjV8GKtsYARVg0JBN196Ar8lUOiA2FcH8Pv6xRSss
++k5p
+-----END CERTIFICATE-----
+,1720:-----BEGIN CERTIFICATE-----
+MIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh
+bCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV
+cNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy
+FuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc
+3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8
+osicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT
+zGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud
+EwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G
+A1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd
+BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG
+NGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH
+Mi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29t
+L0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDA9BgNVHSAENjA0MAsGCWCGSAGG/WwC
+ATAHBgVngQwBATAIBgZngQwBAgEwCAYGZ4EMAQICMAgGBmeBDAECAzANBgkqhkiG
+9w0BAQsFAAOCAQEAkPFwyyiXaZd8dP3A+iZ7U6utzWX9upwGnIrXWkOH7U1MVl+t
+wcW1BSAuWdH/SvWgKtiwla3JLko716f2b4gp/DA/JIS7w7d7kwcsr4drdjPtAFVS
+slme5LnQ89/nD/7d+MS5EHKBCQRfz5eeLjJ1js+aWNJXMX43AYGyZm0pGrFmCW3R
+bpD0ufovARTFXFZkAdl9h6g4U5+LXUZtXMYnhIHUfoyMo5tS58aI7Dd8KvvwVVo4
+chDYABPPTHPbqjc1qCmBaZx2vN4Ye5DUys/vZwP9BFohFrH/6j/f3IL16/RZkiMN
+JCqVJUzKoZHm1Lesh3Sz8W2jmdv51b2EQJ8HmA==
+-----END CERTIFICATE-----
+,]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:8b039754-72fc-4c77-904e-53e94ad44ad4;8:sockname;27:15:100.127.255.249;5:59936#]8:peername;23:13:23.36.162.196;3:443#]}11:client_conn;518:10:proxy_mode;7:regular;8:mitmcert;0:~19:timestamp_tls_setup;18:1696742813.6533031^13:timestamp_end;18:1696742902.4234166^15:timestamp_start;17:1696742813.182677^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;0:]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:0a4814f5-02d8-4d54-9b5a-cd05476922c5;8:sockname;25:14:192.168.56.149;4:8080#]8:peername;26:14:192.168.56.149;5:59935#]}5:error;0:~2:id;36:801d4535-9357-472c-8fe9-d97aca2eb8d9;4:type;4:http;7:version;2:20#}11511:9:websocket;0:~8:response;5256:6:reason;0:,11:status_code;3:200#13:timestamp_end;18:1696742814.3086505^15:timestamp_start;17:1696742814.304651^8:trailers;0:~7:content;3903:‹     Í]ÛrÛHý•jkŸdÇ¤ìøòæ»wg]±Æ³5[[,JjIQ¢–{ìT~c¿ ß§yÓíé¦(±é›’ÕœyI%©@£4€¦¾6¿ŽâxvòáÃóóó.ëº/=ß"oà±~4ƒd¶Û&¢ÞˆMÜ=7fÃ |ùðd}[üÝcQóäksêNXódk5û<„¬ßy™ñgâý‚±]Öîº3o7š±Þî“µ›2µ›1µ{žrÇ9j5£^ ¨sŸÜßwŸø»]oÚßýéô_g—>›°iü·k?èºþƒ ¶šO®Ÿàu_›Ùóš'ÿþÚôú;©h_3@óÔ÷Yã6{×´ù­Õôƒžë{¯¬Ø›Žñìÿ´´oúìöF]7„œî ŽFž?`åo£þo„Ä3¬ë4Þñú\Ñ7÷÷ö¸X#7Ú¸c¶%ÝÕ"¬p×„89¨¬æ7ê‘›=S©—<‰ç‹ÛwÎ‚ ._‚S@[`o,Ñ•õÏ©#ýRˆê©”Bl«šJâ› ‹!Tl[Ë43ÏgÎæ˜n@,†RrxóØmJ ¾6L¬gôštÙ(`a¹ÞÁbQS’ù”Ä¼L]m™Wî(]Ö×q/póïÀA„_¹À5rHqÄÁ‚}çK ¿ªYƒŸ‰‘þkEf|Ú{Õ%q:|{”ÛÔBþ~¶7ê]˜ö½½§#—M‡,t>'ñë FöÊ’¡F	
+3;ŽæßùC„Œ¯Ž}HŠó…!ð¸q‚àã\xlÅ>ó¢8sÏ•£„DJZ‚É¡Î>"#Ó/ÁhúìBç.èjím‰†,;“	äHb“<Xoˆ¤a‡N¤~a^ÌB5*Ø÷†ÂÂìo9ÝH#²2ÝøÇD¬µ\'œj•Ï?MÎ¯Ð§óËuù lp ÌeU½ƒR´uÌÝ¥>¯“,Å:>‘’mn½Ø²ÎØM´Ç%,j'“è9%Z¨Òû²XÇ¤ºb!–tÁ“þkä&ÃOq;ÜŸ&‘ïNû‘'›‡	™¤%±É°w·:dÎ'ü8žLÊÍ)EO!ÊCÌ|æÏ¿Ç¯iP1.„uLf!×ì™…]VP+y¤SÃ`Ò„	Ì"NXoÌ(9Ö9Žë”`þ°×óïKórì‘rÜ`3TÚÝ7óïI„Tö5™à$ž„Ù™à\ÞÛöÞå›ëiU¿b=lÜq|m¼“›8ó«UØç,×íRí=ò÷óä5:ÐF³ ÔÍæ.Ãk0›6i6ë%?
+ÿ½ÁX¶xë¬S¬VQ(>4CerMza%Zµ–ÊTâÔÇF|¦;Óª7Pú±EÈÑç?²†ì#ÒZxê»í2Ô¶™'³·3·ûy1’xç•Xqã%HèÊ“†Ý‡ç*ê–å˜<ÁÜ%~ìMXßs”–ÇqL½q¹P\ì“>T„®*Yòla•`˜à[N=ÉÊ×m’žãCç.‰¼±®tt;ÿCûÃ…-ˆø¿ÖŽÀnìcoRº#ÔD#æ\>áÈRn7ˆ5XAM,AÁ!ïS|w¼Ü6æaØ›zºý,Ñ¤ÑxEU‡4d ª9™ØÔŠÈóe–L”›Ð¢²…ZÖfámÛEªFå¶ºr'žï1oGÊ5³€·D„e.)TV©|a1[ ³—"Põ*2[üü´vVÑ&Í†‹¹Éc”Eû•"2¯G¤X¢1 ‡Hš“ýÒd¤©UsøJ†…i	¬Ò	6ŠÝ˜W¦ËmUð‚„6À{!¹)gˆ7ª}”¢SÃ@²·(îÛ G´´§™yqÈäB0öWHV7Üìd‰%]š´cp–‡/šêcÏ=âŠÂüâq:åéõ:NÖe~ù^‘ðóÞ€²¯"3ù¼¡VÎ·3Î.y@Èò
+©,;4kÅÑ­F9kÛÕ
+r]…ó>h¡H#7åë™Ñ´7A·û‚ýô–XµÊÊTã2ÂüBèXIè¡ö‹î¹f2¼ø‘ê½äÒñ­¹~BÆîË(BÔè„`BW¹P×Àû>÷²EuÇ±÷äÅ®¾\ @d“æÔFk`‘}ƒÎ’Ë» 12åí„ñ'æþíM=cEÝBÚ,È±HoPÃR‘f&Ø)ß¢ÎO§±÷ßÄ‹ë\{Ÿb­ÃÚÌÐèºÍ]Ð‡¯êºIùJÈ°ìfŸLÌsÕ4ž¼žÎÑJU‰¤9Útw‘1ùš™‚‡È·rŠÔ&KK¼Ÿãœ»“™¶¢$ Ø´yp¬“»µÈó1FŒÐïçµ½r[ï„ó  Œq$ç,ô>$uÍh)ë‚q‡î%ó2XGän];[]drëfe[ÎŽö¶¨GòõZ7ÝJý¶2uÜrÁ_ùŽ3·ÏÒZ¹épëXŽŠ[W-t\:KXT9NžÍÿƒµ÷êfÜ’¾ü‚L4zÆpô+;ô}²ÌXlØ:•Í°HÙx_#ªâJÈrµI“¶Ãœûf³^u3‹sÌ_ÃoJd¦W‡vš7˜~ŠÙï1/—k,ê-Ô ÛrÄ¢[¯œ~:©Âtgœã#2¯A*»TÎ±UÜ#º–@ÃNd¼þ%s?"wñ'$dÈ>y½‘¦U™"Áú
+k€mÙPè³ßCoä»ƒ**ƒ4Àµ¬l²
+Í³ª°\Àg˜,†¬›{ÕâÈ&‚
+È6ó,z4Ÿ£A®Iþe˜jí”	Ö•‡n‹æÑ9Œê¹”¬vµ„S²b‹r»áG‰ò4p©QÚ7»èXiÂ.~f˜X%ýð-:µ¨Qi­«€«e²üÆ¯UàX†™`XvV›l4ÝX¨³ÜÆ¯…=Ff¡ÒTMÝ“8UFQñäé……‰‡Þ6s¸\ß±7V`ãKaÑÌC]Gòqþ#Ã˜àTÖ³½O²*"Ú›¯ßJ¬j’‘·-°K…¦jI–?åBD
+ºQy`Z"Të¤|&†2pO?ESÀ©žOiÁÚãNvÝÒ‡Å»£êùÃ37Áq<mô8÷aÐOÐÍÒ•@„šÙ‚Šee:I†bÑ·¢E-gÑÍ‚{xvý
+5¼¬“Ò@˜UÂYÉ5úi)p=ÃéIèEÝ±	d‘‰j…¬/£½†¢ò¢#‚â¾ï÷0òªÝÍSAN×8_š¨àBè‹ß¼±°´;Ì±:Ÿ12ýMëW8–ÏŸÉð:$!;À÷!ïaÝr‡(¡jà×&³³‡àÕÃ¸Yè<`æ>yN{#£i¤4X€•	idEŽby'ÉùÑ7Â`\Ð˜ÂòåXÒµ!„Ê“—ÊÞ'M
+|Ä¸óÚu.Áîé	™²ûzäT`FÕj,Èe„Æ%²ÄÔ2ºgçŒ…¸…\¾8Ù¨uiñÞ /[ØNÔ7JžDª¡TïÐCn¿”«±„9¨j•ï8í¡Ù.þ;(ÌM’žf%G€WæITï¤4eð”YŸ`Éº? Oë©èèªFe#ÌØ”+,…ƒÿql›ÌBx!'µÎ¾ô¥©‘H—m>¾™úIÞa¯Ì9
+kÙü¸q[ä‘~©ñÜ­×©<ÅÔ®ódª·ÐyuÞëÕ:yÊ¼æ\¸v­æÜÞëh
+éè’"ê‘yy±á”ØÌåFå«N“¾87øö`¹{8xÇ%r­]ú‘·[Öuí‡dU³Øœv./ËÙ/R4ÞqÔª(l?¶MFª+|‘«œý%Â¸Öí}2÷çe‡|a×mÍGGÖÂÁƒEMÃ8ëÖ!O ”VÎû=¸&Gød
+Ÿ.×vÍ‡QºöI¹Åçš\ò)g[Bg×>$ƒègLÉwƒ`¬qç2ÌÃ…xH ûs¯ .í.QFñØyñ3>ìYn÷ç;Y!™gæy’H©¹MW:n×gqä„kºÃvŠû_VhóÌ‹	l¥/é<:^Ÿi<vç¯pÆ¶èïEÝŸ§Gü”Æ`Ç9 q¾m›,d¬—ÖÑ­Ø©[ÍEb¡4:ñåçÊó'êìBÐìo58(ˆ‘¦”Fµ¤Êw.^$¾Z‡ƒBè²K3d	cšœ7˜>ÿ‚L¤z/¥=É×Ìé/QŠÎ/e`ê¸Ë¦&ŠaSî/‹D(„¨#r.é½ˆž&Jå05°Jý¯ø'´S+åZOðÁâ‡çÝ§ê]jA-®|òUÈ‘—ŠþÞ›Ø{å—£Às†3Ï/™„¥ãüBc2Ž3 yŽÉôF°âáú[˜ðOÅk"•mž{Òè×ŒV‚ýêúŽRö2<U ¸I%ƒ>w¡—€^DGcñý"L–àã‡±Æ$D0Î<™j‰ÕáËM^ÞÖ”Î€Ã;æÿËª7Pê²ÛÕ*òØô¬/\8Ã)ûÖÅo°8.÷6)ÌKðø? ·ÁuÂÃ>ó¦ší[ÀÕÀó™h¦ß*(WuS¯dé‡üW4ø4Ú•PuðKÄ=ÁrÕ® upJ[ø–1n`cpE“^wF¿EÂó\îÇñ;$BÂ:Ø'óÃ,þ”ë:ëŽ®ïc·ìyßŽzä&1(uÄÊ@ð3Ÿv	ùå	¬m¨»ºBs¿ºÄ«ÖVù6ªHŸ™D7/{GãÑó´úS!}$³GD–Yµ—
+ ùUéŠZëM9'{`Ù7þ„otl*é<o„Ò)¾¬IsfM¡°¢¸ŽuhÃß(÷øªï¾ÇU³o@ðuH@¦2"Eç¸ºƒ	dºƒ3lœ“IÿÄMÅ_®ZÁêà˜<û‰ ‚³)àêà™Ž¸³z®Ä´¬ëC’ënÌVàY†ÕÀñG21Ks–JóÝo¡upNöíÖËÉÞfÒJLÖNN©½Y6FÆ´_ç‰ñŸ×cüÃSNYþ÷ò´Ó‰Ü¬D£Z`e@’¨ÈlFB©žM©Éã
+ëkž ã_UT“ƒÕÁ10å¥­¼¢ëùFª¶ø§ ©ÕÛÈÈ9…~[{ï¥;o	~ùã¤iíâ ?ÊÄ‰óž—\ESÏožˆ¾Õæ~Eó„w][Í?Üùt1Å#qÇ5òÿþöíÿ+Ult  ,7:headers;1168:50:12:content-type,30:application/json;charset=UTF-8,]36:22:x-content-type-options,7:nosniff,]37:16:x-xss-protection,13:1; mode=block,]49:23:content-security-policy,18:default-src='self',]51:25:x-content-security-policy,18:default-src='self',]39:13:cache-control,18:no-store, no-cache,]69:25:strict-transport-security,36:max-age=31536000 ; includeSubDomains,]26:15:x-frame-options,4:DENY,]28:16:content-language,5:de-DE,]27:16:content-encoding,4:gzip,]25:14:content-length,4:3903,]26:4:vary,15:Accept-Encoding,]40:4:date,29:Sun, 08 Oct 2023 09:24:04 GMT,]608:10:set-cookie,589:ak_bmsc=8F9E59F8F24512F59F73C6B570DA9261~000000000000000000000000000000~YAAQkqAkF9ot/AKLAQAAztOZDhWkgh0T+rukvYReX28CLI8ZEybxbrwWhhYaYql6GJTkSBtL0De/9pEnC+EWdlZO6PVOYvGjHuMSzvfLvXbAAHrtilMjXHczMg07hx0HV/iXTa2SVk8bag5SXCcnmvTIvHHTx09eZG+W4AX51DNZaELUBLJNZnnYuaGIFQ3FgTtKOX1uYovRlTYaE/vHKT8W9RRq2I797VMButafysXb1NLP6iXkpU9WPc7gR7QKA0zP9R1QeQy16HI7D7CQOmtBGGhKXt+Cfs62Hwb+zTGV1FonPLiUNzK/NU3eowM/avR1AbjqBi1boVcmdRyxXkWPbt99EISSy8dRM251FVNKUk8MAeZf30aa+bdc67txkNh/e9v/zHABVcb2rdHS2zMBDK2yXvoUyA==; Domain=.kleinanzeigen.de; Path=/; Expires=Sun, 08 Oct 2023 11:24:04 GMT; Max-Age=7200; HttpOnly,]]12:http_version;8:HTTP/2.0,}7:request;924:4:path;20:/api/categories.json,9:authority;20:api.kleinanzeigen.de,6:scheme;5:https,6:method;3:GET,4:port;3:443#4:host;13:23.36.162.196;13:timestamp_end;17:1696742814.034009^15:timestamp_start;18:1696742814.0310078^8:trailers;0:~7:content;0:,7:headers;640:68:11:x-ebayk-app,49:c7b013c7-a4de-40c5-b5a0-a1aa526fd3f51696422065298,]27:20:x-ebayk-userid-token,0:,]279:14:x-ebayk-groups,256:BAND-7832-Category-Alerts_B|BAND-7912-Revise-Buy-Now_B|BLN-19260-cis-login_B|BLN-24066_letzte_preis_A|BLN-24652_category_alert_B|backend_ab_bln01021_B|backend_ab_bln01022_A|backend_ab_bln13364_B|backend_ab_bln404_A|backend_ab_bln418_A|backend_ab_bln_abc2_A,]77:10:user-agent,59:Kleinanzeigen/15.9.0 (Android 11; google sdk_gphone_x86_64),]48:16:x-ecg-user-agent,24:ebayk-android-app-15.9.0,]31:18:x-ecg-user-version,6:15.9.0,]51:13:authorization,30:Basic YW5kcm9pZDpUYVI2MHBFdHRZ,]26:15:accept-encoding,4:gzip,]]12:http_version;8:HTTP/2.0,}6:backup;0:~17:timestamp_created;18:1696742814.0310078^7:comment;0:;8:metadata;0:}6:marked;0:;9:is_replay;0:~11:intercepted;5:false!11:server_conn;4508:3:via;0:~19:timestamp_tcp_setup;18:1696742813.1906588^7:address;23:13:23.36.162.196;3:443#]19:timestamp_tls_setup;18:1696742813.6443014^13:timestamp_end;16:1696742902.52051^15:timestamp_start;18:1696742813.1886575^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;3936:2204:-----BEGIN CERTIFICATE-----
+MIIGLzCCBRegAwIBAgIQDSU/O9zDWqrObJPkT5w3BzANBgkqhkiG9w0BAQsFADBZ
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTMwMQYDVQQDEypE
+aWdpQ2VydCBHbG9iYWwgRzIgVExTIFJTQSBTSEEyNTYgMjAyMCBDQTEwHhcNMjMw
+OTE0MDAwMDAwWhcNMjQxMDE0MjM1OTU5WjBtMQswCQYDVQQGEwJFUzESMBAGA1UE
+BxMJQmFyY2Vsb25hMSswKQYDVQQKDCJBREVWSU5UQSBQUk9EVUNUUyAmIFRFQ0hO
+T0xPR1kgUy5MMR0wGwYDVQQDExRhcGkua2xlaW5hbnplaWdlbi5kZTBZMBMGByqG
+SM49AgEGCCqGSM49AwEHA0IABM/y5etKRC6w0ooMfRiCk1bzc2565VDI9lWuR6m6
+5S8GLE4zlVpLmhGVSHpdQ9PlBAD0GkwsPDa4DRA0AldTUjGjggOoMIIDpDAfBgNV
+HSMEGDAWgBR0hYDAZsffN97PvSk3qgMdvu3NFzAdBgNVHQ4EFgQULtM3KycsRwBu
+p0Hu0r7J42gmymgwOQYDVR0RBDIwMIIUYXBpLmtsZWluYW56ZWlnZW4uZGWCGGdh
+dGV3YXkua2xlaW5hbnplaWdlbi5kZTA+BgNVHSAENzA1MDMGBmeBDAECAjApMCcG
+CCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwDgYDVR0PAQH/
+BAQDAgOIMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATCBnwYDVR0fBIGX
+MIGUMEigRqBEhkJodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9i
+YWxHMlRMU1JTQVNIQTI1NjIwMjBDQTEtMS5jcmwwSKBGoESGQmh0dHA6Ly9jcmw0
+LmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENB
+MS0xLmNybDCBhwYIKwYBBQUHAQEEezB5MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5kaWdpY2VydC5jb20wUQYIKwYBBQUHMAKGRWh0dHA6Ly9jYWNlcnRzLmRpZ2lj
+ZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENBMS0xLmNy
+dDAMBgNVHRMBAf8EAjAAMIIBfAYKKwYBBAHWeQIEAgSCAWwEggFoAWYAdgDuzdBk
+1dsazsVct520zROiModGfLzs3sNRSFlGcR+1mwAAAYqUFM5rAAAEAwBHMEUCIHg8
+rrorqut3gRHraiXM10o1QOKm9FXcPxIjuCGjTFbYAiEA9HYYjGY/8YzcdgdGdpjR
+/CF+rCpE04lfisrxqRbCUuIAdQBIsONr2qZHNA/lagL6nTDrHFIBy1bdLIHZu7+r
+OdiEcwAAAYqUFM6GAAAEAwBGMEQCIHJ1AC6T/qsKXomd2mhZ2yt8h6ZY8PkEE6gu
+vHTAHRlBAiAk8hZ8B1pUTmYRgmPIF2XdoKpBtXsOJFPSrcIhGi+jTAB1ANq2v2s/
+tbYin5vCu1xr6HCRcWy7UYSFNL2kPTBI1/urAAABipQUzk4AAAQDAEYwRAIgWpnL
+XpUgLxtlgGuCwrbrRKgXSx3AtJnwudt7ZACyUoUCIBm7R77Vd/eIE94S6vl63oXf
+KgLkeZzAYi1PZ8sdZLqfMA0GCSqGSIb3DQEBCwUAA4IBAQCscRSaw6FOU5ih1kQz
+Y7wSbabaRn5zHemkyNimWqEXuMaUD2YBGt/j5G1TMJqlf7HJ2COEW8f9dYSAzRiY
+VUgViznc8C0a0DrunA3k6u8A86qwt+jGqy37XamDtcWVB3CrP3bwigrkQj6y6qfz
+2/xwVWzflBW2DiwdbXk+22E5m+yeFwKqROyp+A/+ydILntBDs2LmvOG7HkVvJtvM
+9iAHcArzkum5Ln80PBubD9+9KZTBvVFYQt0rHp9tZm6898+BRx22rf10NzaOB+qj
+t8az3dnl/9axoO/ZLlhuSbAjjV8GKtsYARVg0JBN196Ar8lUOiA2FcH8Pv6xRSss
++k5p
+-----END CERTIFICATE-----
+,1720:-----BEGIN CERTIFICATE-----
+MIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh
+bCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV
+cNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy
+FuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc
+3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8
+osicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT
+zGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud
+EwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G
+A1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd
+BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG
+NGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH
+Mi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29t
+L0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDA9BgNVHSAENjA0MAsGCWCGSAGG/WwC
+ATAHBgVngQwBATAIBgZngQwBAgEwCAYGZ4EMAQICMAgGBmeBDAECAzANBgkqhkiG
+9w0BAQsFAAOCAQEAkPFwyyiXaZd8dP3A+iZ7U6utzWX9upwGnIrXWkOH7U1MVl+t
+wcW1BSAuWdH/SvWgKtiwla3JLko716f2b4gp/DA/JIS7w7d7kwcsr4drdjPtAFVS
+slme5LnQ89/nD/7d+MS5EHKBCQRfz5eeLjJ1js+aWNJXMX43AYGyZm0pGrFmCW3R
+bpD0ufovARTFXFZkAdl9h6g4U5+LXUZtXMYnhIHUfoyMo5tS58aI7Dd8KvvwVVo4
+chDYABPPTHPbqjc1qCmBaZx2vN4Ye5DUys/vZwP9BFohFrH/6j/f3IL16/RZkiMN
+JCqVJUzKoZHm1Lesh3Sz8W2jmdv51b2EQJ8HmA==
+-----END CERTIFICATE-----
+,]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:8b039754-72fc-4c77-904e-53e94ad44ad4;8:sockname;27:15:100.127.255.249;5:59936#]8:peername;23:13:23.36.162.196;3:443#]}11:client_conn;518:10:proxy_mode;7:regular;8:mitmcert;0:~19:timestamp_tls_setup;18:1696742813.6533031^13:timestamp_end;18:1696742902.4234166^15:timestamp_start;17:1696742813.182677^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;0:]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:0a4814f5-02d8-4d54-9b5a-cd05476922c5;8:sockname;25:14:192.168.56.149;4:8080#]8:peername;26:14:192.168.56.149;5:59935#]}5:error;0:~2:id;36:1a15685d-1ae1-4db8-b69b-b7e4aca4da05;4:type;4:http;7:version;2:20#}7065:9:websocket;0:~8:response;499:6:reason;0:,11:status_code;3:200#13:timestamp_end;18:1696742814.4886494^15:timestamp_start;17:1696742814.485649^8:trailers;0:~7:content;16:{"isValid":true},7:headers;301:45:12:content-type,25:application/ebayk.v2+json,]16:4:vary,6:Origin,]40:4:vary,29:Access-Control-Request-Method,]41:4:vary,30:Access-Control-Request-Headers,]68:25:strict-transport-security,35:max-age=15724800; includeSubDomains,]23:14:content-length,2:16,]40:4:date,29:Sun, 08 Oct 2023 09:24:04 GMT,]]12:http_version;8:HTTP/2.0,}7:request;1235:4:path;29:/gdpr/api/consent-v2/validate,9:authority;24:gateway.kleinanzeigen.de,6:scheme;5:https,6:method;4:POST,4:port;3:443#4:host;13:23.36.162.196;13:timestamp_end;18:1696742814.2746491^15:timestamp_start;18:1696742814.2716496^8:trailers;0:~7:content;189:{"customVersion":7,"consentInterpretationFlags":["googleAdvertisingFeaturesAllowed","googleAnalyticsAllowed","firebaseAnalyticsAllowed","infonlineAllowed","theAdexAllowed","criteoAllowed"]},7:headers;745:38:6:accept,25:application/ebayk.v2+json,]31:11:application,12:ebayk-app.v2,]68:11:x-ebayk-app,49:c7b013c7-a4de-40c5-b5a0-a1aa526fd3f51696422065298,]27:20:x-ebayk-userid-token,0:,]279:14:x-ebayk-groups,256:BAND-7832-Category-Alerts_B|BAND-7912-Revise-Buy-Now_B|BLN-19260-cis-login_B|BLN-24066_letzte_preis_A|BLN-24652_category_alert_B|backend_ab_bln01021_B|backend_ab_bln01022_A|backend_ab_bln13364_B|backend_ab_bln404_A|backend_ab_bln418_A|backend_ab_bln_abc2_A,]77:10:user-agent,59:Kleinanzeigen/15.9.0 (Android 11; google sdk_gphone_x86_64),]48:16:x-ecg-user-agent,24:ebayk-android-app-15.9.0,]31:18:x-ecg-user-version,6:15.9.0,]51:12:content-type,31:application/json; charset=utf-8,]24:14:content-length,3:189,]26:15:accept-encoding,4:gzip,]]12:http_version;8:HTTP/2.0,}6:backup;0:~17:timestamp_created;18:1696742814.2716496^7:comment;0:;8:metadata;0:}6:marked;0:;9:is_replay;0:~11:intercepted;5:false!11:server_conn;4508:3:via;0:~19:timestamp_tcp_setup;18:1696742813.1906588^7:address;23:13:23.36.162.196;3:443#]19:timestamp_tls_setup;18:1696742813.6443014^13:timestamp_end;16:1696742902.52051^15:timestamp_start;18:1696742813.1886575^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;3936:2204:-----BEGIN CERTIFICATE-----
+MIIGLzCCBRegAwIBAgIQDSU/O9zDWqrObJPkT5w3BzANBgkqhkiG9w0BAQsFADBZ
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTMwMQYDVQQDEypE
+aWdpQ2VydCBHbG9iYWwgRzIgVExTIFJTQSBTSEEyNTYgMjAyMCBDQTEwHhcNMjMw
+OTE0MDAwMDAwWhcNMjQxMDE0MjM1OTU5WjBtMQswCQYDVQQGEwJFUzESMBAGA1UE
+BxMJQmFyY2Vsb25hMSswKQYDVQQKDCJBREVWSU5UQSBQUk9EVUNUUyAmIFRFQ0hO
+T0xPR1kgUy5MMR0wGwYDVQQDExRhcGkua2xlaW5hbnplaWdlbi5kZTBZMBMGByqG
+SM49AgEGCCqGSM49AwEHA0IABM/y5etKRC6w0ooMfRiCk1bzc2565VDI9lWuR6m6
+5S8GLE4zlVpLmhGVSHpdQ9PlBAD0GkwsPDa4DRA0AldTUjGjggOoMIIDpDAfBgNV
+HSMEGDAWgBR0hYDAZsffN97PvSk3qgMdvu3NFzAdBgNVHQ4EFgQULtM3KycsRwBu
+p0Hu0r7J42gmymgwOQYDVR0RBDIwMIIUYXBpLmtsZWluYW56ZWlnZW4uZGWCGGdh
+dGV3YXkua2xlaW5hbnplaWdlbi5kZTA+BgNVHSAENzA1MDMGBmeBDAECAjApMCcG
+CCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwDgYDVR0PAQH/
+BAQDAgOIMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATCBnwYDVR0fBIGX
+MIGUMEigRqBEhkJodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9i
+YWxHMlRMU1JTQVNIQTI1NjIwMjBDQTEtMS5jcmwwSKBGoESGQmh0dHA6Ly9jcmw0
+LmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENB
+MS0xLmNybDCBhwYIKwYBBQUHAQEEezB5MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5kaWdpY2VydC5jb20wUQYIKwYBBQUHMAKGRWh0dHA6Ly9jYWNlcnRzLmRpZ2lj
+ZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENBMS0xLmNy
+dDAMBgNVHRMBAf8EAjAAMIIBfAYKKwYBBAHWeQIEAgSCAWwEggFoAWYAdgDuzdBk
+1dsazsVct520zROiModGfLzs3sNRSFlGcR+1mwAAAYqUFM5rAAAEAwBHMEUCIHg8
+rrorqut3gRHraiXM10o1QOKm9FXcPxIjuCGjTFbYAiEA9HYYjGY/8YzcdgdGdpjR
+/CF+rCpE04lfisrxqRbCUuIAdQBIsONr2qZHNA/lagL6nTDrHFIBy1bdLIHZu7+r
+OdiEcwAAAYqUFM6GAAAEAwBGMEQCIHJ1AC6T/qsKXomd2mhZ2yt8h6ZY8PkEE6gu
+vHTAHRlBAiAk8hZ8B1pUTmYRgmPIF2XdoKpBtXsOJFPSrcIhGi+jTAB1ANq2v2s/
+tbYin5vCu1xr6HCRcWy7UYSFNL2kPTBI1/urAAABipQUzk4AAAQDAEYwRAIgWpnL
+XpUgLxtlgGuCwrbrRKgXSx3AtJnwudt7ZACyUoUCIBm7R77Vd/eIE94S6vl63oXf
+KgLkeZzAYi1PZ8sdZLqfMA0GCSqGSIb3DQEBCwUAA4IBAQCscRSaw6FOU5ih1kQz
+Y7wSbabaRn5zHemkyNimWqEXuMaUD2YBGt/j5G1TMJqlf7HJ2COEW8f9dYSAzRiY
+VUgViznc8C0a0DrunA3k6u8A86qwt+jGqy37XamDtcWVB3CrP3bwigrkQj6y6qfz
+2/xwVWzflBW2DiwdbXk+22E5m+yeFwKqROyp+A/+ydILntBDs2LmvOG7HkVvJtvM
+9iAHcArzkum5Ln80PBubD9+9KZTBvVFYQt0rHp9tZm6898+BRx22rf10NzaOB+qj
+t8az3dnl/9axoO/ZLlhuSbAjjV8GKtsYARVg0JBN196Ar8lUOiA2FcH8Pv6xRSss
++k5p
+-----END CERTIFICATE-----
+,1720:-----BEGIN CERTIFICATE-----
+MIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh
+bCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV
+cNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy
+FuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc
+3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8
+osicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT
+zGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud
+EwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G
+A1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd
+BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG
+NGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH
+Mi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29t
+L0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDA9BgNVHSAENjA0MAsGCWCGSAGG/WwC
+ATAHBgVngQwBATAIBgZngQwBAgEwCAYGZ4EMAQICMAgGBmeBDAECAzANBgkqhkiG
+9w0BAQsFAAOCAQEAkPFwyyiXaZd8dP3A+iZ7U6utzWX9upwGnIrXWkOH7U1MVl+t
+wcW1BSAuWdH/SvWgKtiwla3JLko716f2b4gp/DA/JIS7w7d7kwcsr4drdjPtAFVS
+slme5LnQ89/nD/7d+MS5EHKBCQRfz5eeLjJ1js+aWNJXMX43AYGyZm0pGrFmCW3R
+bpD0ufovARTFXFZkAdl9h6g4U5+LXUZtXMYnhIHUfoyMo5tS58aI7Dd8KvvwVVo4
+chDYABPPTHPbqjc1qCmBaZx2vN4Ye5DUys/vZwP9BFohFrH/6j/f3IL16/RZkiMN
+JCqVJUzKoZHm1Lesh3Sz8W2jmdv51b2EQJ8HmA==
+-----END CERTIFICATE-----
+,]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:8b039754-72fc-4c77-904e-53e94ad44ad4;8:sockname;27:15:100.127.255.249;5:59936#]8:peername;23:13:23.36.162.196;3:443#]}11:client_conn;518:10:proxy_mode;7:regular;8:mitmcert;0:~19:timestamp_tls_setup;18:1696742813.6533031^13:timestamp_end;18:1696742902.4234166^15:timestamp_start;17:1696742813.182677^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;0:]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:0a4814f5-02d8-4d54-9b5a-cd05476922c5;8:sockname;25:14:192.168.56.149;4:8080#]8:peername;26:14:192.168.56.149;5:59935#]}5:error;0:~2:id;36:83fe87c9-d0e9-483f-9ed3-b29258f79eaa;4:type;4:http;7:version;2:20#}25996:9:websocket;0:~8:response;19704:6:reason;0:,11:status_code;3:200#13:timestamp_end;17:1696742815.221354^15:timestamp_start;18:1696742815.2173467^8:trailers;0:~7:content;18349:‹     í½ÛrãH–%ú+HÕtY÷t8q¿i¦¦M‘©¸LÆÍ$EfU·•É€ƒB‰Ù Šˆì2k›Ï8vú%í<õÓy¨§|šø“ú’Yî )PÜ
+83"+»³2E—‡/¿îµö?\4ÍüÐ4¯®®F"áïÒ	¯ë"/DV«Ùb>JgS³N/Ä”›<3ßØæY}pøÃAÉ§âàðžç?8ÈîT‰ììÝ\^wQ·‰t<âóbTÏE:zcÚ[x6:Â}ÔéLð'þ†¿½NFIQf£ÿyôû‡Ç1eó_Of	Ÿœª¼á“îðÃÏÿå‡ƒyU¤êsº¨*Q¦ïXQÏX:ËÔ—ë£—¿>Á]'³”OŠ÷"cžˆ	 ÿõßÿóàÏ~pÀ§³EÙÈë/Ï<|«nÂõlë_^=;>:=>ÿúå‹³£¯ÏÚÓ³[G½|ôèøäø›y™YÝˆêÖ_¿|þüøäë§GÏäAMÑLºØž½>>1^|{|vfœðªh>üØÇÞ¢1-ã4½¸â“D”(Ü+^¾7xÙ—ÆX|øË¤1¾+&n<NgI1)„ñ„O“E56Ž&ÍÅlòÞxXÉbÆ×e9{#*	!uZó¦˜•’¸ä/³¾¨³BLÄÍò–½ NŽNžž}øßg_þ÷¢®EU7FÝðêÒÀEÆb^}øqÜˆÑhtÞeÙ Ü*¶F¼mÌù„å]g0<S}ãA,yB1Å[U¯xÆx–U¢V\¨›Jˆn%8' l³ñbV%ù=.#ª‹ª{_ÌoV¿Çq-[þ8™•ã¢‘G^×°ÛYžëz±:‚£Ü8ÀwGn€+Dò€ŠgÅBÁ\Õi{ä„«Ú'AnþŠªùô»cy¦,Hž6¬¥úøf×À
+éºR¡Z¾ëÉêfV‰¿; âªÅd‚³yšJÆÜz;¯N^Ê£äòl,âdù×¿ü?áÕ¥U0“¦|,Ø/ oº'ç“Z+ÞP=[TéÎÇ7¨¢*ù„U"’ý×¿Î/f¥,e8«ŠqQ>ÝxLUdõkX†×ÊšB6×ÅàXŽËl‹Yþ™mÚÑ¡ëŽ,ËúGË±Ô©ªäêBÞqÛù³bæØg–uè8‡¶¿q>šå†©‹ˆ¬h1´`sˆr@Á6Å…iùÕú´zËÖúìå«£oÐžeEÒ|‡vlU^ëCž<}üäþw¶qXS¡ýóƒë£^?>zöìøä=‡É—•¢Æ³
+·øá ÈVUhÕH<ÅôJT—Bqñºy]VµmÇå%ñ?v//?ÍÑ“ JmVÌH•û¯YÎ/«	ë‚Z‘aU @‰âˆT=–xdc¦êàêƒê=z¥ÃÕU'qó)Ô!ë†t“þ[n¶§<ég¸¹vHÎlc8~ãÕc´ª‡¸£¸Û¶Jõú°U§÷pQ¢©Ÿ !—·íÌ¶w`^¨^CzQLÐ\–hé6»Ëõ³*ûØ‹ÐPÈÊ“,Þ±rv%ëNÎ"m„|7ë7Å›¦*’EÓ¶ëOêÙ–¯U~õ‚ÿÄQEo?Ëwhæñ ÆôÃ_Æt¸óƒM.Öµs${ù¼h™Ê-Íþª¯ÒvM"ÅŽ x«ž-Aw4|ŒËÜº=:òv(tüâõó»·E4i©ðÃÁš2\OãjŒãäØér"Šýº(Æ¢eâÐó\ùpµé8vä9‘ïX¸I¥Æ2(ã\‘›r-ÙÕæªõ¿ëÒªÙê»¾sÞÄj¢!k‘›S¾@Kn_Š¦a•ÇpÑ0!Ç1C¦†/qÎÄ8†ÅLLöFŽcÐQ,Ç1ì¢­ÛŒ·ã–¨q¾nÇ1‚a‘ÇTeì›/Ôv%’º@¿.«Ë¼HUÛ++êòï–`[^N1ß~`ùbÞØæ¼šÉ1Emª®­6¹‡œÌ±ÏÜ$	™g‰„%I&?ÚÂ¶œÄs÷ŸªÅDüî¿œ[£ÿùêñú6‹iRòbÒWìQ8›(G%Ù3{æã¶ãºQ·5‚o@À˜£âÏ~áŽßÿ^Nn5âU•ŸfÞÀ‘òrVè*_W¨žhî8ØÖ˜Q°©¤¡m‡<f±í¹ÌsƒˆÅiì2+÷l?´báÇ™f¾Qèà‚¾hãÇà|!Ø+_¼ÄôŸ‡<
+˜ŸÚýK˜±ØŠ"&Â<±ý<	œ,×Ì"
+|!BÐÀ"m|¡âœ/D {å‹švh%ŽåG,á¹Ù‹ÆŠVÌƒ Ì¼ ÷Í|!¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾ø¶éÛŸdX4ÏÜ |qãœÅ!e™p2t6Å3Ý|!¢ÐÁ"|!"ÐÆ*ŽÁùB°_¾8¦ï8Žû‚Eœ[ÌsŽ™L3?0ãw²ÔMÍý‹OC¡…/4:øBC /DÃó…`¯|‰)’ ´Ý4fÂN0ß˜¿`w)}"+umžç‘­™/D:øB„ /DÚøBÅ18_ˆ öÊÇÁ
+·Ç¹b™9I™E>‹E$˜{yžÚØÂ±f¾Qèà‚¾hãÇà|!Ø+_ÜØtã(ç©%°€ŒM/tlÆÝËeIêùÜ·\îÍ|!¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾„Üy`¹~³,ˆ9øÂSÇŽÅÜØSç™šùBD¡ƒ/DøBD /Tƒó…`¯|ñ3ÓÏ]ü€Å™“0/R–8©Ïl!Až9¹eiæ…¾!hà6¾PqÎ"€½ò%JÌ(I¸ŸY9Ëc;fžm%,ö=›…1Eî™…šùBD¡ƒ/DøBD /Tƒó…`7¾È Èl–.¤–A ®> ´LýÖÆîÎT¸½: 2ŠEŠmD±Y‰À·¹H[Å?.Cw.ŠL|äúbv…@»¦(ÇêÂ7/ê|ÂÇŽ3Qòd"ã2·Ü©.¦¢¯>†j’ËRâ!¤›O&³«ÍË®ã>g9‚¶ï<¢Pu .œ¿“¥Ç Ÿ¨ ì‚\_ÓÑ-°|VMJú‘G“'­Þ[Ì'3T¾½$–!¢lÊç=ofq…*1Ù-O&P¦lÁ±>e›¿”ˆäBd	O-T'°û)ä»D@ØúxSŸ°¾N~O¯¤$o~yªäqç\ý¦þZVÆYs!ª£n<.UÑ¼8Sâ¥KvƒÛý¬b›ÇÐ#ðò’/rÁÑÆixÔjùÅû…q™B™B¢ï¶)e¾/*C^ºyÁÎ¥Œ¢4rÄþÐ=PK!×þÜ½ºYî.ð£è_
+ùÖ‡ÿÀÏx.&_’Læ…XˆRIŽøÔ8A,¶*¹>™L»±/‹µ7ˆ>ù¡W?÷DÐ{á(²]è`úâç½‘5œB&Œü(Ž}´£Áx}—$fSçõÅ+c¼3Ç=´‚CgSÙ²ƒ2!œ˜YgŽuèz‡V¬Aóä-Gi
+1Ø¬€çúºém±ª˜Û4!ŒßJIÞúŠÈÅö•¶ê£*—Õ @5Í¶¯d#+ý†jÔWTüzÊ¥CµmO¤1úÙ» ¡o…®s'Gã@)án‹\Z’ÒE.—Aˆòý‡Ÿª¦S4×ãáô.–ë(UÞ.z—·bŽAõ.PE¨ªÔÕœ¬<ëjöÇµÖ;¦ëŠ»<u•Fw^ÚaA¿âe)†ù˜šå÷PbŸmÁßW²xnX+ñ×º‡OP²¬ZéVÉÒéû*YÆëAÃ ÕA{¿Àðìz`:ë[3ð”©JòsêP|Ïô½$Jâ8dÂµ<—b³Øq|æãsnEžˆ_ó¼›ˆBÇ¼›AÃ¼›ˆ@Û¼›Šcðy7Ànóît(‘gFž—$Ì	d\JæúŒÛø—ˆSÁÃ,q-¡[‡BD¡ƒ/DøBD /Tƒó…`¯|ñÓO°1˜èU"Û–:Gq)6Û³È±¸íØy®½¡¡ÐÁbAhà6¾PqÎ"€½ò%ðÍÀCž§¶%_ÒûìAˆÍCž<òCn{ºã‰(tð…A_ˆ´ñ…Šcp¾ì•/~lúq9¿ _"qŽ›³‡,]æ5yíý…¾B_ˆ´ñ…Šcp¾ì•/©o¦>Æ]nn31ôèd02K|ˆQRn'±ú®GšçûD:øB„ /DÚøBÅ18_ˆ öÊ››6wE–úœ	ÏEÿÂ¹Ë¸q°Ëmaå~ðX÷xŒˆB_ˆ4ð…ˆ@_¨8çÀ^ù'&–‹sá@xqÂY
+ß‰8ð\J;©•Zºû"
+|!BÐÀ"m|¡âœ/D {å¬Û<RÆô)Ï £¡Há–—E‡õ!ÆišÇcD:øB„ /DÚøBÅ18_ˆ öÊ—40ÓÀJrôB`Ù‹°_™DÐmÙ~–'	æ6–Ð­£'¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾$‘™DkÈ±ÇBáB‡Û9ã¹]°ëx~˜E¾çëöi!¢ÐÁ"|!"ÐÆ*ŽÁùB°_¾$&6÷“4R–Ã$|ICL]¬“þÌ·D r?Ð­ÛJh(´ð…A_hôñ…ˆcx¾Ð ì•/ÊsÉ·õâ#˜-Ä&Œ:,²SÓ™À‡^èbMYóü…ˆB_ˆ4ð…ˆ@_¨8çÀ^ù’†f
+µ¼Édn€xK?pá3™{,ÉáH‘ùœGŽöù…¾B_ˆ´ñ…Šcp¾ì•/–mZ6¦/ÈDÀ2/‡O‹M˜$AÿsØµ:Qœ¸¶îþ…ˆB_ˆ4ð…ˆ@_¨8çÀ^ùXf`!©–ÅXš¸j<ª„ˆ‡±ãé%œ¿ëö5"¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾ˆÔÄ*rzÐ¿¸	Ì¼ÔÃPŒ»6Ë,Â8°ÎË3ÝyXˆ(tð…A_ˆ´ñ…Šcp¾ì•/7=äÈLÀaÝG<Œ…H2lº$r»–à©ã¦žn¾Qèà‚¾hãÇà|!Ø/Cû´¬-9î0jY³G§–õ=¿«–5Þ½ZÖÇÿ-›µ¬EÇâÿrÍZŽk$µ^ÌçÂø;Ã8…ì]Lð×¸âü?6ðòO•*ùïŒ©Ì…ý_<„£‹ñwÒ¦ cÔuz¤.¢Z”c£žÁL¨Yg–4¾úïIe˜ÿã¹ÌdX"ß$2Hð†¿üðã|Žt†åÒ"Æ`Œµ×†¨® ÄÈ×[ééò%™¸|=5|gT¢Ð>ë(þZëŠ-ÎvèmµnñílE·¤>G!ð¦@ÿONnlÛAØÊÑáoÙ¹Å?³ÂCÎ+°Ü å4††ÀeNxfÅ‡V„<¤íùv›y˜œÆŸêÜòíB€ç ÿ{$mš_§‹½™Ê÷Û?áh8¶lOñlÙ11ñ†eKDwlé0l›c‹:ÄèRu7X:-õX)I>ZqØf+¾íÓÒ2’îÓòbVe•´bß‹ºA7--´†JLl‡ÊufŸä”Ô‘—¸F~éz¥_òMOŠ÷°ð[µ|/c^BF_}»6o¹lë.z²¶î~!Î-vh;Yv8„sË²‘VÆ-[®|_ãl;``5þ&Ç
+ª‘Â*±%`I¨¼dÈ·z4†ÄŠªêüœî-7-Ž’Nƒ€e!G´ŠÃ¨ä\Ç!t^£;Ë#…ŽÙ8‚†Ù8¶Ù8Çà³q"€ÝfãC¹·)3W„´Osdáâ–u}ÆvÃ4HDìè^½Šh(tð…A_ˆ´ñ…Šcp¾ì•/®0]á¸P?"m0h‚è.¹C×åÚN‚UàÈwug} ¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾(gÛA’GÅ°€‹½ÌW‘0‹báÙç„×­~$¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾¨Nä|iƒ£XfEåˆ#EX˜:2G\©æèa"
+|!BÐÀ"m|¡âœ/D {å·Ln¥"Ï±ìšûR-8P×Ã£•å<HSŽDÂÞkæ…¾!hà6¾PqÎ"€Ýøòëîûç™(e½›þëî;2ãì–*åzÍXëîû*#cw´?iÊé«ã¯Ÿ>zzüÍùÑó—¯_œ­6R[3÷ëL?/=:>9þFnˆ/ÐÜ<b3w…J,ÓÝ/ÿ¾˜ÎEUNŠ\fÜy`<ãõÅòƒñÀXþšñöÀeŽŒ;vÞ¾={úòÅ©ñêäøé©ñÕWËÍövý^«KÏÚ2©È­t£ž‹÷…¼´ÊµRŠ…„AWEz)&H¬ò\4³¿Mä
+ø’öÝÛäêß²Ðú¶ÞCì¼[òÇÞÍ¾hä Ot›Å éˆŠf‘mäOò¢QèG¶Êfr{¯Ï—7Åv=ˆ7Oe¸ø[Þ~GâçÐõ›ºýî"k
+³Öç[çÛï_4ïÎ‹©°Û‹¬ÝÑ›ûïíáØ¿qeþ^IS§GÁV­Ì©µ[Ò”k¦­6xo>"#â‹dJ’5ku“¾ßÓ’+%¶<Õˆì²c„#Ç|ƒ¦J™òKq¾˜÷îÀ?Çoìõ¼­iˆkêy>Ø®—í[<HÚº‹ìËºû…ì¿;”úŽÙ_µÓmê”þkßwþjc €øˆõ8-º%˜×ÏÅ@W¦jÍÏ¹ûp3àO£Ûí*Ç/âdàE«ÈÉ°}ÛöÂ0ÕíAD¡c6N„ a6ND m6NÅ1ølœà×ÙxwÚ²žÝþ¯æd¿ÈÄ¥×˜ÎXøÕlÜ¶ãÏ`>þsbÄÇÿº(ÊÙ[#¶,9	F6ÞL4â²™U†a¼8~-'Ø_}uÇtüii\"³Þ{a¼Uþá§qÂ+œÔNÇÛ¿ªfÙâ²I‚í‘5AÈür¶Ž¬¥S¤JmpªÌ†Š‰øÑdÂ ú²áò¼yÏä|ýKš?F<V:¶MÆ½0°¢­“ñ`„ ½­éwëÛ‘ŠN¿=Fb†1b"ÞãÐFÎ7	´3_ÕáÛ­6¿éÝM_¼”—ø%¤2uå¤ü3r¤2µü3Û>ô­Ï3•é#ò=&âü²)Þà?h Tõ½ŽR¾9‰½qÆ‡WgfåÈãˆºñÑT¦ë>¸Íe©¾«ô¥;MË;œÛ6-W‡`aÍÝÞ)9èi¹aÐÆæ÷¬•I‚:^äª•ƒm¥OÊõÆË™öƒƒ]få¶í#5ë³òOIñé@‚ÓÇàè;r¤;¿hšy}hšw¦•Nm®Z±UŠÏ¾Kßwž:m;P&ÚsO‹M7:P†Ef&Ó{.oË`*€ qa÷ÑØ|‘`TÅ®DRC VæEÚ ­½ªÛË¿UšÞmÅZLÇ£Ë	–¹y	#ü(²|Ì7¶9Gç‹ÄjµYLeÖQÓÍñó FÒÅkÃŽ=ÉÐkD)œ?³ÀVkÞ0&¢Ð1E%BÐ0E%"Ð6E¥â|ŠJ°Ûu  ñ,7³<ÂC’„Ûà]XÀÔFÓA’Ö ™n{6"
+|!BÐÀ"m|¡âœ/D {å÷MØâ"ÓZ˜3„îIAE*ëjEÌm? NBrÍý…¾!hà6¾PqÎ"€½ò%&ÂÂãÀG¦Bd·w BB"îùàËb×&ÊíP3_ˆ(tð…A_ˆ´ñ…Šcp¾ì•/Ü3¹—'ØIóaÿéÃ.×H$Í‘È µ\?È‘€Çº®D:øB„ /DÚøBÅ18_ˆ öË nGp’vÑµ$Ê.™Ö…ƒ~E®íFN¢Û.W…ïŽB_h¡ƒ/4úøBÄ1<_h öÊ—$5“”Ã/¦Ò.´è_29C66ßÉ³ÌK¸@ÒÝã1
+|!„¾hãÇà|!Ø+_Ûl?Ì£Ðbn@naƒñ˜ÏRdûÌ`£ËóP·…¾!hà6¾PqÎ"€Ÿ/®åg1óóöÒˆ`‰q_éÐÍSa…¾îõä¶„vF¡/;CÐÆ—hæËî84ñeg {å‹š9Ä®›@.\¹ë’¹1ã±Ã¥*<‘öÒ·ÕÍ"
+|!BÐÀ"m|¡âœ/D »ñehëÊNò3s—^Áú5 ö—P»yQq;Jy*ƒªÓEU‰2}ÇŠzÆRÈ-;‘Ö×RÓã×'½úœ¿þû¶áÓÙ¢l:§zÂ—úå­¯žŸýòÅÙÑ×úÄ­¯^ž¼zò‡c,ò	ŸN›­Å4/›‹Š¿/ãŸ}-‹®Ž‘NÄºß/J|9åþC†_m±™¾ºº6³R8Þ¨M6û×ÿ÷GãtV"ÊTiqKC~qËÔÎÇ#Äòá´²=ãßŒGæ£¢J>üX^
+ãßŒ‡(þr½'"÷Œû’âkŸð"ápí~]âyòj$K¯Oõ¸Ñ¶ñÑX*þ°Wóâe˜îí(>wHÃi®œ¡ ¬n#ÐV~º;²vSoýÅØÂq:>ô#ÄÈnHVås±º(BñF°¦˜v[¤{k%¯«ó=ãüÏCò
+²*çßZ¾åíQµkà'|QK¢tƒo#q)qµ;ÚMo†ÕÞ#ª¶C°mQµê£±½áµ ecò«Š©'¼Ö“´ÃX	Ä·“^û¿SûCYM²ËGØ%¤6ôä±;„Ô¢¥® hÚ¨Ðõ'ú†O Å¿\w¢¥¸êíD_ˆEWÏº²¤®G)ú“Bv8mž
+¶ø«¼J/Ø2Q¾k+ÍübÙz=W°r<«Þu~k!Ž_¼~Þ‹aÃK$
+O½-¤õÎè^Î*¥Ÿû–‹›Tb h1s”û}"…WÍðZÑÚséûF
+ÏgÕüâ]ÅV£ƒÖSz=8`ï×ƒæ°tÊ08`WËÁAÝ}PÄ‡0U_º¼ïøáÄ1Ä¤ˆ$²ÿ98½Ä†Á´ÆsßO„›'™öøa"
+óq"óq"móq*ŽÁçãD »ÍÇŠ‰)‘)È¹?â@”¤iÀwEî'èò,Oó~"…¾!hà6¾PqÎ"€Ýø2ôúÕz|ú™-`­q­†>:ÕrŒîïWƒ6Á’	yàðÅDÉ“‰È:ë4ËÁ£ÏÊ†§[Z‰åBd˜Ò_¶cÎ	61V*E¥|wXÃ«±è®÷\_§½SÊ&L›I;8^‡WÇá†Ê–MÉ©v3hë.åx€nÚ}ÜíÕÉÓïŽÎŽåDà–TÎHõ‚”`>cH`M¦4ld[#9£5ŽÈ}“Í*9œÝ¶4t”Œ‘vÓàSã”O1¢E	ó²Ê8mxÖ\ 6BM½ºN»„y(
+~lÈßj¹F…¬&@15¦ESŠ‹©(¯uÛ_Ò’Ðú1eqõ­!ÌÍY&T*Ç·ÎâQàûA¼}ÚŽbÏ	|%<½=íôðëpÂë Œ—ïŽîõ‘å Nmû%¬…‡ž}hÝCl-íÏTö2Ï:DÞÍ^öy¬ýóâ¼CzYa·/}wÝ:¨)«@°•—çPÕÕKPLÏ:äÚ¶¤¹nÚ§ÖÅÄû, I76-¦g¶oµ©ÜvYBÒñÝôÕëåÕ§­?u—€:‹Aâ½ë0²vaf¶²»0ô~£–Žd•K6w®©½»—†®«:º!t÷·  ¯|7ÇRÖöÕ£å)¬ù‘åøÑ«G~Ûh¯z®|ßÅ#ÕUc‰ˆÉW°)0¨PÑÎ©µo¾êá[/4õHÎX+B]ú9Š|Çô‘&ÎÖMÈCÎYeÜfIsHÐnhš'¾D:&¾D&¾DÚ&¾TƒO|‰ ~øöOß–kþ¿N|Í ˜ÜEÿ%M|—½×>¼Ð¢ÏÀ	íhÑÌ=1ç˜/ª2ä C¦W™½ahV©é²ñèÃ˜5Ë‘ë–PÓôâÃOÍ{Läeúny	ã\ÔXÈhÓzã—õm.gˆÆ(uù§•ñmþ^NÂq46¼1‡_(»ýLÉU´C ÂhQ6·Ö'ñ¶1Q3µ¼í5ª›~ˆÎY­š(§p˜°bG®ºà±üÁ³~4j´Y7•Ø\‘…"3ooìÌ#šél{:pD=wy’G±gG**¢/>C% Ž\KMqnÏÈÝQ0ÜŒÎ^àµ¦l¤)ù/,B¦âî¡Y59'øÚ”¼=ßùgå²hD1ç'¢È?f¶>AãIÓs[ÕþNÏWá’Êû>ýíÔKÏ»Z’wˆ¶mv®1:„íÎˆFp’>7×ê}¶Ë»ÌÍíPæC<PCN¬›÷çÕªÿQ•°wº~¬ŽdªÊ-;«öàŽ?9œõ—Õ–~¨Æ_’=¹ëE¨ÞÝ+êú}b9Vöõtüö¥ï=G³õËj»ÏåXåH^"7dæ-»×ÎÈÕ½áNŽFPÖ îóí;t#Í4LRßB2=¤D@îÖÄqXâº.‹ÝÀ6wƒ(×m@D¡cFN„ aFND mFNÅ1øŒœà×yw¨þëV´{\íóÊ`Âô—9#o;°}ÌÈý “¹ŸULñüèõñ‰ñêèäÛã³3ã÷ÏŒc9ÿ5Žž=yùìŸ+ø…cïZ\b>~Ù¨Ió	¾Ádú	Ÿ&‹jl<¬v²ñ±,g˜>Çl“M¤ü¹ÁsÑÕR	ãY^.f“÷Æù¯S!ÞHWãá"½P_ckˆÃ6ªY‚¸Uãx>owæ‡.·íE-ŒG¼šJ¯¿{uh@§bÄÎƒØÿíoÞ:þÛôŽ%ƒ›Ê¾ia©Þþ cñá/“ÆpËz‹½µýé)Ô®ËÈc5ìœaû%-¬Š_–Wß>|Ñí+ˆœ°¼°5Vï‰÷Ý‘ÅêçÛË~l?ÐòÛ ðÎrÁzyÅ	`!-Ÿñ£ú¿çt8Ÿ[‡vtènNûwvXÆ©R‚` w¹ì`[m%àu£ñL n]‰CÚÅª\Èe<Q3oÔ’Ôò«õ7Ø]æs:{ùêèŒÉo¸Ë–vyÈ“§Ÿ<ÃÿÎ6[NË¯zuþøèÙ³ã“?ô&'«`1Ù}»i¨þËTˆt(»míA²nz%/z½]·µ*ï]ÁÁ,ûNŠßcõ¡©ª¡7CûŽ6âÝpäÏPºƒ‡ÈP!jtÐ4´¿+!Åá¿àhÌÔåò¬\¾¹^bu–Ê´]ÖœÈFs1øºÃ=b®Å"rQú—àúQ.bfºt¼Îû,@¬º€v¢ÿÒ÷]€˜Ê©µêR4{;aB°ì 2p‘ÇXÑ“—X¸l¶X¥FGì¢±DŽð±1ÑN—£#$[ëŒŽ˜XŽŽ˜aDÑŽŽX²±vt„+U¸‰1±!t5:Âjˆ±Å›9C@ì³©é¬KEŠZTïü¾WF”€ Œ/NXæû0eáI“oIÕþ?ÿWäêŽU ¢Ð±2B„ ae„ˆ@ÛÊÇà+#D »­Œ =Û¦¸£$‘Hc3c×³ò˜	k›^yR,%&nh¥–£}%‘†B_ˆ¡/DÚøBÅ18_ˆ öÊžš<umèü–ÇN€$±Ç’$KÇ-ÏÍa2™gšcáˆ(tð…A_ˆ´ñ…Šcp¾ì•/v`Úå¦AÊrØK2O*ãé$ò0Ê¬ØEn:_·©$…¾!hà6¾PqÎ"€½ò%ÎÍ8Gž± K½J‚tØQàDŽÅ´ V¹\sÿBD¡ƒ/DøBD /Tƒó…`¯|Q~‘ôÅÇP,²`òíäQÆ|dXBËÊÃ$ÑÌ"
+|!BÐÀ"m|¡âœ/D {å‹í˜Ø}ËÙ,Ìb9„tEA'NÜD”êž¿Qèà‚¾hãÇà|!Ø+_¼Ìô2Ž…Ä…é‹í[žAö#ÝªÍ92¬ºvùæþ…ˆB_ˆ4ð…ˆ@_¨8çÀ^ùâç&–¿Ò,Jr–DÈçååv ?1¤+‚NÔˆýD÷z2…¾!hà6¾PqÎ"€Ýø2´IÒJr‡GÒêúbvÅ¤åK9V:®•Þkõ;T^p/·˜÷¬Swª‹i1á•J,Îf%{SÌ»ñ«cWA/Ÿ¹Pt%ÍÒ‚›š-æ“¾è±1Z¾bS>ï)ƒulî/2(u½}¯B$t;|Çø?DÖô‡¥ž¾:þúé£§Çßœ=ùúÅÙ*’îØ´)Ø»eÚôüåÙKãùË“§/ž¿g_½:6/6ŽËlQÍŒÇ¯ï^>{vôúôôìèììõ‹Ç2¨£¼ì2ä¿þ×Ó×ÏŸ#ÎõôèÙñÍó 5ýNxÝÆ±&…¬l22¾å9ÂnÞ!Pcú@·fó
+ZŸËf† £ÆÙl¡l·¾/Ê>Å${ð%~-3²¼z#?±ØßJAg=ž124,BÒ©íbQgØ±­Ì¾oÚ£gâÎ »±.6G¸Æ?ýNyx­<Ë–‘{8A…0nv…®çÄv¦ZË7s#ðË·ìÖ–ço&øSoz‡p¯ï:1íü‰ÈOŠ©3;ÄÉ‡ÖÒÕ{ÐàÏ'Ÿ³ù|†7\q x~2Cý­d¾¶¸¹ãÙÿáGéÑö[£ýt}švñ(Òû¬ðí,u®™·5€Sb¬ù»5zó“)ú¹obê®Œàv	Þt¢¯!xsÚÖ<éÇt]ÝVÑ¨j†[?XÅ1/ÏQµµRÕn¤zÈ;-ÚAL¿§“}Ü¯é¨jPíÖ±¯[*Ä*"èPô>Ä÷íoK–(Î|äa¦2$×Òl^þ\Ý¦ÿ¬ÞG‘à®·p9½F­þÞjº>-0Òn­Þä½¦üíú3*šü?|»4Ðzö¾úñm1™MJ½ŠXî{7ßÿ0òû»çb‘T|Ñy¦4•îõPhîwz¤'Ë{ö¿øLô•ƒ´Ÿ¸óÅLKÛ,Ê1Î^VªW§÷}õzpòÇ^Î³Õ=ûeÊËFJ½Ïó|ùÛÝU_ysýDw=Ï§xü?ÈV éäŒw[ÈáÇMþáâ !,ôºáÁªA¹¨DñßEÓÌëCÓ¼óZrÀQ›«ÑY—Ýé{Çe£IfÓÆà{‹¬sÁ09ÀôQNX)`à†FÊ39Æ”µÊtÖ ºf¦ºŠîCî;Zyc¹®oç)¡L|l!ü9²…Ìq‘G–xºcnˆ(´¬ÁIãºÝBÇ¾58"Žá×àh v[ƒ(:ŽÌ8
+lž9„ÛxÂâ,±ó„¹"Mò8N3,\kÞã!¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾¤ÜL9“…èZl©pRì‰zˆ&ÈÒ‡ˆ÷Œxšjæ…¾!hà6¾PqÎ"€½ò%ˆÍ ÂŠl‡ò‰=ÇÆž(þ
+ü,L Kƒg½îÄ1D:øB„ /DÚøBÅ18_ˆ öÊ—Ø5céÇÜÔ‡ÆÆ‹0kñ|Æyl³ˆÃõÊ³¹—_sÿBD¡ƒ/DøBD /Tƒó…`¯|	,3°Â,Ì‡<A ´yÐ<}7Hm+Ïb_hæ…¾!hà6¾PqÎ"€½ò%áfÂ}ó9HÑ¾ð„q1j‰Ë#/Ë½H‘f¾Qèà‚¾hãÇà|!Ø+_BÇÜví\v(46ìâÔ ä]@˜–øºÇcD:øB„ /DÚøBÅ18_ˆ öÊ— 5ƒKb~3$ÆI1ßpçÅ8L¦ŒM¢ö¼ø¤¹!¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾x¡	ÃGXhØ<Í=¬'Gr'ÆË y…¥ÈKždº×Çˆ(tð…A_ˆ´ñ…Šcp¾ì•/VbZ‰Ÿ>ì4Æƒõä>ð±ÌÍì(…»æû±æþ…ˆB_ˆ4ð…ˆ@_¨8çÀ^ù$f$Vu3ËýTzj`Òí~á=¶/"Ÿ;v¢[ÃID¡ƒ/DøBD /Tƒó…`¯|Q±¡Àˆ†Eä›ž‡x˜Øã‚eŽ+â<É Ó½žLD¡ƒ/DøBD /Tƒó…`¯|É„™ÁY;•HåìWbë…£Wa¾À{rè8Öí©AD¡ƒ/DøBD /Tƒó…`¯|	m3D
+­$Œ]–À|ÉR– dŒa99ŽxZŽ¥{}ŒˆB_ˆ4ð…ˆ@_¨8çÀn|ùÕ#àJl¤KXKé•Z¦Ø›m;¢)’ÀÿTñ³ù¬®‹ÊâNò…õÕ¤Ü_ÔiUÌ¥’å³j
+iÆGì~õøá`Š”+ü é- í™5È”|Ô@í“,!µÓør™¬t­Ý‘b&ÝŽçZîý3›|å}2{k ªVð0šŠ#«l…<Uea¤È1ý†ßÌÈÜ­œßàÐ«ÙÅÄH„þÆËÍ«|õß“Ê0ÿGûoyèê÷³å]r^¿ÇòUAw„Ô²R]Hm}‰ÔÒÙ—äð¯AE©Xî³ˆÏ_æÂí³°GPrçždP^$“A)ïm? $ƒÌ ²CËÜ@éØÈOò [hšÎ=Ù»7(¤zí!ÏÆŠ^Éò/E?døNòs@SÎŠ)£éCî#4}ÝJÕmñjøD g½²- épòZÐ’OÖ*Þê×ùÅ¬”m'„²Î0O7Úe(åsÉü²³¦˜n´´Ž%³žZÌBêhçÐ†ŒïÅ²þÃ4uê6 ÝóÝC?Ø8²·PŸèðýì¢¼ÂË)ÏŸÏ4ªbÎ¶)ê×GÃ% ’Âõ	ÚÖùÕé¥;DÜö<êãšÏý¨aøŠ+}	ž$iCyÀÚÒ-òw¨üƒ%v²!™T¨v1mOJÁ¡dñŽ•³+ÉY4"mäøç:­%F%×ÝëÁúzà>é6DÝSÕ÷Ö°?®Eêè€–Õµ­}ûË"Ýë°Ã)U>^ãÏ°_€OS=ûd¸¶K›® ­Æ}²Q­:¡VõÜéûªž¯ÚÑ[ŽvØr´ƒ¼SA/G;mlõ8Xç²˜ªöÝçÚ·Ð9Ì °²ŒGig9rlìØ1 gnÙkºÍŸ‰(t,$!hXH "Ð¶@Å1øBÀn		“ÔLÒ,|Èiœ„cáÍrÆm+`)"ž]Á­Ìrt‰(tð…A_ˆ´ñ…Šcp¾ì•/Ü7¹/„Cd®L.€×ÌFšØqmšmˆ(tð…A_ˆ´ñ…Šcp¾ì•/¹cæØ ¸oK' i¤vã™Ôc®‡)t6™ê6&¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾¸©é¦i(œ†äç˜QyÒ Iæ/vê‡Ü=/Ô=#¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾xž‰P´00èJ0AÞM¤I}°âo(s€æñ…¾!hà6¾PqÎ"€½ò%ÈÌ KxÎÓ€)ò:C(°H §á©“åŽç§[èLD¡ƒ/DøBD /Tƒó…`¯|‘)";Î7#W&G]ÆfyÎ!JÎ_Dº“oQèà‚¾hãÇà|!Ø+_”‰T„Ùú¤XOŽmÏ €‡E±#2î"[Z®›/D:øB„ /DÚøBÅ18_ˆ öÊ‹›Çºqä„ÌqåxÌµ"–d0š3Ç‡` À0M·ˆB_ˆ4ð…ˆ@_¨8çÀ^ù’Û&lg\hk"9PÀmÂ×ÆN¿Ÿy1ò¡Nª}=™†B_ˆ¡/DÚøBÅ18_ˆ öÊ.L.<ßËh6„–Ì_|?€›y’c47síFD:øB„ /DÚøBÅ18_ˆ öÊÛ6m;ÄÆ>6(óÔ…‘F„þØ†E@ê:"±Ýqßº÷_ˆ(tð…A_ˆ´ñ…Šcp¾ìÆ—¡…hkÂÙj×Çì1]íúž_H¾Ú5ÞÅhëãÿ–3Ö^>ïCúëÿ™¥hÏ‹´‚~GdH¿56Ž¾={úò…ñÕW_IõIGøØU
+µ¯NŽŸžâÐVi¶y¡bj<u‘^4Æ%/KãŸ4—Éï)”gÉhëÙ„—caÔ…0Juäû…Ñ"ÿ’hP\‰’©ËëS¡…ï*%S¯¤%9Žã:±RûôËÐB?Ú–—ÖA †û‚ãŸœ–ÖFZÚ(Fò.	åo\ˆfúR‹¶!$£ÑÚóÝó‡¢}j>Ú‡‚/šwç '¤žH ©*ÞV™Y{84f7N ÈÌìV„yÁkÖ“-p­N:X¥L_
+ƒ½²Ñv˜¶Mf¦1n°V1ï£4“ÍÉ÷~ªdðNDm«Ô+ÝNàú¯OÔhA³n1I½5ºŽ¶¹‘U:¶Z­ë.¢3‹ipÑÙ”_ŠóÅz¥ÛÏó¿±×ó¶¦ÉÞ žç1–¹!×’³¤­»¸.ëîþ4gŸ,ÕÂÒI%_WÒ„w©Öº^kµz®}_­Ö´;`üR™(qV{ˆ³°'«G÷Iö-ÎJc3-‘a9ŠYiê ¸Ñ‡râ{,M¤«H²À¶-ÍÁZD:&×D&×DÚ&×TƒO®‰ ~\w§ëÉç¯“ëV÷_¤ÊcÎ°LH&‹
+9ƒÇHÌáS³a¯p]r³²á©r³UË1¥ƒíÕ%$â²¿EH+ƒµ€¨0Å€ìÆ¢ßþ¡½ÇÒ'¢)šIk(±J)¾¼¦ÊàEz¹ìjõ‚Éõ²§ÚÇäÚŽ}ØH gÿûÕ³ã£Óãó¯_¾8;úúl5‰j3o_I_>zt|rübÁ%H–ëÍ#^<ýîèìX¡
+«[«Ÿˆªš`,#jŒ8ã
+£–ºùðSzi%LW*ãuz)à'T]ÊÓ·Ì¶kc\$M;Mž¥ý_ÿŸQ‹‹ÊW³ÿqûÒQ#†õµñ—5l>ß(&	¯þÁÀÜ¼N/>ü¥Ä•Æ¾–`¾¤Y÷‹Y•]ÁûfÑ-¿¾¹·:±-·wˆo»#¤ä­0¾;rb„å)¿‰Ûvþóz\|ˆÙ·cÁÃ•Ãnâä»S0ž{èX3gÊÌÛ9Äùv¸qþç1ó~Üò!PiÏÃG(§ë©PÉ7q–'ÈCÈyÑ‡×ç¦ß±ªßÄé·¥œ$¸§ß²m›~«CŒ^úêcè=¦á•´)“Å€óo¸Z„ŠÝ»LÀqp¤Ãö%YwC²öNÄ7{ªîô{Ùµx¬*ðHu‡%’ÔH£–bl¹‰°6¨y £Lðë¶?1¤ÏªwøM­ø ã|7‡%ÔÁñ‹×Ï{!uˆPã¶h"×=ôµ¹ÍÁ%_ä TßâÂ·íO¥„¾g‘—¾÷£´ã¢?Ë–¼“YsÇsx.–‹ûž¦cr!ùëõ¾‡ø×éõ3LÿÏÿ·ÞÈ²Ôá–5Fƒ(zÇeZ	iˆˆÏh¥­ÌòÅ|süõÓçGÏðÅuc5Á˜b‚#»ï&Ÿ|ø£-ïgiôÕ{•——ÍLŽQä1{BŒkò…c(#ýÄp¹*öØj»6pî”¿íþ('2ùCëUÖVÌ?œ?ÇHñ	~X•‰ôõÈw€÷á'	Ã®-EQŠbKEÅÂx¿¨?üØ¼WCGãÛ?¢^Wójö¦}[© ×îT2}´Üµ.¿ê`’c¬¶W¢­iñ¬n½n|(ÑJU+8\åªð.`8‡jvÑ4óúÐ4ù¼]NPJ¼|/
+ÌhF™8ô<Wþ`Êq®¶I­—ÇüÛ—¾ïòl,—#zx
+¯Fô²Ad¨`Ò^o="í<CË/MÐ¢woß‹f"6EÌ£Ø¶úØqççpÆ‘Õ•åVœˆ<æ^é¶F&¢Ð±hF„ aÑŒˆ@Û¢Çà‹fD »-šåhä›‰Ï]+†%‹å#xË³rDÔ{XsÎ`ÀosîCÍ¥[’ÐPèà‚¾hãÇà|!Ø+_ÜÀtƒ(Cï‹®¶…ÔÇ>º–È÷<æ‡‘Ÿ§Y‚Ôbº7eˆ(tð…A_ˆ´ñ…Šcp¾ì•/–oZ2ÓžÌEé:2B8¶ÀÏb+„û—@÷èèæ…¾!hà6¾PqÎ"€½òÅµL×r¢Ù˜“Ã–ÕC=(2•k'y ¢{^š7ý‰(tð…A_ˆ´ñ…Šcp¾ì•/¶k¢áÜól&ç“	R;iÌ0ã°hAÐL¤[áHD¡ƒ/DøBD /Tƒó…`¯|á‰É×Ü…ãwq£—Û‹Â”³ F\tg¹t§>&¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾Ä™	FÄ°<&âŽ±t0vÜ˜	;áI–ÁM/ð4Çˆ(tð…A_ˆ´ñ…Šcp¾ìÆûÍÒ…ÜUñn«ËìfË½î™Ê§¨D¶HE†t5C´Ý›bÞ[‡ìýªpä“…Üù_—ˆÔ*îœmoã¬Õûa‹ù)Õî•¼[á¸’¡`ûõ3Ál¢VÞ's¹ª3Èô]nf>»wù›ßüÛæ?]LæˆHžKã´È„‘¼Ã…ñÝl2©øbzÙ=à±È+ÈWÇ/?¢œ/„ñ=Ç×Sù/¹7ÿ1&ÆY5K/L+UQøºªêù‡Ÿd¿ÓCØ$ÎÄo°{½-¤ót1Ç±ß>©D¦Ù÷PìtÓöM‹Æx…0ÎÁclwË$}À®òý•í/R8‰`‹ªìž—µY÷%ÅržçW|¢„L}AœµŒÀì‹F¡¶Áj=òIßÙP5Ê—q;~Ó¹ÅOƒp"_]9JµÖQO\‡D*õ#Iý^¼”`¿øPNÿÌŠ-çÐ"‡r:2Ç¶Î
+Ð­Mæ@¡œO?y†ÿ! ã:RmÙðÿpÐb|ªÔò	_ÔÐ=×c„Ý„*á½^PÝŒöìèŸ¥ D ¿”ô]ÍmøÉL`¸-ÎÓÛ\z”8Ï·ÅyªCŒMjoc/2-Alã¯gù*_Þ6Ó<Ÿ¨ÀøÁ´•Hßi«rÜ%¶SŒöJŽ*Méw¹ËO”ˆ0·]Úªîu«Þ*voÝG~øg(é¥êqN[Qñ–\¸¸Q—÷§¼ìõüß{W£6¦þ2–ÑsÝPÂ[O€®UŒÝ@¨Ú„þàÕU”Ü5¥>Æ`€› Ö1ƒ[\—§´•âþatð}tâ(öÂ834
+´¼eÝ²?kÃèú/}ß0:v]WËKVctÆ’wø¯`oV£³ueÆËª¼­>ªÑ»êŽÎbòéf9:Ã«ÑÙ	3+i‘°1¦ËÂbhYKÊŸ3</òÌÈ³ó0‡ámbMÅóex+—ëaSèrá¦¶«y9…ˆBÇr
+‚†å"mË)Tƒ/§ì¶œ2Pxž•›ˆÇã\äp äqŠåÇáyòV[¡›¸‹|P^¦™/D:øB„ /DÚøBÅ18_ˆ öÊ—<7‘‘ÃÊ=äæŒS×G‚„³8A¾'Ì’ÄN _Í|!¢ÐÁ"|!"ÐÆ*ŽÁùB°W¾Ä¶Û~è#'²Qçè_DŠ„ƒaš2½‹aÚŠÿhæ…¾!hà6¾PqÎ"€½òE…º.r?æçÈåùvÄb‘!?²vbL–Ù<ÑÍ"
+|!BÐÀ"m|¡âœ/D {å‹ã™Ž'ŽŸÃ ÚÏ —ˆiRä#ÈÂ @`E%™îðo"
+|!BÐÀ"m|¡âœ/D {å‹š˜±¸y”Z,¨ñL
+²ùÔ‚ÜB*uîêšÇcD:øB„ /DÚøBÅ18_ˆ öÊ?0ý Q8…ƒ„®›a<ùªpãÀuÛö,ÝëcD:øB„ /DÚøBÅ18_ˆ öÊ—$0“ 9…ÌýlÉþ<GXOvòÐln…V¤{þBD¡ƒ/DøBD /Tƒó…`¯|É„™aÆ‚n$ciœ`¾yØñ=¸ñB&‘X^ŽbÝû•D:øB„ /DÚøBÅ18_ˆ öÊ—45ÓÔ·ÛÏ‘ÊÇ|?Ë–äžåÏS;Üá¡æù…¾!hà6¾PqÎ"€½ò%ŠÌ(rDE1s½Š‹ž†§¾w/ò<L¡™/D:øB„ /DÚøBÅ18_ˆ vãËÐò¢eóÁê¢Õ!{LŸ¶ºå*™¥2ûã“Éìj‹¥ù,‡ñáGÔ"]T‚Íù;)Îbðè®8¤÷ª­HÚ¢\yÒÒ¢Õáw+‹Ö‚¥ÏWZ´„ˆØd²¶hP©N• H¾¼ d£Iß±¢ž±t–u_ÎÚÆõàøõIoDï_ÿý?[…Æt¶Î¤ë3ì þ™ÝÝOaÜÞfUs53¾æIUÌ&¢1d«0ŽµLÈÕ,JdðÙ*z
+]Â•s­1•ÞŸ¥±å²pŒ—Ê%Ö¹ðÈø†×È¬vQ½‹±QÔô•—W™ÂzéÕÍ—$zÂ§ÒpÙ8žÏE™Í*éÿÙ›P®þvS÷xG<.åÙÈžP4‹*w Ow!ÒJ1t[P`bÐâÔ!$A!¶Ã-ä—P:’ ùI ’ iKSY­ïJ*ðÅ¼3©Ô‚CËÞðd—Ï…ˆïËk­Õn±i~¾vémÏ÷1ª@>‡´–Þ¾ÚºQáçLdE£®ÖE›Þ O¨Q¸MñFµ6Ë¯ÖßÀ4z ‰ÏÑ¢™Õ
+ÎÖj×‡PLÛQƒåeib§¡LÛ;dÚ&æQ‡½ôìÕôÁÀ{HzÚæc@Ml…å;ØEÓƒÎà’žZv1½ý¢ê%ºòdõ›Õ#™KdGKìLÈfVŽš–\X^=ô·ìó…V£œ«Yž+ý&í¹ê.{©íI{ži‰è•ÎJŠ³L|·ù@Ë"ù”’&¨ëÑGÇvÞ]•×íZ´’W!…ü©ã×ÝñeÇ¢]ý½Í¡½ëZ.½£7ÍÊÑ¢)\¿Žg/_<î-×o‹Él
+ùa¥ä/[žb«#ùë¢cd‹ù1+Æ²Í¬†·GÉd¨À°Ã›ê{«·ø±t +°I—‚ž-O„VËf–4¶¿ýf‰¤ZÀ ]sûAÄûË/©Ð}C6LO™…{JçüÍW…RùÛ'ùÊãý½_@ÿŠä‡rLÙW¡rº„ú©÷™—¿ÝªŽ0Ó—„×üÒ¾­xÞ`”çÛ38HzL1dëOLq´þõÖ#ÔE>@îdTZÌWÍáqQ¤qž‰†“%ÔþÜS›–#ðë#?Vƒ‹vÉ¶L	©šLô¾Åvžq»ÎâŽŸþ÷öü+KÔý5Ù9w{Ÿß17òC´*rð‹Éy³‰¥¿ b8R¸3¤{U¹€ú(&ÊÛ¡ƒíÀ×bÝ¶TPo>Þ­ÝnK†{^7X7Z²2d<ymÀ§bË‹¯fýž|ë!JF~3´( Ò'·`{«ýGäm[¢î¯ýj®½Ë Hˆ_o•OQ|r^”XJ¥³ZƒørJçùòŒ§7Ÿ¡¿¬–=ñíf¹]“»É
+/ÏÑ‰bµ„cAi§rÙ¨â­,ã™|7Û:„öoÿ²Kxøò%¾è}±ÇE)Ñ]“|[Ï@|X,®.@ìb1=¯Š©ìÃvèå÷ô´Ï¤«Mƒ)@æb‚T.[Zâ3¿å¬<AÎ'ÅøâózÃ¿—Ø˜ùìøv
+ïž¢¼B² IäÞÑñÁyQ§³«!Èé„l¡÷xÛEùÑº}‹•ë	È]UûÛI1å¼œp™Ð{ˆ‡-ù›âszÀÀ3ÆÐuVÖõ;äÕœó˜rr†¼¦>§§=‘°Ì3k×‰·¢™Íš‹Ïé)®AòŒØïÊê¼â¼ž$Ãû¬Þè#i6&3ÂÉV©’-óöY&±]Â|µšÍòÏéÍ¢ñ•Ó¯Œ§æ+^Î*>åòÃ0¤ÅrNs~}fðiÑ¼Çë}?Ü›#É´ìs°æ°ãÂÆàB[ws&¦s¹’0Ìû”ã‰z:»üÌ^çÉR8J@¶šQóÄØ=¼]Õf|Ñ¼;å›¢š•*—äöQò)ð‹
+RŽÑv•ööa¼(UküýÑÃÓæ‘óÅdrŽ=©7pý<¿Àì@f(¥—5—5¦—"oÆbžOÄXNŠ±GqÏ($e÷mÇ	ñŒZmx^§^¼}éûzF©½Öî ‡ìr»]F!ŠäzªÛ&^T÷eØcjkæç4v²lÓ²‹ûÂCäšÌó“##ÏCGÚÌ»~æÁFÀ4²Qèd#BÐÈFD -Šcð@6"€ÝÙ0¯ÛÖÓñ­´­*eëÛDÂZå”mbŠÇ6Ó‰ðÛ^²À†\Í•IlÃ#Í‚±€›jæ…¾!hà6¾PqÎ"€½ò%‹Ì,
+x;>K=y±<ä]ŒE˜°Àq"mŽ—ÙºóúQèà‚¾hãÇà|!Ø+_TwxN–²Ø Ä±@nåHöcKX¹ëÇ™îþ…ˆB_ˆ4ð…ˆ@_¨8çÀ^ù’äf‚üŠ%-Þ†ç–Âxƒ'!ssO„"ÈÝÀÒmHD¡ƒ/DøBD /Tƒó…`7¾-ÄYj)Å+®?’hRœ5®/D‹³Æ»£g}ü/H“ås¨œ°OÑ& Z}Brˆ.Å;ØÎ_&Ò•mAˆja¬â¹^”›^(ñvevštðòÑ£ã“ão°êz ¹ö‹oñ‘ì<§â²Â®?âTãï§¿ýÍ[çÑ»jÿ“ýƒñá
+š%°§3¹Ú'oÔÉ	Õ‘ üó¢2^Ë-ëºùð‚#Ë±±(±†‹0Õ3¢2j¹8^WEeä²j5¾ž,’ºB*f »ÁþO"d(Q+¶x¾$ùÌ‰Ü¹ÃûhIÑ«œ	'jSåÌÊñ-eL4r]O%ÚèÓÍx„5îÙŒ?²—‡75„lÆÄ#ðcu«Žlf]·7ð[MÍÇT4¿ T:>²áÜCAcùHmpfû‡^pèn¦â(•Î«óÇGÏžŸü­ÏÍ\:²G]u2’¸E¶Œ®½nN"hsÖ²îi0j¥™»Žèjãù;ç€ËËs´äÆY•øp@¤©l`›%O’ðT¼‡|°ÕÕ÷<e‡xÛT6êã&‹{6 ªíÇ²‰ï—¸IªXR8okÜZ²Ò6ex?û…6fš 3Ù`b›Èn3üì¢µ‰ì ¹vdÕ4}Î²GPa×Uo¥åh;­?V&+¨öÇu¬mÒ©¿r.ëïþÒãÈrØ¶êÎçÅ­U÷C¨šÔÊ;Æ£0 ÅÆ“¹±òVJe¢^Þ7cŒl·ÛÝ¿þKß{÷ïº¿fSvÅ2&ã1P`Xë¬Õ@¡ó4ÅbêI÷±Ø|‘@yÍ®DR£Woq^¤J-(I¼ü[qx[‘R62¢ÐŒÂÐA\›å®+àX™¤&/0äK2Ï¶S?Èbí4:&ÎÄ‚Ð0q&"Ð6q¦â|âLðóLœU€ÚµÏlÞ¼‚µÑ|æëiðßð´™<ý½îµd?çcô…¾¡\LAªŸ¡‡ô<GÊ.Å[Ì_\½ŠŠlÇŸ´þSöÅs6F(¼¨ÞþTÏÊZ)Ÿf¿³~ âwaðÛºx/~g¿=ÇPãwözïnGî·w¼¯Ç}3úF×}Ã;î[B‡ÑŽåÂÚRAÛIÁ}]|òõ­—E0bEÃRê(~ <m2Køä4Íá _bŒvŠ5iÑHouèŸÿü–´[‘Y ,7:headers;1169:50:12:content-type,30:application/json;charset=UTF-8,]36:22:x-content-type-options,7:nosniff,]37:16:x-xss-protection,13:1; mode=block,]49:23:content-security-policy,18:default-src='self',]51:25:x-content-security-policy,18:default-src='self',]39:13:cache-control,18:no-store, no-cache,]69:25:strict-transport-security,36:max-age=31536000 ; includeSubDomains,]26:15:x-frame-options,4:DENY,]28:16:content-language,5:de-DE,]27:16:content-encoding,4:gzip,]26:14:content-length,5:18349,]26:4:vary,15:Accept-Encoding,]40:4:date,29:Sun, 08 Oct 2023 09:24:05 GMT,]608:10:set-cookie,589:ak_bmsc=2E03A9CF6CCE9C6DAC780EDFF3971D12~000000000000000000000000000000~YAAQkqAkFxQu/AKLAQAARNeZDhUK0ori4bvllfaSpC3qWtsNY47iMUWBlts4A67RucCmfXkIXtoN0zxurPPXe7zONfRjz1oQdAMVs1eE2XuO2PK15iZgXVvLEFz8Yj6n0gaRFUN2NhzPie/qHGcNbCQe6fmTLTDNivvW2v2KLSHeh8zzYGInQf1k6iM+qqJHr8bc0nEt9mLD2X0N37BPiH/Opkv+w29v4MNNGFH3n9Ph/BkO8Rdj0P2f3i2CVbV0QzySB2j9pXD0oWwAQi/qrxDnjzSTG9roJQqXM+BS24rJsx4oqeMbMkUztXCsFg4gsEY7TuAj7KjCFqXGYMk2R21/nsEVKgXWpnd7D9x1XrdX/b7Leq6tTppALo6QdTGJ/RbvhKdZZW+ZOMQah0dXfc8ZiJOCpchqEQ==; Domain=.kleinanzeigen.de; Path=/; Expires=Sun, 08 Oct 2023 11:24:04 GMT; Max-Age=7199; HttpOnly,]]12:http_version;8:HTTP/2.0,}7:request;960:4:path;56:/api/ads/hp-gallery.json?locationId=0&distance=0&size=16,9:authority;20:api.kleinanzeigen.de,6:scheme;5:https,6:method;3:GET,4:port;3:443#4:host;13:23.36.162.196;13:timestamp_end;17:1696742814.926795^15:timestamp_start;18:1696742814.9238148^8:trailers;0:~7:content;0:,7:headers;640:68:11:x-ebayk-app,49:c7b013c7-a4de-40c5-b5a0-a1aa526fd3f51696422065298,]27:20:x-ebayk-userid-token,0:,]279:14:x-ebayk-groups,256:BAND-7832-Category-Alerts_B|BAND-7912-Revise-Buy-Now_B|BLN-19260-cis-login_B|BLN-24066_letzte_preis_A|BLN-24652_category_alert_B|backend_ab_bln01021_B|backend_ab_bln01022_A|backend_ab_bln13364_B|backend_ab_bln404_A|backend_ab_bln418_A|backend_ab_bln_abc2_A,]77:10:user-agent,59:Kleinanzeigen/15.9.0 (Android 11; google sdk_gphone_x86_64),]48:16:x-ecg-user-agent,24:ebayk-android-app-15.9.0,]31:18:x-ecg-user-version,6:15.9.0,]51:13:authorization,30:Basic YW5kcm9pZDpUYVI2MHBFdHRZ,]26:15:accept-encoding,4:gzip,]]12:http_version;8:HTTP/2.0,}6:backup;0:~17:timestamp_created;18:1696742814.9238148^7:comment;0:;8:metadata;0:}6:marked;0:;9:is_replay;0:~11:intercepted;5:false!11:server_conn;4508:3:via;0:~19:timestamp_tcp_setup;18:1696742813.1906588^7:address;23:13:23.36.162.196;3:443#]19:timestamp_tls_setup;18:1696742813.6443014^13:timestamp_end;16:1696742902.52051^15:timestamp_start;18:1696742813.1886575^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;3936:2204:-----BEGIN CERTIFICATE-----
+MIIGLzCCBRegAwIBAgIQDSU/O9zDWqrObJPkT5w3BzANBgkqhkiG9w0BAQsFADBZ
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTMwMQYDVQQDEypE
+aWdpQ2VydCBHbG9iYWwgRzIgVExTIFJTQSBTSEEyNTYgMjAyMCBDQTEwHhcNMjMw
+OTE0MDAwMDAwWhcNMjQxMDE0MjM1OTU5WjBtMQswCQYDVQQGEwJFUzESMBAGA1UE
+BxMJQmFyY2Vsb25hMSswKQYDVQQKDCJBREVWSU5UQSBQUk9EVUNUUyAmIFRFQ0hO
+T0xPR1kgUy5MMR0wGwYDVQQDExRhcGkua2xlaW5hbnplaWdlbi5kZTBZMBMGByqG
+SM49AgEGCCqGSM49AwEHA0IABM/y5etKRC6w0ooMfRiCk1bzc2565VDI9lWuR6m6
+5S8GLE4zlVpLmhGVSHpdQ9PlBAD0GkwsPDa4DRA0AldTUjGjggOoMIIDpDAfBgNV
+HSMEGDAWgBR0hYDAZsffN97PvSk3qgMdvu3NFzAdBgNVHQ4EFgQULtM3KycsRwBu
+p0Hu0r7J42gmymgwOQYDVR0RBDIwMIIUYXBpLmtsZWluYW56ZWlnZW4uZGWCGGdh
+dGV3YXkua2xlaW5hbnplaWdlbi5kZTA+BgNVHSAENzA1MDMGBmeBDAECAjApMCcG
+CCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwDgYDVR0PAQH/
+BAQDAgOIMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATCBnwYDVR0fBIGX
+MIGUMEigRqBEhkJodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9i
+YWxHMlRMU1JTQVNIQTI1NjIwMjBDQTEtMS5jcmwwSKBGoESGQmh0dHA6Ly9jcmw0
+LmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENB
+MS0xLmNybDCBhwYIKwYBBQUHAQEEezB5MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5kaWdpY2VydC5jb20wUQYIKwYBBQUHMAKGRWh0dHA6Ly9jYWNlcnRzLmRpZ2lj
+ZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENBMS0xLmNy
+dDAMBgNVHRMBAf8EAjAAMIIBfAYKKwYBBAHWeQIEAgSCAWwEggFoAWYAdgDuzdBk
+1dsazsVct520zROiModGfLzs3sNRSFlGcR+1mwAAAYqUFM5rAAAEAwBHMEUCIHg8
+rrorqut3gRHraiXM10o1QOKm9FXcPxIjuCGjTFbYAiEA9HYYjGY/8YzcdgdGdpjR
+/CF+rCpE04lfisrxqRbCUuIAdQBIsONr2qZHNA/lagL6nTDrHFIBy1bdLIHZu7+r
+OdiEcwAAAYqUFM6GAAAEAwBGMEQCIHJ1AC6T/qsKXomd2mhZ2yt8h6ZY8PkEE6gu
+vHTAHRlBAiAk8hZ8B1pUTmYRgmPIF2XdoKpBtXsOJFPSrcIhGi+jTAB1ANq2v2s/
+tbYin5vCu1xr6HCRcWy7UYSFNL2kPTBI1/urAAABipQUzk4AAAQDAEYwRAIgWpnL
+XpUgLxtlgGuCwrbrRKgXSx3AtJnwudt7ZACyUoUCIBm7R77Vd/eIE94S6vl63oXf
+KgLkeZzAYi1PZ8sdZLqfMA0GCSqGSIb3DQEBCwUAA4IBAQCscRSaw6FOU5ih1kQz
+Y7wSbabaRn5zHemkyNimWqEXuMaUD2YBGt/j5G1TMJqlf7HJ2COEW8f9dYSAzRiY
+VUgViznc8C0a0DrunA3k6u8A86qwt+jGqy37XamDtcWVB3CrP3bwigrkQj6y6qfz
+2/xwVWzflBW2DiwdbXk+22E5m+yeFwKqROyp+A/+ydILntBDs2LmvOG7HkVvJtvM
+9iAHcArzkum5Ln80PBubD9+9KZTBvVFYQt0rHp9tZm6898+BRx22rf10NzaOB+qj
+t8az3dnl/9axoO/ZLlhuSbAjjV8GKtsYARVg0JBN196Ar8lUOiA2FcH8Pv6xRSss
++k5p
+-----END CERTIFICATE-----
+,1720:-----BEGIN CERTIFICATE-----
+MIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh
+bCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV
+cNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy
+FuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc
+3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8
+osicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT
+zGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud
+EwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G
+A1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd
+BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG
+NGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH
+Mi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29t
+L0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDA9BgNVHSAENjA0MAsGCWCGSAGG/WwC
+ATAHBgVngQwBATAIBgZngQwBAgEwCAYGZ4EMAQICMAgGBmeBDAECAzANBgkqhkiG
+9w0BAQsFAAOCAQEAkPFwyyiXaZd8dP3A+iZ7U6utzWX9upwGnIrXWkOH7U1MVl+t
+wcW1BSAuWdH/SvWgKtiwla3JLko716f2b4gp/DA/JIS7w7d7kwcsr4drdjPtAFVS
+slme5LnQ89/nD/7d+MS5EHKBCQRfz5eeLjJ1js+aWNJXMX43AYGyZm0pGrFmCW3R
+bpD0ufovARTFXFZkAdl9h6g4U5+LXUZtXMYnhIHUfoyMo5tS58aI7Dd8KvvwVVo4
+chDYABPPTHPbqjc1qCmBaZx2vN4Ye5DUys/vZwP9BFohFrH/6j/f3IL16/RZkiMN
+JCqVJUzKoZHm1Lesh3Sz8W2jmdv51b2EQJ8HmA==
+-----END CERTIFICATE-----
+,]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:8b039754-72fc-4c77-904e-53e94ad44ad4;8:sockname;27:15:100.127.255.249;5:59936#]8:peername;23:13:23.36.162.196;3:443#]}11:client_conn;518:10:proxy_mode;7:regular;8:mitmcert;0:~19:timestamp_tls_setup;18:1696742813.6533031^13:timestamp_end;18:1696742902.4234166^15:timestamp_start;17:1696742813.182677^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;0:]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:0a4814f5-02d8-4d54-9b5a-cd05476922c5;8:sockname;25:14:192.168.56.149;4:8080#]8:peername;26:14:192.168.56.149;5:59935#]}5:error;0:~2:id;36:f2220f1b-822e-4abd-8a8b-1fa774c38a5a;4:type;4:http;7:version;2:20#}7265:9:websocket;0:~8:response;877:6:reason;5:Found,11:status_code;3:302#13:timestamp_end;17:1696742815.459315^15:timestamp_start;17:1696742815.455296^8:trailers;0:~7:content;0:,7:headers;692:22:14:content-length,1:0,]40:4:date,29:Sun, 08 Oct 2023 09:24:04 GMT,]19:6:server,7:Kestrel,]56:13:cache-control,35:no-cache, no-store, must-revalidate,]14:7:expires,1:0,]377:8:location,361:https://mug.criteo.com/sid?cpp=adHibHx6eEdTMEhlRXZlTjU5V0xlM3lKVGpVdkc4dGNvT1ZhKzNKbW8vaE90NVN1Q3dncmp5UUo4S01QUFJ1d2Y5L1owT2c5ZU9tOVhEYjk5TUxuOElkL2pBR2s3TUFvdUFTYWVsdDl5d1FMV1kwenJWUzhxVWhwS21QNW5UenM1Z3VnL2hySmhPdytCUVgvWURXT01lMXVWdFUyam1JRFUzNSszZDNVYlVZeXMxZklVbFUvTDd6Mkp2R1BFd054c1pJb21nVktKR0lBQ1hvRDU4d2JITnA2VXpzOWRrK2VLM2U2eWlkVnpINFQ1Rk5nPXw&cppv=2,]20:6:pragma,8:no-cache,]48:35:server-processing-duration-in-ticks,6:383658,]59:25:strict-transport-security,26:max-age=31536000; preload;,]]12:http_version;8:HTTP/1.1,}7:request;1038:4:path;474:/appevent/v1/2379?gaid=8bb16900-d5a7-4881-9645-ce555aaf71a4&limitedAdTracking=0&appId=com.ebay.kleinanzeigen&gdpr_consent=CPzJXm6PzJXm6E1ABADEC4CgAP_AAAAAAAYgJQtd_H__bX9v-f7_6ft0eY1f9_r77uQzDhfNs-4F3L_W_LwX_2E7NF36tq4KmR4ku1LBIUNtHNnUDVmxaokVrzHsak2cpTNKJ-BkknsZe2dYGF5vm5tj-QKZ5v5_d3f52T_9_9v-39z33913v3d9_-_12Pjde5_9H_v_fR_b8_Kf9_7-_4v8_9_rk3_e__________--AAAAkpABgACCUJKADAAEEoSEAGAAIJQjoAMAAQShGQAYAAglCKgAwABBKERABgACCUIaADAAEEoQkAGAAIJQgA.YAAAAAAAArwA&eventType=Active,9:authority;0:,6:scheme;5:https,6:method;3:GET,4:port;3:443#4:host;12:178.250.1.11;13:timestamp_end;18:1696742815.2760742^15:timestamp_start;17:1696742815.271074^8:trailers;0:~7:content;0:,7:headers;321:30:12:Content-Type,10:text/plain,]191:10:User-Agent,172:Mozilla/5.0 (Linux; Android 11; sdk_gphone_x86_64 Build/RSR1.210722.013.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36,]25:4:Host,14:gum.criteo.com,]28:10:Connection,10:Keep-Alive,]26:15:Accept-Encoding,4:gzip,]]12:http_version;8:HTTP/1.1,}6:backup;0:~17:timestamp_created;17:1696742815.271074^7:comment;0:;8:metadata;0:}6:marked;0:;9:is_replay;0:~11:intercepted;5:false!11:server_conn;4533:3:via;0:~19:timestamp_tcp_setup;17:1696742814.929818^7:address;22:12:178.250.1.11;3:443#]19:timestamp_tls_setup;18:1696742815.2023535^13:timestamp_end;17:1696742818.176089^15:timestamp_start;18:1696742814.9247947^3:sni;14:gum.criteo.com;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_128_GCM_SHA256;11:alpn_offers;11:8:http/1.1,]4:alpn;8:http/1.1,16:certificate_list;3968:2179:-----BEGIN CERTIFICATE-----
+MIIGGzCCBQOgAwIBAgIQC06AXcu0VgXecNFTygz4MDANBgkqhkiG9w0BAQsFADBZ
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTMwMQYDVQQDEypE
+aWdpQ2VydCBHbG9iYWwgRzIgVExTIFJTQSBTSEEyNTYgMjAyMCBDQTEwHhcNMjMw
+OTI2MDAwMDAwWhcNMjMxMjIzMjM1OTU5WjBtMQswCQYDVQQGEwJGUjEXMBUGA1UE
+CAwOw45sZS1kZS1GcmFuY2UxDjAMBgNVBAcTBVBhcmlzMR4wHAYDVQQKExVDcml0
+ZW8gVGVjaG5vbG9neSBTQVMxFTATBgNVBAMMDCouY3JpdGVvLmNvbTBZMBMGByqG
+SM49AgEGCCqGSM49AwEHA0IABCzDq0fcRxqPnkXI1n8NKkdqoxDpOmnpv1CV5WgR
+uLfuvFSDYcCO76v77Yj2RvTx+BOMeLmdddA0lCNZW4JdLi6jggOUMIIDkDAfBgNV
+HSMEGDAWgBR0hYDAZsffN97PvSk3qgMdvu3NFzAdBgNVHQ4EFgQUcueDZf/x8Thz
+APuQ64ePISzfvoowIwYDVR0RBBwwGoIMKi5jcml0ZW8uY29tggpjcml0ZW8uY29t
+MD4GA1UdIAQ3MDUwMwYGZ4EMAQICMCkwJwYIKwYBBQUHAgEWG2h0dHA6Ly93d3cu
+ZGlnaWNlcnQuY29tL0NQUzAOBgNVHQ8BAf8EBAMCA4gwHQYDVR0lBBYwFAYIKwYB
+BQUHAwEGCCsGAQUFBwMCMIGfBgNVHR8EgZcwgZQwSKBGoESGQmh0dHA6Ly9jcmwz
+LmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENB
+MS0xLmNybDBIoEagRIZCaHR0cDovL2NybDQuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0
+R2xvYmFsRzJUTFNSU0FTSEEyNTYyMDIwQ0ExLTEuY3JsMIGHBggrBgEFBQcBAQR7
+MHkwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBRBggrBgEF
+BQcwAoZFaHR0cDovL2NhY2VydHMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0R2xvYmFs
+RzJUTFNSU0FTSEEyNTYyMDIwQ0ExLTEuY3J0MAwGA1UdEwEB/wQCMAAwggF+Bgor
+BgEEAdZ5AgQCBIIBbgSCAWoBaAB2AOg+0No+9QY1MudXKLyJa8kD08vREWvs62nh
+d31tBr1uAAABitD7gyQAAAQDAEcwRQIgW8tl/vDnzzC9sstinve+cGPdE03qEO4P
+P56hG6z1N0wCIQDap+T5/RX+JSUxYxzJPHrQYkwgrBJC4bNEYWNGnr9taAB2AHoy
+jFTYty22IOo44FIe6YQWcDIThU070ivBOlejUutSAAABitD7gwEAAAQDAEcwRQIg
+RB16rIxYiVkTmF/ZkRcwZgmPlg3iWsihSbOtfih05C4CIQCOilGO+DmuBDYhRXAg
+cs9nCCD/3ichvfcVhHIiKv/RFAB2ALc++yTfnE26dfI5xbpY9Gxd/ELPep81xJ4d
+CYEl7bSZAAABitD7g1EAAAQDAEcwRQIhAI9zLQrl7Dx27rDJ00sbK7aVbqwR/G4s
+u5JsbsATyaAqAiBm0hyS6cJ8hQ9SOESMpVBrNHE8jHWUSc2O0o1Qu83mUTANBgkq
+hkiG9w0BAQsFAAOCAQEAl0SR9xfsrZnB6c1/Cf4L1dEVZmd8j8BEtnF61pm04RkL
+T2r/v0va5EOxCjk8X7I3MbfOgVvpNhmfKGx0HNzBMOd8G7CsNelRc+8N8gI2L6gn
+ERkF3msKt5Gfs6vnfnYWrYy8NP8iL7rEVTecJm2N4TvHY8JGstpCl2CtAwJdgXj3
+BdBxKHQTIXGgbV9YQhk+Kc0le+2H2wWCRx/p+v9Qx0oLz0Gi7wNG9HBcWsTHKPok
+umx587jjMOf+rf+l8bCB44Y+Mkz1ghGsZbJYgZiCEvbopodowcwLLpiHajJwOKlk
+5qXFQgw9qxmWA5RMSqyBd6u/Z8BRff2+YZHdDrf+zQ==
+-----END CERTIFICATE-----
+,1777:-----BEGIN CERTIFICATE-----
+MIIE9DCCA9ygAwIBAgIQCF+UwC2Fe+jMFP9T7aI+KjANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0yMDA5MjQwMDAwMDBaFw0zMDA5MjMyMzU5NTlaMFkxCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh
+bCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV
+cNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy
+FuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc
+3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8
+osicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT
+zGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAa4wggGqMB0GA1Ud
+DgQWBBR0hYDAZsffN97PvSk3qgMdvu3NFzAfBgNVHSMEGDAWgBROIlQgGJXm427m
+D/r6uRLtBhePOTAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0lBBYwFAYIKwYBBQUHAwEG
+CCsGAQUFBwMCMBIGA1UdEwEB/wQIMAYBAf8CAQAwdgYIKwYBBQUHAQEEajBoMCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG
+NGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH
+Mi5jcnQwewYDVR0fBHQwcjA3oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29t
+L0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDA3oDWgM4YxaHR0cDovL2NybDQuZGln
+aWNlcnQuY29tL0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDAwBgNVHSAEKTAnMAcG
+BWeBDAEBMAgGBmeBDAECATAIBgZngQwBAgIwCAYGZ4EMAQIDMA0GCSqGSIb3DQEB
+CwUAA4IBAQB1i8A8W+//cFxrivUh76wx5kM9gK/XVakew44YbHnT96xC34+IxZ20
+dfPJCP2K/lHz8p0gGgQ1zvi2QXmv/8yWXpTTmh1wLqIxi/ulzH9W3xc3l7/BjUOG
+q4xmfrnti/EPjLXUVa9ciZ7gpyptsqNjMhg7y961n4OzEQGsIA2QlxK3KZw1tdeR
+Du9Ab21cO72h2fviyy52QNI6uyy/FgvqvQNbTpg6Ku0FUAcVkzxzOZGUWkgOxtNK
+Aa9mObm9QjQc2wgD80D8EuiuPKuK1ftyeWSm4w5VsTuVP61gM2eKrLanXPDtWlIb
+1GHhJRLmB7WqlLLwKPZhJl5VHPgB63dx
+-----END CERTIFICATE-----
+,]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:d98a0120-6f97-4670-8d81-eb08a0cc0e59;8:sockname;27:15:100.127.255.249;5:59950#]8:peername;22:12:178.250.1.11;3:443#]}11:client_conn;513:10:proxy_mode;7:regular;8:mitmcert;0:~19:timestamp_tls_setup;18:1696742815.2193472^13:timestamp_end;17:1696742818.166085^15:timestamp_start;18:1696742814.8799145^3:sni;14:gum.criteo.com;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;11:8:http/1.1,]4:alpn;8:http/1.1,16:certificate_list;0:]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:3d9d8d10-5a3f-4b77-9e59-519fbd1c0071;8:sockname;25:14:192.168.56.149;4:8080#]8:peername;26:14:192.168.56.149;5:59949#]}5:error;0:~2:id;36:10dada2b-f74d-4b52-b09f-c08a5a12118f;4:type;4:http;7:version;2:20#}7523:9:websocket;0:~8:response;586:6:reason;2:OK,11:status_code;3:200#13:timestamp_end;18:1696742817.2176244^15:timestamp_start;18:1696742817.2166283^8:trailers;0:~7:content;87:{"app_token":"zqqbe3yqdfzq","adid":"271694410d4a79c2c98441f9bdb14072","ask_in":3600000},7:headers;314:51:12:content-type,31:application/json; charset=utf-8,]40:4:date,29:Sun, 08 Oct 2023 09:24:07 GMT,]23:14:content-length,2:87,]77:25:strict-transport-security,44:max-age=31536000; includeSubDomains; preload,]33:15:x-frame-options,10:SAMEORIGIN,]36:22:x-content-type-options,7:nosniff,]26:12:x-robots-tag,7:noindex,]]12:http_version;8:HTTP/1.1,}7:request;1456:4:path;783:/attribution?gps_adid_attempt=1&api_level=30&event_buffering_enabled=0&app_version=15.9.0&app_token=zqqbe3yqdfzq&created_at=2023-10-08T05%3A26%3A56.787Z%2B0000&device_type=phone&gps_adid=8bb16900-d5a7-4881-9645-ce555aaf71a4&google_app_set_id=db452ff1-240c-4ecc-bbd9-6cb084dfec4c&device_name=sdk_gphone_x86_64&needs_response_details=1&gps_adid_src=service&push_token=cc4fjbE5R5m456CVh2x8En%3AAPA91bHgUQ0u5oUutY7B4C4Ff8p-MmBP9n9Mzzkvo4UbyE371P2IWrpmvs750TsiFg1wMGSygsZ3d7rHqBKDqj6Zey4rmpcmOKg2YjmNnOFJ6jk2mAj0Hw93CZ7rRLT6ksdnZBdt3YWw&initiated_by=sdk&os_version=11&android_uuid=572ab486-0ce6-4f36-b291-610d97af5e73&environment=production&attribution_deeplink=1&package_name=com.ebay.kleinanzeigen&os_name=android&ui_mode=1&tracking_enabled=1&sent_at=2023-10-08T05%3A26%3A56.842Z%2B0000,9:authority;0:,6:scheme;5:https,6:method;3:GET,4:port;3:443#4:host;13:185.151.204.8;13:timestamp_end;18:1696742817.0649676^15:timestamp_start;18:1696742817.0619671^8:trailers;0:~7:content;0:,7:headers;428:31:10:Client-SDK,13:android4.34.0,]196:13:Authorization,174:Signature secret_id="1",signature="7682b4d2f8216d54f8c3e655cafd0906e758db022fbc240553b74c444ee1dd92",algorithm="sha256",headers="created_at gps_adid app_secret activity_kind",]97:10:User-Agent,79:Dalvik/2.1.0 (Linux; U; Android 11; sdk_gphone_x86_64 Build/RSR1.210722.013.A2),]25:4:Host,14:app.adjust.com,]28:10:Connection,10:Keep-Alive,]26:15:Accept-Encoding,4:gzip,]]12:http_version;8:HTTP/1.1,}6:backup;0:~17:timestamp_created;18:1696742817.0619671^7:comment;0:;8:metadata;0:}6:marked;0:;9:is_replay;0:~11:intercepted;5:false!11:server_conn;4670:3:via;0:~19:timestamp_tcp_setup;18:1696742816.8733237^7:address;23:13:185.151.204.8;3:443#]19:timestamp_tls_setup;18:1696742817.0444221^13:timestamp_end;18:1696742818.3920896^15:timestamp_start;17:1696742816.871328^3:sni;14:app.adjust.com;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;11:8:http/1.1,]4:alpn;0:,16:certificate_list;4110:2394:-----BEGIN CERTIFICATE-----
+MIIGuzCCBaOgAwIBAgIQCStpT3iI/jS6Bs/RfZ3NaDANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMSkwJwYDVQQDEyBE
+aWdpQ2VydCBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTAeFw0yMzAxMDMwMDAwMDBa
+Fw0yNDAyMDMyMzU5NTlaMF4xCzAJBgNVBAYTAkRFMQ8wDQYDVQQIEwZCZXJsaW4x
+DzANBgNVBAcTBkJlcmxpbjEUMBIGA1UEChMLQWRqdXN0IEdtYkgxFzAVBgNVBAMT
+DmFwcC5hZGp1c3QuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+5dreiUipuDBwvSFgnUATJM9Pr282PxJgBoPC2Hk9PvtGYUyx4NtNiMGe69M9xJxJ
+hAwgvMGknkYNsM7FFTwcN868vxycJnCjsPJBC2Ab1baLHniYha4o6RHch20OH5Bu
+tS2bCk2Hx0LWuaLcVWkbbdm7Gyiprs9JuOTi6wcAxIlrbBl26fnXec1K7cM4VHUZ
+cw4LgKTqAwbz6JDSq/sdqA0tkWvucO2ZVjWRatBJEWm16ea2VloacoEwG/32rQ1H
+hIvXDdqCyQrUDJODXOlGk2StODRg63CLE+dotvn3/Mr4t9w3kH/7g/fVcc0e2y9r
+i1lVgrDWE6S6+D3x3SWttQIDAQABo4IDgjCCA34wHwYDVR0jBBgwFoAUt2ui6qiq
+hIx56rTaD5iyxZV2ufQwHQYDVR0OBBYEFMgjGNwX9cPDxFd0vqgd+mudRH8cMC0G
+A1UdEQQmMCSCDmFwcC5hZGp1c3QuY29tghJ3d3cuYXBwLmFkanVzdC5jb20wDgYD
+VR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjCBjwYD
+VR0fBIGHMIGEMECgPqA8hjpodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNl
+cnRUTFNSU0FTSEEyNTYyMDIwQ0ExLTQuY3JsMECgPqA8hjpodHRwOi8vY3JsNC5k
+aWdpY2VydC5jb20vRGlnaUNlcnRUTFNSU0FTSEEyNTYyMDIwQ0ExLTQuY3JsMD4G
+A1UdIAQ3MDUwMwYGZ4EMAQICMCkwJwYIKwYBBQUHAgEWG2h0dHA6Ly93d3cuZGln
+aWNlcnQuY29tL0NQUzB/BggrBgEFBQcBAQRzMHEwJAYIKwYBBQUHMAGGGGh0dHA6
+Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBJBggrBgEFBQcwAoY9aHR0cDovL2NhY2VydHMu
+ZGlnaWNlcnQuY29tL0RpZ2lDZXJ0VExTUlNBU0hBMjU2MjAyMENBMS0xLmNydDAJ
+BgNVHRMEAjAAMIIBfgYKKwYBBAHWeQIEAgSCAW4EggFqAWgAdQDuzdBk1dsazsVc
+t520zROiModGfLzs3sNRSFlGcR+1mwAAAYV2p+DIAAAEAwBGMEQCIEKhrUUandtP
+qHRjN1OF2Hp3KOVtynMCJlhEVRbMFPvDAiB3y7edPqQR01HLND+cPK+KT/oLHBJ+
+I3CUm7YbqXpKLwB3AEiw42vapkc0D+VqAvqdMOscUgHLVt0sgdm7v6s52IRzAAAB
+hXan4J0AAAQDAEgwRgIhAKxLgJlBMaiVIirBZmMDfhgfj7n2uUmFAygNhbVQ+phg
+AiEA/qyjGo1EZA7hRqo9N9E4x5nlxyBvr8XuGmFMIrlE3tIAdgA7U3d1Pi25gE6L
+MFsG/kA7Z9hPw/THvQANLXJv4frUFwAAAYV2p+CWAAAEAwBHMEUCIQDOoxOPySyF
+q2qCjTxwx/W17fBG4fExLY7ektnXCr4nDQIgGbgk2aryloYx21q3YFXR6fw7ZNrD
+kKkejGjquxFz4ywwDQYJKoZIhvcNAQELBQADggEBADc3kAZYTF4K1ljdSTUw60Ba
+ScUlVCDmfBf1wPJwthyOxa+anqMYpMbcT4inkUbD0WtzHXkIvIknqDOryj40He2m
+wI9dUVV5DP0ye6vmGNaf3WLTZnkwBc5oqz7/ddSX/tQvXKaBYhrUTPO0nB3iOrEy
+90+OxiS8tcfRsgyCdm4xHF/PFgAD14UDfLbZHqbEu9xVRPmu4OoPw8MQKNsHIjmA
+pH8+D0faB8AkhawC5NKKu4xkeYdkeirbU5SY06S+SBOMP34XUovBBZrN2tFcoAia
+wjkwXWfgUFRMaJJfOQEz9yytxYd41X3YWxCACMuf54QHOA8eJBIfYJtKYqBunfM=
+-----END CERTIFICATE-----
+,1704:-----BEGIN CERTIFICATE-----
+MIIEvjCCA6agAwIBAgIQBtjZBNVYQ0b2ii+nVCJ+xDANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
+QTAeFw0yMTA0MTQwMDAwMDBaFw0zMTA0MTMyMzU5NTlaME8xCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxKTAnBgNVBAMTIERpZ2lDZXJ0IFRMUyBS
+U0EgU0hBMjU2IDIwMjAgQ0ExMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+AQEAwUuzZUdwvN1PWNvsnO3DZuUfMRNUrUpmRh8sCuxkB+Uu3Ny5CiDt3+PE0J6a
+qXodgojlEVbbHp9YwlHnLDQNLtKS4VbL8Xlfs7uHyiUDe5pSQWYQYE9XE0nw6Ddn
+g9/n00tnTCJRpt8OmRDtV1F0JuJ9x8piLhMbfyOIJVNvwTRYAIuE//i+p1hJInuW
+raKImxW8oHzf6VGo1bDtN+I2tIJLYrVJmuzHZ9bjPvXj1hJeRPG/cUJ9WIQDgLGB
+Afr5yjK7tI4nhyfFK3TUqNaX3sNk+crOU6JWvHgXjkkDKa77SU+kFbnO8lwZV21r
+eacroicgE7XQPUDTITAHk+qZ9QIDAQABo4IBgjCCAX4wEgYDVR0TAQH/BAgwBgEB
+/wIBADAdBgNVHQ4EFgQUt2ui6qiqhIx56rTaD5iyxZV2ufQwHwYDVR0jBBgwFoAU
+A95QNVbRTLtm8KPiGxvDl7I90VUwDgYDVR0PAQH/BAQDAgGGMB0GA1UdJQQWMBQG
+CCsGAQUFBwMBBggrBgEFBQcDAjB2BggrBgEFBQcBAQRqMGgwJAYIKwYBBQUHMAGG
+GGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBABggrBgEFBQcwAoY0aHR0cDovL2Nh
+Y2VydHMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0R2xvYmFsUm9vdENBLmNydDBCBgNV
+HR8EOzA5MDegNaAzhjFodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRH
+bG9iYWxSb290Q0EuY3JsMD0GA1UdIAQ2MDQwCwYJYIZIAYb9bAIBMAcGBWeBDAEB
+MAgGBmeBDAECATAIBgZngQwBAgIwCAYGZ4EMAQIDMA0GCSqGSIb3DQEBCwUAA4IB
+AQCAMs5eC91uWg0Kr+HWhMvAjvqFcO3aXbMM9yt1QP6FCvrzMXi3cEsaiVi6gL3z
+ax3pfs8LulicWdSQ0/1s/dCYbbdxglvPbQtaCdB73sRD2Cqk3p5BJl+7j5nL3a7h
+qG+fh/50tx8bIKuxT8b1Z11dmzzp/2n3YWzW2fP9NsarA4h20ksudYbj/NhVfSbC
+EXffPgK2fPOre3qGNm+499iTcc+G33Mw+nur7SpZyEKEOxEXGlLzyQ4UfaJbcme6
+ce1XR2bFuAJKZTRei9AqPCCcUZlM51Ke92sRKw2Sfh3oius2FkOH6ipjv3U/697E
+A7sKPPcw7+uvTPyLNhBzPvOk
+-----END CERTIFICATE-----
+,]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:9c9164e4-9f49-4d8a-bebc-3098b08b1716;8:sockname;27:15:100.127.255.249;5:59957#]8:peername;23:13:185.151.204.8;3:443#]}11:client_conn;506:10:proxy_mode;7:regular;8:mitmcert;0:~19:timestamp_tls_setup;18:1696742817.0609667^13:timestamp_end;18:1696742818.3800852^15:timestamp_start;18:1696742816.8633242^3:sni;14:app.adjust.com;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;11:8:http/1.1,]4:alpn;0:,16:certificate_list;0:]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:a2376805-1625-446b-83ee-3303d9e922c1;8:sockname;25:14:192.168.56.149;4:8080#]8:peername;26:14:192.168.56.149;5:59956#]}5:error;0:~2:id;36:7696cf3d-6836-4fab-b91d-66af6cf968fe;4:type;4:http;7:version;2:20#}7584:9:websocket;0:~8:response;1642:6:reason;2:OK,11:status_code;3:200#13:timestamp_end;18:1696742933.6568842^15:timestamp_start;17:1696742933.655869^8:trailers;0:~7:content;275:{"serversidesignal":"AAQAAAAA%2f%2f%2f%2f%2f7fl56CoicpLLvksnbbRrkaVBHXYsUIZvgzQKyU90Yn2e5RnF13lgngrwITHML4GXE5kSRD2px5pMhcfjSe577d8+2hvPZQj7zoU70kLRHBByQCmGcJeWitwaeqDIgGX%2fmJYspB%2fj7QBuvkyx1y+80SbpbYja5zOk+nckK%2fSeTB+mLMbYBIR6+8ncZYAtRe2FFCJqxrZomie9YyOeVV%2fS80JIFw%3d"},7:headers;1181:24:14:Content-Length,3:275,]40:4:Date,29:Sun, 08 Oct 2023 09:26:03 GMT,]28:10:Connection,10:keep-alive,]36:12:Content-Type,16:application/json,]553:10:Set-Cookie,534:_abck=86AD768048FFA069A61AD0541F45227E~-1~YAAQjaAkFzntUQOLAQAAHaabDgp/VAV52/m1X0MqKPpSlx0svDi2ojbYYuyER5rTVx77aBw2/IxM27ZnKQeL3eVNLE4GpR17VNYxJXJRmKeqWUg2TRvN8jJrj7eXNiaOPctNMLxv25qCuRZk46QKyrjNxzLdrGFQgci89gPigNWxAdwow5ybZOoJW20pjz1tQPI21iB+g5nL7mdB/09jTaI7lzfppRRp41natO0Hb2/qBHlDWBFhE/zVSs8nMs0QWZlZTKba9R/hsGOJeAQbsGB5Fanz12JZRMAxPGOUolxeR/mz/QMvbeSx/qshlPQlOWuFqe5EU1Xi7b3EC7TEn6tWiMge7AginaXVd5UeTsSttj6+Da7t+MVRl33NiRU=~-1~-1~-1; Domain=.kleinanzeigen.de; Path=/; Expires=Mon, 07 Oct 2024 09:26:03 GMT; Max-Age=31536000; Secure,]474:10:Set-Cookie,455:bm_sz=0D3C6E2887648C2CA34DB2B1ED992402~YAAQjaAkFzrtUQOLAQAAHaabDhWUJuNiP8iwr38yaYyw+vyyJdgu769CiJOO8uQ6rEDxy4hRdXd7wiJuGYcBlH6siZHVHGNQPjl0QwfTkOaVcJixz+FgDwoEPcq17zJVhyyOiaz0KYIjRmWVubTWM4fl2exbGlHQdV7blof1uNQFCyrO1y8liZWpMRBSPvmYwv8WS5YewIOxYb5+4l6YJ4iupgQ92CE8xGLWLpGS5ONr7h01lb2sTAacxPGKJ4Kta/+N40R//Bp64K6F1ODEoTlxPeBpwCAhAYZBPW8vrH32ZCWA97XFLjE=~4599859~3290168; Domain=.kleinanzeigen.de; Path=/; Expires=Sun, 08 Oct 2023 13:26:03 GMT; Max-Age=14400,]]12:http_version;8:HTTP/1.1,}7:request;609:4:path;182:/_bm/get_params?type=sdk-dci&starttime=1696742932420&systemVersion=11&model=sdk_gphone_x86_64&deviceHardwareType=ranchu&appIdentifier=com.ebay.kleinanzeigen&deviceId=bb38c6bd2d102ed0,9:authority;0:,6:scheme;5:https,6:method;3:GET,4:port;3:443#4:host;13:23.36.162.222;13:timestamp_end;17:1696742933.492854^15:timestamp_start;18:1696742933.4908555^8:trailers;0:~7:content;0:,7:headers;183:82:10:User-Agent,64:Akamai BMPSDK/3.3.5 (Android; 11; Google; sdk_gphone_x86_64; en),]31:4:Host,20:api.kleinanzeigen.de,]28:10:Connection,10:Keep-Alive,]26:15:Accept-Encoding,4:gzip,]]12:http_version;8:HTTP/1.1,}6:backup;0:~17:timestamp_created;18:1696742933.4908555^7:comment;0:;8:metadata;0:}6:marked;0:;9:is_replay;0:~11:intercepted;5:false!11:server_conn;4510:3:via;0:~19:timestamp_tcp_setup;18:1696742932.9077637^7:address;23:13:23.36.162.222;3:443#]19:timestamp_tls_setup;18:1696742933.4767675^13:timestamp_end;17:1696743233.709599^15:timestamp_start;18:1696742932.9067636^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;11:8:http/1.1,]4:alpn;8:http/1.1,16:certificate_list;3936:2204:-----BEGIN CERTIFICATE-----
+MIIGLzCCBRegAwIBAgIQDSU/O9zDWqrObJPkT5w3BzANBgkqhkiG9w0BAQsFADBZ
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTMwMQYDVQQDEypE
+aWdpQ2VydCBHbG9iYWwgRzIgVExTIFJTQSBTSEEyNTYgMjAyMCBDQTEwHhcNMjMw
+OTE0MDAwMDAwWhcNMjQxMDE0MjM1OTU5WjBtMQswCQYDVQQGEwJFUzESMBAGA1UE
+BxMJQmFyY2Vsb25hMSswKQYDVQQKDCJBREVWSU5UQSBQUk9EVUNUUyAmIFRFQ0hO
+T0xPR1kgUy5MMR0wGwYDVQQDExRhcGkua2xlaW5hbnplaWdlbi5kZTBZMBMGByqG
+SM49AgEGCCqGSM49AwEHA0IABM/y5etKRC6w0ooMfRiCk1bzc2565VDI9lWuR6m6
+5S8GLE4zlVpLmhGVSHpdQ9PlBAD0GkwsPDa4DRA0AldTUjGjggOoMIIDpDAfBgNV
+HSMEGDAWgBR0hYDAZsffN97PvSk3qgMdvu3NFzAdBgNVHQ4EFgQULtM3KycsRwBu
+p0Hu0r7J42gmymgwOQYDVR0RBDIwMIIUYXBpLmtsZWluYW56ZWlnZW4uZGWCGGdh
+dGV3YXkua2xlaW5hbnplaWdlbi5kZTA+BgNVHSAENzA1MDMGBmeBDAECAjApMCcG
+CCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwDgYDVR0PAQH/
+BAQDAgOIMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATCBnwYDVR0fBIGX
+MIGUMEigRqBEhkJodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9i
+YWxHMlRMU1JTQVNIQTI1NjIwMjBDQTEtMS5jcmwwSKBGoESGQmh0dHA6Ly9jcmw0
+LmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENB
+MS0xLmNybDCBhwYIKwYBBQUHAQEEezB5MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5kaWdpY2VydC5jb20wUQYIKwYBBQUHMAKGRWh0dHA6Ly9jYWNlcnRzLmRpZ2lj
+ZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENBMS0xLmNy
+dDAMBgNVHRMBAf8EAjAAMIIBfAYKKwYBBAHWeQIEAgSCAWwEggFoAWYAdgDuzdBk
+1dsazsVct520zROiModGfLzs3sNRSFlGcR+1mwAAAYqUFM5rAAAEAwBHMEUCIHg8
+rrorqut3gRHraiXM10o1QOKm9FXcPxIjuCGjTFbYAiEA9HYYjGY/8YzcdgdGdpjR
+/CF+rCpE04lfisrxqRbCUuIAdQBIsONr2qZHNA/lagL6nTDrHFIBy1bdLIHZu7+r
+OdiEcwAAAYqUFM6GAAAEAwBGMEQCIHJ1AC6T/qsKXomd2mhZ2yt8h6ZY8PkEE6gu
+vHTAHRlBAiAk8hZ8B1pUTmYRgmPIF2XdoKpBtXsOJFPSrcIhGi+jTAB1ANq2v2s/
+tbYin5vCu1xr6HCRcWy7UYSFNL2kPTBI1/urAAABipQUzk4AAAQDAEYwRAIgWpnL
+XpUgLxtlgGuCwrbrRKgXSx3AtJnwudt7ZACyUoUCIBm7R77Vd/eIE94S6vl63oXf
+KgLkeZzAYi1PZ8sdZLqfMA0GCSqGSIb3DQEBCwUAA4IBAQCscRSaw6FOU5ih1kQz
+Y7wSbabaRn5zHemkyNimWqEXuMaUD2YBGt/j5G1TMJqlf7HJ2COEW8f9dYSAzRiY
+VUgViznc8C0a0DrunA3k6u8A86qwt+jGqy37XamDtcWVB3CrP3bwigrkQj6y6qfz
+2/xwVWzflBW2DiwdbXk+22E5m+yeFwKqROyp+A/+ydILntBDs2LmvOG7HkVvJtvM
+9iAHcArzkum5Ln80PBubD9+9KZTBvVFYQt0rHp9tZm6898+BRx22rf10NzaOB+qj
+t8az3dnl/9axoO/ZLlhuSbAjjV8GKtsYARVg0JBN196Ar8lUOiA2FcH8Pv6xRSss
++k5p
+-----END CERTIFICATE-----
+,1720:-----BEGIN CERTIFICATE-----
+MIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh
+bCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV
+cNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy
+FuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc
+3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8
+osicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT
+zGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud
+EwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G
+A1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd
+BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG
+NGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH
+Mi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29t
+L0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDA9BgNVHSAENjA0MAsGCWCGSAGG/WwC
+ATAHBgVngQwBATAIBgZngQwBAgEwCAYGZ4EMAQICMAgGBmeBDAECAzANBgkqhkiG
+9w0BAQsFAAOCAQEAkPFwyyiXaZd8dP3A+iZ7U6utzWX9upwGnIrXWkOH7U1MVl+t
+wcW1BSAuWdH/SvWgKtiwla3JLko716f2b4gp/DA/JIS7w7d7kwcsr4drdjPtAFVS
+slme5LnQ89/nD/7d+MS5EHKBCQRfz5eeLjJ1js+aWNJXMX43AYGyZm0pGrFmCW3R
+bpD0ufovARTFXFZkAdl9h6g4U5+LXUZtXMYnhIHUfoyMo5tS58aI7Dd8KvvwVVo4
+chDYABPPTHPbqjc1qCmBaZx2vN4Ye5DUys/vZwP9BFohFrH/6j/f3IL16/RZkiMN
+JCqVJUzKoZHm1Lesh3Sz8W2jmdv51b2EQJ8HmA==
+-----END CERTIFICATE-----
+,]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:a3fc3f69-0502-4529-afb5-eea4f82b4423;8:sockname;27:15:100.127.255.249;5:60049#]8:peername;23:13:23.36.162.222;3:443#]}11:client_conn;518:10:proxy_mode;7:regular;8:mitmcert;0:~19:timestamp_tls_setup;16:1696742933.48987^13:timestamp_end;18:1696743233.7056074^15:timestamp_start;18:1696742932.9037642^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;11:8:http/1.1,]4:alpn;8:http/1.1,16:certificate_list;0:]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:d218fc5a-686b-49ac-bcae-9857903f004f;8:sockname;25:14:192.168.56.149;4:8080#]8:peername;26:14:192.168.56.149;5:60048#]}5:error;0:~2:id;36:a421b6fe-f547-4d86-a424-536aff3b4ab9;4:type;4:http;7:version;2:20#}23478:9:websocket;0:~8:response;16920:6:reason;0:,11:status_code;3:200#13:timestamp_end;18:1696742934.8879297^15:timestamp_start;17:1696742934.885942^8:trailers;0:~7:content;16235:‹       }ûâF’øg³›ýq“ÛÛÇw—ÌÌn2bhÏB&ƒ™Q”ýÈ’`É 02`ûnGhÀcÂ+ˆódöþõoUuKjÎænƒÔêêzWwK(ãï£ÑúÝwÑ£[½1_ÅÝÙÉRx¯+Õ;†´ºy¬œ³“ãÂûÍ›å£í±vr¬âÕý±VÚŽF¯Þ~¼,SÉKÊ~õøÅËW/¨d
+%êø»¥‚7#¼s† j±80ÇÇÚ9ê»±÷šV.ýð¿x!.^|U}­ßEß¿U¡ š}YÚŽá_áÙýqQQ àÛo¿-Wð6©ùæ¸7ø;Ž¡ôå¼õñ.¨yÔüaPÛãÿXð¥mâ‹¶ÔéÍ|P·Ô—t› }ù#05ev+–¶¿ò5ö]‹¾Pô¶òòë  åôXý€øL	-1“°(m«/ßú£7?‡NVü£såí_ì}åõæí‹—;@“âŸ ´¢.ß®¿_Fè¶¤~0P‘Ž––H"H§huõäz[ÁßKø{Ç×Ûã¯á»ú„AÕ×e¸ýŠÿUðúW^Àß˜÷8~Á{P³—¼Ž Œ±Œ7+ªøûŠ–T!ÐÿC<’*bÌ1ïõ5XÍ¿÷X‡½¤./%<*¯’Ùdè>Ø[Ìòë'7ê"Ôì¡N[ÏßÌç³ÿVÖ·ïVìjn³7ËÉ÷áÛh½º)ˆŽ'RÇm‹Ý·ÒÞÛÖ·Ú}K4›‚?ÍÃŸ‚?’:Ž[lÁ·¾]'à{R«Ë;ÏZ]¶4í›¥)<V¬c6;fa@–ÇZÊž”¶OŠPJ »IéSõ)[ŠÂÁ±¶<.‚	‚VEn¤VÇÚ%µ³îñÑ@´\$Å¥´s=)êË¼hr¬-Ž‹õãâú¿ço¿?ê_ÍŽo¸äk`:'Çìë—¯Ê_½($"¾:>j€¶b“3iÒ-ÖÎ&}Ñººk]Ý¶nn(4ªÅuáç¿ì…¯sý©hüâ“_?ÿøß5Ôß€ýþ–Ï®·/Ææ‘ò¾û?ýÇG–ÁßIÿ/¥/PÎ>=»º^ÿ.¾úÍÏ>/]ýü“ÏþýÚ¿Þ–Ž'zõw]{úÙ_>ö»ë±ëüõã_ý©-ŸÍVŸ·>þ]ýo³Ú«ßAÁ'ÁKå£Ï~þK¼û¼² ¥¿¨ hóïæðúÉµè<2ªŸÁ÷ë_ý¿O®£\ýÛç…“_tøüûÅÕ·ðÕÑËŸÿò××ëÿüÅ«T°ûÒ¬í˜ùq:u;.ú±,Àœ7Ìg£´Å›ç«ïýÕz©`!§¹.ëd°wb1^ë0•¯^}Y~þfòì¬¹Öç­uï ‹zzýe	¾~õç³ŠòéÙˆŽÕ—£Ö®ýîüðÇð××Pz{Í!e¿ÿ¨þÇ>ûŠ;‚Ï?aÿÿ">¿¬ýíñ'ìñ7¿jþ~ð·TœÂßÙïOþbþ.~þãûþãønø».ÿñæzE/à¯~åýÂ¼FŒ´o
+×‘œhª_—Øk7ÿ„¿/Ê¯¿ùËG€QBÛøÐ\Ý8§Ô«CJ=<H¤¬™«bí*Š“:—>O3ÉäÄŠ3/æºÆš«ñí»Ù[(~¬ìÂûUün=º…ÛÂûÑ›ÕÛGcû5µmÆªC‹Dµš±fÅ,ˆŸÏ¿›+ÕüåÛ7S•z]B/#.jk;I6±¶Œ•nŒÊ6ˆonØ*.¨'-e³\m`Hû
+l VžYˆXã5Éøi}=f“˜5b6‹ÙiÌNÄÜ¶8·ç£7³™}?›±žÍ® é}Òt³i4¶¯ñÍoQFåëà%?Ès<”ÅZ?V®nØ€ÛDöq¬­ã«^Ì-Ô%Í~?Ÿ½&ë[š¼ì‚&Ñ÷<OÐ;¨‡pí,V„ñ»ˆ²S(¼¿ˆµ»˜«Üù2m[½¥"½V~]ÁE £qS`n—šÿú}Âµ~ñ¶Ë»\ë—×úeä4è—÷¹æ—5^³Ç5½Ì:eÖ*³¸ÌÜ2o=,kfYèñìªLƒ–µŒ°å±Ì/bÙ°œ±Œ®‰eF|¤ÝÚ¹	Úþ1rFL§¬eNL¯,3,26„Œ(ó}?7X[¨‚ïMµ‹¨W@$6eeIÔíÂÜX¯V@çÂ—_•—ev‘*oßk)Èzì}P§-E÷ÙÕ-ŠòItvëná@-GGVY…8vYÎËsGbû ¬buUVe¶(‹ibð; v/ÊWƒì®—5^³ÇîI™5Êl&}ZÖNòŒæõz¬’*°¸~Å§‹Os,žçYÜòwôÉ+çêãÝúm¾~èså¶Êš_l®ÅKº[‰;P;¸[Àò×õyà@MêP(ƒ3w‡»zj>eOÇOóÍÎIVŽ´ ‘Ë˜Ë
+åem^V¸Â'TMË…¥‘2Î‘E*kg-°Aì2æk*•Ù=DX£Lbzeå²¬œ—•1@_Ã¿Ã+(A]ÆGGyéqvuêLÒ©³²vQF>i§ÒVÖ¬v¢Yw?Ñ@y0V+`<"ù—š„‚vÊ?¼–×LËçšÙä8õb™ÕÓ«oË	«Éâ—Ñ´×Ü<ó6VW}W¹m˜í2¸ò:]uÜ¤lð«-—ÅTæÂMÇ†n!~)fdº2š› ‰®øûÕ­¹œ¹„4ë1÷GŽ«¹@YŸHŽ†«îßûWöóËœ.6]f¹lã²¥{S¸yzŠç‚»d!"•Øˆ®+lD×e¦­Î•ËV.[¸("P\…ºJ¯Cƒ3˜6«»lâ²´QWq\úva¤ÂŽ{ø\º~:âÌEgtêî:£™+œÑÌEëfî¾u:q5^³g¶.»wÙ¦è²‘ËÆ.ï°v1„IIÝUÏE;õþCAt€@:q×tâ²[k7³[t½M,„0®¸0.R¹½t•¼h×… tcI´/óæ/‚6©·9weosæ>ämÎ\vVÞó6 Ç ôï·åÔ>´Ë’·AÃ¹[×†{ uæ¢·9wÑÛœ¹¨ÿEm’×ÁYj&_“Û{L¾H˜|AL†˜|çj¼fÉ·.«YÈì!ó‡¼µ>„ˆCi Ú ñ¬–8yw“ú0ã$]ïqòDpò”sò4ÕW¹ÑVfPk(3(>Ä xÈœ}Aðb ƒ¼Œ	¡Ì ô|»u!Ü¨xˆj‘Añt+ÏŸKg|.íƒsé‰@8Ê–ÉI(ãžhæìhk˜øJÊVèn"î†t×Øj.ÙØ§xÐ:ü-v¼è\às&Û~‡#`e³~æÊèœ»2:A»ò:>ð+þëµší¡´î¼œut†i×:CÑÀ {Cfm¼á·ß†I³¥” 6‡ÌÊš5‡GVÒj#[Y7kµ>Öºi3	©Á­²fh¦­’v}n¤2 êCe2d¡X³¡V’JO†êºN}øJ³K¼$V2~ž
+ÕÉPk‰‰Ûáó¦­Ý•%Hñ	ê(W ð@T•„óa¡@E¾`à¢6Î‹õ	@OætÁDžq6éú0ÇÇÞ.'CœŒ’å™k°.ëL5IŽ÷$˜Ât^d$†R<„ø®¹¸žÑ^å´1Ï…Ù8…ö—Ã«sPæóán\v	ã!Àx–¸e—”9ó,GNªJ†\º…5úÊ¬ÿ.òü;ó3
+·—nFá»)|éïPø´%ÑÖLW1»²š‰Y'ÿA2_Ð´µs>ë¾™ÅÍ¶ùpÀ<±“ojºyÕ1³`§eŠ`§e2ßLÃê–Y,r‰MŒ¥}“µLÃ¥‚¡ù¼k³>6S/†©æ5|Æ&sÍBõÒË›wÒ–MžÝ{gØðq5¼kâÇ?",ŸáU?†øq‚çðw~Lð£…:vôwÌçÊæsçgÉJ›_Â_ƒ.ð£M¼áGo]üwÞr^L%x·Ð.ÆÆSì»Å9~ØXvŽWuü8ƒ¿;¼ˆñÃÅñ.ô¾ÎÑ­éDöŽ)ë•Mw‰¹7é.1÷²ÎÉ}‚x¤Ù:îÏ“E)Ïïƒï þˆÌ«ÀÜ?Sã5{ñ‡a2Ïd¡Éš&oj™ÚÆÌ…—¼ÉÒÆ“`Ç<‚Xf‚Ð5† Åb —©
+çQÎK”®‹ 2%çÎÐ”Œ¿ÉV&[˜)j_ßQÔ¤™©tÍÂ^^DžRÎ×Õ‰)öÒ­Ý7••ÊÄü9xq†Bà“Äá‡‡ek¼ZâG›¤œ¤?NñvCívÅfjKC±qþ,l{KÊ„&–;¤/xµÂ«þ‘ö.:¤ÒIpÐ(:Ëh¹ùî]ðhf
+_z&9ðS“díNMMÓN’v=É7oMvŸµÛš?Ü'­æ¦,1kHŸØ¿Æ¥ð_ÿéæ‹?|ü„=ùü¿£½ºòþíúéô?þ°^]/[?¿üâOæõöëR\~Ž+ä´‡ð_ðWýúõëbmöjýÓZüîaüú“Ë—Ãëõ/¯7µú+çzsí_?¹~Š[¿ÿÝ'âóß^?û?^ýî—¿¡eó>2ËÿÄ¢O~ùñõÆ}õ·kÿWØòSïÏêÏÏqmþ·¸°ÎÜkÿñ§—çŸáÎEç³/ÿÍh~2»^ÂOá¿kœCj®pÃ£ý)Þ^?ýµ…KîU,úÌüÈý.ÏÐªûÉãÓf¸/óGìu÷³³ß^/?MWã§æ¡Õ¥|Ø¶ØuF”ûKÇ&[g\›ßhë„'åß:ßÌ:>ê™Ê¥ÉÎ…½83µž)œô¥ùXëèi<uiŠxªª}iBU¢f~ÙKO¥¾¯q³š»|æ3·¦v%V2¦1.OXp•qáBO–/¦|I£[¦5¨„›Z e^Ån!ù²æØž¹U2Â¾¨õ,ÑÖ	2ÛK¾8@ÏÚ	˜pS{ÌÐÕÞ™û®¶°8à®V\Ñuhž·Ž÷ö	¯ž6QÑÑO¡÷Ü±#‘.%rÃ@NäÌà¡DÎXì%rAÀ"Àê};CÞ	¤D9¶[çE@™&rÃ 93P? ƒ<qA\‡ûI#ÐÎÍÔOzt—øÉî?ygJ~’"› ‹¦Œàáhª)ØÓ	4+¸òNv­}(üÑ&E	ñôt¬¥¤%`] n*SÏÌ)“ñ€C•MwHÍLÔWAÞU	Yz¶V¿Èñ´þ Oë›ìót°[·h2¾5dž¢~îÖ5€§ ªN<]OëA^H»„è‘¶ÔAÄêéìaVìå>Ò:%®Dú¤Àm®À«ì‹ë:j=oó«÷A·ý Qù…›ê»«DP0Ì¼¾tÉïÞ£{Æ(#ÕÝ0TV¬ÓNdÂIÀ¶ûLØìk¤„žËL@)Ø­›Ã=€:!&œNH±´f^¯ê"QåjšS¨aN¡ºKÖLºÃu†Üò9ƒtù:DB©\{Ûæ±k¨vh˜&­âÄ*ˆK6ð&N¤í 1ãðÕƒ¯UáªuT¦%ì ¹Œ†//hÿk©¯q@²QsÒmkÇp!±á
+°µù†‰0Û™×92Ÿ¦d†þ+N©“”Ø9òn%òÈû€ïø­‰®óD³Ö?Q³²l0œÄŒiG®“è»—N$É1/Lö{ÁîÊçe V>/\ù„—Á~æqh¼f/ó8ØEÀÚ0ã€7½…¦¦2ÑÙU3«¢5ÏóàPÂqdö”®iÍsŸGŸ›Ï'}-’Y5É±ªžÓˆ~$kÄâ°FL$–°[“³ìBV…FÂ²~ôÓXvªçŒ¡O‹ $“‘ñ\PŸ†fçtüE:ü2º}³4¾ÞêkÅÇ_üè_/ê»n‹bx)xÔ#Ö‰²Õçè‹N”žÉ·@éŸü¥S+ž}©ö›_ª_GÚÏðHËÅõXý™RùY÷æOxÛÿBywd]o0î>ÿë£ÿ÷	ºh}ClŽ¼O^\¯¿ù÷~ºÏÛÐI—ß>þ‹îµ?(=‚›áß¾9½~¢¿xýÇßV0ô¾@¸Uq‚¦÷ðQçu\ÅÞ××öLeÛ•ùþUüüsK ÔßýþõGÉû…Æïë±ùI þðû¨3yôçÏ_ë3ÄNýôzs\®ß|jQÄhÿ‹7-õü‹¯ÿ«ðözÉ(ü^ã‘¨£ÿ|þíño™—F÷›mm6°ÙÊf'6›Ù¬n³{›Úla³	ßãŸSétL)nÄ†×3Òâˆ”ÓT7z¬Ýúð•ÆÜxÉý)ˆP mÝgíø™åMc5Š´iüÌŠ~ …Åš«:‘fÏü Ø-¡™‹Z]W=ª¸m=[ag5Œ4#‚nÅžû@tËjSÀâ Jµ"­uËP èÞŠý¡@ç#@¡æ,uIB(ôÄ±‹PŠ–û,v‹0¼¨ê»ÐÆ>ZÅê*Ò 
+‚6 z¹‘¶ÕÕE¤~ *ÆÂâ*ÏáVpÝÕ _ÒˆŽz„õÄ…> ûXØYmPˆ3èõHƒiA3Àì¶¥Ni¢›”N0$æ}¬„ÛÐ I»€Ö‘v¯«šŒqÛ*”üÒ+0jF-x5 ³F>Ìlõ”†˜t‚œ)Âä€ÛçŒ„€ ?¢Aä„Ï#Ä
+8N½p‚òà#aö§Q<6RÌC…³šr[:ŽpËyeÞ¢‰É^ÄÆQº"Ù‹’ÉËˆ¶û#Ö‹x~N´ˆË¦ØL=ƒ¹ƒÐçöü/ÁðGÉž?]E|URØ ³(7±5Lì¶…Ä«¡ìƒ0 yÔØÕHðQ6ü@K„•¨=ÖU; ÎïQ@¨žrÌ@$UªÔF^@aìîJØ¥ æÑ€/Ò]D¬åé(y¡9·#v!ˆpKóùÆf5‰ÐwR"¤¹â]Än#ž+ŠK ÀE„¹bš™æT?€jôòþphÚŽæ“„Ã¼¸ªøJõ4Z ;¨\Í æÞqÐ$€â¬b ÅX…–ƒ²g¡ì=#B‘h ã¤ó©Ž„s©)×{æÀ\~è kÐ¸´"F¦Ãe_XöÀIMê 	¸Ø¥Mv`¹‡Ãu›MIe­U!qLsÛ@” q
+Äs´Ð¹j:™P[†@ž#ïw@d9YÎÑ—í“;õKçGÂtÜA˜ƒ2à9ÌrxÁŠ
+ºÛ@ÁÂÙWŠ@_9‰Rà”ì-Õ_ÀôêÄïY‹ÖÄâ"¦«¬(’FRƒi#¸ý°P"Ô™£Õ\Þ“Z=u4â¢ð A'Há"É‹ºÅk´¯ ¤æîRûÐñ]•ÜË·à£@ã^iŠ>­ü=1%g“Õœ£Â-Ô"û¡dêhä|¸’#ûÛºÚr±™EæzEì_ IÇÈžÃLò«¯ßH²@:¸>pQºÕÕq"qÜë­…ÚÀÌP¸ ËÉ×2
+ê%
+?Ê,§€:w¸FÈä·³X¯ïäbg÷uÐ—+‡zAÜ€á8Çø´ûUµM¨Bš3RýNè·þê-Þ¢  aPk†PiÎ[`c.%€áûLøˆÈ‰¢ƒÙúîL€À ¾!dHNæAÕûX %yNµcpßˆž
+(Ò2¸±yFqâ"°Q.ÌÊ¯æOÏUQOµN5UL×ÞÆ5ØÐHµÉ5oc´Ýe0×«úTŸ/ma3Õ1öË4@mD±ð
+Jö+|n‡< xÆ>¨f"ÿé%-rqæ+T_ ¦àøªGG-‘ cèraF#±Ô&ª	ÖöÐP#Wè’žñp…¸?H:ÒÜªjE+™E÷d?°€”iÂ	´1&Bš74ÜÔìˆ‚+Õ2„­‘
+n®[ÏH·Ô¥ÁÑ)r-Ü1ëÎ¯Ût‡Í1ò;ZPßE"²$½RÈy=Œ÷.ñG+‹Vž¯.’IBqë§N	Än‚óáÑÑ3#¿°ã7h~\÷iêÌ±˜…†	C¨Sƒ;"XŽÌÊ®ª'D­Än ¡Ù¦<Â&£¡Þ£\£1âmæÄ‹ü …½ê‘.Ú‚ÓˆCn)—S1¨ªÍ€[¡2ó˜{YT1 üˆÆæÄÕpLsã^X¹&ÞÑ5ÊÃ†l0àÍcÎå7`ÔžÁ]ÞH½D2)H-r³>Àp
+­1·Ò t‰Â´1„¦øs¨Q¤ÍÈz«ºˆ"Ò–0ÚGš“Wtbéˆ¢t+–‹ãs0\“Î‰U€r å ÖŠW7È£ªÚ§=þPYjFÉjbœŸp-RÝ÷×¡H†êI½ÚFKÆ1BW3¼#% É 7oIZÒ6¡Èƒ0Ø=Þ7Öä˜Õ™
+î'V8)µVB„(ÓyÆž~IãF5Æ
+‰`—Pž(Ì:âÒéc›g|êD1U/¡lPîñŒ’éPã9 NÝ‰ažV•´’6ŒÒ%“Ý%K&1Ý%K&.Ý%K&Ž±³FY€Ô)=ÅâÄÃÐÀP¬Uº¡p¥™ÇnÃãBW‡%îÙ€Ï(¦WÍ’F‰)wB¨vAI#ÃÇ“ZdTTÒ’€æÙ~Lz«s[º¬ªN‰Å¶ÈžU£$<+÷ú0 G|á2ÁÃ×°Ä-ËO†›%,qþF1…+Š]Ý”PÂ¹Aá›[£†ù.Tj"!Ât«j·$Âw2\ê $RVžß¬0·0ûS]Té4¸ÑE‰ÕK;G
+ê¥«EiaoRÒxÍÞÂ^£Äf%vZç[A"òç	x½îòÃ“Ò¡µ½“R¶¶G×ü0Á¢$e:yd1Ó9ÒVy©ÃÌ¶ÈžÑqÒª÷È
+¾HÀã(uŽd-ò¤kñ´Ä½%öšð9Ú¦ªŽP°ŠÔø·»¹å`ÔkÒYîÃÉó«kdt‘D¥Èm^Ûð©È×!.cal‘¸ŸS›¶Ð3ž•„s³{ðvuõ‚F$ƒÀãûüYVÀ©M4 £ÍGUïJ<h+RP	³ToKÂwYh)Ôš§ñèVBÐôÀ`ªÚ§r2FÏ(2Ï/\
+‹a{‰ÅO"úÓ=ÖñXËK9GùÝçêá³ØSlogÇh7¼€(î´Ê®ÎÎîÃ–7Œ«êz(ò@PBÒ}µ‡%E¢22¹3ÄÙÑ®Iê´1ÀC5"+ó]b~ñŒ'²ä÷ÒQ'/ù
+I=5õä`É¢´»Õˆûf®'1Nr`÷ÐEVhLO£u3÷£HžÆ×•@xV”¢D^š¾=£<‰¯Bó4nÛÅ<ÛY»˜O#GzÄC%ÏÓV—#ž/„žXÈª¹ba°ée‘>´^–'(HfïˆKQ›WÕ"/²Â˜ôbé¡U¢Ø¡H†ÚõÄ2åKÅIŽG-Ïxú(¬hÂ~À•$YvUÕ…˜0;P¥êžHdaX>àñ/ò¥NÐÂuáq9ª3¢	HÉZç%Kì²-„Ë8Ùu•Ÿ*vd?yêÉ~òÄ“ýd—VVâ¡¼…óÀ.Z[ˆV¯ª].-Èz.¹QY£YqN¨[¯tòh_u]ž‚)X£eBG|åÙ1Gv<£ÈAµ)¡$f®ö)òäéÛÎ
+â%0eêi©åýGÈ&$$7;ÐgLÒÌ×_x}¢«k¤÷O¹øäÖeªÙ£_=/YWôØ¥'=úÕóp÷éÒ»êyvŸ<×ìï>yìÂcmÝyb÷ÉÓ¢¡(¾÷ØÜ#ïtîÜyò¤'/ÙyÚótqÆ¬fâmÀÙŽL¥²³j!J{Æ~psƒßÓøæ Ô·³ÕÛ÷µðH»¨ªµÄïš=¸ƒé1†÷QÛÕƒ» ànn«{‰¬!.û2žÂ€Ù¡,Å~(K±ÊRÜwv¢½š´f‡G{¾ˆöÚÛ‡Wý0¿3Yë¼~ß
+yˆ‘÷V€`­ªÆ!Ïùz>š?7ÔøB=åÔ(ŠClÃ£Þ"Y	Õ5¾IÀ=<.,†é*K‘¤TB±¿A:v´#ôL'äþYt0B®="?Cûj”UóÒ£7LýŽ†ÂŒÒ~‰Ú¹Åä¦~w¹Ì†é[!*sâ0èß„"èçKdhLCÔ[,2Eè†"™çù¹Hµ&¾:Ÿ%+ê
+g[ä	EYÅ¡§©xl¤ãfõMBÖÙ,|È©ï‚A+¦§~{b*‹pgÏ†\A.÷èñ£ÇWÜªúµ[F3“mÇ|E­QNHI¨:5JBwÃÛžt²DOÏƒ´ciÓ÷àÇæNMñxœî¦Åñ#ü98<À!l½Ó$A°u$çM£(Ñ$Þ×®Óœ>EX~ÃOBr)äó|ÛÝ‡lþ öÎ&o×p•“êëÈêêé)9Å3Ü¬Ò¶NðA¤V †u:»OûÒiûi†èÑ4LŽ1†¬í"Æwsè|â¥DˆqÈÖðqøå:ß;~çøãÞÓ´/¿Ùyþ2üæ<v|úì8_ßŸnó¡«…ÇÊÅ±’½©Àžd7ü­0__o_”Å«oÊüÍ4/ªXöDìðßKÀ\„Jì~(œ\¨]„âY;|¬µ:éÆq;Çq'U—Z3jÚaQkèél¿Iâ7wvFúMÚé7“¿™Ûz½ù#;#fng¤ÕÄE[»ÉúMq´’
+:MæCÛ<pª²Éâ¦8UÉ/w}^rþ{ØÔîBÜ6Øëw\ÍOfÒ4‡¹i‚Ç3“M~Råà1l^™ÍÕlâ/é#1¢ÑÎ¶Lîqá!`4wÔ~d#ÁKjª
+Š®³«h·!ÚÞ–]Ò)ÑsÀreƒ'3›òÓ4T•ÌÇŽ
+*(jô•7ÿ™@˜e%„ñÝÝñÏD a4Ñƒ{M"æ·V!ÑÎh|X(lf‘7ó2UÖÉÈ&/#K	£ÉB!#]*Ø4Y
+‚2²l²®q‰ 6wU
+Hê4“w@ÓYžÎ@šÎ"?¨ªÿØt&ùé4ûÀÓ™QÁ¤ÉP˜N£Éfb:â¦3Ø›N[zêÜ(@Z*óof¯
+ó|×è!~XÏ`—†üLš‡¨“O„¢HŠVÔNÍ:&Ñå–îo8iâãN‘E»:¹¢ê“æþ+h76psÃÜç†™Ó]€3î–7$ÇÝ²8Ù|À-{Â |2znÌinÌQnÌNÏ×ÄÙcwwj6UOw¦–„aãÜ0k¹sš-‘ŽwÍr›å™å5ÈÐ¸yÕÃQ’gÀóö>ìßžãÜ­Òöš´Z—9³BUÉ°9¨ „¿öžJqB{™ ž?(ˆagGA¶6ÃSrcƒb²n™­.ŠÍÎÏ;ZÙ`žå(z±ËŽ6Qóì°Ê·…Ê_ 9ÏšWm´}¤t	þyšÞ‹xé.} 1­»ºkæˆXJRjŒÝ/
+TPÔè+¿ü(=?Z+Ô‰¤Û·’ô~/â1~$Ö.ArVbz)Áé01“w@ô-™Œ¶u@0}IÙ·vÓ·H0}Ó¶ŠZßºò­L0mk7”Ô-é%^kY…tæ=§ >y÷Ýê‰¦i-‹^%1Qb6ÃóìÔa~P¸Òq_y)¿xùOWŽxáº†­üõËcf•¨dÔ—ö,ýêk1Ëe^Ýë+'æ˜ .…×OÞDÁò»wGàË/ƒ©$vÙ³sÈ92Ÿ¾Š•(Ï# lþ\KZÌ´¸ß	,ÍµˆàCKZµM¾Ò8/ù¢#ù±âÔBˆBoàÀãDen7ü…C`WG…ûŸZÍ“V‘…­ð‘ç«§ËáýàÍþáóøæÓ|ošÛîdÚ
+¹v9–öü‰E^î¨=4N´%I…æ
+" z‚D+ÂL#–Z¬lj1µE£Œn²G·8ìŠ~³#ê!ž9Ig:È_‡á'‡žÇºÏç#“]õzö~'‰9Ùí$?ˆüP§³]'SipôïZZ£Ô0,mÃ·‰0§E~NK˜“'èrZš’=¦oe/€³rwV®ÒN–Å6[B×§ß#ÏÖËw£õÓ$^íZ?šºÝòâ1ô(„ÙW<ÏåÓCÕ…­	+eâ²ÐÀÃüMƒ‚'ÍU^n“É2ØÆ@uZÂuüÎ(¼²ØÂbuÉh´Áü˜@ÖEPÑeÄðì?ïRøáTæ¦ ý@<Rà†…Ä¢Drgñ ƒp%æc‚®â…ýÜR6!­$@ofêPe"—¡Ós§¯@­	µ5—áã
+uÉ•™AyÄn„ V¡<ÕÉƒ\]ìÈ ¸É,3Ïc-WØ°ØL"\R*(P*¾üZh>t€Œ‹WlYék², ¥/êƒŠJÍåPzð=_ÊÈ€8„2ƒ‰£÷l×°ð	ÚWšaf{ép'ùá ‚2å-ø(ä§4
+>çì gï£„«Ý¾`7½BˆZÑ”úËb–Hf<6ek‡.·èzü%þeê¡ è.õö$” ý'Ž>R ({’ð`5`›[=bkGï”@À(MÈ`1Ñ{3zÈ#s™Ê…Ä}ß[ÞEXr@ã€D®uQXs:°{‹¥ò3Ïø6G/ÿÜÌ=ŒÆÃç”wSKÛJ¼ƒ
+!ª«¾â vâ¸|nYPG’”ŽÄ‘Ê±¥@`FB`ü
+¾õéïÙã­–’õ‹~—)6—z”Èa^$Ør“áM?¼N¡­­Ìœ †OÃæ‚R÷1# Ô¿ Y Vµ>"5¶Äétøsðû1ÎSbìÚ­f„ïÈqf±‹mÁ¤sÈLú(c÷%à%@²ŸÛyaÇð¤$^;":O½Šã žóÉ2A ¤	ËŽçHkä½Ò Ì>ø£.EpÖà–ïø2¤“Ô…‡>ÕôÌ…×é¯pq_”TÞÅØùTßËÜNùàF´¨ÖM­…^t*‡ 8 í$i[ÜÏ®:ùvSˆ¬’YtB­†ÀC©Ñ†Ç3·	°¹¹ƒ&õŸ‚´÷³séµ&»µXmóPç½—›ÀtêÜÃìó7LŠ¹E~J¶³a­‹ììí&ur.øP§½w=ämDJân4ÓJS’á7cfnÄ–¢¹aîFÚR47"’Þà’‹»aP¼scƒj?ü0jáåI§P ˜æ7üÝ©É{>7‡ß5‘ÃÆÉac$ØÉØ°‰6ÌH±ñ2l<ŽCØ8ylœ<6[‘Ö‡9lš9l¬kÃBK`³!lÂ³Rl66ŽM“°iæ±iæ±™l–9lº9l	6ƒ[ÊØ6+Âf¹aƒ›U†ÍŠcÓ%lºL8îÓ…Õn©H¬g.rHÕ	ìhg+à“·É†-dÜ&·á¶Ø°IŠ[#Ã­Áq«nõ<¥êy¤’G4g9¤Ns”:I°9Ù°™ŒÍ‰ÀfKØÌ`Ô›m†Í–csJØœæ±9Íc3"ZÔ¦bYTÊÇï7™yxèXW÷•Í7	ÕçW€×öÛe]™ƒƒÆ©M“¦Z ™’Ã[áëHYÝc¯Àî7?C(‚{x‚£Ø$ÂÑržŒœ¤¬ì=d&j“†ãcL7WôécÇ¦&šˆItËP: ïMÅŽ„)®Cx+Ã`5˜­Æã&¾N˜g´Ñò0Û¹0æMÞ@Zü©‹ÇŠÆ(*|™p£7´˜ŠL¿—.n´?X±aãMò¾ÌI„zz›¢“y¿Þ\Amoƒg,6xÂ GÒÁÛAŠçÀdº"Ñ¿Ü`âIá¡•`p–ÈìÙ†§BJd
+êÇàrs•gˆÀ9!p& %»”jír“Qé"/´±ú6±JÂ‚È‰)öú(>ƒß-ÊÒûCv$Ë\„o(ná|ÖŸš(P1¡Šf‰* 0”£³òs+L¬x'9±æS¢;óÊŽƒ©ÂS…‰ÅÒ!køþŒüÒ!>ˆÊq°,{èÊ"‰‹_¬Ec‚HÆjHS Ä-ÌB1ià°ëˆ<IÆRá¸Çbl—bl®[…@j8«„SK_º\8 MÒø$È’-âÝÉ/ŸŠ(¾ŠI{Ã?ˆm;"‘_;i"¯÷+¢÷ÈTVEØ¶$Ò,fø>\>^g’×Þ\¼o¦¨¢Ž÷¶Èï6Ò’í†Õ–Ù¡£ÍÖ–bõ¯mÉñQèhWOþVu>ý¯Ÿ=aO¦Añ×Oß®æøÛ­áCÉáŸŸ½:RáöòÏáÏðáæo¯Ÿ”â_ãïàË”¯ZìþùÕWømýñ_ÔÅßø³Ÿß^?}ôí%¾*éÛâg‚ƒë·ÿãåã"û•†¥ô+Kæg˜ÛËo¾ñÔ»ÒÂ¥¾T:KÖZî,ÑúæRÓ—ªX³ì,Åšå­´ye”Ä{_–	SÝ¥Æ—ZqÍaØJŸ³¥Ø¸Í›ñšËÌ.á#ü7ŠÄA œÛÉök%ÚZõÒ—¹@õv74ÎmDÈ3V{˜Îh˜Ì(‡2¾.WeÄÌ û*ðu„û0'L½ZnnÃå^¼óšÛÞË¢vÁ$só·ÌtnæCs•À÷0#äsšC–0/Ä6ÙA~f~ëÎÿq{Gcï–¥µ–©‘ÙÐ]²»·¤»ôM*KY;
+\‚Z/ÿ›'KŠW³w£·âP°Ã©±UÖ.A_—ð1$mç—tbÖ+aødÞ7à°|[²§—%L¾!ýç±×2ñ©çàœdqÌXjPš»ü·-vVs UE1°G†Q"WS¢è7·©IËV\]•ÚÏc[›¡Çº%ÖõÀXFn©‚Bc7?¢IË_7µû`h+‡[z‰úbGSF$òÐqÌÐÝd/¥]f4?šŸÅ ªÝÇùäÃ4!‡FÅƒ^B‹ å½ìöq¤ô]‰6ù
+H.\á—Ú`ØØà è¶Œ°_‚n|æY2K<Q‹á1³]8;BÄ .Ü<"Í‘=90ñFðlyìæd+¤×Ü2­ÒdNþ¤Ã%³–…¿+o¹ÔVKdÅyÞ…Ÿ—RoÉK¥PxM³ò˜é.»ÅER F¸Ä)]RI!Ç!†F@ê‡Ñôub­-SÕÑ-(D+¢Ô<¶¤ERˆƒPoºœò,å f:¥L3'{šÙÈõù	Ö$ÜÝ-)°ÙÿF¤ïÁ8ýßÂXwö`œ,µ†I¹e¿a¥XŸß/´CŽKÞN‹Ó•2k­†}z\ëìç†­ø`­[¸KÌåR½_^-É²Ü ´C«†ÍÍ½‚ØÈWz¨1’ÀCQf98–Ý†(€Ñ%pYì(jæå!7íY2íùþ´!õPfÙ´%¨œ s'·ê,"rò„Xe„PÄä‡Y…£Ñ7&w
+oŒÓT˜Òæ•'MN‘éCñ´…Çó½©&S›îM-‹^¡çéLqˆ[bjR%Ÿäí0?I4oùI.¢=¤ã<ÕxÇdÂ:~»Îqs_8|LåQ(¦{³>If=Ú›5˜ÚådOŽ{Ã<=$6Ú;llKòœ[x€¹BÊõ€ôçh–øLÛB‚sÏÂ23Q–ÑÀßìð{€ŒÎx¼Tî—©I\s“8É™Ä57‰3Ó90‰”Ê<`MbW2‰½œIL_¶Yûå’-ÓãÔ@ÉÀŸbY&àŸ/5¨¿\Þ¨ü$Æ|Èšx•0IcÈ~½ÌN|ck$òDŸºqRÇ™C‡1è4G>ØØ=$¸-½¼gâ/ŽKøfº›äh” ÿ35tËçHAAú3Nú^Žôgœô¸÷‹(:Dþðaò_HäoK‘ËFbÀÝAÜ.µ}YœI,ÃjÁ ZEbÐ”´T« ƒn—E\êk“„×*øêÂŠ8El§?ÉiWÊý9”jÈu3à?¡r»Ie«ºvæ@P_Èw˜I±Ws)…ö0º ³_!2ßåÈìWÌ²ÉŠ˜M›qýqÿzEÚ“¨dÄx±[•Ý  ®hKlÏX"G.‘Ò™¢œL<6[¸›È?^dµä……ÜñŸ.bü•l“—Û ˆ+©æ»œ.­ŠL—ÓEFáÎÁì(3÷€27f,ÉáP"ÍJ"¹Gš€H3¤ÙOåndÉuîÜˆ¹*5gEìgd3ŠøŒÌÜŒ¢
+W¨zI˜Åâ[&/8/ùÎ¼2¢Ýø9*« ¦ÞiXÂ`]¢‰±=z D`ÖÇ3ËJ²8iºÔpù'Æ–P¤q¬F‰E%:´qJÉj=@ñIž0Ð¤ÛÛp#V/»KãÈ\D´wßÏ+Ðå +xNÜpÄ²öŸ°§ð%p¾©œ­°­C€Ž¥o0ÛÀµW¶¿Ç¦ƒÚ˜ ”pmLGk^¸S…ûcßK|IÔ–|8Ò´”ˆéx Ï _öù@*Œ¦~N_F˜DãpÀ½dpÎw6ÅW­D;Æ!¨„Ô$¯[ð[†ÿŒ6ÈÁI;Î!p\N50`ˆ oˆ¹ã7Š„x`eB.Üì4Á@Fç½‹–$‡€…!
+ñÃ(ÈD 8	ÙeEÇ¬@6£ˆN§Øµ•ñt]´Ï?" wý]—¼0Ð°Ó™•}àËÃü‚a¶y=Xå÷¶¯Ô‰þÆA1¸@°|Q³N¶–Ú1›`ÓÅé`ýpßVê-\/—¤€Ž7¸_&ûêòc|Ñh‰?…F;±KÍZò]ØåÁc`°Váp@
+ÐÃ!½¼0R·#èDá3Ttùü‡#Yõ…dÕœUOs}ÈÌ!î…^<\ž´øù$²7|•Ã`wxLi¶&q£9\ä 6Ë#Èþå—zÖÔÊ{ÜÊ9+ïq+k/N¿>·oåY üÞŽ€X:w³_,xV”f…Y±Y]ÑÂŠ|—œmVÄzr¯“=a¼¬Ð/ÁVvßs»¬ˆ÷Ü.+ôK°•«eeÿIãAEã5{O¯*lQaõ
+›l<;‹GçyUgUôžÛAåÐÓÆJö°]ÓÓÆÍÊ‘6É¿íâRl¥ÏÒÈmCU² 
+*rOíˆö'Íª¤+›[º“·O±}rZÑ:‹ð$ºÚ¬h—ÙVâ}qÞWØI%]Íé¤«9š@¸	õ«ä1™yE£¶þÎéSŒöAÔî+â<XEÛV®æ@àÓJQ›VòOµ¬¥GÅG	£
+W¤=ð1p\¹`àbCªÙc`¯Â.+ì\pï¬‚¿ß$ë'¯OÏ;×ùx&ññLâ#¾×}÷ìJBú†Ø¸¨hïŸ^o_VŸ¾Aû3Áé`á+,lKä0%Õo°úäE
++e,¼EV¶;˜tFÖñWX^ƒ¼'`ž›æXC`ú}å®ƒ'Ráðy@ŠÚ-ß…k§b×–âì»Jæe*Ê>ãPa:d–m–åÓ‚ÙM‡©åŸJ^‰½ÜqÚh4TH$×ÕÌ2ð§(š•Ç@å$Öõø–¸Qæá½—=ƒyv¬¼‘ÞžÌERî¤þ¶¢ÔŽYÿ8³¤'‚Aö±Ìñª}Ìw·´‹hóG:t¼ò>¢Õ­vœ´’XÇÛ‡|á¿ÕÇã™ó(‰§$©ò%–boE?NW5\1'ì·ð×Šå0­Œ02@çâãðç\J^º¹P|
+âÐ
+ÂJ ÕI‘êì e·ÐuàJ"“Våt‹7“B…MH'4R´;ÇÉ{§ÓqZÇZô6ŽÈ[EPMYíÆÌ¸}‘çöú»îzù.š("î„üØ‚«–¶Aùí¿Zfå¯+ÕÊW_½xÅwêLî¿¹$Õù]›ßE?Ð1äç/búºå_÷A†E|¬¸Çâ§¦5÷˜o“£»2ñÂàX§–xBáXƒ!Ô½–b3è[H·ÔÄ$|è»}Íù.Í@F0f”:þ{tüú¼Œ÷|#êX»,+ý%P¶.H‰3Þwüßb-¾¹Ÿ_ùø& €[uç_H›œ=(m9n9‰"®w:Ó}6öÙÖgg>sàSgc­mù¬¡c64ÒY¯Ê¢*[WYWg[>èlÒaŸÍuvg³°ÅÜkB¡Î¬*wX]g3“¸»*s«Ì¨²F‡ÝúÌ„*ŸÍ:¬­³sª¬ÞÁù´ÊÎmv¢3§ÊVU¶„fUÖd|¶Veóà¢ƒç6oa¬*kûlª³©ÏÎ}6ê°N•Ù>kuX¬³s…æû¸Íã:sÁnúÌÓY³Ã‚*»äaâü	øó*»×Ù™ÍÖ:»ÔY£Ê:»÷Y·ŠÏ¼@`yâ£™núÌ‡A«ìÒf-OdÔtvk3£Ã\-:¬hCG0è:›Û˜—ô|ÖŠuØe•Õ ±*Ù¨Q§:ëûÌõY ¯â8Ä#+™U<i4ª²Ðgq‡E:fª¨­â‘äÛZšY:¬ôôY­Ê.t\Ñ0ZlÙ!Óas s•€ Íg—0Ó*kÁ@îÃµ f‡Ù@1øÔY8ÕaŸuLÒ f8šT„¾ÎN:là³›õ;¸œ²‚Ï*›éì´Ã¦Uf&ÀP›mtÖÑq±× äGU6¯²“*ëC„€*¨
+4>Vñ·û<@›MÕ;	ì0X	œåob¿(gjc€Iy?Õµº]ØÏîíâ=~Â¬µS»¸•Jš¾6Àëâ)ÞbÉYUkØÅ:µiˆÂô¯gÙ5¶ŸøÚÌ.N¨j‘š¾¶…ÀM”ª8X,œéÚŠÆM»Ä4nŠX½…ê9°ÅtÐMr0³Ú!UÄí§Ï¥VÕ¶¢0­‘N15G€§`U÷µI2kÇÏ@ñÚ®Žt8ÉŸ†2Â– Ì`¾ÞÂy<0ú¹¯ì!_óQhÊ‹7Udú©4è¨ƒh4ò<ºµ‘È“Ñ@&=á:AÛæ›­ˆ¿Û<2^6
+ØLÄ–_{-¤Lãy-t¤êÝ"f=ð’¾žo·p í¢RkeD›$….Á‘…Óî`Éi~Ž¾ô!È`·ñú$Oçi1ß¡ªM<Œ6ãhï3½'µOñi†‹<>¦„d:— šM?-ì’ÔÉvÀ¤QN¤’HO‘'’‰nŠÃ±x‡t“j6—´å„øÛNÚ<`ÊA0hõÓ[™^ì‹Däcß‰ÔÞ"uãªçO2­jf¯R¦œÑôe©¾°3bŠ=3&©té:
+ÿ‚7 C'Q#tÐÉ˜˜ŠÇ)ì$_8«"¼…$lcÊëa+“ÿ}™“UäQmV3™I'î‘qÛQ£•iô¾ÊØDÞƒUõÎ¾y—Š¬A#SMù¾‘ÙæçÞ¶±ÝBø„ˆä%¼F23È÷ZK…é ž$‡©p6IÑ$›œa~igFFX0¢áŽ_›V§yrµõÌ«fª•‰têzÒáVT»x@DÏ;ûv#«ít2/RÆ•ì|:ß	ä,O®ØÏ(ŸNA'ùäbt2Êg~Šå¼³3ç.heKÖ/Ýð¹œ@4…#îØÆ$ç™’¨p›sçgÌŒ9¡±£GQ+Óè¤¥T3-ÖÏÏ†N±=íàÐùˆâCÄaÇÌÞRÀÃiu®sÙ–¢2/;4ïèiKCOU4rÈFïSnÓÌV†ó¾8Y”V\ ‰vt¤Cê Þ ¯=Ëxêg‚—¶Û)ÀS=ê mAþÊnQ òP˜tGqÅŽãXÛ)©!àþBÂ¨*«çi5õõHgîë‹YÍ\|ªÈ!i7'~W2ÎéˆacUÝ×eHŽ2Z¥³èHj˜@=‹£RRŸt„ä¤K±¨£õÌ §`j&œ)X·“…R)VS?éÓ	nü”k.aƒ»í¶Ï)Jm)„X@{w
+sŸ‡µAæ¦”4:YH™â|^ÍŒLŠóº*²•ŒMÕŒ¶ißq&œÙt¬ÌýAžžú)È[y°‰Uª×Y¯µŸ9ÍTøuŸkdyˆ$ {vJdÈ3ß‘beµöå0£ç}2µ´}=3gÚš6¸­¦±ÇO’¢{?s”¼dQÍ41¡†¤éX})“J‰³éð<KŠ	;™sÙ™`TÍª”’Ë–†ýfE
+²ã†Î¨3Q¯f632ÊC–¥)†#É­¤½æY¦ÃÚŒãûÞdÒÊÄrç¡žºuø<fcw’žîwiS3nˆ¦vÊe6ÐSEfžžY¿Tk»¤f÷4wÙHvZ©|úÜÎ\Uæ‚íÔgôé·„±: ·zlË¦g$J±©OÍé¤×gW”zï$t—ý@”-³6²³¸=3ŒRn(Â)Í– üxæ)¶áluÒü.S„Ÿù‚´×HOÅRŒØ'1Û	o¶ÕÔ;ðµFƒ¯.q¶r£+…÷6nÃ¾'?Ü¿‹‚ïâÇšöôû(x;~½žÞ÷5^Î_¼û(k>™}ç¿™Aó«›âÕÍÕÕÍ6æ¥â-½}ZßV?à6D¶gÐ£ßdd#i¥Fx»m,å(;AúsKzBüÞæ‹²±Îìð/+›˜‡KR÷¶v…¯JÄ 9ü<ººa[…Å>ÙÄÖªªìÍVi1ÛîšTÍþåÐÜÉƒ0RX‹Žìô'‚Í6ý ÿUzèPpñlÉ-mØûu™±ˆ~íõœNØôD½àaàkA†âçeG¾Õ Ÿ~Ãã7x&H¿,¾õðä½<ŸìxÐ_ÞaàFÇš¸ŽÖqY­„‡†ì»›ÙzˆgQ;CÖ²¥Ëß{Ã"7áB—5]¶rYÝÅç
+ôFI„;:÷1kD|+7ý"nÏžFì$ÂíÜnŠØ²„û6ƒ[ÑÿMˆo ê†ü1KÖ
+Y27dÃ™!B…lä°±ÃÖë9ìÒaç ¼ÄŒóJ,ÄS­ø È`zlå±…ÇŸ¾Å'[gž;õ<ÚÒ4½„ût#|®ráI.þ¨£îà3-‡Ås_:z¬‰ïrÁ÷®,=|cêákPÆ¾Í$ˆðÄ‰á8Â_vaEøhÞ}	_I1-áCDÃ3K,ÀÃYx$kâà‰©™ƒ/ ;qØÖaü,”o0Ý`OöÄ¹1ØÊÀƒ'uOzŒKø,N¯„Õœ—ðÉ˜‹s=|²ÅL<|
+ÅñðIŠ»>ÛPóðñ,'dFˆÏ-…!žnlfàñØƒm<…:7ð0æ™ƒ‡Û»sð´\ÍÀƒã§+n~ÄDìçÄ*¨þ| âÿŸ_š¼Ÿ  ,7:headers;500:101:29:stored-attribute-sha-checksum,64:109ed660711d2983d8f58a30dfd65840da27b014e0c7be30c0ec699315b55246,]50:13:last-modified,29:Thu, 30 Mar 2023 16:09:00 GMT,]77:4:etag,66:"f1edb9a0482dbd4417e99d73e203c5cc5f31d27fafd99caaedebcf45239b2eaa",]42:12:content-type,22:application/javascript,]26:4:vary,15:Accept-Encoding,]27:16:content-encoding,4:gzip,]26:14:content-length,5:16235,]40:4:date,29:Sun, 08 Oct 2023 09:26:04 GMT,]14:7:expires,1:0,]56:13:cache-control,35:no-cache, no-store, must-revalidate,]]12:http_version;8:HTTP/2.0,}7:request;1223:4:path;457:/_sec/sdk_challenge.js?os=android&starttime=1696742932420&systemVersion=11&model=sdk_gphone_x86_64&deviceHardwareType=ranchu&appIdentifier=com.ebay.kleinanzeigen&deviceId=bb38c6bd2d102ed0&serverSideSignal=AAQAAAAA%2f%2f%2f%2f%2f7fl56CoicpLLvksnbbRrkaVBHXYsUIZvgzQKyU90Yn2e5RnF13lgngrwITHML4GXE5kSRD2px5pMhcfjSe577d8+2hvPZQj7zoU70kLRHBByQCmGcJeWitwaeqDIgGX%2fmJYspB%2fj7QBuvkyx1y+80SbpbYja5zOk+nckK%2fSeTB+mLMbYBIR6+8ncZYAtRe2FFCJqxrZomie9YyOeVV%2fS80JIFw%3d,9:authority;20:api.kleinanzeigen.de,6:scheme;5:https,6:method;3:GET,4:port;3:443#4:host;13:23.36.162.222;13:timestamp_end;17:1696742934.698998^15:timestamp_start;18:1696742934.6949975^8:trailers;0:~7:content;0:,7:headers;501:20:6:pragma,8:no-cache,]28:13:cache-control,8:no-cache,]191:10:user-agent,172:Mozilla/5.0 (Linux; Android 11; sdk_gphone_x86_64 Build/RSR1.210722.013.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36,]15:6:accept,3:*/*,]46:16:x-requested-with,22:com.ebay.kleinanzeigen,]32:14:sec-fetch-site,10:cross-site,]28:14:sec-fetch-mode,7:no-cors,]27:14:sec-fetch-dest,6:script,]36:15:accept-encoding,13:gzip, deflate,]37:15:accept-language,14:en-US,en;q=0.9,]]12:http_version;8:HTTP/2.0,}6:backup;0:~17:timestamp_created;18:1696742934.6949975^7:comment;0:;8:metadata;0:}6:marked;0:;9:is_replay;0:~11:intercepted;5:false!11:server_conn;4510:3:via;0:~19:timestamp_tcp_setup;18:1696742934.2380226^7:address;23:13:23.36.162.222;3:443#]19:timestamp_tls_setup;18:1696742934.6809988^13:timestamp_end;18:1696742936.7560756^15:timestamp_start;18:1696742934.2370236^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;3936:2204:-----BEGIN CERTIFICATE-----
+MIIGLzCCBRegAwIBAgIQDSU/O9zDWqrObJPkT5w3BzANBgkqhkiG9w0BAQsFADBZ
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTMwMQYDVQQDEypE
+aWdpQ2VydCBHbG9iYWwgRzIgVExTIFJTQSBTSEEyNTYgMjAyMCBDQTEwHhcNMjMw
+OTE0MDAwMDAwWhcNMjQxMDE0MjM1OTU5WjBtMQswCQYDVQQGEwJFUzESMBAGA1UE
+BxMJQmFyY2Vsb25hMSswKQYDVQQKDCJBREVWSU5UQSBQUk9EVUNUUyAmIFRFQ0hO
+T0xPR1kgUy5MMR0wGwYDVQQDExRhcGkua2xlaW5hbnplaWdlbi5kZTBZMBMGByqG
+SM49AgEGCCqGSM49AwEHA0IABM/y5etKRC6w0ooMfRiCk1bzc2565VDI9lWuR6m6
+5S8GLE4zlVpLmhGVSHpdQ9PlBAD0GkwsPDa4DRA0AldTUjGjggOoMIIDpDAfBgNV
+HSMEGDAWgBR0hYDAZsffN97PvSk3qgMdvu3NFzAdBgNVHQ4EFgQULtM3KycsRwBu
+p0Hu0r7J42gmymgwOQYDVR0RBDIwMIIUYXBpLmtsZWluYW56ZWlnZW4uZGWCGGdh
+dGV3YXkua2xlaW5hbnplaWdlbi5kZTA+BgNVHSAENzA1MDMGBmeBDAECAjApMCcG
+CCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwDgYDVR0PAQH/
+BAQDAgOIMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATCBnwYDVR0fBIGX
+MIGUMEigRqBEhkJodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9i
+YWxHMlRMU1JTQVNIQTI1NjIwMjBDQTEtMS5jcmwwSKBGoESGQmh0dHA6Ly9jcmw0
+LmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENB
+MS0xLmNybDCBhwYIKwYBBQUHAQEEezB5MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5kaWdpY2VydC5jb20wUQYIKwYBBQUHMAKGRWh0dHA6Ly9jYWNlcnRzLmRpZ2lj
+ZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2MjAyMENBMS0xLmNy
+dDAMBgNVHRMBAf8EAjAAMIIBfAYKKwYBBAHWeQIEAgSCAWwEggFoAWYAdgDuzdBk
+1dsazsVct520zROiModGfLzs3sNRSFlGcR+1mwAAAYqUFM5rAAAEAwBHMEUCIHg8
+rrorqut3gRHraiXM10o1QOKm9FXcPxIjuCGjTFbYAiEA9HYYjGY/8YzcdgdGdpjR
+/CF+rCpE04lfisrxqRbCUuIAdQBIsONr2qZHNA/lagL6nTDrHFIBy1bdLIHZu7+r
+OdiEcwAAAYqUFM6GAAAEAwBGMEQCIHJ1AC6T/qsKXomd2mhZ2yt8h6ZY8PkEE6gu
+vHTAHRlBAiAk8hZ8B1pUTmYRgmPIF2XdoKpBtXsOJFPSrcIhGi+jTAB1ANq2v2s/
+tbYin5vCu1xr6HCRcWy7UYSFNL2kPTBI1/urAAABipQUzk4AAAQDAEYwRAIgWpnL
+XpUgLxtlgGuCwrbrRKgXSx3AtJnwudt7ZACyUoUCIBm7R77Vd/eIE94S6vl63oXf
+KgLkeZzAYi1PZ8sdZLqfMA0GCSqGSIb3DQEBCwUAA4IBAQCscRSaw6FOU5ih1kQz
+Y7wSbabaRn5zHemkyNimWqEXuMaUD2YBGt/j5G1TMJqlf7HJ2COEW8f9dYSAzRiY
+VUgViznc8C0a0DrunA3k6u8A86qwt+jGqy37XamDtcWVB3CrP3bwigrkQj6y6qfz
+2/xwVWzflBW2DiwdbXk+22E5m+yeFwKqROyp+A/+ydILntBDs2LmvOG7HkVvJtvM
+9iAHcArzkum5Ln80PBubD9+9KZTBvVFYQt0rHp9tZm6898+BRx22rf10NzaOB+qj
+t8az3dnl/9axoO/ZLlhuSbAjjV8GKtsYARVg0JBN196Ar8lUOiA2FcH8Pv6xRSss
++k5p
+-----END CERTIFICATE-----
+,1720:-----BEGIN CERTIFICATE-----
+MIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+MjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh
+bCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV
+cNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy
+FuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc
+3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8
+osicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT
+zGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud
+EwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G
+A1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd
+BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG
+NGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH
+Mi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29t
+L0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDA9BgNVHSAENjA0MAsGCWCGSAGG/WwC
+ATAHBgVngQwBATAIBgZngQwBAgEwCAYGZ4EMAQICMAgGBmeBDAECAzANBgkqhkiG
+9w0BAQsFAAOCAQEAkPFwyyiXaZd8dP3A+iZ7U6utzWX9upwGnIrXWkOH7U1MVl+t
+wcW1BSAuWdH/SvWgKtiwla3JLko716f2b4gp/DA/JIS7w7d7kwcsr4drdjPtAFVS
+slme5LnQ89/nD/7d+MS5EHKBCQRfz5eeLjJ1js+aWNJXMX43AYGyZm0pGrFmCW3R
+bpD0ufovARTFXFZkAdl9h6g4U5+LXUZtXMYnhIHUfoyMo5tS58aI7Dd8KvvwVVo4
+chDYABPPTHPbqjc1qCmBaZx2vN4Ye5DUys/vZwP9BFohFrH/6j/f3IL16/RZkiMN
+JCqVJUzKoZHm1Lesh3Sz8W2jmdv51b2EQJ8HmA==
+-----END CERTIFICATE-----
+,]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:4979815d-3611-4177-9e74-82064afb4689;8:sockname;27:15:100.127.255.249;5:60051#]8:peername;23:13:23.36.162.222;3:443#]}11:client_conn;518:10:proxy_mode;7:regular;8:mitmcert;0:~19:timestamp_tls_setup;18:1696742934.6930017^13:timestamp_end;18:1696742936.7510695^15:timestamp_start;17:1696742934.233016^3:sni;20:api.kleinanzeigen.de;11:tls_version;7:TLSv1.3;11:cipher_list;0:]6:cipher;22:TLS_AES_256_GCM_SHA384;11:alpn_offers;16:2:h2,8:http/1.1,]4:alpn;2:h2,16:certificate_list;0:]3:tls;4:true!5:error;0:~18:transport_protocol;3:tcp;2:id;36:de608bde-33a4-4369-b01c-814c0d5fa01c;8:sockname;25:14:192.168.56.149;4:8080#]8:peername;26:14:192.168.56.149;5:60050#]}5:error;0:~2:id;36:c97a01dc-5a69-454c-844e-e94780d919ba;4:type;4:http;7:version;2:20#}

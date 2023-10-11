@@ -1,4 +1,6 @@
 import traceback
+from pathlib import Path
+
 from flask_cors import CORS
 from flask import Flask, request, jsonify, render_template
 from print_dict import pd
@@ -14,13 +16,14 @@ log = False
 deploy_mode = "offline"
 if deploy_mode == "online":
     cookie_domain = '.ebay-zakir-1996.onrender.com'
-    app.config['SERVER_NAME'] = 'ebay-zakir-1996.onrender.com'
+    app.config['SERVER_NAME'] = 'publish_zakir.onrender.com'
 elif deploy_mode == "offline":
     cookie_domain = '.ebay-kleinanzeigen-zakir.de:5000'
     app.config['SERVER_NAME'] = 'ebay-kleinanzeigen-zakir.de:5000'
 elif deploy_mode == "mobile":
     cookie_domain = '.192.168.151.149'
     # app.config['SERVER_NAME'] = '192.168.151.149:5000'
+
 
 @app.route('/')
 @app.route('/search')
@@ -51,12 +54,28 @@ def is_user_logged():  # put application's code here
         user_id = ""
         # is_logged = api.is_user_logged_in()
         user_email, user_name = ("None", "None")
-        if  is_logged:
+        if is_logged:
             user_id = api.get_user_id()
             user_email, user_name = api.get_user_name()
         res = dict(is_logged=is_logged, user_id=user_id, user_name=user_name, user_email=user_email)
         res = api.attach_cookies_to_response(res)
         return res
+    except Exception as e:
+        return get_error_msg(e, log)
+
+
+@app.route('/publish/saleem/nachhilfe')
+def publish_saleem_nachhilfe():  # put application's code here
+    try:
+        api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/saleem.json", keep_old_cookies=False,
+                                   save=True, webshare_rotate=False)
+        # api.is_user_logged_in()
+        print("login", api.login)
+        if not api.login:
+            return json.dumps(dict(type="error",msg="user couldnet be logged in"))
+        res = api.publish_add_from_json_file(Path("./adds/all_zakir.json"))
+
+        return json.dumps(type= "success",msg=res)
     except Exception as e:
         return get_error_msg(e, log)
 
@@ -280,8 +299,7 @@ def get_error_msg(e, log=False):
     res = jsonify(res)
     res.headers.add('Access-Control-Allow-Credentials', 'true')
     res.status = 400
-    return res , 400
-
+    return res, 400
 
 
 def clear_cookies(ads: dict, cookies: dict):
@@ -304,4 +322,5 @@ def print_cookies(cookies):
 
 
 if __name__ == '__main__':
-    app.run()
+    publish_saleem_nachhilfe()
+    # app.run()

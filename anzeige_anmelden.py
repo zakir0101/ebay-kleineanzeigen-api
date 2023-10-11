@@ -14,7 +14,7 @@ class AnzeigeAnmelden(Main):
         super().__init__(filename, log, cookies, save, mode, keep_old_cookies, rotate_ip,webshare_rotate)
         self.language = ['java', 'python', 'c++', 'c', 'matlab', 'kotlin', 'javascript', 'sql', 'informatik']
         self.myAdd = ["2548972822","2557207555","2516923750","2557039288"]
-        if not os.path.exists("reported_adds.csv"):
+        if not os.path.exists("report/reported_adds.csv"):
             df = pd.DataFrame(
                 columns=['add_link', 'title', 'add_date', 'views', 'location', 'price', 'add_id', 'user_name',
                          "user_type","reported_1","reported_2","reported_3","deleted", 'java',
@@ -24,7 +24,7 @@ class AnzeigeAnmelden(Main):
 
 
     def report_adds_from_csv(self):
-        df = pd.read_csv("reported_adds2.csv")
+        df = pd.read_csv("report/reported_adds2.csv")
         not_deleted = df[(df['deleted'] == False) & (df['reported_1'] == False)]
         for index, row in not_deleted.iterrows():
             add_link = row['add_link']
@@ -38,7 +38,7 @@ class AnzeigeAnmelden(Main):
         df.to_csv("reported_adds2.csv", index=False)
 
     def mark_reported_add(self):
-        df = pd.read_csv("reported_adds2.csv")
+        df = pd.read_csv("report/reported_adds2.csv")
         not_deleted = df[(df['deleted'] == False)]
         for index, row in not_deleted.iterrows():
             add_link = row['add_link']
@@ -48,14 +48,14 @@ class AnzeigeAnmelden(Main):
         df.to_csv("reported_adds2.csv", index=False)
 
     def mark_all_undeleted(self):
-        df = pd.read_csv("reported_adds2.csv")
+        df = pd.read_csv("report/reported_adds2.csv")
         for index, row in df.iterrows():
             df.at[index, "deleted"] = False
         df.to_csv("reported_adds2.csv", index=False)
 
     def mark_deleted_adds(self):
         string =  "Die gewünschte Anzeige ist nicht mehr"
-        df = pd.read_csv("reported_adds2.csv")
+        df = pd.read_csv("report/reported_adds2.csv")
         not_deleted = df[(df['deleted'] == False)]
         for index, row in not_deleted.iterrows():
             add_link = row['add_link']
@@ -69,7 +69,7 @@ class AnzeigeAnmelden(Main):
         df.to_csv("reported_adds2.csv",index=False)
 
     def merge_adds_to_csv_file(self,adds:list):
-        df = pd.read_csv("reported_adds2.csv")
+        df = pd.read_csv("report/reported_adds2.csv")
         for add in adds:
             id  = int(add.get("add_id"))
             similar = df[(df['add_id'] == int(id))]
@@ -101,7 +101,7 @@ class AnzeigeAnmelden(Main):
         return all_add
 
     def __filter_links(self,links):
-        df = pd.read_csv("reported_adds2.csv")
+        df = pd.read_csv("report/reported_adds2.csv")
         not_deleted = df[(df["deleted"] == False)]["add_link"].tolist()
         for link in not_deleted:
             if link.strip() in links:
