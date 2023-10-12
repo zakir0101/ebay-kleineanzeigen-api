@@ -1,4 +1,5 @@
 import json
+import random
 import re
 import traceback
 from ssl import SSLError
@@ -39,11 +40,19 @@ class EbayKleinanzeigenApi:
         self.response: Response | None = None
         self.active_proxy = None
         self.webshare_proxies = None
+        self.webshare_proxies_list = None
+        self.webshare_rotate = webshare_rotate
         if webshare_rotate:
-            self.webshare_proxies = {
+            self.zakir_proxies = {
                 "http": "http://oeaariao-rotate:yoeq67r30rhb@p.webshare.io:80/",
                 "https": "http://oeaariao-rotate:yoeq67r30rhb@p.webshare.io:80/"
             }
+            self.ahmed_tita_proxies = {
+                "http": "http://qbdhukkk-rotate:0olcqbjafp1b@p.webshare.io:80/",
+                "https": "http://qbdhukkk-rotate:0olcqbjafp1b@p.webshare.io:80/"
+            }
+            self.webshare_proxies = self.ahmed_tita_proxies
+            self.update_webshare_proxies()
 
         if rotate_ip:
             self.countries = json.loads(open('Countries.json', "r").read())[:8]
@@ -85,6 +94,40 @@ class EbayKleinanzeigenApi:
                     proxies.append(proxy)
         return proxies
 
+    def update_webshare_proxies(self):
+
+        zakir1996_link = "https://proxy.webshare.io/api/v2/proxy/list/download/wwgxjjciahsxutqnrpaodcooxmwivbrgsmbpwbsr/-/any/username/direct/-/"
+        zakir_elkheir = "https://proxy.webshare.io/api/v2/proxy/list/download/xeqhkzlgfuzemzoyvizizlvdnrhtoxwemgfgssal/-/any/username/direct/-/"
+        adnan_link = "https://proxy.webshare.io/api/v2/proxy/list/download/flgurmocunyqhwsjgfeoojgeirczemcxmrlaglix/-/any/username/direct/-/"
+        ahmed_tita_link = "https://proxy.webshare.io/api/v2/proxy/list/download/gwtupjzvgnuqxchyhoqiizmbropovvpniqxewrlu/-/any/username/direct/-/"
+        saleem_abd_link = "https://proxy.webshare.io/api/v2/proxy/list/download/wmypmxbysjagflzpkwhgsooyccjqhtpaujclzzsd/-/any/username/direct/-/"
+        saleem_omer_link = "https://proxy.webshare.io/api/v2/proxy/list/download/njsxdevopvnjuutgnutwdvztlhfeuqjfifxwxzji/-/any/username/direct/-/"
+
+        all_links = [zakir1996_link, zakir_elkheir, adnan_link, ahmed_tita_link, saleem_abd_link, saleem_omer_link]
+        proxy_list = []
+        for link in all_links:
+            if link == "":
+                continue
+            text = requests.get(link).text
+            lines = text.split("\n")
+            for line in lines:
+                token = line.strip().split(":")
+                if len(token) < 4:
+                    continue
+                ip = token[0].strip()
+                if ip == "38.154.227.167":
+                    continue
+                port = token[1].strip()
+                user = token[2].strip()
+                password = token[3].strip()
+                proxy_link = f"http://{user}:{password}@{ip}:{port}"
+                print(proxy_link)
+                proxy = {"http": proxy_link, "https": proxy_link}
+                proxy_list.append(proxy)
+        print("number of proxies added = ", len(proxy_list))
+        open("proxies/all_proxies.json", "w").write(json.dumps(proxy_list))
+        self.webshare_proxies_list = proxy_list
+
     def make_request(self, type, method, url, body=None, files=None):
         # self.cookies.print_request_cookies()
         # if self.proxies:
@@ -93,7 +136,11 @@ class EbayKleinanzeigenApi:
         #         print("active proxy")
         #         pd(self.active_proxy)
 
+        if self.webshare_rotate :
+            self.webshare_proxies = random.choice(self.webshare_proxies_list)
+
         try:
+
             if method == "post":
                 self.request_url_post(url, body=body, type=type, files=files)
             elif method == "get":
@@ -138,8 +185,9 @@ class EbayKleinanzeigenApi:
                                  cookies=self.cookies.request_cookies)
 
         else:
-
-            print("get request using proxies webshare")
+            if self.log and self.webshare_rotate:
+                print("get request using proxies webshare")
+                print(self.webshare_proxies.get("http"))
             result = session.get(url, proxies=self.webshare_proxies,
                                  headers=self.headers,
                                  cookies=self.cookies.request_cookies)
@@ -149,11 +197,11 @@ class EbayKleinanzeigenApi:
         if self.log:
             print("URL = " + url)
             print("StatusCode = " + str(result.status_code))
-            print("x-csrf-token after:", self.cookies.request_cookies.get('CSRF-TOKEN'))
+            # print("x-csrf-token after:", self.cookies.request_cookies.get('CSRF-TOKEN'))
         return result
 
     def request_url_post(self, url, body, type, files):
-        print("x-csrf-token befor:", self.cookies.request_cookies.get('CSRF-TOKEN'))
+        # print("x-csrf-token befor:", self.cookies.request_cookies.get('CSRF-TOKEN'))
 
         session = requests.Session()
         if self.rotate_ip and self.active_proxy:
@@ -166,7 +214,7 @@ class EbayKleinanzeigenApi:
         if self.log:
             print("URL = " + url)
             print("StatusCode = " + str(result.status_code))
-            print("x-csrf-token after:", self.cookies.request_cookies.get('CSRF-TOKEN'))
+            # print("x-csrf-token after:", self.cookies.request_cookies.get('CSRF-TOKEN'))
 
         return result
 

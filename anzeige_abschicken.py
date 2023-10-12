@@ -18,7 +18,7 @@ import pprint
 class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
     def __init__(self, filename: str = "default.json", log: bool = True, cookies: dict = None, save=False,
                  mode: str = "client", rotate_ip: bool = False, keep_old_cookies=True, webshare_rotate=False):
-        super().__init__(filename, log, cookies, save, mode, keep_old_cookies, rotate_ip)
+        super().__init__(filename, log, cookies, save, mode, keep_old_cookies, rotate_ip,webshare_rotate)
         self.adwen_id = None
         self.form_data = None
         self.NachbarschaftHilfe = "401"
@@ -422,18 +422,20 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
             print(response)
             if response.get("state") == "ACTIVE":
                 active = True
+            time.sleep(2)
         print("add was published successfully")
         myadds: list = json.loads(open("myAdd.json", "r").read())
-        myadds.append(adid.__str__().strip())
+        myadds.append(add_id.__str__().strip())
         open("myAdd.json", "w").write(json.dumps(myadds))
         return active
 
 
 if __name__ == "__main__":
-    id = 16
-    api = AnzeigeAbschickenApi(log=True, mode="server",filename="Cookies/saleem.json", keep_old_cookies=False, save=True, webshare_rotate=True)
+    id = 13
+    api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/saleem_abd.json", keep_old_cookies=False, save=True, webshare_rotate=False)
     # api.is_user_logged_in()
     print("login", api.login)
+    # print(api.html_text)
     if not api.login:
         exit(1)
     # print(api.html_text)
@@ -455,7 +457,7 @@ if __name__ == "__main__":
     if id == 14:
         api.set_bearer_token()
     if id == 13:
-        api.publish_add_from_json_file(Path("./adds/all_zakir.json"))
+        api.publish_add_from_json_file(Path("./adds/iphone.json"))
     if id == 12:
         api.set_xsrf_token(2)
         print(api.html_text)

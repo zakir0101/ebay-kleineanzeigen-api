@@ -7,7 +7,9 @@
     "email" : "adnanabugerga@gmail.com",
     "ebay_name" : "Adnan",
     "ebay_number" : "+4917634589456",
-    "ebay_number_src" : "Muaz - friend"
+    "ebay_number_src" : "Muaz - friend",
+    "cookies": "Cookies\\adnan.json",
+    "report_lable": "reported_1"
   },
   {
     "first_name" : "Ahmed",
@@ -17,7 +19,9 @@
     "email" : "ahmedtita97@gmail.com",
     "ebay_name" : "Tita",
     "ebay_number" : "+4915731166017",
-    "ebay_number_src" : "Ibrahim muqafi - firend"
+    "ebay_number_src" : "Ibrahim muqafi - firend",
+    "cookies": "Cookies\\ahmed_tita.json",
+    "report_lable": "reported_2"
   },{
     "first_name" : "Saleem",
     "lasst_name" : "Ahmed",
@@ -26,7 +30,9 @@
     "email" : "saleemahmedabd@gmail.com",
     "ebay_name" : "Sally",
     "ebay_number" : "",
-    "ebay_number_src" : "Ben - friend - student"
+    "ebay_number_src" : "Ben - friend - student",
+  "cookies": "Cookies\\saleem_abd.json",
+    "report_lable": "reported_3"
   }
 ,{
     "first_name" : "Mustafa",
