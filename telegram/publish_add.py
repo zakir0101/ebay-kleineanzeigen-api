@@ -1,6 +1,7 @@
 import json
 import os
 from pathlib import Path
+from threading import Thread
 
 from anzeige_abschicken import AnzeigeAbschickenApi
 from telegram.base import Base
@@ -66,6 +67,12 @@ class PublishAd(Base):
         return keyboard
 
     def publish_ad(self, token_file, ad_file):
+        """
+        Publishes an advertisement using the selected token and ad files.
+        """
+        thread = Thread(target=self.publish_ad_async,args=(token_file,ad_file))
+        thread.start()
+    def publish_ad_async(self, token_file, ad_file):
         """
         Publishes an advertisement using the selected token and ad files.
         """

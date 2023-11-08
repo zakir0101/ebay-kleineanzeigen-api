@@ -14,7 +14,7 @@ def set_telegram_webhook(bot_token, ngrok_url):
 
 # Replace 'YOUR_BOT_TOKEN' with your actual bot token and 'YOUR_NGROK_URL' with your ngrok URL
 bot_token = '6819822176:AAHnYg7TVpRXaDE4Yt0F6du_WwfDmbDryX8'
-ngrok_url = 'ea32-2a02-2498-4-7003-00-72e5.ngrok-free.app/webhook'  # Make sure this points to your webhook endpoint
+ngrok_url = 'https://publish-zakir.onrender.com/webhook'  # Make sure this points to your webhook endpoint
 
 result = set_telegram_webhook(bot_token, ngrok_url)
 print(result)

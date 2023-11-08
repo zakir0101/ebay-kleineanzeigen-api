@@ -1,4 +1,5 @@
 # messages.py
+from threading import Thread
 
 from telegram.base import Base
 import json
@@ -16,6 +17,9 @@ class Messages(Base):
         self.send_token_file_selection()
 
     def display_conversation(self,cookie_file):
+        thread = Thread(target=self.display_conversation_async,args=(cookie_file))
+        thread.start()
+    def display_conversation_async(self,cookie_file):
         # Code to get conversations list and send it to user
         # You would use the api.get_conversations() here
         # and format it to send to the user with an inline keyboard
@@ -59,7 +63,11 @@ class Messages(Base):
     def leave_message_window(self):
         self.send_welcome_message()
 
+
     def display_messages(self, api, conversation_id):
+        thread = Thread(target=self.display_messages_async, args=(api,conversation_id))
+        thread.start()
+    def display_messages_async(self, api, conversation_id):
         # Code to get messages for the specified conversation
         # You would use the api.get_messages() here
         # Format the messages and send them to the user with "send" and "back" buttons
