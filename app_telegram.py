@@ -264,7 +264,7 @@ def notify_user(text, reply_markup=None):
     requests.post(f"{TELEGRAM_API_URL}/sendMessage", data=payload)
 
 
-def notify_messages_async_task(index, cookie_file):
+def notify_messages_async_task():
     for index, cookie_file in enumerate(os.listdir("Cookies")):
         index = index + 1
         print(f"{index}: logged in as {cookie_file}")
