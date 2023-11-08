@@ -67,13 +67,16 @@ def is_user_logged():  # put application's code here
 @app.route('/publish/saleem/nachhilfe')
 def publish_saleem_nachhilfe():  # put application's code here
     try:
-        api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/saleem_abd.json", keep_old_cookies=False,
+        token_file_name = "saleem_abd.json"
+        api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/" + token_file_name, keep_old_cookies=False,
                                    save=True, webshare_rotate=False)
         # api.is_user_logged_in()
         print("login", api.login)
         if not api.login:
             return json.dumps(dict(type="error",msg="user couldnet be logged in"))
-        res = api.publish_add_from_json_file(Path("./adds/all_zakir.json"))
+
+        add_file_name = "all_zakir.json"
+        res = api.publish_add_from_json_file(Path("./adds/"+add_file_name))
 
         return json.dumps(type= "success",msg=res)
     except Exception as e:

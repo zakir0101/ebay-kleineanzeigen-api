@@ -10,9 +10,8 @@ from flask import jsonify
 from requests import Response
 from requests.exceptions import ProxyError, ConnectTimeout
 
-from Cookies.cookies import Cookies
+from cookies import Cookies
 from Extractor.extractor import EbayKleinanzeigenExtractor
-from print_dict import pd
 
 
 class EbayKleinanzeigenApi:
@@ -354,26 +353,39 @@ class EbayKleinanzeigenApi:
             user_text = user_elm.text.strip()
             user_email = user_text.replace("angemeldet", "").replace("als", "").replace(":", "").strip()
             user_name = user_email[:user_email.index("@")]
-            if self.log:
-                print("user_email :", user_email)
-                print("user_name :", user_name)
-            return user_email, user_name
+            return  user_name
+        else:
+            return self.get_user_name_2()
 
-        return None
-
+    def get_user_name_2(self):
+        url = self.ebay_url + "m-einstellungen.html#/account-settings"
+        url = self.ebay_url
+        self.make_request("html-soup","get",url)
+        open("result.html","w",encoding="utf-8").write(self.html_text)
+        tag = self.soup.find("li", class_="subnav-info")
+        if tag is None:
+            return None
+        tagStrong = tag.find("strong")
+        if tagStrong is None:
+            return None
+        text = tagStrong.text
+        return text[:text.index("@")]
     def get_user_id(self):
         url = "https://www.ebay-kleinanzeigen.de/m-nachrichten.html"
         self.make_request(type="soup", method="get", url=url)
+
         scripts = self.soup.find_all("script", type="text/javascript")
+        if  self.soup is None:
+            return None
         main_script = None
         for script in scripts:
             if "userId" in script.text:
                 main_script = script
+        if not main_script:
+            return None
         text = main_script.text
         user_id_regex = re.compile(r'userId: (\d+)')
         match = user_id_regex.search(text)
-        if self.log:
-            print("user id =  ", match.groups()[0])
         return match.groups()[0]
         pass
 
@@ -388,9 +400,12 @@ class EbayKleinanzeigenApi:
 
 
 if __name__ == "__main__":
-    api = EbayKleinanzeigenApi(mode="server", keep_old_cookies=False)
-    # login = api.is_user_logged_in()
+    api = EbayKleinanzeigenApi(log=True, mode="server", filename="Cookies/ahmed_tita.json", keep_old_cookies=False,
+                               save=True, webshare_rotate=False)
+    if api.login:
+        user_id = api.get_user_id()
     print("login ", api.login)
-    # user_email, user_name = api.get_user_name()
-    api.try_hard(api.get_user_name, lambda res: res)
+    print("user_name",api.get_user_name())
+    print("user_id",user_id)
+
     pass

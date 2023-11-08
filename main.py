@@ -1,6 +1,7 @@
+import json
 import time
 from datetime import datetime
-from print_dict import pd
+from print_dict import pd, print_dict
 from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
 
 
@@ -104,6 +105,12 @@ class Main(EbayKleinanzeigenApi):
               user_id.__str__() + "/conversations?page=" + page.__str__() + "&size=" + size
         self.set_bearer_token()
         self.make_request(type="json", method="get", url=url)
+        json_object = self.json_obj
+        if json_object is None:
+            return None
+        json_object["lastModified"] = self.get_time_readable(json_object['lastModified'])
+        for conv in json_object.get("conversations"):
+            conv["receivedDate"] = self.get_time_readable(conv["receivedDate"])
         return self.json_obj
 
     def send_message_from_add_page(self, message, add_id, add_type, contact_name):
@@ -156,8 +163,7 @@ class Main(EbayKleinanzeigenApi):
 
 
     def get_time_readable(self,time_str):
-        print(time_str)
-        try:	
+        try:
             time_obj = time.strptime(time_str, "%Y-%m-%dT%H:%M:%S.%f+0100")
         except Exception as e:
             time_obj = time.strptime(time_str, "%Y-%m-%dT%H:%M:%S.%f+0200")
@@ -184,3 +190,17 @@ class Main(EbayKleinanzeigenApi):
         pass
 
 
+if __name__ == '__main__':
+    id = 1
+    api = Main(log=True, mode="server", filename="Cookies/adnan.json", keep_old_cookies=False,                               save=True, webshare_rotate=False)
+    if api.login:
+        user_id = api.get_user_id()
+        conversation_id = "dq1r:2pc1q4v:2knzkfc9x"
+        api.send_message_from_message_box("hey, gerne helfe ich dir",user_id,conversation_id)
+
+        # conver = api.get_conversations(user_id,"0","10")
+        # messages = api.get_messages(user_id,conve_id)
+        #
+        #
+        # open("testing/conversations.json","w",encoding="utf-8").write(json.dumps(conver,ensure_ascii=False))
+        # open("testing/messages.json", "w", encoding="utf-8").write(json.dumps(messages, ensure_ascii=False))

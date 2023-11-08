@@ -1,0 +1,21 @@
+{
+  "id": "1g8bq:29rrm23:2klp4kd9c",
+  "buyerName": "Viktor",
+  "sellerName": "Adnan",
+  "adId": "2571410538",
+  "numUnread": 0,
+  "adTitle": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+  "messages": [
+    {
+      "textShort": "Hallo Adnan,\r\n\r\nkennst du dich mit Android Studio ? Ich habe ein paar Aufgaben die man dort lösen muss.\r\n\r\nGrüße,\r\nViktor",
+      "boundness": "INBOUND",
+      "readableDate": "18-Oct-23 12:46"
+    },
+    {
+      "textShort": "Hi",
+      "boundness": "OUTBOUND",
+      "readableDate": "18-Oct-23 18:55"
+    }
+ // other messages in this conversations
+  ],
+}

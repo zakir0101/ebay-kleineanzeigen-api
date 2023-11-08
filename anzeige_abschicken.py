@@ -1,24 +1,24 @@
-import base64
 import json
 import os
 import traceback
 from time import sleep
-import uuid
+import random
+
+import requests
 from print_dict import pd
 from urllib import parse
 from uuid import uuid4
 
-# from app import publish_saleem_nachhilfe
 from ebay_kleinanzeigen_api import EbayKleinanzeigenApi
 from pathlib import Path
 import time
-import pprint
 
 
 class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
     def __init__(self, filename: str = "default.json", log: bool = True, cookies: dict = None, save=False,
-                 mode: str = "client", rotate_ip: bool = False, keep_old_cookies=True, webshare_rotate=False):
-        super().__init__(filename, log, cookies, save, mode, keep_old_cookies, rotate_ip,webshare_rotate)
+                 mode: str = "client", rotate_ip: bool = False, keep_old_cookies=True, webshare_rotate=False,
+                 chat_id=None, telegram_api_url=None):
+        super().__init__(filename, log, cookies, save, mode, keep_old_cookies, rotate_ip, webshare_rotate)
         self.adwen_id = None
         self.form_data = None
         self.NachbarschaftHilfe = "401"
@@ -26,6 +26,8 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
         self.NACHHILFE = "268"
         self.WEITERE_DIENSTLEISTUN = "298"
         self.tracking_id = "ma99601b-34dd-4432-b026-ad8082545711"
+        self.chat_id = chat_id
+        self.telegram_api_url = telegram_api_url
 
     def set_headers_for_posting_add(self):
         accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8," \
@@ -89,7 +91,7 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
         else:
             return self.zuVerschenken
 
-    def set_form_data(self, title, price, zip_code, city_code, description, contact_name, image_url=None):
+    def set_form_data(self, title, price, zip_code, city_code, description, contact_name, image_url_list=None):
         category_id = self.get_category_id(title)
         sug_category_id = self.get_suggested_category(title)
         # location = self.get_location_by_zip(zip_code)
@@ -122,8 +124,9 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
                          postAdWenkseSessionId=self.adwen_id,
                          _csrf=self._csrf
                          )
-        if image_url is not None:
-            form_data["adImages[0].url"] = image_url
+        if image_url_list is not None:
+            for index, url in enumerate(image_url_list):
+                form_data[f"adImages[{index}].url"] = url
 
         # form_data['attributeMap[notebooks.versand_s]'] = "nein"
         if category_id == self.zuVerschenken:
@@ -222,12 +225,14 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
             res = self.json_obj['yamsAdImage']
             image_link = res["dynamicRuleThumbnailUrl"]
             if self.log:
-                print("image uploaded successfully")
+                if self.telegram_api_url:
+                    self.send_telegram_message(f"image: {image_name} uploaded successfully")
+                print(f"image: {image_name} uploaded successfully")
                 # print(image_link)
             return image_link
         else:
             if self.log:
-                print("could not upload image")
+                print(f"could not upload image : {image_name}")
             return None
 
     def get_location_by_zip(self, zip):
@@ -321,53 +326,38 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
         self.cookies.remove_specific_cookies()
         self.set_bearer_token()
         if self.authorization is None:
+            if self.telegram_api_url:
+                self.send_telegram_message("couldn't get Bearer Token")
+                raise Exception()
             return None
 
-        self.cookies.remove_specific_cookies()
+        # self.cookies.remove_specific_cookies()
         self.set_xsrf_token(mode=2)
-
+        if self.response.status_code >= 400:
+            if self.telegram_api_url:
+                self.send_telegram_message("couldn't set xsrf token")
         print("""*************************** Header **************************************""")
         self.headers = dict()
         self.set_headers_for_posting_add()
-        pd(self.headers)
+        # pd(self.headers)
 
         print("""*************************** form data **************************************""")
+        webshare_state = self.webshare_rotate
+        self.webshare_rotate = False
         self.set_form_data(title, price, zip_code, city_code, description, contact_name, image_link)
-        pd(self.form_data)
+        # pd(self.form_data)
+        self.webshare_rotate = webshare_state
         # making request
         print("""***************************  posting add 1 **************************************""")
 
-        self.cookies.remove_specific_cookies()
+        # self.cookies.remove_specific_cookies()
         self.make_request(type="html-soup", method="post", url=url, body=self.form_data)
         print("\n******************* Response Header 1 **********************************")
-        for key, value in self.response.headers.items():
-            print(key, value)
-
-        # print("""***************************  posting add 2 **************************************""")
-        #
-        # ad_wenk = self.soup.find("input", {"name": "postAdWenkseSessionId"}).get("value")
-        # tracking_id = self.soup.find("input", {"id": "trackingId"}).get("value")
-        # print("postAdWenkseSessionId", ad_wenk)
-        # print("trackingId", tracking_id)
-        # self.form_data['postAdWenkseSessionId'] = ad_wenk
-        # self.form_data['trackingId'] = tracking_id
-        #
-        # self.make_request(type="html-soup", method="post", url=url, body=self.form_data)
-        # print("\n******************* Response Header 2 **********************************")
         # for key, value in self.response.headers.items():
         #     print(key, value)
 
-
-
-
-        # url_2 = self.response.headers.get('Location')
-        # print("response location",url_2)
-        # if url_2 is None:
-        #     return None
-        # url = self.ebay_url + url[1:]
         url = self.response.url
-        # self.anzeige_bestaetigen("Response Url",url)
-        # sleep(1)
+
         f = open("result.html", "w", encoding="utf-8")
         f.write(self.html_text)
         f.close()
@@ -381,63 +371,107 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
 
         # trackingId = parse.parse_qs(parse.urlparse(self.response.url).query)['trackingId'][0]
         # uuid = parse.parse_qs(parse.urlparse(self.response.url).query)['uuid'][0]
-        print("adId", adId)
+        if self.log:
+            if self.telegram_api_url:
+                self.send_telegram_message(f"addId : {adId}")
+            print("adId", adId)
         return adId
 
     def anzeige_bestaetigen(self, url):
         self.make_request(method="get", type="html", url=url)
 
+    def choose_rando_images(self, numb=3):
+        root_dir = "images/pexels/"
+        dir_list = os.listdir(path=root_dir)
+        selected = random.sample(dir_list, 3)
+        result = selected
+        if self.log:
+            for item in result:
+                print(item, "was selected")
+
+        return result
+
     def publish_add_from_json_file(self, file_path):
-        # self.cookies.remove_specific_cookies()
-        # self.set_bearer_token()
-        # sleep(0.5)
-        # self.validate()
-        # sleep(0.5)
-        # self.init_request()
-        # sleep(0.5)
+
         if not os.path.exists(file_path):
             print("file could not be found :(")
+            if self.telegram_api_url:
+                self.send_telegram_message("file could not be found :(")
             return False
-        add = json.loads(open(file_path, "r").read())
+        add = json.loads(open(file_path, "r", encoding="utf-8").read())
         city_c = self.get_location_by_zip(add['zip'])[0].get('id')
         sleep(0.5)
-        print("city_code", city_c)
-
-        image_url = self.upload_image(add["image_file"], Path("./images"))
-        print("image_url", image_url)
-        if image_url is None:
-            "problem uploading image"
+        if self.log:
+            print("city_code", city_c)
+        image_folder = add.get("image_folder")
+        image_name_list = os.listdir(image_folder)
+        image_url_list = []
+        for name in image_name_list:
+            image_url_list.append(self.upload_image(name, Path(image_folder)))
+        # for url in image_url_list:
+        #     print("image_url", url)
+        if None in image_url_list:
+            print("problem uploading some images")
+            if self.telegram_api_url:
+                self.send_telegram_message("problem uploading some images")
+                raise Exception()
             return False
         print("""*************************** Preparing posting add**************************************""")
 
         add_id = self.anzeige_abschicken(add["title"], add["price"], add["zip"], city_c,
-                                         add["description"], add["contact_name"], image_url)
+                                         add["description"], add["contact_name"], image_url_list)
         if add_id is None:
-            print("could not pos add, sorry :(")
+            if self.telegram_api_url:
+                self.send_telegram_message("could not post add, sorry :(")
+                raise Exception()
+            print("could not post add, sorry :(")
             return
         print("""*************************** checking add state *********************************""")
         active = False
         for i in range(20):
             response = self.check_add_state(add_id)
-            print(response)
+            if self.log:
+                if self.telegram_api_url:
+                    self.send_telegram_message( f"state : {response.get('state') }")
+                print(response)
             if response.get("state") == "ACTIVE":
                 active = True
+                break
             time.sleep(2)
-        print("add was published successfully")
+        if self.log:
+            if self.telegram_api_url:
+                self.send_telegram_message("add was published successfully")
+            print("add was published successfully")
         myadds: list = json.loads(open("myAdd.json", "r").read())
         myadds.append(add_id.__str__().strip())
         open("myAdd.json", "w").write(json.dumps(myadds))
         return active
 
+    def send_telegram_message(self, message):
+
+        """
+        Sends a message to the specified chat_id on Telegram.
+        """
+        chat_id = self.chat_id  # Assuming the chat_id is set as an attribute of the instance
+        payload = {
+            'chat_id': chat_id,
+            'text': message
+        }
+        requests.post(self.telegram_api_url + '/sendMessage', data=payload)
+
 
 if __name__ == "__main__":
-    id = 13
-    api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/saleem_abd.json", keep_old_cookies=False, save=True, webshare_rotate=False)
+    id = 18
+
+    api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/ahmed_tita.json", keep_old_cookies=False,
+                               save=True, webshare_rotate=True)
     # api.is_user_logged_in()
     print("login", api.login)
+    print("user name ", api.get_user_name())
     # print(api.html_text)
     if not api.login:
-        exit(1)
+        pass
+        # exit(1)
     # print(api.html_text)
     title = "Audi 10"
     zip_array = ["01616", "02627",
@@ -457,7 +491,7 @@ if __name__ == "__main__":
     if id == 14:
         api.set_bearer_token()
     if id == 13:
-        api.publish_add_from_json_file(Path("./adds/iphone.json"))
+        api.publish_add_from_json_file(Path("./adds/all_saleem_abd.json"))
     if id == 12:
         api.set_xsrf_token(2)
         print(api.html_text)

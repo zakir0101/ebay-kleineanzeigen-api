@@ -1,0 +1,402 @@
+{
+  "id": "1g8bq:29rrm23:2klp4kd9c",
+  "role": "Seller",
+  "buyerName": "Viktor",
+  "sellerName": "Adnan",
+  "userIdBuyer": 36376313,
+  "userIdBuyerHash": "e11373027fa4871758d13b770db4ce92",
+  "userIdSeller": 134253131,
+  "userIdSellerHash": "735afee7d1f4494a43d74f27a7a5763e",
+  "adId": "2571410538",
+  "messages": [
+    {
+      "textShort": "Hallo Adnan,\r\n\r\nkennst du dich mit Android Studio ? Ich habe ein paar Aufgaben die man dort lösen muss.\r\n\r\nGrüße,\r\nViktor",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-18T12:46:50.106+0200",
+      "attachments": [],
+      "messageId": "a470b2f2-6da3-11ee-9c79-01fa5223628d",
+      "readableDate": "18-Oct-23 12:46"
+    },
+    {
+      "textShort": "Hi",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-18T18:55:36.843+0200",
+      "attachments": [],
+      "messageId": "2900ac02-6dd7-11ee-b395-dbfb19dd93c4",
+      "readableDate": "18-Oct-23 18:55"
+    },
+    {
+      "textShort": "Freue mich dass du mich schreibst",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-18T18:56:00.200+0200",
+      "attachments": [],
+      "messageId": "36e77a9a-6dd7-11ee-ad00-91b1d405f02a",
+      "readableDate": "18-Oct-23 18:56"
+    },
+    {
+      "textShort": "Ja gerne kann ich helfen",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-18T18:56:04.940+0200",
+      "attachments": [],
+      "messageId": "39bf04ec-6dd7-11ee-b11a-91925735e3cf",
+      "readableDate": "18-Oct-23 18:56"
+    },
+    {
+      "textShort": "Adnan, sorry für verspätete Antwort. Ich hatte einen Freund der mir helfen wollte, das hat aber nicht geklappt. Kannst du mir bitte deine Email schicken ich sende dir die Aufgaben.\nGrüße Viktor",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-25T17:17:10.002+0200",
+      "attachments": [],
+      "messageId": "91240d98-7349-11ee-8f0f-f502d9d57483",
+      "readableDate": "25-Oct-23 17:17"
+    },
+    {
+      "textShort": "Moin Adnan, kannst du mir bitte noch deine Email Adresse schicken.\nDanke",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T07:42:00.679+0200",
+      "attachments": [],
+      "messageId": "62659cc7-73c2-11ee-bb03-6541508b8a5e",
+      "readableDate": "26-Oct-23 07:42"
+    },
+    {
+      "textShort": "Gerne",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T07:49:31.127+0200",
+      "attachments": [],
+      "messageId": "6ee25e64-73c3-11ee-ae0b-2707435a26c8",
+      "readableDate": "26-Oct-23 07:49"
+    },
+    {
+      "textShort": "adnanabugerga@gmail.com",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T07:50:51.990+0200",
+      "attachments": [],
+      "messageId": "9f153cf2-73c3-11ee-9c2b-c958db02d6d8",
+      "readableDate": "26-Oct-23 07:50"
+    },
+    {
+      "textShort": "Habe ich dir gesendet",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T10:33:53.208+0200",
+      "attachments": [],
+      "messageId": "6524a8aa-73da-11ee-8920-8b7d257cac97",
+      "readableDate": "26-Oct-23 10:33"
+    },
+    {
+      "textShort": "Ich lese gerade die Aufgaben, und melde mich nachher bei dir",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T11:18:04.605+0200",
+      "attachments": [],
+      "messageId": "917fbbd9-73e0-11ee-b7d2-69bcc16ae1a2",
+      "readableDate": "26-Oct-23 11:18"
+    },
+    {
+      "textShort": "Wurde von dir gerne wissen wie du es preislich vorstellst",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T11:18:50.599+0200",
+      "attachments": [],
+      "messageId": "ace98ed0-73e0-11ee-9bd4-4bcc8fee32a1",
+      "readableDate": "26-Oct-23 11:18"
+    },
+    {
+      "textShort": "Adnan preislich so in Rahmen von 120-200€ was meinst du?",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T11:38:57.480+0200",
+      "attachments": [],
+      "messageId": "7c45225f-73e3-11ee-9a6a-7fa1eedcd4b8",
+      "readableDate": "26-Oct-23 11:38"
+    },
+    {
+      "textShort": "Also. Fur 200 euro kann ich die Aufgaben machen . Abhängig davon wie viel Zeit zur Verfügung steht",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T16:49:16.109+0200",
+      "attachments": [],
+      "messageId": "d5d675f1-740e-11ee-a0e6-dddce7070137",
+      "readableDate": "26-Oct-23 16:49"
+    },
+    {
+      "textShort": "Ok. Wir haben bis 8.11 Zeit... Leider hat ein Helfer nach einer Woche abgesagt.. Ich sende dir dann jetzt noch die Aufgaben mit Sourcen und nicht als zusammenfassung sonder als einzelne Übungsbläter.",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T17:00:24.343+0200",
+      "attachments": [],
+      "messageId": "6422e067-7410-11ee-b882-3394beb811e9",
+      "readableDate": "26-Oct-23 17:00"
+    },
+    {
+      "textShort": "Es gibt noch eine Wichtige Sache die ich erwähnen will, und zwar nur weil die Aufgabe Arbeit erfodrdet, der bis zu 7 tage dauern kann .darum verlange ich , als Sicherheit Maßnahme, und natürlich nur wenn Sie sich für mich entscheiden, dass sie die Hälfte der summe im voraus zahlen",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T18:24:03.801+0200",
+      "attachments": [],
+      "messageId": "13f6ed97-741c-11ee-8170-a78074315b30",
+      "readableDate": "26-Oct-23 18:24"
+    },
+    {
+      "textShort": "Es tut mir leid dass ich sowas verlange",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T18:24:24.678+0200",
+      "attachments": [],
+      "messageId": "2068f6d6-741c-11ee-8193-bda5d14b6a6f",
+      "readableDate": "26-Oct-23 18:24"
+    },
+    {
+      "textShort": "Und ich kann ihnen eine ähnliche Aufgabe schicken zusammen mit der Lösung, als Beweis dass ich deine Aufgabe lösen kann",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T18:26:15.074+0200",
+      "attachments": [],
+      "messageId": "623634fb-741c-11ee-9216-13b5bb591a23",
+      "readableDate": "26-Oct-23 18:26"
+    },
+    {
+      "textShort": "Ok. Was hältst du davon wenn ich 50 Euro jetzt bezahle. Dann machst du die Aufgaben. 1. String Array durchblättern. 2. Fragmente und 3. UI Modern dann sende ich dir weitere 50 Euro und dann am Ende den Rest. Klingt Fair?",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T18:31:59.681+0200",
+      "attachments": [],
+      "messageId": "2f976b41-741d-11ee-ae3b-df0b50200a43",
+      "readableDate": "26-Oct-23 18:31"
+    },
+    {
+      "textShort": "Klingt sehr Fair",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T18:52:23.823+0200",
+      "attachments": [],
+      "messageId": "0941da48-7420-11ee-b560-77ba234a091b",
+      "readableDate": "26-Oct-23 18:52"
+    },
+    {
+      "textShort": "Paypal?",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T21:05:22.711+0200",
+      "attachments": [],
+      "messageId": "9d0b6347-7432-11ee-b801-ad58b3cc9cb7",
+      "readableDate": "26-Oct-23 21:05"
+    },
+    {
+      "textShort": "Ja ,",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T21:24:50.653+0200",
+      "attachments": [],
+      "messageId": "553158cf-7435-11ee-8a08-116ec686c881",
+      "readableDate": "26-Oct-23 21:24"
+    },
+    {
+      "textShort": "Ja ,",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T21:24:56.050+0200",
+      "attachments": [],
+      "messageId": "586952c0-7435-11ee-8576-bfbf6985a237",
+      "readableDate": "26-Oct-23 21:24"
+    },
+    {
+      "textShort": "Sidig777@gmail.com",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T21:25:02.171+0200",
+      "attachments": [],
+      "messageId": "5c0f4fda-7435-11ee-9dc7-539afa1f3444",
+      "readableDate": "26-Oct-23 21:25"
+    },
+    {
+      "textShort": "Noch eine Frage , ich vermute ich soll java verwenden",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T21:25:33.406+0200",
+      "attachments": [],
+      "messageId": "6ead3e28-7435-11ee-8312-d7e524eee80c",
+      "readableDate": "26-Oct-23 21:25"
+    },
+    {
+      "textShort": "Oder kotlin geht auch?",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T21:25:52.764+0200",
+      "attachments": [],
+      "messageId": "7a36bbc2-7435-11ee-bc09-7de9ea010609",
+      "readableDate": "26-Oct-23 21:25"
+    },
+    {
+      "textShort": "Java ja.",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-26T21:27:30.128+0200",
+      "attachments": [],
+      "messageId": "b43f4d60-7435-11ee-a2af-9d911fc39d57",
+      "readableDate": "26-Oct-23 21:27"
+    },
+    {
+      "textShort": "Moin, Geld habe ich gesendet. Wann meinst du bist du mit ersten 3 Aufgaben fertig?",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-27T07:43:11.697+0200",
+      "attachments": [],
+      "messageId": "b723b28f-748b-11ee-9a6a-c918aafaadeb",
+      "readableDate": "27-Oct-23 07:43"
+    },
+    {
+      "textShort": "Hi Adnan hast du alles bekommen?",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-27T16:43:19.317+0200",
+      "attachments": [],
+      "messageId": "2b9612dc-74d7-11ee-9bd4-bbef9c0d912b",
+      "readableDate": "27-Oct-23 16:43"
+    },
+    {
+      "textShort": "Heute nachts oder morgen",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-27T16:45:28.384+0200",
+      "attachments": [],
+      "messageId": "7883d44b-74d7-11ee-848c-0554dbe69ea5",
+      "readableDate": "27-Oct-23 16:45"
+    },
+    {
+      "textShort": "Alles gut. Danke!!",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-27T16:45:59.383+0200",
+      "attachments": [],
+      "messageId": "8afe34eb-74d7-11ee-941a-d54b71edd893",
+      "readableDate": "27-Oct-23 16:45"
+    },
+    {
+      "textShort": "Hi",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-28T14:07:28.650+0200",
+      "attachments": [],
+      "messageId": "90916ba1-758a-11ee-80dd-9b600dbc9b82",
+      "readableDate": "28-Oct-23 14:07"
+    },
+    {
+      "textShort": "Habe dir gerade eine E-Mail geschickt",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-28T14:07:45.759+0200",
+      "attachments": [],
+      "messageId": "9ac36fc5-758a-11ee-9ade-c18b8e1ce85f",
+      "readableDate": "28-Oct-23 14:07"
+    },
+    {
+      "textShort": "Moin. Habs bekommen, bin unterwegs. Melde mich heute Abend",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-28T16:00:26.022+0200",
+      "attachments": [],
+      "messageId": "5831b5b0-759a-11ee-ae3b-4d95ea564c73",
+      "readableDate": "28-Oct-23 16:00"
+    },
+    {
+      "textShort": "Ist das dein Nummer 0024911288233?? \nIch finde so dich nicht. Und auf die Datei kann ich nicht zugreifen.. Kannst es nochmal hochladen",
+      "boundness": "INBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-28T20:27:53.827+0200",
+      "attachments": [],
+      "warning": {
+        "message": "Reagiere nicht auf Forderungen, per Messenger, SMS oder E-Mail zu kommunizieren. Teile niemals vertrauliche Informationen! Gib deine E-Mail-Adresse oder Telefonnummer nicht weiter – diese könnten für Betrug missbraucht werden.\n\nNutze für Zahlungen „Sicher Bezahlen“ – damit profitierst du von unserem Ver-/Käuferschutz. Und deine Daten bleiben geschützt.",
+        "key": "CONTAINS_PHONE_NUMBER",
+        "links": {
+          "„Sicher Bezahlen“": "https://themen.kleinanzeigen.de/hilfe/sicher-bezahlen/",
+          "Betrug missbraucht": "https://themen.kleinanzeigen.de/hilfe/sicherheitshinweise/Sicherheitsmeldung/"
+        }
+      },
+      "messageId": "b56e936c-75bf-11ee-8a2f-d7007336b712",
+      "readableDate": "28-Oct-23 20:27"
+    },
+    {
+      "textShort": "Die Nummer lautet 00249111288233",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-28T20:48:41.486+0200",
+      "attachments": [],
+      "messageId": "9d18afe5-75c2-11ee-a8b9-ef19566a15bb",
+      "readableDate": "28-Oct-23 20:48"
+    },
+    {
+      "textShort": "Dann schreib mir bitte auf WhatsApp oder Telegramm, ich die Datei dorthin",
+      "boundness": "OUTBOUND",
+      "title": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+      "type": "MESSAGE",
+      "receivedDate": "2023-10-28T20:49:26.436+0200",
+      "attachments": [],
+      "messageId": "b7e30dca-75c2-11ee-bc09-c769ce677c93",
+      "readableDate": "28-Oct-23 20:49"
+    }
+  ],
+  "ratingPossible": true,
+  "linksEnabled": false,
+  "attachmentsEnabled": false,
+  "paymentPossible": false,
+  "buyNowPossible": false,
+  "adEligibleForPayment": false,
+  "paymentStateSummary": [],
+  "numUnread": 0,
+  "adStatus": "ACTIVE",
+  "adTitle": "Nachhilfe C++ Python Javascript Java Matlab SQL",
+  "adImage": "https://img.kleinanzeigen.de/api/v1/prod-ads/images/80/80c69e75-170c-4ac0-ae52-3d55987b3258?rule=$_{imageId}.JPG",
+  "adPriceInEuroCent": 2000,
+  "adPriceType": "FIXED",
+  "buyerInitials": "V",
+  "sellerInitials": "A",
+  "adL1CategoryId": "235",
+  "adL2CategoryId": "268",
+  "adType": "OFFER",
+  "userActionRequired": false,
+  "flaggingEnabled": true,
+  "adDetailsAvailable": true
+}

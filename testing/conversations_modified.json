@@ -1,0 +1,25 @@
+{
+  "numUnread": 0,
+  "numUnreadMessages": 0,
+  "lastModified": "letzte Sam 14:40",
+  "conversations": [
+    {
+      "id": "j7w:1r8jhvr:2kn7mb17z",
+      "buyerName": "Luisa",
+      "unread": false,
+      "boundness": "OUTBOUND",
+      "receivedDate": "letzte Sam 14:40",
+      "unreadMessagesCount": 0,
+    },
+    {
+      "id": "5pkw:2nt14vr:2knkw9ppt",
+      "buyerName": "ddd",
+      "unread": false,
+      "boundness": "OUTBOUND",
+      "receivedDate": "letzte Fri 11:01",
+      "unreadMessagesCount": 0,
+    }
+//    ......   other conversations , maximal 10 conversations
+  ]
+
+}
