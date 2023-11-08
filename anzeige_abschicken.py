@@ -463,7 +463,7 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
 if __name__ == "__main__":
     id = 18
 
-    api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/ahmed_tita.json", keep_old_cookies=False,
+    api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/saleem_abd.json", keep_old_cookies=False,
                                save=True, webshare_rotate=True)
     # api.is_user_logged_in()
     print("login", api.login)

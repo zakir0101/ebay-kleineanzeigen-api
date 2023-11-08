@@ -8,7 +8,6 @@ from main import Main
 
 TELEGRAM_TOKEN = '6819822176:AAHnYg7TVpRXaDE4Yt0F6du_WwfDmbDryX8'
 TELEGRAM_API_URL = f'https://api.telegram.org/bot{TELEGRAM_TOKEN}'
-CHAT_ID = "5351556147"
 
 
 def notify_user(text, reply_markup=None):
@@ -17,19 +16,23 @@ def notify_user(text, reply_markup=None):
         'text': text,
         'reply_markup': reply_markup,
     }
-    requests.post(f"{TELEGRAM_API_URL}/sendMessage", json=payload)
+    requests.post(f"{TELEGRAM_API_URL}/sendMessage", data=payload)
 
 
 def main():
-    for cookie_file in os.listdir("Cookies"):
-        print(f"logged in as {cookie_file}")
+    for index,cookie_file in enumerate(os.listdir("Cookies")):
+        index = index + 1
+        print(f"{index}: logged in as {cookie_file}")
         api = Main(log=True, mode="server", filename=f"Cookies/{cookie_file}", keep_old_cookies=False, save=True,
                    webshare_rotate=True)
         if api.login:
+
+            api.cookies.remove_specific_cookies()
             user_id = api.get_user_id()
+            api.cookies.remove_specific_cookies()
             user_name = api.get_user_name()
             conversations = api.get_conversations(user_id, "0", "10")
-            notify_user(f"Conversations for {user_name}")
+            notify_user(f"{index}. Conversations for {user_name}")
             if conversations["numUnreadMessages"] > 0:
                 for conversation in conversations.get("conversations", []):
                     if conversation['unreadMessagesCount'] > 0:
@@ -55,6 +58,7 @@ def main():
             else:
                 notify_user("no new Messages")
 
-
+        else:
+            notify_user(f"{index}. can't login to account : {cookie_file}")
 if __name__ == "__main__":
     main()

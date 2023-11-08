@@ -103,6 +103,7 @@ class EbayKleinanzeigenApi:
         saleem_omer_link = "https://proxy.webshare.io/api/v2/proxy/list/download/njsxdevopvnjuutgnutwdvztlhfeuqjfifxwxzji/-/any/username/direct/-/"
 
         all_links = [zakir1996_link, zakir_elkheir, adnan_link, ahmed_tita_link, saleem_abd_link, saleem_omer_link]
+        all_links = random.sample(all_links,3)
         proxy_list = []
         for link in all_links:
             if link == "":

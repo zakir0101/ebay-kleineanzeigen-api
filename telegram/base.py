@@ -21,7 +21,7 @@ class Base:
         """
         Sends a message to the user on Telegram.
         """
-        print("chat_id",self.chat_id)
+        # print("chat_id",self.chat_id)
         payload = {
             'chat_id': self.chat_id,
             'text': text,
