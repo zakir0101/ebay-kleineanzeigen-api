@@ -17,7 +17,7 @@ class Messages(Base):
         self.send_token_file_selection()
 
     def display_conversation(self,cookie_file):
-        thread = Thread(target=self.display_conversation_async,args=(cookie_file))
+        thread = Thread(target=self.display_conversation_async,args=(cookie_file,))
         thread.start()
     def display_conversation_async(self,cookie_file):
         # Code to get conversations list and send it to user
