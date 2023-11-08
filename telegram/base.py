@@ -103,7 +103,6 @@ class Base:
         Sends a list of token files for the user to select from.
         """
         # files = os.listdir(Path("Cookies"))
-        # files = [file for file in os.listdir(Path("Cookies")) if file.endswith(".json")] # Assuming 'Cookies' directory is where the token files are stored
-        files = glob.glob("Cookies/*.json")
+        files = [file for file in os.listdir(Path("Cookies")) if file.endswith('.json')]
         keyboard = self.make_file_selection_keyboard(files)
         self.send_message("Select a token file:", reply_markup=json.dumps(keyboard))

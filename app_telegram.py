@@ -1,6 +1,7 @@
 import glob
 import json
 import os
+from pathlib import Path
 from threading import Thread
 
 import requests
@@ -266,7 +267,8 @@ def notify_user(text, reply_markup=None):
 
 
 def notify_messages_async_task():
-    for index, cookie_file in enumerate(glob.glob("Cookies/*.json")):
+    files = [file for file in os.listdir(Path("Cookies")) if file.endswith('.json')]
+    for index, cookie_file in enumerate(files):
         index = index + 1
         print(f"{index}: logged in as {cookie_file}")
         api = Main(log=True, mode="server", filename=f"Cookies/{cookie_file}", keep_old_cookies=False, save=True,
