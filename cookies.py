@@ -52,11 +52,11 @@ class Cookies:
     def load_google_chrome_cookies_from_file(self, log=True):
         with open(self.filename, 'r') as f:
             self.googleChromeCookie = json.load(f)
-            # for cook in self.googleChromeCookie:
-            #     if "kleinanzeigen.de" not in cook.get("domain"):
-            #         self.googleChromeCookie.remove(cook)
-            # if log:
-            #     print("Loading default config")
+            for cook in self.googleChromeCookie:
+                if "kleinanzeigen.de" not in cook.get("domain"):
+                    self.googleChromeCookie.remove(cook)
+            if log:
+                print("Loading default config")
 
     ###############################################
     #   load google chrome cookies
@@ -150,7 +150,7 @@ class Cookies:
         for cook in self.googleChromeCookie:
             print(cook['name'],cook['domain'])
     def remove_specific_cookies(self):
-        un_wanted_cookies = ["ak_bmsc","_gat","bm_sv"]
+        un_wanted_cookies = ["ak_bmsc","_gat","bm_sv"] #,"_abck","bm_sz"
         for unw_cook in un_wanted_cookies:
             if self.request_cookies.get(unw_cook):
                 print("removing",unw_cook)

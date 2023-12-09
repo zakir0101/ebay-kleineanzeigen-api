@@ -272,7 +272,7 @@ def notify_messages_async_task():
         index = index + 1
         print(f"{index}: logged in as {cookie_file}")
         api = Main(log=True, mode="server", filename=f"Cookies/{cookie_file}", keep_old_cookies=False, save=True,
-                   webshare_rotate=True)
+                   webshare_rotate=False)
         if api.login:
 
             api.cookies.remove_specific_cookies()

@@ -1,5 +1,3 @@
-
-
 import json
 import os
 from pathlib import Path
@@ -132,22 +130,27 @@ class AdFiles(Base):
         Start the process of adding a new ad by asking for the file name.
         """
         # The bot should send a message asking for the name of the ad file
-
+        self.user_state['add_mode'] = True
         self.send_message("Please send the name for the new ad file.")
-        self.user_state = {'mode': "adds", 'add_mode': True}
+        # self.user_state = {'mode': "adds", 'add_mode': True}
 
     # When the user sends the file name, you save it and ask for the next field
-    def handle_new_ad_file_name(self, ad_file_name):
+    def handle_new_ad_file_name(self, ad_file_name:str):
         """
         Handle the file name input for a new ad.
         """
         if 'add_mode' in self.user_state:
             # user_state['new_ad_data']['file_name'] = ad_file_name
             # Now you should ask for the next ad field, starting with the title
+            if not ad_file_name.endswith(".json"):
+                ad_file_name = ad_file_name + ".json"
             muster = open("adds/muster.json", "r", encoding="utf-8").read()
-            open("adds/" + ad_file_name, "w", encoding="utf-8").write(muster)
+            with open("adds/" + ad_file_name, "w", encoding="utf-8") as f:
+                f.write(muster)
+                f.close()
             self.send_message("the new add have been created, no you can select the add to edit its fields")
             self.user_state.pop("add_mode")
+            self.user_state['ad_file'] = ad_file_name
             self.handle_ad_file_selection(ad_file_name)
 
     def save_ad_content(self, ad_content, ad_file_name):
@@ -155,3 +158,4 @@ class AdFiles(Base):
         with ad_path.open('w', encoding='utf-8') as file:
             json.dump(ad_content, file, ensure_ascii=False, indent=4)
         self.send_message("Ad updated successfully!")
+1

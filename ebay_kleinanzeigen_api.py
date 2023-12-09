@@ -64,7 +64,6 @@ class EbayKleinanzeigenApi:
         if not self.login and log:
             print("leider koennte nciht einlogen", )
 
-        # self.login = self.is_user_logged_in()
 
     def try_hard(self, func1, func2):
         for x in range(len(self.proxies)):

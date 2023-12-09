@@ -256,8 +256,11 @@ class AnzeigeAnmelden(Main):
         for konto in accounts:
             if konto.get("cookies") != None:
                 print(f"******************* {konto['first_name']} ********************")
-                api = AnzeigeAnmelden(log=False,filename=konto.get("cookies"),mode="server",save=True,keep_old_cookies=False,webshare_rotate=True)
-                print(f"{konto['first_name']} logged in :",api.login)
+                api = AnzeigeAnmelden(log=True,filename=konto.get("cookies"),mode="server",save=True,keep_old_cookies=False,webshare_rotate=False)
+                api.cookies.remove_specific_cookies()
+                api.is_user_logged_in()
+                print(api.html_text)
+                print(f"{konto['first_name']} logged in :", api.login)
         pass
     @staticmethod
     def report_adds_from_csv_from_all_account():
@@ -325,7 +328,14 @@ class AnzeigeAnmelden(Main):
         open( "report\\"+file_name, "w").write(json.dumps(report))
 if __name__ == "__main__":
     # AnzeigeAnmelden.check_alL_user_are_logged_in()
-    AnzeigeAnmelden.report_adds_from_csv_from_all_account()
+
+    print(f"******************* Tito ********************")
+    api = AnzeigeAnmelden(log=True, filename="Cookies/ahmed_tita.json", mode="server", save=True, keep_old_cookies=False,
+                          webshare_rotate=True)
+    api.cookies.remove_specific_cookies()
+    api.is_user_logged_in()
+    print(api.html_text)
+    print(f"Tito logged in :", api.login)
     # api = AnzeigeAnmelden(filename="Cookies/ahmed_tita.json",log=True, mode="server", keep_old_cookies=False, save=True,webshare_rotate=True)
     # print("logged in : ", api.is_user_logged_in())
     # api.cookies.remove_specific_cookies()
