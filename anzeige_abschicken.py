@@ -331,7 +331,7 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
                 raise Exception()
             return None
 
-        # self.cookies.remove_specific_cookies()
+        self.cookies.remove_specific_cookies()
         self.set_xsrf_token(mode=2)
         if self.response.status_code >= 400:
             if self.telegram_api_url:
