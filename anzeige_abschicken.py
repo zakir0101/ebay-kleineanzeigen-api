@@ -466,6 +466,7 @@ if __name__ == "__main__":
     api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/ahmed_tita.json", keep_old_cookies=False,
                                save=True, webshare_rotate=False)
     # api.is_user_logged_in()
+    api.cookies.remove_specific_cookies()
     print("login", api.login)
     print("user name ", api.get_user_name())
     # print(api.html_text)
