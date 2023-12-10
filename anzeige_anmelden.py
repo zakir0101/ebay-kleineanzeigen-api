@@ -330,10 +330,9 @@ if __name__ == "__main__":
     # AnzeigeAnmelden.check_alL_user_are_logged_in()
 
     print(f"******************* Tito ********************")
-    api = AnzeigeAnmelden(log=True, filename="Cookies/ahmed_tita.json", mode="server", save=True, keep_old_cookies=False,
-                          webshare_rotate=True)
+    api = AnzeigeAnmelden(log=True, filename="Cookies/saleem_abd.json", mode="server", save=True, keep_old_cookies=False,
+                          webshare_rotate=False)
     api.cookies.remove_specific_cookies()
-    api.is_user_logged_in()
     print(api.html_text)
     print(f"Tito logged in :", api.login)
     # api = AnzeigeAnmelden(filename="Cookies/ahmed_tita.json",log=True, mode="server", keep_old_cookies=False, save=True,webshare_rotate=True)

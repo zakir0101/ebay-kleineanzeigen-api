@@ -46,6 +46,9 @@ class EbayKleinanzeigenApi:
                 "http": "http://oeaariao-rotate:yoeq67r30rhb@p.webshare.io:80/",
                 "https": "http://oeaariao-rotate:yoeq67r30rhb@p.webshare.io:80/"
             }
+            self.abdul_proxies = {
+                "htpp" : "http://"
+            }
             self.ahmed_tita_proxies = {
                 "http": "http://qbdhukkk-rotate:0olcqbjafp1b@p.webshare.io:80/",
                 "https": "http://qbdhukkk-rotate:0olcqbjafp1b@p.webshare.io:80/"
@@ -245,6 +248,22 @@ class EbayKleinanzeigenApi:
 
     def is_user_logged_in(self):
         url = self.ebay_url
+        self.headers = {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-language": "de-DE,de;q=0.9",
+            "dnt" : "1",
+            "accept-encoding" : "gzip, deflate, br",
+            "cache-control": "max-age=0",
+            "sec-ch-ua": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "none",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1",
+            "user-agent" : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
+        }
         self.make_request(url=url, method="get", type="html")
 
         if self.request_error:

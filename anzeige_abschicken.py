@@ -461,17 +461,17 @@ class AnzeigeAbschickenApi(EbayKleinanzeigenApi):
 
 
 if __name__ == "__main__":
-    id = 18
+    id = 13
 
-    api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/saleem_abd.json", keep_old_cookies=False,
-                               save=True, webshare_rotate=True)
+    api = AnzeigeAbschickenApi(log=True, mode="server", filename="Cookies/ahmed_tita.json", keep_old_cookies=False,
+                               save=True, webshare_rotate=False)
     # api.is_user_logged_in()
     print("login", api.login)
     print("user name ", api.get_user_name())
     # print(api.html_text)
     if not api.login:
-        pass
-        # exit(1)
+
+        exit(1)
     # print(api.html_text)
     title = "Audi 10"
     zip_array = ["01616", "02627",
@@ -491,7 +491,7 @@ if __name__ == "__main__":
     if id == 14:
         api.set_bearer_token()
     if id == 13:
-        api.publish_add_from_json_file(Path("./adds/all_saleem_abd.json"))
+        api.publish_add_from_json_file(Path("./adds/all_ahmed_tita.json"))
     if id == 12:
         api.set_xsrf_token(2)
         print(api.html_text)

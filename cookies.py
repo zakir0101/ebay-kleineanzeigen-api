@@ -52,11 +52,11 @@ class Cookies:
     def load_google_chrome_cookies_from_file(self, log=True):
         with open(self.filename, 'r') as f:
             self.googleChromeCookie = json.load(f)
-            for cook in self.googleChromeCookie:
-                if "kleinanzeigen.de" not in cook.get("domain"):
-                    self.googleChromeCookie.remove(cook)
-            if log:
-                print("Loading default config")
+            # for cook in self.googleChromeCookie:
+            #     if "kleinanzeigen.de" not in cook.get("domain"):
+            #         self.googleChromeCookie.remove(cook)
+            # if log:
+            #     print("Loading default config")
 
     ###############################################
     #   load google chrome cookies
